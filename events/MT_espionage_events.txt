@@ -1,0 +1,1014 @@
+#
+
+###############################################################################
+#
+# Espionage Events
+#
+###############################################################################
+
+namespace = MT_espionage_events
+
+############################
+# SUBTERFUGE: ACQUIRE ASSET
+############################
+# this = operation; from = target (country)
+
+# Identify Targets
+espionage_operation_event = {
+	id = MT_espionage_events.1
+	title = MT_espionage_events.1.name
+	espionage_operation = yes
+	desc = MT_espionage_events.1.desc
+	picture = GFX_evt_spy_network
+	show_sound = event_encrypted_comms
+	is_triggered_only = yes
+
+	option = { name = ACKNOWLEDGED }
+}
+# Infiltrate
+espionage_operation_event = {
+	id = MT_espionage_events.2
+	title = MT_espionage_events.2.name
+	desc = MT_espionage_events.2.desc
+	espionage_operation = yes
+	picture = GFX_evt_space_hangar
+	show_sound = event_encrypted_comms
+	is_triggered_only = yes
+
+	immediate = {
+		from = {
+			ordered_owned_fleet = {
+				position = 0
+				order_by = trigger:fleet_power
+				inverse = no
+				save_event_target_as = MT_shatter_pride_fleet
+			}
+		}
+	}
+
+	option = { name = GOOD }
+}
+# Result
+espionage_operation_event = {
+	id = MT_espionage_events.3
+	title = MT_espionage_events.3.name
+	desc = MT_espionage_events.3.desc
+	espionage_operation = yes
+	picture = GFX_evt_synth_sabotage
+	show_sound = event_encrypted_comms
+	is_triggered_only = yes
+
+	immediate = {
+		set_espionage_operation_progress_locked = yes
+	}
+
+	option = {
+		name = LAUNCH_OPERATION
+		hidden_effect = {
+			owner = {
+				country_event = { id = MT_espionage_events.4 days = 1 }
+			}
+		}
+	}
+
+	after = {
+		set_espionage_operation_progress_locked = no
+	}
+}
+
+# Finalé | from = operation
+country_event = {
+	id = MT_espionage_events.4
+	title = MT_espionage_events.4.name
+	desc = MT_espionage_events.4.desc
+	picture = GFX_evt_sabotaged_ship
+	location = from.target.capital_scope
+	show_sound = event_encrypted_comms
+	is_triggered_only = yes
+
+	option = {
+		name = EXCELLENT
+		event_target:MT_shatter_pride_fleet = {
+			add_modifier = {
+				modifier = MT_shattered_pride_modifier
+				days = 1800
+			}
+		}
+		hidden_effect = {
+			fromfrom = {
+				country_event = { id = MT_espionage_events.5 days = 1 }
+			}
+		}
+	}
+
+	after = {
+		custom_tooltip = MT_espionage_events.4.tooltip.cooldown
+		fromfrom.spynetwork = {
+			set_saved_date = {
+				key = recently_stole_technology
+				days_from_present = 1800
+				expires = 1800
+			}
+		}
+		destroy_espionage_operation = from
+	}
+}
+
+# Target gets to know about operation
+country_event = {
+	id = MT_espionage_events.5
+	title = MT_espionage_events.5.name
+	desc = MT_espionage_events.5.desc
+	picture = GFX_evt_sabotaged_ship
+	location = fromfrom.target.capital_scope
+	show_sound = event_encrypted_comms
+	is_triggered_only = yes
+
+	option = {
+		name = MT_espionage_events.5.a
+	}
+}
+
+###########################
+# SABOTAGE INTEL
+###########################
+# this = operation
+
+# Hacking Databases
+espionage_operation_event = {
+	id = MT_espionage_events.6
+	title = MT_espionage_events.6.name
+	espionage_operation = yes
+	desc = {
+		text = MT_espionage_events.6.desc
+		trigger = {
+			target = {
+				is_gestalt = no
+			}
+		}
+	}
+	desc = {
+		text = MT_espionage_events.6.desc.hive
+		trigger = {
+			target = {
+				is_hive_empire = yes
+			}
+		}
+	}
+	desc = {
+		text = MT_espionage_events.6.desc.machine
+		trigger = {
+			target = {
+				is_machine_empire = yes
+			}
+		}
+	}
+	picture = GFX_evt_synth_sabotage
+	show_sound = event_default
+	is_triggered_only = yes
+
+	option = {
+		name = ACKNOWLEDGED
+	}
+}
+# Ready-signal
+espionage_operation_event = {
+	id = MT_espionage_events.7
+	title = MT_espionage_events.7.name
+	espionage_operation = yes
+	desc = {
+		text = MT_espionage_events.7.desc
+		trigger = {
+			target = {
+				is_gestalt = no
+			}
+		}
+	}
+	desc = {
+		text = MT_espionage_events.7.desc.hive
+		trigger = {
+			target = {
+				is_hive_empire = yes
+			}
+		}
+	}
+	desc = {
+		text = MT_espionage_events.7.desc.machine
+		trigger = {
+			target = {
+				is_machine_empire = yes
+			}
+		}
+	}
+	picture = GFX_evt_synth_sabotage
+	show_sound = event_default
+	is_triggered_only = yes
+
+	option = {
+		name = LAUNCH_OPERATION
+		hidden_effect = {
+			owner = {
+				country_event = { id = MT_espionage_events.8 }
+			}
+		}
+	}
+
+	after = {
+		set_espionage_operation_progress_locked = no
+	}
+}
+# Finalé | from = operation
+country_event = {
+	id = MT_espionage_events.8
+	title = MT_espionage_events.8.name
+	desc = {
+		text = MT_espionage_events.8.desc
+		trigger = {
+			from.target = {
+				is_gestalt = no
+			}
+		}
+	}
+	desc = {
+		text = MT_espionage_events.8.desc.hive
+		trigger = {
+			from.target = {
+				is_hive_empire = yes
+			}
+		}
+	}
+	desc = {
+		text = MT_espionage_events.8.desc.machine
+		trigger = {
+			from.target = {
+				is_machine_empire = yes
+			}
+		}
+	}
+	picture = GFX_evt_glitchy_matrix
+	show_sound = event_espionage_concluded
+	is_triggered_only = yes
+
+	trigger = {
+		exists = from.target
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_first_contact_dlc = yes
+			}
+			from.target = {
+				add_modifier = {
+					modifier = MT_sabotaged_intel_first_contact
+					days = 1800
+				}
+			}
+		}
+		else = {
+			from.target = {
+				add_modifier = {
+					modifier = MT_sabotaged_intel
+					days = 1800
+				}
+			}
+		}
+	}
+
+	option = { #We're done here (smooth)
+		name = MT_espionage_events.8.a
+		trigger = {
+			from.target.owner = {
+				NOR = {
+					has_hostile_espionage_operation_ethics = yes
+					has_closed_borders = root
+					is_at_war_with = root
+				}
+			}
+		}
+		from.spynetwork = {
+			add_spy_network_level_on_success_effect = { VALUE = -15 }
+		}
+		owner = {
+			if = {
+				limit = { has_ascension_perk = ap_become_the_crisis }
+				complete_crisis_objective = crisobj_perform_upsetting_operations
+			}
+		}
+	}
+	option = { #We're done here (messy)
+		name = MT_espionage_events.8.a
+		trigger = {
+			from.target = {
+				OR = {
+					has_hostile_espionage_operation_ethics = yes
+					has_closed_borders = root
+					is_at_war_with = root
+				}
+			}
+		}
+		from.spynetwork = {
+			add_spy_network_level_on_success_effect = { VALUE = -20 }
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			from.target.owner = {
+				set_timed_country_flag = {
+					flag = sabotaged_MT_intel_alert@root
+					days = @SabotageMTIntelTimer
+				}
+				country_event = { id = MT_espionage_events.9 } #Notification of sabotage
+			}
+		}
+		destroy_espionage_operation = from
+	}
+}
+
+# Intel Leaked! (victim) | from = instigating country
+country_event = {
+	id = MT_espionage_events.9
+	title = MT_espionage_events.9.name
+	desc = {
+		text = MT_espionage_events.9.desc.phobe
+		trigger = {
+			is_xenophobe = yes
+		}
+	}
+	desc = {
+		text = MT_espionage_events.9.desc
+		trigger = {
+			is_xenophobe = no
+			is_gestalt = no
+		}
+	}
+	desc = {
+		text = MT_espionage_events.9.desc.hive
+		trigger = {
+			is_hive_empire = yes
+		}
+	}
+	desc = {
+		text = MT_espionage_events.9.desc.machine
+		trigger = {
+			is_machine_empire = yes
+		}
+	}
+	picture = GFX_evt_glitchy_matrix
+	show_sound = event_default
+	is_triggered_only = yes
+
+	trigger = {
+		exists = from
+	}
+
+	immediate = {
+		random_list = {
+			1 = { # Caught Wind (Traced Signal)
+				modifier = {
+					factor = 3
+					relative_encryption_decryption = { target = from value > 0.8 }
+					relative_encryption_decryption = { target = from value < 1.6 }
+				}
+				modifier = {
+					factor = 10
+					relative_encryption_decryption = { target = from value >= 1.6 }
+				}
+				set_timed_country_flag = {
+					flag = MT_traced_signal
+					days = 20
+				}
+				#if = {
+				#	limit = {
+				#		any_spynetwork = {
+				#			owner = { is_same_value = root }
+				#			target = { is_same_value = from }
+				#			is_spynetwork_level > 5
+				#		}
+				#		NOT = { has_country_flag = recently_received_espionage_asset }
+				#	}
+				#	country_event = { #A Surprise Catch (asset granted)
+				#		id = MT_espionage_events.999
+				#		days = 15
+				#		scopes = { from = fromfrom }
+				#	}
+				#}
+			}
+			9 = { } #Nothing
+		}
+	}
+
+	option = {
+		name = {
+			text = APPALLING
+			trigger = {
+				OR = {
+					is_xenophobe = yes
+					is_gestalt = yes
+				}
+			}
+		}
+		name = {
+			text = CURSES
+			trigger = {
+				NOT = {
+					OR = {
+						is_xenophobe = yes
+						is_gestalt = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+###########################
+# SABOTAGE FLEETS
+###########################
+
+# Infiltrating the crew
+espionage_operation_event = {
+	id = MT_espionage_events.10
+	title = MT_espionage_events.10.name
+	espionage_operation = yes
+	desc = {
+		text = MT_espionage_events.10.desc
+		trigger = {
+			exists = target
+			target.owner = {
+				MT_has_valid_fleet_target = yes
+				is_gestalt = no
+				NOR = {
+					has_hostile_espionage_operation_ethics = yes
+					has_closed_borders = root.owner
+					is_at_war_with = root.owner
+				}
+			}
+		}
+	}
+	desc = {
+		text = MT_espionage_events.10.desc.hostile
+		trigger = {
+			exists = target
+			target.owner = {
+				MT_has_valid_fleet_target = yes
+				is_gestalt = no
+				owner = {
+					OR = {
+						has_hostile_espionage_operation_ethics = yes
+						has_closed_borders = root.owner
+						is_at_war_with = root.owner
+					}
+				}
+			}
+		}
+	}
+	desc = {
+		text = MT_espionage_events.10.desc.gestalt
+		trigger = {
+			exists = target
+			target.owner = {
+				MT_has_valid_fleet_target = yes
+				is_gestalt = yes
+			}
+		}
+	}
+	desc = {
+		text = MT_espionage_events.10.desc.invalid
+		trigger = {
+			OR = {
+				NOT = { exists = target }
+				target.owner = { MT_has_valid_fleet_target = no }
+			}
+		}
+	}
+	picture = GFX_evt_space_station
+	show_sound = event_default
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					NOT = { exists = target }
+					target.owner = { MT_has_valid_fleet_target = no }
+				}
+			}
+			set_espionage_operation_progress_locked = yes
+			owner = {
+				country_event = { id = MT_espionage_events.15 } #Operation invalid
+			}
+		}
+	}
+
+	option = {
+		name = ACKNOWLEDGED
+	}
+}
+# Operatives in place
+espionage_operation_event = {
+	id = MT_espionage_events.11
+	title = MT_espionage_events.11.name
+	espionage_operation = yes
+	desc = {
+		text = MT_espionage_events.11.desc
+		trigger = {
+			exists = target
+			target.owner = {
+				MT_has_valid_fleet_target = yes
+				is_gestalt = no
+			}
+		}
+	}
+	desc = {
+		text = MT_espionage_events.11.desc.gestalt
+		trigger = {
+			exists = target
+			target.owner = {
+				MT_has_valid_fleet_target = yes
+				is_gestalt = yes
+			}
+		}
+	}
+	desc = {
+		text = MT_espionage_events.10.desc.invalid
+		trigger = {
+			OR = {
+				NOT = { exists = target }
+				target.owner = { MT_has_valid_fleet_target = no }
+			}
+		}
+	}
+	picture = GFX_evt_space_station
+	show_sound = event_default
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					NOT = { exists = target }
+					target.owner = { MT_has_valid_fleet_target = no }
+				}
+			}
+			set_espionage_operation_progress_locked = yes
+			owner = {
+				country_event = { id = MT_espionage_events.15 } #Operation invalid
+			}
+		}
+	}
+
+	option = {
+		name = ACKNOWLEDGED
+	}
+}
+# Ready-signal
+espionage_operation_event = {
+	id = MT_espionage_events.12
+	title = MT_espionage_events.12.name
+	espionage_operation = yes
+	desc = {
+		text = MT_espionage_events.12.desc
+		trigger = {
+			exists = target
+			target.owner = {
+				MT_has_valid_fleet_target = yes
+				owner = {
+					NOR = {
+						has_hostile_espionage_operation_ethics = yes
+						has_closed_borders = root.owner
+						is_at_war_with = root.owner
+					}
+				}
+			}
+		}
+	}
+	desc = {
+		text = MT_espionage_events.12.desc.hostile
+		trigger = {
+			exists = target
+			target.owner = {
+				MT_has_valid_fleet_target = yes
+				owner = {
+					OR = {
+						has_hostile_espionage_operation_ethics = yes
+						has_closed_borders = root.owner
+						is_at_war_with = root.owner
+					}
+				}
+			}
+		}
+	}
+	desc = {
+		text = MT_espionage_events.10.desc.invalid
+		trigger = {
+			OR = {
+				NOT = { exists = target }
+				target.owner = { MT_has_valid_fleet_target = no }
+			}
+		}
+	}
+	picture = GFX_evt_space_station
+	show_sound = event_default
+	is_triggered_only = yes
+
+	immediate = {
+		set_espionage_operation_progress_locked = yes
+		if = {
+			limit = {
+				NOR = {
+					exists = target
+					target.owner = { MT_has_valid_fleet_target = yes }
+				}
+			}
+			owner = {
+				country_event = { id = MT_espionage_events.15 } #Operation invalid
+			}
+		}
+		else = {
+			target = {
+				save_event_target_as = MT_sabotaged_fleet
+				owner = { save_event_target_as = MT_sabotaged_fleet_owner }
+				solar_system = { save_event_target_as = MT_sabotaged_fleet_system }
+			}
+		}
+	}
+
+	option = {
+		name = LAUNCH_OPERATION
+		hidden_effect = {
+			owner = {
+				country_event = { id = MT_espionage_events.13 }
+			}
+		}
+	}
+
+	after = {
+		set_espionage_operation_progress_locked = no
+	}
+}
+# Finalé | from = operation; fromfrom = target (starbase)
+country_event = {
+	id = MT_espionage_events.13
+	title = MT_espionage_events.13.name
+	desc = {
+		text = MT_espionage_events.13.desc.hostile
+		trigger = {
+			from.target.owner = {
+				is_at_war_with = root.owner
+			}
+		}
+	}
+	desc = {
+		text = MT_espionage_events.13.desc
+		trigger = {
+			from.target.owner = {
+				NOT = { is_at_war_with = root.owner }
+			}
+		}
+	}
+	picture = GFX_evt_sabotaged_ship
+	show_sound = event_espionage_concluded
+	is_triggered_only = yes
+
+	trigger = {
+		exists = from
+	}
+
+	immediate = {
+		from.target = {
+			set_variable = {
+				which = MT_num_ships
+				value = trigger:num_ships
+			}
+			divide_variable = {
+				which = MT_num_ships
+				value = 3
+			}
+			ceiling_variable = MT_num_ships
+			while = {
+				count = MT_num_ships
+				random_owned_ship = {
+					limit = {
+						NOT = { is_ship_size = titan }
+					}
+					destroy_ship = this
+				}
+			}
+		}
+	}
+
+	option = { #We're done here (smooth)
+		name = MT_espionage_events.13.a
+		trigger = {
+			from.target.owner = {
+				NOR = {
+					has_hostile_espionage_operation_ethics = yes
+					has_closed_borders = root
+					is_at_war_with = root
+				}
+			}
+		}
+		from.spynetwork = {
+			add_spy_network_level_on_success_effect = { VALUE = -30 }
+		}
+		owner = {
+			if = {
+				limit = { has_ascension_perk = ap_become_the_crisis }
+				complete_crisis_objective = crisobj_perform_upsetting_operations
+			}
+		}
+	}
+	option = { #We're done here (messy)
+		name = MT_espionage_events.13.b
+		trigger = {
+			from.target.owner = {
+				OR = {
+					has_hostile_espionage_operation_ethics = yes
+					has_closed_borders = root
+					is_at_war_with = root
+				}
+			}
+		}
+		from.spynetwork = {
+			add_spy_network_level_on_success_effect = { VALUE = -45 }
+		}
+		owner = {
+			if = {
+				limit = { has_ascension_perk = ap_become_the_crisis }
+				complete_crisis_objective = crisobj_perform_upsetting_operations
+			}
+		}
+	}
+
+	after = {
+		hidden_effect = {
+			if = {
+				limit = {
+					owner = { NOT = { has_country_flag = operation_complete_MT_sabotage_fleet } }
+				}
+				owner = {
+					change_variable = {
+						which = tinker_tailor_soldier_blorg_achievement_count
+						value = 1
+					}
+					set_country_flag = operation_complete_MT_sabotage_fleet
+				}
+			}
+			from.target.owner = {
+				set_timed_country_flag = {
+					flag = MT_sabotaged_fleet_alert@root
+					days = @SabotageStarbaseTimer
+				}
+				country_event = { id = MT_espionage_events.14 } #Notification of sabotage
+			}
+		}
+		destroy_espionage_operation = from
+	}
+}
+# Fleet sabotaged! (victim) | from = instigating country
+country_event = {
+	id = MT_espionage_events.14
+	title = MT_espionage_events.14.name
+	desc = {
+		text = MT_espionage_events.14.desc.phobe
+		trigger = {
+			is_xenophobe = yes
+		}
+	}
+	desc = {
+		text = MT_espionage_events.14.desc
+		trigger = {
+			is_xenophobe = no
+			is_gestalt = no
+		}
+	}
+	desc = {
+		text = MT_espionage_events.14.desc.gestalt
+		trigger = {
+			is_gestalt = yes
+		}
+	}
+	picture = GFX_evt_sabotaged_ship
+	show_sound = event_default
+	is_triggered_only = yes
+
+	trigger = {
+		exists = from
+	}
+
+	immediate = {
+		random_list = {
+			1 = { #Saboteurs caught
+				modifier = {
+					factor = 0
+					OR = {
+						NOT = {
+							any_spynetwork = {
+								owner = { is_same_value = root }
+								target = { is_same_value = from }
+							}
+						}
+						has_country_flag = recently_received_espionage_asset
+					}
+				}
+				modifier = {
+					factor = 3
+					relative_encryption_decryption = { target = from value > 0.8 }
+					relative_encryption_decryption = { target = from value < 1.6 }
+				}
+				modifier = {
+					factor = 10
+					relative_encryption_decryption = { target = from value >= 1.6 }
+				}
+				set_timed_country_flag = {
+					flag = espionage_MT_caught_saboteurs
+					days = 20
+				}
+				if = {
+					limit = {
+						any_spynetwork = {
+							owner = { is_same_value = root }
+							target = { is_same_value = from }
+							is_spynetwork_level > 5
+						}
+						NOT = { has_country_flag = recently_received_espionage_asset }
+					}
+					country_event = { #A Surprise Catch (asset granted)
+						id = MT_espionage_events.999
+						days = 15
+						scopes = { from = fromfrom }
+					}
+				}
+			}
+			9 = { } #Nothing
+		}
+	}
+
+	option = {
+		name = {
+			text = APPALLING
+			trigger = {
+				OR = {
+					is_xenophobe = yes
+					is_gestalt = yes
+				}
+			}
+		}
+		name = {
+			text = CURSES
+			trigger = {
+				NOR = {
+					is_xenophobe = yes
+					is_gestalt = yes
+				}
+			}
+		}
+	}
+}
+# Operation invalid (nothing to sabotage) | from = operation; event_target:sabotaged_starbase = target
+country_event = {
+	id = MT_espionage_events.15
+	title = MT_espionage_events.15.name
+	desc = MT_espionage_events.15.desc
+	picture = GFX_evt_space_hangar
+	show_sound = event_default
+	is_triggered_only = yes
+
+	immediate = { }
+
+	option = {
+		name = UNFORTUNATE
+	}
+
+	after = {
+		destroy_espionage_operation = from
+	}
+}
+
+#########################################
+# A SURPRISE CATCH (an Asset is granted)
+#########################################
+# from = instigating country
+
+country_event = {
+	id = MT_espionage_events.999
+	title = MT_espionage_events.999.name
+	desc = {
+		text = MT_espionage_events.999.desc.MT_traced_signal
+		trigger = { has_country_flag = MT_traced_signal }
+	}
+	desc = {
+		text = MT_espionage_events.999.desc.espionage_MT_caught_saboteurs
+		trigger = { has_country_flag = espionage_MT_caught_saboteurs }
+	}
+	picture = GFX_evt_acquire_asset
+	show_sound = event_nem_asset_acquired_positive
+	is_triggered_only = yes
+
+	trigger = {
+		has_nemesis = yes
+		has_active_spynetwork = yes
+		AND = { #If this event has been forced by another, ROOT must also still be running a spy network there
+			OR = {
+				has_country_flag = MT_traced_signal
+				has_country_flag = espionage_MT_caught_saboteurs
+			}
+			exists = from #Instigating country
+			any_spynetwork = {
+				owner = { is_same_value = root }
+				is_spynetwork_level > 0
+				target = { is_same_value = from }
+			}
+		}
+		NOT = { has_country_flag = recently_received_espionage_asset }
+	}
+
+	immediate = {
+		country_event = { id = tutorial.2010 } #Tutorial: Assigning Assets
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = MT_traced_signal
+					has_country_flag = espionage_MT_caught_saboteurs
+				}
+			}
+			from = {
+				save_event_target_as = luckycatch_country
+			}
+		}
+	}
+
+	option = { #as random event
+		name = EXCELLENT
+		trigger = {
+			root = {
+				NOR = {
+					has_country_flag = MT_traced_signal
+					has_country_flag = espionage_MT_caught_saboteurs
+				}
+			}
+		}
+		custom_tooltip = espionage.1040.a.tooltip
+		hidden_effect = {
+			random_spynetwork = {
+				limit = {
+					owner = { is_same_value = root }
+					target = { is_same_value = event_target:luckycatch_country }
+				}
+				if = {
+					limit = { target = { has_authority = auth_hive_mind } }
+					espionage_create_asset_hive = yes
+				}
+				else_if = {
+					limit = { target = { has_authority = auth_machine_intelligence } }
+					espionage_create_asset_machine = yes
+				}
+				else = {
+					espionage_create_asset_regular = yes
+				}
+			}
+		}
+	}
+	option = { #as triggered elsewhere
+		name = GOOD
+		trigger = {
+			root = {
+				OR = {
+					has_country_flag = MT_traced_signal
+					has_country_flag = espionage_MT_caught_saboteurs
+				}
+			}
+		}
+		add_intel = {
+			who = event_target:luckycatch_country
+			amount = 10
+		}
+		custom_tooltip = espionage.1040.a.tooltip
+		hidden_effect = {
+			random_spynetwork = {
+				limit = {
+					owner = { is_same_value = root }
+					target = { is_same_value = event_target:luckycatch_country }
+				}
+				if = {
+					limit = { target = { has_authority = auth_hive_mind } }
+					espionage_create_asset_hive = yes
+				}
+				else_if = {
+					limit = { target = { has_authority = auth_machine_intelligence } }
+					espionage_create_asset_machine = yes
+				}
+				else = {
+					espionage_create_asset_regular = yes
+				}
+			}
+		}
+	}
+
+	after = {
+		remove_country_flag = MT_traced_signal
+		set_timed_country_flag = { flag = recently_received_espionage_asset days = @AssetReceivedTimer }
+	}
+}

@@ -1,0 +1,29 @@
+namespace = MT_botany
+
+# Botany // Evolution in Miniature // x months of science on_terraforming_complete
+planet_event = {
+    id = MT_botany.1
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        from = {
+            has_tradition = tr_mt_botany_2
+        }
+    }
+    immediate = {
+        from = {
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = 3
+            }
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = 3
+            }
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = 3
+            }
+        }
+    }
+}
