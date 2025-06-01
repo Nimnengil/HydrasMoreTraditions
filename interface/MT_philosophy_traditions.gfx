@@ -1,0 +1,59 @@
+spriteTypes = {
+
+	### philosophy
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_philosophy"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_philosophy.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_philosophy"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_philosophy.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_philosophy"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_philosophy.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_philosophy"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_philosophy.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### philosophy ###
+
+	spriteType = {
+		name = "GFX_tr_mt_philosophy_control"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_philosophy_control.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_philosophy_ethics_bonuses"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_philosophy_ethics_bonuses.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_philosophy_entertainment"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_philosophy_entertainment.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_philosophy_coming_change"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_philosophy_coming_change.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_philosophy_flaws"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_philosophy_flaws.dds"
+	}
+}

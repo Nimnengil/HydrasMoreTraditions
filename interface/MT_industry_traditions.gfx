@@ -1,0 +1,76 @@
+spriteTypes = {
+
+	### industry
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_industry"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_industry.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_industry"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_industry.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_industry"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_industry.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_industry"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_industry.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### industry ###
+
+	spriteType = {
+		name = "GFX_tr_mt_industry_pillars_of_creation"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_industry_pillars_of_creation.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_industry_multilayered"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_industry_multilayered.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_industry_maintenance"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_industry_maintenance.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_industry_bigger_batches"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_industry_bigger_batches.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_industry_recycled_products"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_industry_recycled_products.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_industry_prospector"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_industry_prospector.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_industry_agriculture"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_industry_agriculture.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_industry_bigger_batches_machine"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_industry_sleek_machine.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_industry_bigger_batches_hive"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_industry_sleek_machine.dds"
+	}
+}

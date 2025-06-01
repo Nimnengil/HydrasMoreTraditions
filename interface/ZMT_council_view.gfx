@@ -1,0 +1,7 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_icon_MT_veneration_position"
+		texturefile = "gfx/interface/icons/governments/civics/civic_MT_veneration.dds"
+	}
+}

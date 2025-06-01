@@ -1,0 +1,7 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_planet_modifier_ground_support_MT_ruination"
+		sprite_sheet_sprite_type = "GFX_planet_view_bombarded"
+		default_frame = 3
+	}
+}

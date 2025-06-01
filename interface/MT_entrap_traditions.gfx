@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### entrap
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_entrap"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_entrap.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_entrap"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_entrap.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_entrap"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_entrap.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_entrap"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_entrap.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### entrap ###
+
+	spriteType = {
+		name = "GFX_tr_mt_entrap_art_of_the_deal"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_entrap_art_of_the_deal.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_entrap_adaptive_economy"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_entrap_adaptive_economy.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_entrap_galactization"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_entrap_galactization.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_entrap_human_resources"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_entrap_human_resources.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_entrap_market_research"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_entrap_market_research.dds"
+	}
+}

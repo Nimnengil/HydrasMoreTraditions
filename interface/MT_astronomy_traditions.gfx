@@ -1,0 +1,61 @@
+spriteTypes = {
+
+	### astronomy
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_astronomy"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_astronomy.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_astronomy"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_astronomy.dds"
+	}
+
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_astronomy"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_astronomy.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_astronomy"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_astronomy.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### astronomy ###
+
+	spriteType = {
+		name = "GFX_tr_mt_astronomy_1"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_astronomy_1.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_astronomy_2"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_astronomy_2.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_astronomy_3"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_astronomy_3.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_astronomy_4"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_astronomy_4.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_astronomy_5"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_astronomy_5.dds"
+	}
+}

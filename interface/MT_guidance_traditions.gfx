@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### guidance
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_guidance"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_guidance.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_guidance"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_guidance.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_guidance"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_guidance.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_guidance"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_guidance.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### guidance ###
+
+	spriteType = {
+		name = "GFX_tr_mt_guidance_teacher"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_guidance_teacher.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_guidance_delegator"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_guidance_delegator.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_guidance_trusted_caretaker"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_guidance_trusted_caretaker.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_guidance_shared_frequencies"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_guidance_shared_frequencies.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_guidance_shepherd"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_guidance_shepherd.dds"
+	}
+}

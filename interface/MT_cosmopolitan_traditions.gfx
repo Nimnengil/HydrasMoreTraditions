@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### cosmopolitan
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_cosmopolitan"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_cosmopolitan.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_cosmopolitan"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_cosmopolitan.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_cosmopolitan"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_cosmopolitan.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_cosmopolitan"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_cosmopolitan.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### cosmopolitan ###
+
+	spriteType = {
+		name = "GFX_tr_mt_cosmopolitan_migration"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_cosmopolitan_migration.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_cosmopolitan_wayfarers"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_cosmopolitan_wayfarers.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_cosmopolitan_mundialization"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_cosmopolitan_mundialization.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_cosmopolitan_diverse_knowledge"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_cosmopolitan_diverse_knowledge.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_cosmopolitan_galactic_citizenship"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_cosmopolitan_galactic_citizenship.dds"
+	}
+}

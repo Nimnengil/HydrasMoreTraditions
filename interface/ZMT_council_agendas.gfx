@@ -1,0 +1,311 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_archeology_grants"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_archeology_grants.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_artifact_exploitation"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_artifact_exploitation.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_envy_gestalt"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_artifact_exploitation.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_priority_movement"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_priority_movement.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_ambitious_promises"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_ambitious_promises.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_construction_efforts"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_construction_efforts.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_finality"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_finality.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_mystic_ritual"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_mystic_ritual.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_swarm"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_swarm.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_justice"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_justice.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_long_range_communication"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_long_range_communication.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_insurgency"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_insurgency.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_insurgency_shadow_strike"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_insurgency_shadow_strike.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_benevolence"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_benevolence.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_loyalty"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_loyalty.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_chaos"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_chaos.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_valor"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_valor.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_diligence"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_diligence.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_manipulation"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_manipulation.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_greed"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_greed.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_greed_gestalt"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_greed.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_guidance"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_guidance.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_dominance"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_dominance.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_nature"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_nature.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_industry"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_industry.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_industry_gestalt"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_industry.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_curiosity"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_curiosity.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_royalty"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_royalty.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_reflection"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_reflection.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_legion"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_legion.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_sloth"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_sloth.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_ingenuity"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_ingenuity.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_antiquity"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_antiquity.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_isolation"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_isolation.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_evolution"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_evolution.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_brightburn"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_brightburn.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_vengeance"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_vengeance.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_oppression"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_oppression.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_philosophy"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_philosophy.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_advisor"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_advisor.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_piracy"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_piracy.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_disruption"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_disruption.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_liberation"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_liberation.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_exchange"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_exchange.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_veneration"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_veneration.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_ruination"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_ruination.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_maritime"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_maritime.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_maritime_upgraded"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_maritime.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_core"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_core.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_integration"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_integration.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_entrap"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_entrap.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_conquest"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_conquest.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_opulence"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_opulence.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_cosmopolitan"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_cosmopolitan.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_starseeker"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_starseeker.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_freedom"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_freedom.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_desperation"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_desperation.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_geology"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_geology.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_genesis"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_genesis.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_botany_angler"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_botany.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_botany"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_botany.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_council_agenda_icon_agenda_MT_astronomy"
+		texturefile = "gfx/interface/icons/agenda_icons/agenda_MT_astronomy.dds"
+	}
+}

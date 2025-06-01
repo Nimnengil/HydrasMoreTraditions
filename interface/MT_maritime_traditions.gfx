@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### maritime
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_maritime"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_maritime.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_maritime"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_maritime.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_maritime"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_maritime.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_maritime"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_maritime.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### maritime ###
+
+	spriteType = {
+		name = "GFX_tr_mt_maritime_war_and_peace"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_maritime_war_and_peace.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_maritime_grand_harbors"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_maritime_grand_harbors.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_maritime_merchant_navy"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_maritime_merchant_navy.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_maritime_port_of_call"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_maritime_port_of_call.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_maritime_industrial_contracts"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_maritime_industrial_contracts.dds"
+	}
+}

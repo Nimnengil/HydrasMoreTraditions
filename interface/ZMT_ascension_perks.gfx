@@ -1,0 +1,12 @@
+spriteTypes = {
+
+	################################################################
+	# ASCENSION PERK ICONS
+	################################################################
+
+	spriteType = {
+		name = "GFX_ap_MT_archeology_tradition_perk"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_MT_archeology_tradition_perk.dds"
+		alwaystransparent = yes
+	}
+}

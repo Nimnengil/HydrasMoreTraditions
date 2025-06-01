@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### manipulation
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_manipulation"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_manipulation.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_manipulation"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_manipulation.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_manipulation"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_manipulation.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_manipulation"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_manipulation.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### manipulation ###
+
+	spriteType = {
+		name = "GFX_tr_mt_manipulation_mandatory_voting"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_manipulation_mandatory_voting.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_manipulation_puplic_speeches"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_manipulation_puplic_speeches.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_manipulation_master_of_the_web"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_manipulation_master_of_the_web.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_manipulation_special_agents"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_manipulation_special_agents.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_manipulation_planted_evidence"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_manipulation_planted_evidence.dds"
+	}
+}

@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### liberation
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_liberation"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_liberation.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_liberation"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_liberation.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_liberation"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_liberation.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_liberation"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_liberation.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### liberation ###
+
+	spriteType = {
+		name = "GFX_tr_mt_liberation_voice"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_liberation_voice.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_liberation_forced_liberation"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_liberation_forced_liberation.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_liberation_presidential_training"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_liberation_presidential_training.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_liberation_influence"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_liberation_influence.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_liberation_free_speech"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_liberation_free_speech.dds"
+	}
+}

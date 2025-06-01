@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### core
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_core"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_core.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_core"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_core.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_core"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_core.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_core"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_core.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### core ###
+
+	spriteType = {
+		name = "GFX_tr_mt_core_central_command"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_core_central_command.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_core_compact_computing"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_core_compact_computing.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_core_fast_communication"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_core_fast_communication.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_core_constructions"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_core_constructions.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_core_expansion"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_core_expansion.dds"
+	}
+}

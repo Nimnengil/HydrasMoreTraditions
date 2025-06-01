@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### freedom
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_freedom"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_freedom.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_freedom"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_freedom.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_freedom"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_freedom.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_freedom"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_freedom.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### freedom ###
+
+	spriteType = {
+		name = "GFX_tr_mt_freedom_price"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_freedom_price.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_freedom_of_arms"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_freedom_of_arms.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_freedom_of_markets"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_freedom_of_markets.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_freedom_of_speech"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_freedom_of_speech.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_freedom_for_all"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_freedom_for_all.dds"
+	}
+}

@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### isolation
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_isolation"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_isolation.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_isolation"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_isolation.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_isolation"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_isolation.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_isolation"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_isolation.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### isolation ###
+
+	spriteType = {
+		name = "GFX_tr_mt_isolation_closed_borders"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_isolation_closed_borders.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_isolation_thorns"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_isolation_thorns.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_isolation_home_turf"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_isolation_home_turf.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_isolation_no_relations"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_isolation_no_relations.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_isolation_introspection"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_isolation_introspection.dds"
+	}
+}

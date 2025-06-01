@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### chaos
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_chaos"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_chaos.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_chaos"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_chaos.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_chaos"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_chaos.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_chaos"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_chaos.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### chaos ###
+
+	spriteType = {
+		name = "GFX_tr_mt_chaos_event_horizon"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_chaos_event_horizon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_chaos_horrific_visions"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_chaos_horrific_visions.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_chaos_trip_through_hell"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_chaos_trip_through_hell.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_chaos_last_gift"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_chaos_last_gift.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_chaos_glory_of_war"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_chaos_glory_of_war.dds"
+	}
+}

@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### ingenuity
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_ingenuity"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_ingenuity.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_ingenuity"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_ingenuity.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_ingenuity"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_ingenuity.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_ingenuity"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_ingenuity.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### ingenuity ###
+
+	spriteType = {
+		name = "GFX_tr_mt_ingenuity_frameworks"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_ingenuity_frameworks.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_ingenuity_extra_dyson_sphere"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_ingenuity_extra_dyson_sphere.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_ingenuity_stellar_shipyards"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_ingenuity_stellar_shipyards.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_ingenuity_wonder_worlds"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_ingenuity_wonder_worlds.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_ingenuity_grand_construction"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_ingenuity_grand_construction.dds"
+	}
+}

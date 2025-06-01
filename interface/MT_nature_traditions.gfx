@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### nature
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_nature"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_nature.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_nature"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_nature.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_nature"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_nature.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_nature"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_nature.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### nature ###
+
+	spriteType = {
+		name = "GFX_tr_mt_nature_nutrient_rich"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_nature_nutrient_rich.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_nature_bounty"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_nature_bounty.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_nature_natural_weaponry"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_nature_natural_weaponry.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_nature_healing"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_nature_healing.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_nature_land_claim"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_nature_land_claim.dds"
+	}
+}

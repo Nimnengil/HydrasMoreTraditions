@@ -1,0 +1,72 @@
+spriteTypes = {
+
+	### loyalty
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_loyalty"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_loyalty.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_loyalty"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_loyalty.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_loyalty"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_loyalty.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_loyalty"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_loyalty.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### loyalty ###
+
+	spriteType = {
+		name = "GFX_tr_mt_loyalty_blood_pact"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_loyalty_blood_pact.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_loyalty_shared_navy"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_loyalty_shared_navy.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_loyalty_representitives"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_loyalty_representitives.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_loyalty_bonds_not_chains"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_loyalty_bonds_not_chains.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_loyalty_speciality"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_loyalty_speciality.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_loyalty_speciality_bulwark"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_loyalty_speciality.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_loyalty_speciality_prospectorium"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_loyalty_speciality.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_loyalty_speciality_scholarium"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_loyalty_speciality.dds"
+	}
+}

@@ -1,0 +1,390 @@
+@entries_row1_y = 63
+@entries_row2_y = 329
+@entries_column1 = 11
+@entries_column2 = 325
+@entries_column3 = 639
+@entries_column4 = 953
+@entry_h = 260
+@entry_w = 308
+
+@two_layer_tree_h = 25
+@three_layer_tree_h = 0
+
+@dynamic_extra = 0.8
+@dynamic_extra_max = 260
+
+guiTypes = {
+
+	################################################################
+	# TRADITION CATEGORY TREE TEMPLATES
+	################################################################
+
+	
+		### 1 to 3, 3 to 1 ###
+
+		    #####
+		    # 1 #
+		    #####
+
+	#####   #####   #####
+	# 2 #   # 3 #   # 4 #
+	#####   #####   #####
+	
+	        #####
+		    # 5 #
+		    #####
+
+	containerWindowType = {
+		name = "MT_tree_131"
+		position = { x = 0 y = @three_layer_tree_h }
+
+		iconType = {
+			name = "arrow_1"
+			spriteType = "GFX_arrow_mt_triple_split"
+			position = { x = 71 y = 100 }
+			alwaysTransparent = yes
+		}
+		
+		iconType = {
+			name = "arrow_2"
+			spriteType = "GFX_arrow_mt_triple_merge"
+			position = { x = 81 y = 170 }
+			alwaysTransparent = yes
+		}
+
+		containerWindowType = {
+			name = "tree_mt_131_tradition_1"
+			position = { x = 131 y = 55 }
+		}
+
+		containerWindowType = {
+			name = "tree_mt_131_tradition_2"
+			position = { x = 61 y = 125 }
+		}
+
+		containerWindowType = {
+			name = "tree_mt_131_tradition_3"
+			position = { x = 131 y = 125 }
+		}
+
+		containerWindowType = {
+			name = "tree_mt_131_tradition_4"
+			position = { x = 201 y = 125 }
+		}
+
+		containerWindowType = {
+			name = "tree_mt_131_tradition_5"
+			position = { x = 131 y = 195 }
+		}
+		# Don't put any container windows above this comment that shouldn't contain a tradition.
+	}
+	
+	### 1 to 1 and 1 to 2 ###
+
+				#####
+				# 3 #
+				#####
+
+			#####   #####
+			# 4 #   # 5 #
+			#####   #####
+	
+		#####	#####
+		# 1 #	# 2 #
+		#####	#####
+
+	containerWindowType = {
+		name = "MT_tree_122"
+		position = { x = 0 y = @three_layer_tree_h }
+
+		iconType = {
+			name = "arrow_1"
+			spriteType = "GFX_arrow_double"
+			position = { x = 147 y = 100 }
+			alwaysTransparent = yes
+		}
+		
+		iconType = {
+			name = "arrow_2"
+			spriteType = "GFX_arrow_double"
+			position = { x = 117 y = 170 }
+			alwaysTransparent = yes
+		}
+		
+		containerWindowType = {
+			name = "tree_mt_122_tradition_3"
+			position = { x = 166 y = 55 }
+		}
+
+		containerWindowType = {
+			name = "tree_mt_122_tradition_4"
+			position = { x = 131 y = 125 }
+		}
+
+		containerWindowType = {
+			name = "tree_mt_122_tradition_5"
+			position = { x = 201 y = 125 }
+		}
+
+		containerWindowType = {
+			name = "tree_mt_122_tradition_1"
+			position = { x = 96 y = 195 }
+		}
+
+		containerWindowType = {
+			name = "tree_mt_122_tradition_2"
+			position = { x = 166 y = 195 }
+		}
+		# Don't put any container windows above this comment that shouldn't contain a tradition.
+	}
+	
+	### 1 to 1 to 3 ###
+
+		    #####
+		    # 1 #
+		    #####
+
+			#####   
+			# 5 #   
+			#####   
+	
+	#####   #####   #####
+	# 2	#   # 3 #   # 4 #
+	#####   #####   #####
+
+	containerWindowType = {
+		name = "MT_tree_113"
+		position = { x = 0 y = @three_layer_tree_h }
+
+		iconType = {
+			name = "arrow_1"
+			spriteType = "GFX_arrow_single"
+			position = { x = 147 y = 100 }
+			alwaysTransparent = yes
+		}
+		
+		iconType = {
+			name = "arrow_2"
+			spriteType = "GFX_arrow_mt_triple_split"
+			position = { x = 71 y = 170 }
+			alwaysTransparent = yes
+		}
+
+		containerWindowType = {
+			name = "tree_mt_113_tradition_1"
+			position = { x = 131 y = 55 }
+		}
+
+		containerWindowType = {
+			name = "tree_mt_113_tradition_2"
+			position = { x = 61 y = 195 }
+		}
+
+		containerWindowType = {
+			name = "tree_113_tradition_3"
+			position = { x = 131 y = 195 }
+		}
+
+		containerWindowType = {
+			name = "tree_mt_113_tradition_4"
+			position = { x = 201 y = 195 }
+		}
+		
+		containerWindowType = {
+			name = "tree_mt_113_tradition_5"
+			position = { x = 131 y = 125 }
+		}
+		
+		# Don't put any container windows above this comment that shouldn't contain a tradition.
+	}
+	
+	### 1 , 2 to 2 ###
+
+			#####    #####
+			# 2 #    # 3 #
+	#####   #####    #####
+	# 1 #
+	#####	#####	 #####
+			# 4 #    # 5 #
+			#####    #####
+
+	containerWindowType = {
+		name = "MT_tree_1_22"
+		position = { x = 0 y = @two_layer_tree_h }
+
+		iconType = {
+			name = "arrow_1"
+			spriteType = "GFX_arrow_mt_double_double"
+			position = { x = 147 y = 100 }
+			alwaysTransparent = yes
+		}
+
+		containerWindowType = {
+			name = "tree_mt_1_22_tradition_1"
+			position = { x = 61 y = 80 }
+		}
+
+		containerWindowType = {
+			name = "tree_mt_1_22_tradition_2"
+			position = { x = 131 y = 55 }
+		}
+
+		containerWindowType = {
+			name = "tree_mt_1_22_tradition_3"
+			position = { x = 201 y = 55 }
+		}
+
+		containerWindowType = {
+			name = "tree_mt_1_22_tradition_4"
+			position = { x = 131 y = 125 }
+		}
+
+		containerWindowType = {
+			name = "tree_mt_1_22_tradition_5"
+			position = { x = 201 y = 125 }
+		}
+		# Don't put any container windows above this comment that shouldn't contain a tradition.
+	}
+	
+	### 1 to 4 ###
+
+	#####   #####   #####
+	# 1 #   # 2 #   # 3 #
+	#####   #####   #####
+
+		#####	 #####
+		# 4 #    # 5 #
+		#####    #####
+
+	containerWindowType = {
+		name = "MT_tree_1_4"
+		position = { x = 0 y = @two_layer_tree_h }
+
+		iconType = {
+			name = "arrow_1"
+			spriteType = "GFX_arrow_mt_left"
+			position = { x = 108 y = 70 }
+			alwaysTransparent = yes
+		}
+
+		iconType = {
+			name = "arrow_2"
+			spriteType = "GFX_arrow_double"
+			position = { x = 117 y = 100 }
+			alwaysTransparent = yes
+		}
+		
+		iconType = {
+			name = "arrow_3"
+			spriteType = "GFX_arrow_mt_right"
+			position = { x = 176 y = 70 }
+			alwaysTransparent = yes
+		}
+
+		containerWindowType = {
+			name = "tree_mt_1_4_tradition_1"
+			position = { x = 61 y = 55 }
+		}
+
+		containerWindowType = {
+			name = "tree_mt_1_4_tradition_2"
+			position = { x = 131 y = 55 }
+		}
+
+		containerWindowType = {
+			name = "tree_mt_1_4_tradition_3"
+			position = { x = 201 y = 55 }
+		}
+
+		containerWindowType = {
+			name = "tree_mt_1_4_tradition_4"
+			position = { x = 96 y = 125 }
+		}
+
+		containerWindowType = {
+			name = "tree_mt_1_4_tradition_5"
+			position = { x = 166 y = 125 }
+		}
+		# Don't put any container windows above this comment that shouldn't contain a tradition.
+	}
+	
+	##############
+	# By Azurian #
+	##############
+	
+			### 2 to 3 ###
+
+		#####	  		#####
+		# 1 #	  		# 2 #
+		#####	  		#####
+#	      V               V
+		#####   #####   #####
+		# 3	# > # 4 # < # 5 #
+		#####   #####   #####
+	
+	containerWindowType = {
+		name = "MT_tree_23"
+		position = { x = 0 y = @two_layer_tree_h }
+
+		iconType = {
+			name = "arrow_down_1"
+			spriteType = "GFX_arrow_single"
+			position = { x = 217 y = 100 }
+			alwaysTransparent = yes
+		}
+		
+		iconType = {
+			name = "arrow_down_2"
+			spriteType = "GFX_arrow_single"
+			position = { x = 76 y = 100 }
+			alwaysTransparent = yes
+		}
+		
+#		iconType = {
+#			name = "arrow_merge_same_height_1"
+#			spriteType = "GFX_arrow_mt_merge_same_height"
+#			position = { x = 106 y = 100}
+#			alwaysTransparent = yes
+#		}
+
+		iconType = {
+			name = "arrow_right_1"
+			spriteType = "GFX_arrow_mt_right"
+			position = { x = 106 y = 141 }
+			alwaysTransparent = yes
+		}
+		
+		iconType = {
+			name = "arrow_left_1"
+			spriteType = "GFX_arrow_mt_left"
+			position = { x = 178 y = 141 }
+			alwaysTransparent = yes
+		}
+
+		containerWindowType = {
+			name = "tree_mt_23_tradition_1"
+			position = { x = 61 y = 55 }
+		}
+
+		containerWindowType = {
+			name = "tree_mt_23_tradition_2"
+			position = { x = 201 y = 55 }
+		}
+
+		containerWindowType = {
+			name = "tree_mt_23_tradition_3"
+			position = { x = 61 y = 125 }
+		}
+
+		containerWindowType = {
+			name = "tree_23_tradition_4"
+			position = { x = 131 y = 125 }
+		}
+
+		containerWindowType = {
+			name = "tree_mt_23_tradition_5"
+			position = { x = 201 y = 125 }
+		}
+		# Don't put any container windows above this comment that shouldn't contain a tradition.
+	}
+}

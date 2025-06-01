@@ -1,0 +1,9 @@
+spriteTypes = {
+
+	### text icons ###
+
+	spriteType = {
+		name = "GFX_text_mt_text_icon_strategic"
+		texturefile = "gfx/interface/icons/resources/strategic.dds"
+	}
+}

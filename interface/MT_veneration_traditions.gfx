@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### veneration
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_veneration"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_veneration.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_veneration"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_veneration.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_veneration"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_veneration.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_veneration"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_veneration.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### veneration ###
+
+	spriteType = {
+		name = "GFX_tr_mt_veneration_wise_council"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_veneration_wise_council.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_veneration_elder"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_veneration_elder.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_veneration_council_overseer"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_veneration_council_overseer.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_veneration_more_leaders"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_veneration_more_leaders.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_veneration_empire_of_infinity"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_veneration_empire_of_infinity.dds"
+	}
+}

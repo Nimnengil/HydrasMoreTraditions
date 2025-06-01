@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### conquest
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_conquest"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_conquest.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_conquest"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_conquest.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_conquest"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_conquest.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_conquest"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_conquest.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### conquest ###
+
+	spriteType = {
+		name = "GFX_tr_mt_conquest_strengthened_hulls"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_conquest_strengthened_hulls.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_conquest_valiant_heroes"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_conquest_valiant_heroes.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_conquest_stranglehold"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_conquest_stranglehold.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_conquest_siege_engines"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_conquest_siege_engines.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_conquest_rapid_training"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_conquest_rapid_training.dds"
+	}
+}

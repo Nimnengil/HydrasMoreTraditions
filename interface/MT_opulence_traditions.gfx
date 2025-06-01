@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### opulence
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_opulence"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_opulence.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_opulence"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_opulence.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_opulence"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_opulence.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_opulence"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_opulence.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### opulence ###
+
+	spriteType = {
+		name = "GFX_tr_mt_opulence_golden_armada"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_opulence_golden_armada.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_opulence_big_estates"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_opulence_big_estates.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_opulence_golden_paycheck"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_opulence_golden_paycheck.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_opulence_beacons_of_splendor"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_opulence_beacons_of_splendor.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_opulence_glistening_towers"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_opulence_glistening_towers.dds"
+	}
+}

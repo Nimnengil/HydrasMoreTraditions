@@ -1,0 +1,183 @@
+spriteTypes = {
+
+	### antiquity
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_antiquity"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_antiquity.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_antiquity"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_antiquity.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_antiquity"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_antiquity.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_antiquity"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_antiquity.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### antiquity ###
+
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_1"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_1.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_2"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_2.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_3"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_3.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_4"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_4.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5"
+		textureFile = "gfx/interface/icons/traditions/tr_stage_1_swap.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_cybrex_initial"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_cybrex.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_cybrex"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_cybrex.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_first_league"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_first_league.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_first_league_initial"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_first_league.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_irassian"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_irassian.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_irassian_initial"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_irassian.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_vultaum"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_vultaum.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_vultaum_initial"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_vultaum.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_yuht"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_yuht.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_yuht_initial"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_yuht.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_zroni"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_zroni.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_zroni_initial"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_zroni.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_baol"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_baol.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_baol_initial"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_baol.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_adakkaria"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_adakkaria.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_adakkaria_initial"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_adakkaria.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_inetian"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_inetian.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_inetian_initial"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_inetian.dds"
+	}
+	### Forgotten History ###
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_plexian"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_plexian.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_plexian_initial"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_plexian.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_lartian"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_lartian.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_lartian_initial"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_lartian.dds"
+	}
+	### More Precursors ###
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_ixardian"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_ixardian.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_ixardian_initial"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_ixardian.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_werediran"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_werediran.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_werediran_initial"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_werediran.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_ezentian"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_ezentian.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_ezentian_initial"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_ezentian.dds"
+	}
+	### Unavoidable Changes ###
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_volgan"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_volgan.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_antiquity_5_volgan_initial"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_volgan.dds"
+	}
+}

@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### starseeker
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_starseeker"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_starseeker.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_starseeker"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_starseeker.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_starseeker"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_starseeker.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_starseeker"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_starseeker.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### starseeker ###
+
+	spriteType = {
+		name = "GFX_tr_mt_starseeker_storm_shelters"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_starseeker_storm_shelters.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_starseeker_stormwielders"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_starseeker_stormwielders.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_starseeker_solar_panels"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_starseeker_solar_panels.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_starseeker_space_claim"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_starseeker_space_claim.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_starseeker_observation_modules"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_starseeker_observation_modules.dds"
+	}
+}

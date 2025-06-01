@@ -1,0 +1,33 @@
+
+### Tradition Arrows ###
+spriteTypes = {
+	spriteType = {
+		name = "GFX_arrow_mt_triple_merge"
+		textureFile = "gfx/interface/traditions/MT_arrow_triple_merge.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_arrow_mt_triple_split"
+		textureFile = "gfx/interface/traditions/MT_arrow_triple_split.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_arrow_mt_double_double"
+		textureFile = "gfx/interface/traditions/MT_arrow_double_double.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_arrow_mt_right"
+		textureFile = "gfx/interface/traditions/MT_arrow_right.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_arrow_mt_left"
+		textureFile = "gfx/interface/traditions/MT_arrow_left.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_arrow_mt_merge_same_height"
+		textureFile = "gfx/interface/traditions/MT_arrow_double_merge_same_height.dds"
+	}
+}

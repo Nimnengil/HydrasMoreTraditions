@@ -1,0 +1,64 @@
+spriteTypes = {
+
+	### valor
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_valor"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_valor.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_valor"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_valor.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_valor"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_valor.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_valor"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_valor.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### valor ###
+
+	spriteType = {
+		name = "GFX_tr_mt_valor_charge"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_valor_charge.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_valor_flagships"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_valor_flagships.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_valor_heroism"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_valor_heroism.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_valor_heroism_machine"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_valor_heroism_machine.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_valor_heroic_symbols"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_valor_heroic_symbols.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_valor_the_armada"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_valor_the_armada.dds"
+	}
+}

@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### desperation
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_desperation"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_desperation.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_desperation"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_desperation.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_desperation"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_desperation.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_desperation"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_desperation.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### desperation ###
+
+	spriteType = {
+		name = "GFX_tr_mt_desperation_weak_point_analysis"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_desperation_weak_point_analysis.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_desperation_records"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_desperation_records.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_desperation_fight_or_flight"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_desperation_fight_or_flight.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_desperation_emergency_waivers"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_desperation_emergency_waivers.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_desperation_united_we_stand"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_desperation_united_we_stand.dds"
+	}
+}

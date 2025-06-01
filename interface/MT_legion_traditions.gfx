@@ -1,0 +1,64 @@
+spriteTypes = {
+
+	### legion
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_legion"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_legion.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_legion"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_legion.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_legion"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_legion.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_legion"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_legion.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### legion ###
+
+	spriteType = {
+		name = "GFX_tr_mt_legion_stealth"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_legion_stealth.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_legion_stealth_no_cloaking"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_legion_stealth_no_cloaking.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_legion_perfection"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_legion_perfection.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_legion_rapid_response"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_legion_rapid_response.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_legion_replication"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_legion_replication.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_legion_connected"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_legion_connected.dds"
+	}
+}

@@ -1,0 +1,64 @@
+spriteTypes = {
+
+	### insurgency
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_insurgency"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_insurgency.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_insurgency"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_insurgency.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_insurgency"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_insurgency.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_insurgency"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_insurgency.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### insurgency ###
+
+	spriteType = {
+		name = "GFX_tr_mt_insurgency_right_of_independence"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_insurgency_right_of_independence.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_insurgency_deterrence"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_insurgency_deterrence.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_insurgency_spiteful_memories"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_insurgency_spiteful_memories.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_insurgency_taste_of_freedom"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_insurgency_taste_of_freedom.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_insurgency_never_again"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_insurgency_never_again.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_insurgency_our_land"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_insurgency_our_land.dds"
+	}
+}

@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### Genesis
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_genesis"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_genesis.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_genesis"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_genesis.dds"
+	}
+
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_genesis"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_genesis.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_genesis"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_genesis.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### genesis ###
+
+	spriteType = {
+		name = "GFX_tr_mt_genesis_1"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_genesis_1.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_genesis_2"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_genesis_2.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_genesis_3"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_genesis_3.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_genesis_4"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_genesis_4.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_genesis_5"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_genesis_5.dds"
+	}
+}

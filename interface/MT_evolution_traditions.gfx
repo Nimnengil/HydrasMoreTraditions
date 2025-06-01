@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### evolution
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_evolution"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_evolution.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_evolution"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_evolution.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_evolution"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_evolution.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_evolution"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_evolution.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### evolution ###
+
+	spriteType = {
+		name = "GFX_tr_mt_evolution_predatory"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_evolution_predatory.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_evolution_parental"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_evolution_parental.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_evolution_farmers"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_evolution_farmers.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_evolution_terraforming"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_evolution_terraforming.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_evolution_demotion"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_evolution_demotion.dds"
+	}
+}

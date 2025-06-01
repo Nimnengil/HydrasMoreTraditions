@@ -1,0 +1,64 @@
+spriteTypes = {
+
+	### Geology
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_geology"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_geology.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_geology"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_geology.dds"
+	}
+
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_geology"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_geology.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_geology"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_geology.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### geology ###
+
+	spriteType = {
+		name = "GFX_tr_mt_geology_1"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_geology_1.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_geology_2"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_geology_2.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_geology_3"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_geology_3.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_geology_4"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_geology_4.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_geology_5"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_geology_5.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_geology_5_purifier"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_geology_5_purifier.dds"
+	}
+}

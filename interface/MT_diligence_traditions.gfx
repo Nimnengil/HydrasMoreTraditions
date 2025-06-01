@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### diligence
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_diligence"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_diligence.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_diligence"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_diligence.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_diligence"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_diligence.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_diligence"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_diligence.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### diligence ###
+
+	spriteType = {
+		name = "GFX_tr_mt_diligence_last_stand"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_diligence_last_stand.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_diligence_fortifications"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_diligence_fortifications.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_diligence_never_surrender"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_diligence_never_surrender.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_diligence_zeal"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_diligence_zeal.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_diligence_payback"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_diligence_payback.dds"
+	}
+}

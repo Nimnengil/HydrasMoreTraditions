@@ -1,0 +1,70 @@
+spriteTypes = {
+
+	### greed
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_greed"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_greed.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_greed"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_greed.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_greed"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_greed.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_greed"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_greed.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### greed ###
+
+	spriteType = {
+		name = "GFX_tr_mt_greed_taxes"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_greed_tight_grip.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_mt_greed_taxes_hive"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_greed_investment.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_tr_mt_greed_taxes_machine"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_greed_investment.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_greed_fossil_fuels"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_greed_investment.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_greed_landfills"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_greed_landfills.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_greed_martial_business"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_greed_cutting_corners.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_greed_strip_mines"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_greed_strip_mines.dds"
+	}
+}

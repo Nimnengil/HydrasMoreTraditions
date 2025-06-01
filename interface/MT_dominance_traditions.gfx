@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### dominance
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_dominance"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_dominance.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_dominance"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_dominance.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_dominance"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_dominance.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_dominance"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_dominance.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### dominance ###
+
+	spriteType = {
+		name = "GFX_tr_mt_dominance_leverage"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_dominance_leverage.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_dominance_extended_gallery"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_dominance_extended_gallery.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_dominance_suppression"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_dominance_suppression.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_dominance_integration"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_dominance_integration.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_dominance_the_throne"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_dominance_the_throne.dds"
+	}
+}

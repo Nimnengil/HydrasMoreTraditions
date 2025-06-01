@@ -1,0 +1,67 @@
+spriteTypes = {
+
+	### advisor
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_advisor"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_advisor.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_advisor"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_advisor.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_advisor"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_advisor.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_advisor"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_advisor.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### advisor ###
+
+	spriteType = {
+		name = "GFX_tr_mt_advisor_extra_papers"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_advisor_extra_papers.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_advisor_emergency_powers"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_advisor_emergency_powers.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_advisor_standard_legal_language"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_advisor_standard_legal_language.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_advisor_information_collection"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_advisor_information_collection.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_advisor_fast_procedures"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_advisor_fast_procedures.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_advisor_standard_legal_language_hive"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_advisor_standard_legal_language_hive.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_advisor_standard_legal_language_machine"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_advisor_standard_legal_language_machine.dds"
+	}
+}

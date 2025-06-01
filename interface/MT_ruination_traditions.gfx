@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### ruination
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_ruination"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_ruination.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_ruination"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_ruination.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_ruination"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_ruination.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_ruination"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_ruination.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### ruination ###
+
+	spriteType = {
+		name = "GFX_tr_mt_ruination_cities_under_cities"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_ruination_cities_under_cities.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_ruination_revelry_in_ruin"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_ruination_revelry_in_ruin.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_ruination_spiteful_reclamations"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_ruination_spiteful_reclamations.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_ruination_wastelands_of_decay"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_ruination_wastelands_of_decay.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_ruination_couldrons_of_corrosion"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_ruination_couldrons_of_corrosion.dds"
+	}
+}

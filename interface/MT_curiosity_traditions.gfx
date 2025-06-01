@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### curiosity
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_curiosity"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_curiosity.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_curiosity"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_curiosity.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_curiosity"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_curiosity.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_curiosity"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_curiosity.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### curiosity ###
+
+	spriteType = {
+		name = "GFX_tr_mt_curiosity_siphon"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_curiosity_siphon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_curiosity_call_of_the_unknown"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_curiosity_call_of_the_unknown.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_curiosity_bright_ideas"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_curiosity_bright_ideas.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_curiosity_rapid_simulation"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_curiosity_rapid_simulation.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_curiosity_gravity"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_curiosity_gravity.dds"
+	}
+}

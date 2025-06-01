@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### disruption
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_disruption"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_disruption.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_disruption"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_disruption.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_disruption"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_disruption.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_disruption"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_disruption.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### disruption ###
+
+	spriteType = {
+		name = "GFX_tr_mt_disruption_full_infiltration"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_disruption_full_infiltration.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_disruption_large_toolkit"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_disruption_large_toolkit.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_disruption_special_tools"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_disruption_special_tools.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_disruption_intel_sabotage"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_disruption_intel_sabotage.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_disruption_malware"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_disruption_malware.dds"
+	}
+}

@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### piracy
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_piracy"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_piracy.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_piracy"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_piracy.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_piracy"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_piracy.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_piracy"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_piracy.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### piracy ###
+
+	spriteType = {
+		name = "GFX_tr_mt_piracy_privateers"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_piracy_privateers.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_piracy_mercenaries"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_piracy_mercenaries.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_piracy_plunder"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_piracy_plunder.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_piracy_debris"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_piracy_debris.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_piracy_opportunity"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_piracy_opportunity.dds"
+	}
+}

@@ -1,0 +1,80 @@
+spriteTypes = {
+
+	### botany
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_botany"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_botany.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_botany"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_botany.dds"
+	}
+
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_botany"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_botany.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_botany"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_botany.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### botany ###
+
+	spriteType = {
+		name = "GFX_tr_mt_botany_1"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_botany_1.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_botany_1_angler"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_botany_1_angler.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_botany_1_synth"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_botany_1_synth.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_botany_2"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_botany_2.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_botany_2_habitat"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_botany_2_habitat.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_botany_3"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_botany_3.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_botany_4"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_botany_4.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_botany_4_angler"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_botany_4_angler.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_botany_5"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_botany_5.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_botany_5_synth"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_botany_5_synth.dds"
+	}
+}

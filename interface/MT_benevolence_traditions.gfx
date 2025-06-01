@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### benevolence
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_benevolence"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_benevolence.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_benevolence"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_benevolence.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_benevolence"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_benevolence.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_benevolence"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_benevolence.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### benevolence ###
+
+	spriteType = {
+		name = "GFX_tr_mt_benevolence_open_borders"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_benevolence_open_borders.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_benevolence_kindness"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_benevolence_kindness.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_benevolence_peace_protocols"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_benevolence_peace_protocols.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_benevolence_mercy"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_benevolence_mercy.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_benevolence_guarantee"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_benevolence_guarantee.dds"
+	}
+}

@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### brightburn
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_brightburn"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_brightburn.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_brightburn"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_brightburn.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_brightburn"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_brightburn.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_brightburn"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_brightburn.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### brightburn ###
+
+	spriteType = {
+		name = "GFX_tr_mt_brightburn_supernova"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_brightburn_supernova.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_brightburn_ever_brighter"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_brightburn_ever_brighter.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_brightburn_lightspeed"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_brightburn_lightspeed.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_brightburn_eternity"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_brightburn_eternity.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_brightburn_burning_light"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_brightburn_burning_light.dds"
+	}
+}

@@ -1,0 +1,60 @@
+spriteTypes = {
+
+	### integration
+
+	## New tradition category gfx names
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_mt_integration"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_mt_integration.dds"
+	}
+
+	# Backgrounds
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_mt_integration"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_integration.dds"
+	}
+
+	# Tiles
+
+	corneredTileSpriteType = {
+		name = "GFX_tradition_category_tile_tradition_mt_integration"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_mt_integration.dds"
+		borderSize = { x=140 y=140 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	### TRADITION CATEGORY ICONS ###
+
+	spriteType = {
+		name = "GFX_tradition_category_icon_tradition_mt_integration"
+		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_mt_integration.dds"
+	}
+
+	### TRADITION ICONS ###
+
+	### integration ###
+
+	spriteType = {
+		name = "GFX_tr_mt_integration_pods"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_integration_pods.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_mt_integration_bioprocessors"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_integration_bioprocessors.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_integration_biogrid_revision"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_integration_biogrid_revision.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_integration_dream_capsules"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_integration_dream_capsules.dds"
+	}
+	spriteType = {
+		name = "GFX_tr_mt_integration_simulated_reality"
+		textureFile = "gfx/interface/icons/traditions/tradition_mt_integration_simulated_reality.dds"
+	}
+}

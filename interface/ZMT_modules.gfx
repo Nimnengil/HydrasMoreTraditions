@@ -1,0 +1,8 @@
+
+### Module and Starbase Buildings ###
+spriteTypes = {
+	spriteType = {
+		name = "GFX_MT_Hydra_starseeker_observation_post"
+		texturefile = "gfx/interface/icons/modules/MT_Hydra_starseeker_observation_post.dds"
+	}
+}
