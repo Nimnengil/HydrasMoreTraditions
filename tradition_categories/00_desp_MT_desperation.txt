@@ -1,0 +1,63 @@
+tradition_mt_desperation = {
+	desc = tradition_mt_desperation_desc
+	tree_template = "MT_tree_1_4"
+	adoption_bonus = "tr_mt_desperation_adopt"
+	finish_bonus = "tr_mt_desperation_finish"
+	traditions = {
+		"tr_mt_desperation_united_we_stand" # 
+		"tr_mt_desperation_weak_point_analysis" # 
+		"tr_mt_desperation_emergency_waivers" # 
+		"tr_mt_desperation_fight_or_flight" # 
+		"tr_mt_desperation_records" # 
+	}
+
+	potential = {
+		always = no
+		NOR = {
+			has_ascension_perk = ap_become_the_crisis
+			has_ascension_perk = ap_cosmogenesis
+			has_ascension_perk = ap_behemoths
+		}
+		NOT = {
+			has_valid_civic = civic_inwards_perfection
+		}
+		is_homicidal = no
+	}
+
+	ai_weight = {
+		weight = 2
+		modifier = {
+			factor = 0.5
+			is_gestalt = yes
+		}
+		modifier = {
+			factor = 0.2
+			has_crisis = no
+		}
+		modifier = {
+			factor = 5
+			any_country = {
+				relative_power = {
+					who = prev
+					value > equivalent
+				}
+				OR = {
+					has_ascension_perk = ap_become_the_crisis
+					has_ascension_perk = ap_cosmogenesis
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			is_xenophile = yes
+		}
+		modifier = {
+			factor = 10
+			is_galactic_custodian = yes
+		}
+		modifier = {
+			factor = 4
+			allowed_crisis_type = all
+		}
+	}
+}

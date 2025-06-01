@@ -1,0 +1,32 @@
+tradition_mt_geology = {
+	#desc = "tradition_mt_geology_desc"     redundant?
+	tree_template = "tree_11_11_21"
+	adoption_bonus = "tr_mt_geology_adopt"
+	finish_bonus = "tr_mt_geology_finish"
+	traditions = {
+		"tr_mt_geology_1" # Geotechnical Engineering
+		"tr_mt_geology_2" # Certified Geologists          GESTALTSWAP: Applied Geology
+		"tr_mt_geology_4" # Rock Plating
+		"tr_mt_geology_3" # Deepcore Samples
+		"tr_mt_geology_5" # Geode Clinics                Flavor swaps: Purifier (any), Lithoid (any)    GESTALTSWAP: tbd
+	}
+
+	potential = {
+		always = yes
+		#is_gestalt = no
+		#OR = {
+		#	has_civic = civic_mining_guilds
+		#	has_civic = civic_machine_rockbreakers
+		#	has_civic = civic_machine_astromining_drones
+		#	has_civic = civic_relentless_industrialists
+		#	has_civic = civic_corporate_relentless_industrialists
+		#	has_civic = civic_private_prospectors
+		#	is_species_class = LITHOID
+		#	always = yes
+		#}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

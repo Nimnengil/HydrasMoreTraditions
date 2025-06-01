@@ -1,0 +1,48 @@
+tradition_mt_piracy = {
+	desc = tradition_mt_piracy_desc
+	tree_template = "tree_11_12"
+	adoption_bonus = "tr_mt_piracy_adopt"
+	finish_bonus = "tr_mt_piracy_finish"
+	traditions = {
+		"tr_mt_piracy_mercenaries" # 
+		"tr_mt_piracy_privateers" # 
+		"tr_mt_piracy_debris" # 
+		"tr_mt_piracy_plunder" # 
+		"tr_mt_piracy_opportunity" # 
+	}
+
+	potential = {
+		has_overlord_dlc = yes
+		is_gestalt = no
+		#NOT = { has_tradition = tr_mt_justice_adopt }
+		is_homicidal = no
+		NOT = {
+			has_valid_civic = civic_inwards_perfection
+		}
+		NOT = { has_global_flag = disabled_MT_piracy }
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_xenophobe
+		}
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_xenophobe
+		}
+		modifier = {
+			factor = 2
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 3
+			has_ethic = ethic_fanatic_militarist
+		}
+		modifier = {
+			factor = 0
+			has_ascension_perk = ap_become_the_crisis
+		}
+	}
+}

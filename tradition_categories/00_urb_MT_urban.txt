@@ -1,0 +1,28 @@
+tradition_mt_urban = {
+	tree_template = "tree_21_11"
+	adoption_bonus = "tr_mt_urban_adopt"
+	finish_bonus = "tr_mt_urban_finish"
+	traditions = {
+		"tr_mt_urban_highways"
+		"tr_mt_urban_effective_planning"
+		"tr_mt_urban_oversight"
+		"tr_mt_urban_compression"
+		"tr_mt_urban_trusted_caretakers"
+	}
+
+	potential = {
+		NOT = { has_global_flag = disabled_MT_urban }
+	}
+
+	ai_weight = {
+		factor = 5
+		modifier = {
+			factor = 0
+			is_homicidal = yes
+		}
+		modifier = {
+			factor = 0
+			is_gestalt = yes
+		}
+	}
+}

@@ -1,0 +1,34 @@
+tradition_mt_astronomy = {
+	#desc = "tradition_mt_astronomy_desc"     redundant?
+	tree_template = "tree_12_11_11"
+	adoption_bonus = "tr_mt_astronomy_adopt"
+	finish_bonus = "tr_mt_astronomy_finish"
+	traditions = {
+		"tr_mt_astronomy_2" # Starstudies
+		"tr_mt_astronomy_1" # Solar Siphon
+		"tr_mt_astronomy_4" # Citizen Astronomers
+		"tr_mt_astronomy_3" # Deeper Space
+		"tr_mt_astronomy_5" # Weave Theory
+	}
+
+	potential = {
+		always = yes
+#		OR = {
+#			has_civic = civic_dark_consortium
+#			has_civic = civic_corporate_dark_consortium
+#			has_civic = civic_eager_explorers
+#			has_civic = civic_privatized_exploration
+#			has_civic = civic_hive_stargazers
+#			has_civic = civic_machine_exploration_protocol
+#			has_civic = civic_void_hive
+#			has_civic = civic_relentless_industrialists
+#			has_civic = civic_corporate_relentless_industrialists
+#			is_species_class = EXD
+#			is_species_class = AVI
+#		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

@@ -1,0 +1,50 @@
+tradition_mt_benevolence = {
+	desc = tradition_mt_benevolence_desc
+	tree_template = "tree_21_11"
+	adoption_bonus = "tr_mt_benevolence_adopt"
+	finish_bonus = "tr_mt_benevolence_finish"
+	traditions = {
+		"tr_mt_benevolence_mercy" # 
+		"tr_mt_benevolence_kindness" # 
+		"tr_mt_benevolence_open_borders" # 
+		"tr_mt_benevolence_peace_protocols" # 
+		"tr_mt_benevolence_guarantee" # 
+	}
+
+	potential = {
+		NOT = { has_tradition = tr_mt_annihilation_adopt }
+		is_homicidal = no
+		NOT = {
+			has_valid_civic = civic_inwards_perfection
+		}
+		NOT = { has_global_flag = disabled_MT_benevolence }
+	}
+
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 0.5
+			has_ethic = ethic_xenophobe
+		}
+		modifier = {
+			factor = 0.5
+			has_ethic = ethic_fanatic_xenophobe
+		}
+		modifier = {
+			factor = 2
+			has_ethic = ethic_xenophile
+		}
+		modifier = {
+			factor = 3
+			has_ethic = ethic_fanatic_xenophile
+		}
+		modifier = {
+			factor = 0.5
+			is_gestalt = yes
+		}
+		modifier = {
+			factor = 0
+			has_ascension_perk = ap_become_the_crisis
+		}
+	}
+}

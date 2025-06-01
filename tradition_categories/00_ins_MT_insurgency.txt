@@ -1,0 +1,47 @@
+tradition_mt_insurgency = {
+	desc = tradition_mt_insurgency_desc
+	tree_template = "tree_21_11"
+	adoption_bonus = "tr_mt_insurgency_adopt"
+	finish_bonus = "tr_mt_insurgency_finish"
+	traditions = {
+		"tr_mt_insurgency_right_of_independence" # 
+		"tr_mt_insurgency_deterrence" # 
+		"tr_mt_insurgency_our_land" #
+		"tr_mt_insurgency_taste_of_freedom" # 
+		"tr_mt_insurgency_never_again" # 
+	}
+
+	potential = {
+		NOT = { has_tradition = tr_mt_loyalty_adopt }
+		NOT = {
+			has_civic = civic_hive_devouring_swarm
+		}
+		NOT = { has_global_flag = disabled_MT_insurgency }
+	}
+
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 3
+			has_loyalty < 20
+		}
+		modifier = {
+			factor = 0
+			has_loyalty > 80
+		}
+		modifier = {
+			factor = 0
+			is_specialist_subject = yes
+		}
+		modifier = {
+			factor = 2
+			any_country = {
+				is_guaranteeing = prev
+			}
+		}
+		modifier = {
+			factor = 10
+			has_valid_civic = civic_inwards_perfection
+		}
+	}
+}

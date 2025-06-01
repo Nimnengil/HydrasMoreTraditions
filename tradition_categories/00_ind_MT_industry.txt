@@ -1,0 +1,38 @@
+tradition_mt_industry = {
+	desc = tradition_mt_industry_desc
+	tree_template = "MT_tree_131"
+	adoption_bonus = "tr_mt_industry_adopt"
+	finish_bonus = "tr_mt_industry_finish"
+	traditions = {
+		"tr_mt_industry_pillars_of_creation" #
+		"tr_mt_industry_multilayered" #Multilayered Forging - alloy
+		"tr_mt_industry_recycled_products" #Prefabricated Factories
+		"tr_mt_industry_bigger_batches" #Compact Nanofabrication - consumer
+		"tr_mt_industry_maintenance" #Template Consolidation
+	}
+
+	potential = {
+		NOT = { has_global_flag = disabled_MT_industry }
+		#NOT = { has_tradition = tr_mt_nature_adopt }
+		#NOT = { has_civic = civic_environmentalist }
+	}
+
+	ai_weight = {
+		weight = 8
+		modifier = {
+			factor = 3
+			is_relentless_industrialist_empire = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_origin = origin_machine
+		}
+		modifier = {
+			factor = 0.2
+			OR = {
+				is_species_class = FUN
+				is_species_class = PLANT
+			}
+		}
+	}
+}

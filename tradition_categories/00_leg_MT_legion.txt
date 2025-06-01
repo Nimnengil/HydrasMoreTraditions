@@ -1,0 +1,27 @@
+tradition_mt_legion = {
+	desc = tradition_mt_legion_desc
+	tree_template = "tree_11_12"
+	adoption_bonus = "tr_mt_legion_adopt"
+	finish_bonus = "tr_mt_legion_finish"
+	traditions = {
+		"tr_mt_legion_replication"
+		"tr_mt_legion_connected"
+		"tr_mt_legion_perfection"
+		"tr_mt_legion_rapid_response"
+		"tr_mt_legion_stealth"
+	}
+
+	potential = {
+		is_machine_empire = yes
+		NOT = { has_global_flag = disabled_MT_legion }
+	}
+	
+
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 3
+			is_homicidal = yes
+		}
+	}
+}

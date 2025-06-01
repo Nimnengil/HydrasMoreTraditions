@@ -1,0 +1,27 @@
+#tradition_mt_integration = {
+#	desc = tradition_mt_integration_desc
+#	tree_template = "MT_tree_122"
+#	adoption_bonus = "tr_mt_integration_adopt"
+#	finish_bonus = "tr_mt_integration_finish"
+#	traditions = {
+#		"tr_mt_integration_pods" # 
+#		"tr_mt_integration_dream_capsules" # 
+#		"tr_mt_integration_biogrid_revision" # 
+#		"tr_mt_integration_bioprocessors" # 
+#		"tr_mt_integration_simulated_reality" # 
+#	}
+#
+#	potential = {
+#		is_machine_empire = yes
+#		is_homicidal = no
+#		NOR = {
+#			has_civic = civic_machine_servitor
+#			has_civic = civic_machine_assimilator
+#		}
+#		NOT = { has_global_flag = disabled_MT_integration }
+#	}
+#
+#	ai_weight = {
+#		weight = 0
+#	}
+#}

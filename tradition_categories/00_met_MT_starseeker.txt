@@ -1,0 +1,41 @@
+tradition_mt_starseeker = {
+	desc = tradition_mt_starseeker_desc
+	tree_template = "MT_tree_1_4"
+	adoption_bonus = "tr_mt_starseeker_adopt"
+	finish_bonus = "tr_mt_starseeker_finish"
+	traditions = {
+		"tr_mt_starseeker_storm_shelters" # 
+		"tr_mt_starseeker_solar_panels" # 
+		"tr_mt_starseeker_observation_modules" # 
+		"tr_mt_starseeker_stormwielders" # 
+		"tr_mt_starseeker_space_claim" # 
+	}
+
+	potential = {
+		has_cosmic_storms_dlc = yes
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 10
+			has_origin = origin_storm_chasers
+		}
+		modifier = {
+			factor = 2
+			is_astrometeorologist_empire = yes
+		}
+		modifier = {
+			factor = 5
+			is_storm_callers_empire = yes
+		}
+		modifier = {
+			factor = 0.5
+			is_gestalt = yes
+		}
+		modifier = {
+			factor = 0
+			has_ascension_perk = ap_become_the_crisis
+		}
+	}
+}

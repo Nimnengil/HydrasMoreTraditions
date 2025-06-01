@@ -1,0 +1,27 @@
+tradition_mt_core = {
+	desc = tradition_mt_core_desc
+	tree_template = "MT_tree_1_4"
+	adoption_bonus = "tr_mt_core_adopt"
+	finish_bonus = "tr_mt_core_finish"
+	traditions = { 
+		"tr_mt_core_fast_communication" # 
+		"tr_mt_core_central_command" #
+		"tr_mt_core_compact_computing" # 
+		"tr_mt_core_constructions" # 
+		"tr_mt_core_expansion" # 
+	}
+
+	potential = {
+		is_machine_empire = yes
+		OR = {
+			host_has_dlc = "Utopia"
+			has_origin = origin_void_dwellers
+			has_origin = origin_toxic_knights
+		}
+		NOT = { has_global_flag = disabled_MT_core }
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
