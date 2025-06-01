@@ -1,0 +1,54 @@
+# Logistics Harbour
+#zone_mt_maritime = {
+#	icon = GFX_colony_type_fortress
+#	base_buildtime = @zone_buildtime
+#	potential = { # planet scope
+#		exists = owner
+#		owner = {
+#			is_wilderness_empire = no
+#			#has_tradition = tr_mt_maritime_grand_harbors
+#		}
+#	}
+#
+#	unlock = { # planet scope
+#		exists = owner
+#		owner = {
+#			is_wilderness_empire = no
+#			#has_tradition = tr_mt_maritime_grand_harbors
+#		}
+#	}
+#
+#	resources = {
+#		category = planet_zones
+#		cost = {
+#			minerals = @zone_cost
+#		}
+#	}
+#
+#	included_building_sets = {
+#		fortress
+#		automation
+#		origin
+#	}
+#
+#	inline_script = {
+#		script = zones/zone_mt_marines_add
+#		AMOUNT = @scaling_district_1_job
+#	}
+#
+#	planet_modifier = {
+#		zone_building_slots_add = 3
+#	}
+#
+#	inline_script = {
+#		script = zones/shared_city_non_urban_zone_modifiers
+#	}
+#
+#	triggered_desc = {
+#		trigger = {
+#			always = yes
+#		}
+#		text = zone_fortress_triggered_desc
+#	}
+#
+#}
