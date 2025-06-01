@@ -1,0 +1,1278 @@
+
+#To use one of them, refer to them elsewhere in script via "value:<value>" e.g. value:example_value
+#IMPORTANT NOTE: Be mindful of performance when using these in triggers that are checked often!
+
+# example_value = {
+# 	base = 10 #default: 0
+
+# 	# List of valid mathematical operations:
+# 	# 	Numerical (modifying by a number):
+# 	# 	- set/weight (both do the same, replaces the current result with this value)
+# 	# 	- add
+# 	# 	- subtract
+# 	# 	- factor/mult/multiply ("multiply" fits the name scheme of the rest better, but the other two were kept for historical reasons)
+# 	# 	- divide
+# 	# 	- modulo
+# 	# 	- round_to (rounds to nearest of that value, e.g. 10.7 round_to 5 gives you 10)
+# 	# 	- max (sets to specified value if currently above it)
+# 	# 	- min (sets to specified value if currently below it)
+# 	# 	- pow (value is multiplied by itself to the power of x; be careful, you can get overflows if you are not careful)
+# 	# 	Simple (do not need a number, but just "yes", e.g. "round = yes")
+# 	# 	- round (sets to nearest full number)
+# 	# 	- ceiling (rounds up)
+# 	# 	- floor (rounds down)
+# 	# 	- abs (multiply by -1 if negative)
+# 	# 	- square (multiply by itself)
+# 	# 	- square_root
+
+# 	#All mathematical operations except weight and factor can be used inline e.g.
+# 	add = 100
+# 	multiply = value:some_other_script_value
+# 	round = yes
+# 	#(Note: weight and factor will instead overwrite the base value - use set, mult or multiply instead)
+
+# 	#They can also be used in modifier = {} fields, which lets you only apply them if triggers are true
+# 	modifier = {
+# 		max = owner.max_example_variable 					#Variable set by set_variable
+# 		owner = { is_variable_set = max_example_variable }	#Only applied if this trigger is true
+# 	}
+# 	# What works for right hand side values of mathematical operations? See events/00_how_to_use_variables for full list.
+
+# 	complex_trigger_modifier = { 	#This lets you get the value of a trigger that you can't use in one-liners because it uses {}
+# 		trigger = count_owned_planet
+# 		trigger_scope = owner 		#Lets you get the result of the trigger on a different scope. Default is "this"
+# 		parameters = { 				#Stick any further information necessary in here, like you'd do within the {} of the trigger normally
+# 			limit = { num_pops > 10 }
+# 		}
+# 		mode = add 					#Allows all numerical operations
+# 		mult = 5 					#Multiplies the outcome by this. In this example, this means adding 5 for each planet with more than 10 pops
+# 	}
+# }
+
+# Final note: script_values use the same metascript system as scripted_triggers and scripted_effects
+# This means that you can input parameters into them, in a similar fashion as described in scripted_effects/99_advanced_documentation.txt
+# For format for doing so is value:my_value|PARAM1|value1|PARAM2|value2|.
+# Then you can use $PARAM1$ in the script value and it will replace it with value1
+
+MT_envy_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_relation
+		parameters = {
+			limit = {
+				relative_power = {
+					who = root
+					category = technology
+					value >= superior
+				}
+			}
+		}
+		mode = add
+	}
+}
+
+#num_MT_owned_relics = {
+#	complex_trigger_modifier = {
+#		trigger = num_owned_relics
+#		mode = add
+#	}
+#}
+#
+#num_MT_owned_relics_x5 = {
+#	complex_trigger_modifier = {
+#		trigger = num_owned_relics
+#		mode = add
+#	}
+#	mult = 5
+#}
+
+MT_desecration_envy_value = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = num_fallen_empires
+		mode = add
+	}
+}
+
+# MT_perc_of_planet_pop = { # unused as of 4.0
+# 	add = trigger:num_pops
+# 	subtract = 1
+# 	max = 3
+# }
+
+MT_num_spy_networks = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_spynetwork
+		parameters = {
+			limit = {
+				has_spy_power > 59
+			}
+		}
+		mode = add
+	}
+}
+
+mt_peace_time = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = years_of_peace
+		mode = add
+	}
+	max = 60
+}
+
+mt_overlord_navy = {
+	base = 0
+	add = trigger:max_naval_capacity
+	divide = 10
+}
+
+mt_overlord_opinion = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = their_opinion
+		parameters = {
+			who = overlord
+		}
+		mode = add
+	}
+	divide = 500
+}
+
+#MT_valor_force_disparity = {
+#	base = 0
+#	add = trigger:fromfrom.fleet_power
+#	divide = trigger:fromfromfrom.fleet_power
+#}
+
+mt_manipulation_agenda_duration = {
+	base = 3600
+	mult = modifier:council_agenda_finishing_effect_duration_mult
+	add = 3600
+}
+
+MT_chaos_exhaustion = {
+	base = 0
+	add = trigger:off_war_exhaustion_sum
+	divide = 2
+	max = 0.5
+}
+
+mt_diligence_last_stand_value = {
+	base = 0
+	add = trigger:def_war_exhaustion_sum
+	divide = 4
+}
+
+#mt_power_projection_influence_produces_mult = {
+#	base = 1
+#	add = modifier:country_power_projection_influence_produces
+#	add = 2
+#	#mult = modifier:country_power_projection_influence_produces_mult
+#}
+
+#mt_power_projection_produces_mult = {
+#	base = 1
+#	mult = modifier:country_power_projection_influence_produces
+#	add = 2
+#	#mult = modifier:country_power_projection_produces_mult
+#}
+
+#mt_power_projection = {
+#	base = 1
+#	add = modifier:country_power_projection_influence_produces
+#	add = 2
+#	add = value:mt_power_projection_produces_mult
+#	#add = value:mt_power_projection_influence_produces_mult
+#}
+
+mt_double_naval_capacity_used = {
+	base = 2
+	mult = trigger:used_naval_capacity_integer
+}
+
+mt_royal_projection = {
+	base = 1
+	#divide = trigger:empire_size
+	#mult = value:mt_double_naval_capacity_used
+	#max = 1
+	complex_trigger_modifier = {
+		trigger = has_monthly_income
+		parameters = {
+			resource = influence
+		}
+		mode = mult
+	}
+	#has_monthly_income = { resource = engineering_research  value < 20 }
+	#mult = modifier:country_power_projection_influence_produces
+	#mult = modifier:country_power_projection_influence_produces_mult
+	#mult = modifier:country_power_projection_produces_mult
+	#mult = value:mt_power_projection
+}
+
+mt_royal_unity_projection = {
+	base = 1
+	mult = value:mt_double_naval_capacity_used
+	divide = trigger:empire_size
+	max = 1
+}
+
+MT_royalty_value = {
+	base = 1
+	add = trigger:subjects
+	modifier = {
+		subtract = 1
+		is_subject = yes
+	}
+	modifier = {
+		add = 5
+		has_federation = yes
+		is_federation_leader = yes
+	}
+	modifier = {
+		add = 3
+		is_part_of_galactic_council = yes
+	}
+	modifier = {
+		add = 5
+		is_galactic_custodian = yes
+	}
+	modifier = {
+		add = 10
+		is_galactic_emperor = yes
+	}
+}
+
+MT_royalty_ruler_age = {
+	complex_trigger_modifier = { 	#This lets you get the value of a trigger that you can't use in one-liners because it uses {}
+ 		trigger = leader_age
+ 		trigger_scope = ruler 		#Lets you get the result of the trigger on a different scope. Default is "this"
+ 		mode = add 					#Allows all numerical operations
+ 	}
+	divide = 50
+	floor = yes
+}
+
+MT_royalty_ruler_level = {
+	complex_trigger_modifier = { 	#This lets you get the value of a trigger that you can't use in one-liners because it uses {}
+ 		trigger = has_total_skill
+ 		trigger_scope = ruler 		#Lets you get the result of the trigger on a different scope. Default is "this"
+ 		mode = add 					#Allows all numerical operations
+ 	}
+	#add = modifier:ruler_skill_add
+	#add = modifier:councilor_skill_add
+}
+
+MT_royalty_ruler_broodmother_level = {
+	complex_trigger_modifier = { 	#This lets you get the value of a trigger that you can't use in one-liners because it uses {}
+ 		trigger = has_total_skill
+ 		trigger_scope = ruler 		#Lets you get the result of the trigger on a different scope. Default is "this"
+ 		mode = add 					#Allows all numerical operations
+ 	}
+	#add = modifier:ruler_skill_add
+	#add = modifier:councilor_skill_add
+	divide = 5
+	floor = yes
+}
+
+MT_num_neighbors = {
+	base = 10
+	complex_trigger_modifier = {
+		trigger = count_neighbor_country
+		parameters = {
+			limit = {
+				OR = {
+					is_country_type = default
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+				}
+			}
+		}
+		mode = subtract
+	}
+}
+
+MT_num_agreements = {
+	add = trigger:num_research_agreements
+	add = trigger:num_commercial_pacts
+	add = trigger:num_migration_pacts
+	add = trigger:num_guarantees
+	add = trigger:num_support_independence
+	add = trigger:num_defensive_pacts
+	add = trigger:num_rivals
+}
+
+MT_inverse_num_agreements = {
+	base = 10
+	subtract = value:MT_num_agreements
+	min = 0
+}
+
+MT_num_observed_preftls = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_observed_pre_ftl_within_border
+		mode = add
+	}
+}
+
+MT_num_upgrading_megastructures = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_owned_megastructure
+		parameters = {
+			limit = { is_upgrading = yes }
+		}
+		mode = add
+	}
+}
+
+MT_brightburn_value = {
+	base = 1
+	#base = 5
+	#modifier = {
+	#	mult = trigger:council_agenda_progress_percent
+	#	has_agenda_selected = agenda_MT_brightburn
+	#}
+	#modifier = {
+	#	set = 1
+	#	NOT = { has_agenda_selected = agenda_MT_brightburn }
+	#}
+	modifier = {
+		set = 10
+		has_modifier = agenda_MT_brightburn_finish
+	}
+	#modifier = {
+ 	#	mult = 2	# Double
+ 	#	has_crisis = yes
+ 	#}
+	#add = variable:MT_brightburn_variable
+	#subtract = trigger:years_passed
+	#min = 1
+	#modifier = {
+ 	#	mult = 2	# Double
+ 	#	has_crisis = yes
+ 	#}
+	#modifier = {
+ 	#	set = 20	# Pretty high
+ 	#	owner = { won_the_game = yes }	#Only applied if this trigger is true
+ 	#}
+}
+
+MT_unused_rival_slots = {
+	base = 1
+	add = modifier:max_rivalries
+	subtract = trigger:num_rivals
+}
+
+MT_philosophy_ruler_flaws = {
+	complex_trigger_modifier = { 	#This lets you get the value of a trigger that you can't use in one-liners because it uses {}
+ 		trigger = num_negative_traits
+ 		trigger_scope = ruler 		#Lets you get the result of the trigger on a different scope. Default is "this"
+ 		mode = add 					#Allows all numerical operations
+ 	}
+}
+
+MT_old_council = {
+	complex_trigger_modifier = {
+		trigger = count_owned_leader
+		parameters = {
+			limit = {
+				is_councilor = yes
+				leader_age > 99
+			}
+		}
+		mode = add
+	}
+}
+
+MT_num_researchers = {
+	complex_trigger_modifier = {
+		trigger = num_assigned_jobs
+		parameters = {
+			job = researcher
+		}
+		mode = add
+	}
+}
+
+MT_num_farmers = {
+	complex_trigger_modifier = {
+		trigger = num_assigned_jobs
+		parameters = {
+			job = farmer
+		}
+		mode = add
+	}
+}
+
+MT_mining_districts_value = {
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = district_mining
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = district_mining_uncapped
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = district_hab_mining
+		}
+		mode = add
+	}
+}
+
+MT_energy_districts_value = {
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = district_generator
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = district_generator_uncapped
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = district_hab_energy
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = district_rw_generator
+		}
+		multiplier = 4
+		mode = add
+	}
+}
+
+MT_num_disruption_spy_networks = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_spynetwork
+		parameters = {
+			limit = {
+				has_spy_power > 99
+			}
+		}
+		mode = add
+	}
+}
+
+
+MT_num_factions = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_pop_faction
+		mode = add
+	}
+}
+
+MT_veneration_game_state = {
+	base = 0
+	modifier = {
+		add = 1
+		mid_game_years_passed > 0
+	}
+	modifier = {
+		add = 1
+		end_game_years_passed > 0
+	}
+}
+
+MT_half_planet_size = {
+	base = 0
+	add = trigger:planet_size
+	divide = 2
+	floor = yes
+}
+
+# MT_num_marine_convert = {
+# 	base = 0
+# 	# complex_trigger_modifier = {
+# 	# 	trigger = num_buildings
+# 	# 	parameters = {
+# 	# 		type = building_stronghold
+# 	# 		disabled = no
+# 	# 		in_construction = no
+# 	# 	}
+# 	# 	mode = add
+# 	# }
+# 	# complex_trigger_modifier = {
+# 	# 	trigger = num_buildings
+# 	# 	parameters = {
+# 	# 		type = building_fortress
+# 	# 		disabled = no
+# 	# 		in_construction = no
+# 	# 	}
+# 	# 	mode = add
+# 	# 	mult = 2
+# 	# }
+# 	complex_trigger_modifier = {
+# 		trigger = num_districts
+# 		parameters = {
+# 			type = district_city
+# 		}
+# 		mode = add
+# 		mult = value:MT_num_fortress_zone
+# 	}
+# }
+
+#MT_num_fortress_zone = {
+#	base = 0
+#	complex_trigger_modifier = {
+#		trigger = num_zones
+#		parameters = {
+#			type = zone_fortress
+#		}
+#		mode = add
+#	}
+#}
+
+mt_1_10_trade_value = {
+	base = 0
+	add = value:mt_trade_value
+	pow = 0.3333
+	floor = yes
+}
+
+mt_trade_value = {
+	base = 0
+	add = value:percent_monthly_resource_income|RESOURCE|trade|PERCENT|100|
+}
+
+MT_core_sector = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = controlled_systems
+		trigger_scope = capital_scope.sector
+		mode = add
+	}
+}
+
+MT_core_sector_dominance = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = controlled_systems
+		trigger_scope = capital_scope.sector
+		mode = add
+	}
+	divide = trigger:controlled_systems
+}
+
+#MT_organic_percentage = {
+#	base = 1
+#	complex_trigger_modifier = {
+#		trigger = pop_percentage
+#		parameters = {
+#			limit = {
+#				OR = {
+#					has_job = MT_organic_battery
+#					has_job = organic_battery
+#				}
+#			}
+#		}
+#		mode = factor
+#	}
+#}
+
+MT_excess_trade_fee = {
+	base = 0
+	add = modifier:country_trade_fee
+	mult = -1
+	subtract = 0.25
+	min = 0
+}
+
+MT_years_of_peace = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = years_of_peace
+		mode = add
+	}
+	max = 30
+}
+
+MT_years_of_war = {
+	base = 0
+	add = trigger:years_passed
+	subtract = MT_current_war_start
+	max = 60
+}
+
+MT_num_wars = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_war
+		mode = add
+	}
+}
+
+MT_years_in_row = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = years_of_peace
+		mode = add
+	}
+	add = value:MT_years_of_war
+	max = 30
+}
+
+MT_num_excavating_scientists = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_owned_leader
+		parameters = {
+			limit = {
+				leader_class = scientist
+				MT_is_currently_excavating_site = yes
+			}
+		}
+		mode = add
+	}
+}
+
+MT_num_gilded_edicts = {
+	base = 0
+	modifier = {
+		add = 1
+		has_edict = MT_gilded_fleets
+	}
+	modifier = {
+		add = 1
+		has_edict = MT_gilded_beacons
+	}
+	modifier = {
+		add = 1
+		has_edict = MT_gilded_gardens
+	}
+	modifier = {
+		add = 1
+		has_edict = MT_gilded_cities
+	}
+}
+
+MT_excess_commanders = {
+	base = -4
+	complex_trigger_modifier = {
+		trigger = count_owned_leader
+		parameters = {
+			limit = {
+				leader_class = commander
+				NOR = {
+					is_hidden = yes
+					has_leader_flag = hired_admiral_merc_leader
+					has_leader_flag = legendary_leader
+					has_trait = leader_trait_rift_warped
+					AND = {
+						has_trait = leader_trait_eager
+						has_base_skill < 4
+					}
+					AND = {
+						is_ruler = yes
+						OR = {
+							has_trait = leader_trait_ruler_machine_intelligence
+							has_trait = leader_trait_ruler_hive_mind
+						}
+					}
+				}
+			}
+		}
+		mode = add
+	}
+	subtract = modifier:country_commander_cap_add
+	add = value:scripted_modifier_mult|MODIFIER|MT_num_excess_commanders|
+	min = 0
+}
+
+MT_excess_scientists = {
+	base = -4
+	complex_trigger_modifier = {
+		trigger = count_owned_leader
+		parameters = {
+			limit = {
+				leader_class = scientist
+				NOR = {
+					is_hidden = yes
+					has_leader_flag = hired_admiral_merc_leader
+					has_leader_flag = legendary_leader
+					has_trait = leader_trait_rift_warped
+					AND = {
+						has_trait = leader_trait_eager
+						has_base_skill < 4
+					}
+					AND = {
+						is_ruler = yes
+						OR = {
+							has_trait = leader_trait_ruler_machine_intelligence
+							has_trait = leader_trait_ruler_hive_mind
+						}
+					}
+				}
+			}
+		}
+		mode = add
+	}
+	subtract = modifier:country_scientist_cap_add
+	add = value:scripted_modifier_mult|MODIFIER|MT_num_excess_scientists|
+	min = 0
+}
+
+MT_excess_officials = {
+	base = -4
+	complex_trigger_modifier = {
+		trigger = count_owned_leader
+		parameters = {
+			limit = {
+				leader_class = official
+				NOR = {
+					is_hidden = yes
+					has_leader_flag = hired_admiral_merc_leader
+					has_leader_flag = legendary_leader
+					has_trait = leader_trait_rift_warped
+					AND = {
+						has_trait = leader_trait_eager
+						has_base_skill < 4
+					}
+					AND = {
+						is_ruler = yes
+						OR = {
+							has_trait = leader_trait_ruler_machine_intelligence
+							has_trait = leader_trait_ruler_hive_mind
+						}
+					}
+				}
+			}
+		}
+		mode = add
+	}
+	subtract = modifier:country_official_cap_add
+	add = value:scripted_modifier_mult|MODIFIER|MT_num_excess_officials|
+	min = 0
+}
+
+MT_num_districts = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = any
+		}
+		mode = add
+	}
+}
+
+MT_years_passed = {
+	base = 0
+	add = trigger:years_passed
+	min = 20
+}
+
+MT_cosmopolitan_wayfarers_value = {
+	base = 0
+	modifier = {
+		add = 1
+		any_owned_planet = {
+			is_planet_class = pc_tundra
+		}
+	}
+	modifier = {
+		add = 1
+		any_owned_planet = {
+			is_planet_class = pc_alpine
+		}
+	}
+	modifier = {
+		add = 1
+		any_owned_planet = {
+			is_planet_class = pc_arctic
+		}
+	}
+	modifier = {
+		add = 1
+		any_owned_planet = {
+			is_planet_class = pc_tropical
+		}
+	}
+	modifier = {
+		add = 1
+		any_owned_planet = {
+			is_planet_class = pc_continental
+		}
+	}
+	modifier = {
+		add = 1
+		any_owned_planet = {
+			is_planet_class = pc_ocean
+		}
+	}
+	modifier = {
+		add = 1
+		any_owned_planet = {
+			is_planet_class = pc_savannah
+		}
+	}
+	modifier = {
+		add = 1
+		any_owned_planet = {
+			is_planet_class = pc_arid
+		}
+	}
+	modifier = {
+		add = 1
+		any_owned_planet = {
+			is_planet_class = pc_desert
+		}
+	}
+	modifier = {
+		add = 1
+		any_owned_planet = {
+			is_planet_class = pc_nuked
+		}
+	}
+	modifier = {
+		add = 1
+		any_owned_planet = {
+			is_planet_class = pc_gaia
+		}
+	}
+	modifier = {
+		add = 1
+		any_owned_planet = {
+			is_planet_class = pc_relic
+		}
+	}
+	modifier = {
+		add = 1
+		any_owned_planet = {
+			is_planet_class = pc_city
+		}
+	}
+	modifier = {
+		add = 1
+		any_owned_planet = {
+			is_planet_class = pc_habitat
+		}
+	}
+	modifier = {
+		add = 1
+		any_owned_planet = {
+			is_planet_class = pc_machine
+		}
+	}
+	modifier = {
+		add = 1
+		any_owned_planet = {
+			is_planet_class = pc_hive
+		}
+	}
+	modifier = {
+		add = 1
+		any_owned_planet = {
+			OR = {
+				is_planet_class = pc_ringworld_habitable
+				is_planet_class = pc_shattered_ring_habitable
+			}
+		}
+	}
+}
+
+MT_black_hole_fire_rate = {
+	base = 1
+	modifier = {
+		add = 0.25
+		owner = {
+			has_MAP_ap_mastery_of_hyperspace = yes
+		}
+	}
+}
+
+MT_storm_observation_physics = {
+	base = 2
+	modifier = {
+		add = 10
+		is_inside_storm = electric_storm
+	}
+	modifier = {
+		add = 10
+		is_inside_storm = particle_storm
+	}
+	modifier = {
+		add = 10
+		is_inside_storm = gravity_storm
+	}
+	modifier = {
+		add = 20
+		is_inside_storm = nexus_storm
+	}
+	inline_script = {
+		script = comptriggers/MT_Hydra_double_toggle
+		HAS_MOD = @HAS_MCS_Hydra
+		INLINE = MT_MCS_Hydra_storms_for_science
+	}
+}
+
+MT_storm_observation_society = {
+	base = 2
+	modifier = {
+		add = 10
+		is_inside_storm = solar_storm
+	}
+	modifier = {
+		add = 15
+		is_inside_storm = shroud_storm
+	}
+	modifier = {
+		add = 20
+		is_inside_storm = nexus_storm
+	}
+	inline_script = {
+		script = comptriggers/MT_Hydra_toggle
+		HAS_MOD = @HAS_MCS_Hydra
+		INLINE = MT_MCS_Hydra_storms_for_society_science
+	}
+}
+
+MT_storm_observation_engineering = {
+	base = 2
+	modifier = {
+		add = 10
+		is_inside_storm = magnetic_storm
+	}
+	modifier = {
+		add = 10
+		is_inside_storm = celestial_storm
+	}
+	modifier = {
+		add = 20
+		is_inside_storm = nexus_storm
+	}
+	inline_script = {
+		script = comptriggers/MT_Hydra_toggle
+		HAS_MOD = @HAS_MCS_Hydra
+		INLINE = MT_MCS_Hydra_storms_for_engineering_science
+	}
+}
+
+MT_freedom_value = {
+	base = 1
+	modifier = {
+		factor = 2
+		is_at_war = yes
+		has_active_tradition = tr_mt_freedom_for_all
+		any_war = {
+			OR = {
+				using_war_goal = {
+					type = wg_force_ideology
+					owner = attacker
+				}
+				using_war_goal = {
+					type = wg_independence
+					owner = attacker
+				}
+			}
+		}
+	}
+}
+
+MT_freedom_gas_tax = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = resource_revenue_compare
+		trigger_scope = owner
+		parameters = {
+			resource = exotic_gases #exotic_gases
+		}
+		mode = add
+	}
+	divide = 5
+	complex_trigger_modifier = {
+		trigger = situation_monthly_progress
+		mode = multiply
+	}
+	modifier = {
+		set = 0
+		has_situation_flag = MT_freedom_tax_reciever
+	}
+	modifier = {
+		set = 0
+		owner = {
+			is_at_war_with = prev.target
+		}
+	}
+	min = 0
+}
+
+MT_freedom_gas_prize = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = resource_revenue_compare
+		trigger_scope = target
+		parameters = {
+			resource = exotic_gases
+		}
+		mode = add
+	}
+	divide = 5
+	complex_trigger_modifier = {
+		trigger = situation_monthly_progress
+		mode = multiply
+	}
+	modifier = {
+		set = 0
+		has_situation_flag = MT_freedom_tax_payer
+	}
+	modifier = {
+		set = 0
+		owner = {
+			is_at_war_with = prev.target
+		}
+	}
+	min = 0
+}
+
+MT_negative_current_progress = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = situation_progress
+		mode = add
+	}
+	multiply = -1
+}
+
+MT_extradimensional_multiplier = {
+	base = 0
+	modifier = {
+		set = 4
+		has_global_flag = extradimensional_invasion_happened
+	}
+	modifier = {
+		divide = 4
+		has_global_flag = extradimensional_invasion_defeated
+	}
+}
+
+MT_swarm_multiplier = {
+	base = 0
+	modifier = {
+		set = 4
+		has_global_flag = prethoryn_invasion_happened
+	}
+	modifier = {
+		divide = 4
+		has_global_flag = prethoryn_invasion_defeated
+	}
+}
+
+MT_contingency_multiplier = {
+	base = 0
+	modifier = {
+		set = 4
+		has_global_flag = ai_invasion_happened
+	}
+	modifier = {
+		divide = 4
+		has_global_flag = ai_invasion_defeated
+	}
+}
+
+MT_cetena_multiplier = {
+	base = 0
+	modifier = {
+		set = 4
+		has_global_flag = synth_queen_happened
+	}
+	modifier = {
+		divide = 4
+		has_global_flag = synth_queen_defeated
+	}
+}
+
+MT_num_surveyed_habitable_planet_types = {
+	base = 0
+	modifier = {
+		add = 1
+		has_surveyed_class = pc_alpine
+	}
+	modifier = {
+		add = 1
+		has_surveyed_class = pc_arctic
+	}
+	modifier = {
+		add = 1
+		has_surveyed_class = pc_arid
+	}
+	modifier = {
+		add = 1
+		has_surveyed_class = pc_continental
+	}
+	modifier = {
+		add = 1
+		has_surveyed_class = pc_desert
+	}
+	modifier = {
+		add = 1
+		has_surveyed_class = pc_ocean
+	}
+	modifier = {
+		add = 1
+		has_surveyed_class = pc_savannah
+	}
+	modifier = {
+		add = 1
+		has_surveyed_class = pc_tropical
+	}
+	modifier = {
+		add = 1
+		has_surveyed_class = pc_tundra
+	}
+	modifier = {
+		add = 1
+		has_surveyed_class = pc_nuked
+	}
+	modifier = {
+		add = 1
+		has_surveyed_class = pc_gaia
+	}
+	modifier = {
+		add = 1
+		has_surveyed_class = pc_relic
+	}
+	modifier = {
+		add = 1
+		has_surveyed_class = pc_city
+	}
+	modifier = {
+		add = 1
+		has_surveyed_class = pc_hive
+	}
+	modifier = {
+		add = 1
+		has_surveyed_class = pc_machine
+	}
+	modifier = {
+		add = 1
+		has_surveyed_class = pc_nanotech
+	}
+	modifier = {
+		add = 1
+		has_surveyed_class = pc_habitat
+	}
+	modifier = {
+		add = 1
+		has_surveyed_class = pc_ringworld_habitable
+	}
+	modifier = {
+		add = 1
+		has_surveyed_class = pc_shattered_ring_habitable
+	}
+	modifier = {
+		add = 1
+		has_surveyed_class = pc_cosmogenesis_world
+	}
+	
+}
+
+MT_num_psionic_tech_count = {
+	base = 0
+	modifier = {
+		add = 1
+		has_technology = tech_psionic_theory
+	}
+	modifier = {
+		add = 1
+		has_technology = tech_mine_zro
+	}
+	modifier = {
+		add = 1
+		has_technology = tech_telepathy
+	}
+	modifier = {
+		add = 1
+		has_technology = tech_thought_enforcement
+	}
+	modifier = {
+		add = 1
+		has_technology = tech_precognition_interface
+	}
+	modifier = {
+		add = 1
+		has_technology = tech_psi_jump_drive_1
+	}
+	modifier = {
+		add = 1
+		has_technology = tech_cloaking_psi
+	}
+	modifier = {
+		add = 1
+		has_technology = tech_pk_godray
+	}
+	modifier = {
+		add = 1
+		has_technology = tech_psionic_barrier
+	}
+	modifier = {
+		add = 1
+		has_technology = tech_psionic_shield
+	}
+	modifier = {
+		add = 1
+		has_technology = tech_covenant_composer
+	}
+	modifier = {
+		add = 1
+		has_technology = tech_covenant_eater
+	}
+	modifier = {
+		add = 1
+		has_technology = tech_covenant_instrument
+	}
+	modifier = {
+		add = 1
+		has_technology = tech_covenant_whisperers
+	}
+}
+
+MT_num_tech_count = {
+	#base = -29 # minus starting techs as its a lot
+	base = 0
+	complex_trigger_modifier = {
+		trigger = num_researched_techs
+		mode = add
+	}
+	# Added this as replacement for base = -29
+	complex_trigger_modifier = {
+		trigger = num_researched_techs_of_tier
+		parameters = {
+			tier = 0
+		}
+		mode = subtract
+	}
+}
+
+MT_num_anglers = {
+	complex_trigger_modifier = {
+		trigger = num_assigned_jobs
+		parameters = {
+			job = angler
+		}
+		mode = add
+	}
+}

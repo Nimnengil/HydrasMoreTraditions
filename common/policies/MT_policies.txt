@@ -1,0 +1,483 @@
+##########################################################################
+# Empire Policies
+#
+# #####
+#
+# AI:
+# Base AI-weight is 100, if unchanged
+# AI will grab whatever policy-option has the highest weight
+#
+# #####
+#
+##########################################################################
+
+mt_taxes = {
+	potential = {
+		has_tradition = tr_mt_greed_taxes
+	}
+
+	allow = {
+		always = yes # Always allowed to change policy
+	}
+
+	option = {
+		name = "mt_high_taxes"
+
+		potential = {
+			OR = {
+				is_country_type = default
+				is_country_type = awakened_fallen_empire
+			}
+		}
+
+		modifier = {
+			pop_lifestyle_trade_value_mult = 1
+			pop_happiness = -0.1
+		}
+
+		ai_weight = {
+			weight = 0
+		}
+	}
+
+	option = {
+		name = "mt_medium_taxes"
+
+		potential = {
+			OR = {
+				is_country_type = default
+				is_country_type = awakened_fallen_empire
+			}
+		}
+
+		modifier = {
+			pop_lifestyle_trade_value_mult = 0.5
+			pop_happiness = -0.025
+		}
+
+		ai_weight = {
+			weight = 0
+		}
+	}
+	
+	option = {
+		name = "mt_small_taxes"
+
+		potential = {
+			OR = {
+				is_country_type = default
+				is_country_type = awakened_fallen_empire
+			}
+		}
+
+		modifier = {
+			pop_lifestyle_trade_value_mult = 0.25
+			pop_happiness = -0.01
+		}
+
+		ai_weight = {
+			weight = 5
+		}
+	}
+	
+	option = {
+		name = "mt_no_taxes"
+
+		potential = {
+			OR = {
+				is_country_type = default
+				is_country_type = awakened_fallen_empire
+			}
+		}
+
+		modifier = {
+		}
+
+		ai_weight = {
+			weight = 10
+		}
+	}
+}
+
+#MT_evolution_policy = {
+#	potential = {
+#		always = no
+#		#has_tradition = tr_mt_evolution_finish
+#	}
+#
+#	option = {
+#		name = MT_evolution_mutations
+#		
+#		policy_flags = {
+#			mt_evolve
+#		}
+#		
+#		AI_weight = {
+#			factor = 0
+#		}
+#	}
+#
+#	option = {
+#		name = MT_evolution_fertility
+#
+#		policy_flags = {
+#			mt_breed
+#		}
+#		
+#		modifier = {
+#			logistic_growth_mult = 0.1
+#		}
+#
+#		AI_weight = {
+#			factor = 10
+#		}
+#	}
+#}
+
+#MT_evolution_opener_policy = {
+#	potential = {
+#		has_tradition = tr_mt_evolution_adopt
+#	}
+#
+#	option = {
+#		name = MT_evolution_adapt
+#		
+#		policy_flags = {
+#			mt_adapt
+#		}
+#		
+#		AI_weight = {
+#			factor = 0
+#		}
+#	}
+#
+#	option = {
+#		name = MT_evolution_static
+#
+#		policy_flags = {
+#			mt_static
+#		}
+#		
+#		modifier = {
+#			pop_environment_tolerance = 0.05
+#		}
+#
+#		AI_weight = {
+#			factor = 10
+#		}
+#	}
+#}
+
+mt_punishments = {
+	potential = {
+		has_tradition = tr_mt_oppression_punishments
+	}
+
+	allow = {
+		always = yes # Always allowed to change policy
+	}
+
+	option = {
+		name = "mt_extreme_punishments"
+
+		potential = {
+			OR = {
+				is_country_type = default
+				is_country_type = awakened_fallen_empire
+			}
+		}
+
+		modifier = {
+			planet_jobs_slave_produces_mult = 0.2
+			pop_cat_slave_happiness = -0.4
+		}
+
+		ai_weight = {
+			weight = 0
+		}
+	}
+
+	option = {
+		name = "mt_corporal_punishments"
+
+		potential = {
+			OR = {
+				is_country_type = default
+				is_country_type = awakened_fallen_empire
+			}
+		}
+
+		modifier = {
+			planet_jobs_slave_produces_mult = 0.1
+			pop_cat_slave_happiness = -0.2
+		}
+
+		ai_weight = {
+			weight = 0
+		}
+	}
+	
+	option = {
+		name = "mt_public_punishments"
+
+		potential = {
+			OR = {
+				is_country_type = default
+				is_country_type = awakened_fallen_empire
+			}
+		}
+
+		modifier = {
+			planet_jobs_slave_produces_mult = 0.05
+			pop_cat_slave_happiness = -0.1
+		}
+
+		ai_weight = {
+			weight = 0
+		}
+	}
+	
+	option = {
+		name = "mt_prison_punishments"
+
+		potential = {
+			OR = {
+				is_country_type = default
+				is_country_type = awakened_fallen_empire
+			}
+		}
+
+		ai_weight = {
+			weight = 10
+		}
+	}
+	
+	option = {
+		name = "mt_demotion_punishments"
+
+		potential = {
+			OR = {
+				is_country_type = default
+				is_country_type = awakened_fallen_empire
+			}
+		}
+
+		modifier = {
+			pop_cat_slave_political_power = 0.25
+			pop_cat_slave_happiness = 0.05
+		}
+
+		ai_weight = {
+			weight = 0
+		}
+	}
+	
+	option = {
+		name = "mt_fines_punishments"
+
+		potential = {
+			OR = {
+				is_country_type = default
+				is_country_type = awakened_fallen_empire
+			}
+		}
+
+		modifier = {
+			pop_cat_slave_political_power = 0.5
+			pop_cat_slave_happiness = 0.1
+		}
+
+		ai_weight = {
+			weight = 0
+		}
+	}
+}
+
+mt_forced_slavery = {
+	potential = {
+		has_tradition = tr_mt_oppression_forced_slavery
+	}
+
+	allow = {
+		always = yes # Always allowed to change policy
+	}
+	
+	option = {
+		name = "mt_forced_slavery_serfdom"
+
+		potential = {
+			OR = {
+				is_country_type = default
+				is_country_type = awakened_fallen_empire
+			}
+		}
+
+		modifier = {
+			country_pop_enslaved_mult = 0.35
+		}
+
+		ai_weight = {
+			weight = 0
+		}
+	}
+	
+	option = {
+		name = "mt_forced_slavery_villeinage"
+
+		potential = {
+			OR = {
+				is_country_type = default
+				is_country_type = awakened_fallen_empire
+			}
+		}
+
+		modifier = {
+			country_pop_enslaved_mult = 0.25
+		}
+
+		ai_weight = {
+			weight = 0
+		}
+	}
+	
+	option = {
+		name = "mt_forced_slavery_debt"
+
+		potential = {
+			OR = {
+				is_country_type = default
+				is_country_type = awakened_fallen_empire
+			}
+		}
+
+		modifier = {
+			country_pop_enslaved_mult = 0.15
+		}
+
+		ai_weight = {
+			weight = 0
+		}
+	}
+	
+	option = {
+		name = "mt_forced_slavery_voluntary"
+
+		potential = {
+			OR = {
+				is_country_type = default
+				is_country_type = awakened_fallen_empire
+			}
+		}
+
+		modifier = {
+			country_pop_enslaved_mult = 0.05
+		}
+
+		ai_weight = {
+			weight = 10
+		}
+	}
+	
+	option = {
+		name = "mt_forced_slavery_outlawed"
+
+		potential = {
+			OR = {
+				is_country_type = default
+				is_country_type = awakened_fallen_empire
+			}
+		}
+
+		ai_weight = {
+			weight = 0
+		}
+	}
+}
+
+#MT_navy_draft = {
+#	potential = {
+#		has_tradition = tr_mt_maritime_war_and_peace
+#	}
+#
+#	option = {
+#		name = MT_marine_traders
+#		
+#		policy_flags = {
+#			mt_marine_traders
+#		}
+#		
+#		AI_weight = {
+#			factor = 0
+#		}
+#	}
+#
+#	option = {
+#		name = MT_marine_marines
+#
+#		policy_flags = {
+#			mt_marine_marines
+#		}
+#
+#		AI_weight = {
+#			factor = 10
+#		}
+#	}
+#
+#	option = {
+#		name = MT_marine_soldiers
+#
+#		policy_flags = {
+#			mt_marine_soldiers
+#		}
+#
+#		AI_weight = {
+#			factor = 0
+#		}
+#	}
+#}
+
+#MT_bio_processors = {
+#	potential = {
+#		has_tradition = tr_mt_integration_bioprocessors
+#	}
+#
+#	option = {
+#		name = MT_neural_heat_accumulators
+#		
+#		modifier = {
+#			MT_planet_organic_batteries_energy_produces_add = 1
+#			MT_planet_organic_batteries_food_upkeep_mult = 0.5
+#		}
+#		
+#		AI_weight = {
+#			factor = 0
+#		}
+#	}
+#
+#	option = {
+#		name = MT_brain_computer_interface
+#
+#		modifier = {
+#			MT_planet_organic_batteries_physics_research_produces_add = 0.5
+#			MT_planet_organic_batteries_society_research_produces_add = 0.5
+#			MT_planet_organic_batteries_engineering_research_produces_add = 0.5
+#			MT_planet_organic_batteries_food_upkeep_mult = 0.25
+#		}
+#
+#		AI_weight = {
+#			factor = 0
+#		}
+#	}
+#
+#	option = {
+#		name = MT_cellular_caching
+#
+#		modifier = {
+#			MT_planet_organic_batteries_unity_produces_add = 0.5
+#		}
+#
+#		AI_weight = {
+#			factor = 10
+#		}
+#	}
+#}

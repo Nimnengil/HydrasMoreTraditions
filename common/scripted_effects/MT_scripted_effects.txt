@@ -1,0 +1,97 @@
+##################################
+# Scripted Effects
+##################################
+
+MT_give_next_ftl_tech_option_effect = {
+	if = {
+		limit = { NOT = { has_technology = tech_hyper_drive_2 } }
+		add_research_option = tech_hyper_drive_2
+		add_tech_progress = {
+			tech = tech_hyper_drive_2
+			progress = 0.25
+		}
+	}
+	else_if = {
+		limit = { NOT = { has_technology = tech_hyper_drive_3 } }
+		add_research_option = tech_hyper_drive_3
+		add_tech_progress = {
+			tech = tech_hyper_drive_3
+			progress = 0.25
+		}
+	}
+	else_if = {
+		limit = { NOT = { has_technology = tech_wormhole_stabilization } }
+		add_research_option = tech_wormhole_stabilization
+		add_tech_progress = {
+			tech = tech_wormhole_stabilization
+			progress = 0.25
+		}
+	}
+	else_if = {
+		limit = { NOT = { has_technology = tech_jump_drive_1 } }
+		add_research_option = tech_jump_drive_1
+		add_tech_progress = {
+			tech = tech_jump_drive_1
+			progress = 0.25
+		}
+	}
+	else = {
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = @tier3researchreward
+			min = @tier3researchmin
+			max = @tier3researchmax
+		}
+	}
+}
+
+# Does not check whether or not you have the tradition, should be done before calling
+MT_event_horizon_check = {
+	if = {
+		limit = {
+			NOT = {	has_modifier = mt_event_horizon_modifier }
+			solar_system = {
+				is_star_class = sc_black_hole
+			}
+		}
+		add_modifier = {
+			modifier = mt_event_horizon_modifier
+			days = -1
+			multiplier = value:MT_black_hole_fire_rate
+		}
+	}
+	else_if = {
+		limit = {
+			has_modifier = mt_event_horizon_modifier
+			solar_system = {
+				NOT = { is_star_class = sc_black_hole }
+			}
+		}
+		remove_modifier = mt_event_horizon_modifier
+	}
+}
+
+create_MT_situation_handler = {
+	if = {
+		limit = {
+			NOT = {
+				exists = event_target:MT_situation_handler_country
+			}
+		}
+		create_country = {
+			name = MT_situation_handler_country_name
+			type = MT_situation_handler
+			authority = "auth_oligarchic"
+			origin = "origin_default"
+			species = random
+			flag = random
+			ethos = {
+				ethic = ethic_fanatic_militarist
+			}
+			ignore_initial_colony_error = yes
+			effect = {
+				save_global_event_target_as = MT_situation_handler_country
+			}
+		}
+	}
+}

@@ -1,0 +1,4 @@
+modifier = {
+	add = 15
+	is_inside_storm = MCS_litho_storm
+}

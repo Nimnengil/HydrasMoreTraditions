@@ -1,0 +1,22 @@
+war_name_parts_list = {
+	key = "MT_relic_theft_war_names"
+	parts = {
+		MT_relic_theft = 1
+	}
+}
+
+### Relic Snatchers
+
+war_name_format = {
+	random_weight = {
+		factor = 0
+		modifier = {
+			add = 999
+			using_war_goal = {
+				type = wg_MT_take_relic
+				owner = attacker
+			}
+		}
+	}
+	format = "{war_vs_adjectives {[This.MainAttacker.GetAdj] <MT_relic_theft_war_names>}}"
+}

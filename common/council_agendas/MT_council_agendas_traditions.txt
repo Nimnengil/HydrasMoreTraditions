@@ -1,0 +1,1498 @@
+@base_tradition_agenda_cost = 7000
+
+#agenda_MT_archeology_grants = {
+#	agenda_cost = @base_tradition_agenda_cost
+#	allow = {
+#		has_tradition = tr_mt_archeology_adopt
+#	}
+#	potential = {
+#		has_paragon_dlc = yes
+#	}
+#	modifier = {
+#		scientist_exp_gain = 0.1
+#		country_minor_artifacts_produces_mult = 0.2
+#	}
+#	finish_modifier = agenda_MT_archeology_grants_finish
+#	#effect = {
+#	#	give_next_terraforming_tech_option_effect = yes # Change to give archeotech
+#	#}
+#}
+
+# Desecration.
+#agenda_MT_artifact_exploitation = {
+#	agenda_cost = @base_tradition_agenda_cost
+#	allow = {
+#		has_tradition = tr_mt_history_adopt
+#	}
+#	potential = {
+#		has_paragon_dlc = yes
+#		has_ancrel = yes
+#	}
+#	modifier = {
+#		country_minor_artifacts_produces_mult = 0.1
+#		#damage_vs_country_type_fallen_empire_mult = 0.25
+#		#damage_vs_country_type_awakened_fallen_empire_mult = 0.25
+#	}
+#	finish_modifier = agenda_MT_artifact_exploitation_finish
+#	effect = {
+#		custom_tooltip = council_agenda_agenda_MT_artifact_exploitation
+#		hidden_effect = {
+#			set_variable = { which = MT_minor_artifacts value = 0 }
+#			export_resource_stockpile_to_variable = { resource = minor_artifacts variable = MT_minor_artifacts }
+#			add_resource = {
+#				minor_artifacts = -1
+#				mult = MT_minor_artifacts
+#			}
+#			add_resource = {
+#				unity = 10
+#				mult = MT_minor_artifacts
+#			}
+#			clear_variable = MT_minor_artifacts
+#		}
+#	}
+#}
+
+# Transportation
+agenda_MT_priority_movement = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_movement_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+	}
+	modifier = {
+		category_voidcraft_draw_chance_mult = 0.5
+	}
+	finish_modifier = agenda_MT_priority_movement_finish
+	effect = {
+		MT_give_next_ftl_tech_option_effect = yes
+	}
+}
+
+# Envy
+agenda_MT_ambitious_promises = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_envy_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+		is_gestalt = no
+	}
+	#initial_effect_custom_loc = council_agenda_agenda_MT_ambitious_promises_effect
+	modifier = {
+		country_war_exhaustion_mult = -0.25
+	}
+	finish_modifier = agenda_MT_ambitious_promises_finish
+	effect = {
+		custom_tooltip = council_agenda_agenda_MT_ambitious_promises_effect
+	}
+}
+
+# Envy (gestalt)
+agenda_MT_envy_gestalt = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_envy_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+		is_gestalt = yes
+	}
+	modifier = {
+		envoys_add = 1
+		espionage_operation_speed_mult = 0.25
+	}
+	finish_modifier = agenda_MT_envy_gestalt_finish # 
+}
+
+# Urbanization
+agenda_MT_construction_efforts = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_urban_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+	}
+	modifier = {
+		planet_clear_blocker_speed_mult = 0.5
+	}
+	finish_modifier = agenda_MT_construction_efforts_finish
+}
+
+# Annihilation
+agenda_MT_finality = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_annihilation_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+		NOT = { has_tradition = tr_mt_benevolence_adopt }
+	}
+	modifier = {
+		ship_disengage_chance_reduction = 1
+		ship_weapon_damage = 0.25
+	}
+	finish_modifier = agenda_MT_finality_finish
+}
+
+# Mysticism
+agenda_MT_mystic_ritual = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_mysticism_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+	}
+	modifier = {
+		counter_intel_gain_speed = -0.25
+	}
+	finish_modifier = agenda_MT_mystic_ritual_finish # 
+	effect = {
+		# All empires you have communications with loses 50 intel
+		custom_tooltip = council_agenda_agenda_MT_mystic_ritual_effect
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_country_type = default
+					has_communications = root
+				}
+				add_intel = {
+					amount = -50
+					who = root
+				}
+			}
+		}
+	}
+}
+
+# Justice
+agenda_MT_justice = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_justice_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+		is_gestalt = no
+	}
+	modifier = {
+		planet_crime_add = -10
+		pop_government_ethic_attraction = 0.1
+	}
+	finish_modifier = agenda_MT_justice_finish # 
+}
+
+# Observant
+agenda_MT_long_range_communication = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_vigilance_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+	}
+	modifier = {
+		ship_jumpdrive_cooldown_mult = -0.05
+		ship_ftl_jumpdrive_range_mult = 0.25
+	}
+	finish_modifier = agenda_MT_long_range_communication_finish # 
+}
+
+# Swarm
+agenda_MT_swarm = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_swarm_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+		is_hive_empire = yes
+	}
+	modifier = {
+		starbase_shipyard_build_speed_mult = 0.25
+	}
+	finish_modifier = agenda_MT_swarm_finish # 100%
+}
+
+# Chaos
+agenda_MT_chaos = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_chaos_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+	}
+	modifier = {
+		planet_stability_add = -10
+		planet_jobs_produces_mult = 0.1
+	}
+	finish_modifier = agenda_MT_chaos_finish # 
+}
+
+# Insurgency
+agenda_MT_insurgency = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_insurgency_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+		NOT = { has_tradition = tr_mt_loyalty_adopt }
+	}
+	modifier = {
+		starbase_shipyard_build_speed_mult = 0.2
+	}
+	finish_modifier = agenda_MT_insurgency_finish # + build speed
+	effect = {
+		# If finished during war, set agenda to shadow strike
+		custom_tooltip = council_agenda_agenda_MT_insurgency_effect
+		hidden_effect = {
+			if = {
+				limit = {
+					is_at_war = yes
+				}
+				set_council_agenda = agenda_MT_insurgency_shadow_strike
+			}
+		}
+	}
+}
+
+# Insurgency
+agenda_MT_insurgency_shadow_strike = {
+	agenda_cost = 700
+	allow = {
+		always = no
+	}
+	potential = {
+		has_modifier = agenda_MT_insurgency_finish
+	}
+	modifier = {
+		country_war_exhaustion_mult = -0.1
+		ship_fire_rate_mult = 0.05
+	}
+	finish_modifier = agenda_MT_insurgency_shadow_strike_finish # 
+	effect = {
+		# Upon winning a war, finish agenda
+		custom_tooltip = council_agenda_agenda_MT_insurgency_shadow_strike_effect
+	}
+}
+
+# Benevolence
+agenda_MT_benevolence = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_benevolence_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+		NOT = { has_tradition = tr_mt_annihilation_adopt }
+	}
+	modifier = {
+		diplo_action_acceptance_add = 5
+		first_contact_speed_mult = 0.25
+	}
+	finish_modifier = agenda_MT_benevolence_finish # 
+}
+
+# Loyalty
+agenda_MT_loyalty = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_loyalty_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+		NOT = { has_tradition = tr_mt_insurgency_adopt }
+	}
+	modifier = {
+		ship_friendly_territory_fire_rate_mult = 0.1
+	}
+	finish_modifier = agenda_MT_loyalty_finish # 
+	effect = {
+		# Give your overlord the same modifier
+		custom_tooltip = council_agenda_agenda_MT_loyalty_effect
+		overlord = {
+			add_modifier = { modifier = "agenda_MT_loyalty_finish" days = 3600 }
+		}
+	}
+}
+
+# Valor
+agenda_MT_valor = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_valor_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+	}
+	modifier = {
+		ship_engagement_range_mult = 0.25
+	}
+	finish_modifier = agenda_MT_valor_finish # 
+}
+
+# Manipulation
+agenda_MT_manipulation = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_manipulation_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+	}
+	modifier = {
+		pop_ethics_shift_speed_mult = 0.25
+	}
+	finish_modifier = agenda_MT_manipulation_finish # 
+	effect = {
+		# Get to choose an ethic to boost
+		custom_tooltip = council_agenda_agenda_MT_manipulation_effect
+		country_event = { id = MT_events.51 }
+	}
+}
+
+# Diligence
+agenda_MT_diligence = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_diligence_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+	}
+	modifier = {
+		ship_friendly_territory_shield_mult = 0.1
+		ship_friendly_territory_fire_rate_mult = 0.1
+	}
+	finish_modifier = agenda_MT_diligence_finish # 
+}
+
+# Greed
+agenda_MT_greed = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_greed_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+		is_gestalt = no
+	}
+	modifier = {
+		planet_jobs_worker_produces_mult = 0.1
+		planet_jobs_specialist_produces_mult = 0.1
+		pop_cat_worker_happiness = -0.05
+		pop_cat_specialist_happiness = -0.05
+	}
+	finish_modifier = agenda_MT_greed_finish # 
+}
+
+# Greed
+agenda_MT_greed_gestalt = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_greed_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+		is_gestalt = yes
+	}
+	modifier = {
+		planet_jobs_complex_and_simple_drone_produces_mult = 0.1
+		planet_stability_add = -5
+	}
+	finish_modifier = agenda_MT_greed_gestalt_finish # 
+}
+
+# Nature
+agenda_MT_nature = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_nature_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+		is_machine_empire = no
+	}
+	modifier = {
+		deposit_blockers_natural_society_research_produces_add = 5
+	}
+	finish_modifier = agenda_MT_nature_finish # 
+}
+
+# royalty
+agenda_MT_royalty = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_royalty_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+		#is_gestalt = yes
+	}
+	modifier = {
+		ruler_skill_add = 2
+	}
+	finish_modifier = agenda_MT_royalty_finish # 
+	effect = {
+		# Remove all negative traits from leader
+		custom_tooltip = council_agenda_agenda_MT_royalty_effect
+		ruler = {
+			if = {
+				hidden_effect = {
+					# Restore pending traits and tiers, so they'll come back eventually. But a 20% chance to reduce by 1.
+					change_variable = {
+						which = leader_pending_negative_traits_unmodified
+						value = value:leader_num_negative_leader_trait_tiers
+					}
+					random = {
+						chance = 20
+						subtract_variable = {
+							which = leader_pending_negative_traits_unmodified
+							value = 1
+						}
+					}
+				}
+				remove_trait = all_negative
+			}
+		}
+	}
+}
+
+# ingenuity
+agenda_MT_ingenuity = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_ingenuity_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+	}
+	modifier = {
+		country_megastructure_build_cap_add = 1
+	}
+	finish_modifier = agenda_MT_ingenuity_finish # 
+	effect = {
+		# Allow building an extra megastructure
+		if = {
+			limit = {
+				OR ={
+					AND = {
+						has_country_flag = built_dyson_sphere
+						NOT = { has_relic = r_contingency_core }
+					}
+					AND = {
+						has_relic = r_contingency_core
+						has_country_flag = built_dyson_sphere_contingency
+					}
+				}
+			}
+			custom_tooltip = MT_ingenuity_agenda_dyson_sphere_effect
+			if = {
+				limit = {
+					has_country_flag = built_dyson_sphere_contingency
+				}
+				remove_country_flag = built_dyson_sphere_contingency
+			}
+			else = {
+				remove_country_flag = built_dyson_sphere
+			}
+		}
+		else_if = {
+			limit = {
+				OR ={
+					AND = {
+						has_country_flag = built_matter_decompressor_site
+						NOT = { has_relic = r_contingency_core }
+					}
+					AND = {
+						has_relic = r_contingency_core
+						has_country_flag = built_matter_decompressor_site_contingency
+					}
+				}
+			}
+			custom_tooltip = MT_ingenuity_agenda_matter_decompressor_effect
+			if = {
+				limit = {
+					has_country_flag = built_matter_decompressor_site_contingency
+				}
+				remove_country_flag = built_matter_decompressor_site_contingency
+			}
+			else = {
+				remove_country_flag = built_matter_decompressor_site
+			}
+		}
+		if = {
+			limit = {
+				OR ={
+					AND = {
+						has_country_flag = built_think_tank
+						NOT = { has_relic = r_contingency_core }
+					}
+					AND = {
+						has_relic = r_contingency_core
+						has_country_flag = built_think_tank_contingency
+					}
+				}
+			}
+			custom_tooltip = MT_ingenuity_agenda_think_tank_effect
+			if = {
+				limit = {
+					has_country_flag = built_think_tank_contingency
+				}
+				remove_country_flag = built_think_tank_contingency
+			}
+			else = {
+				remove_country_flag = built_think_tank
+			}
+		}
+		else_if = {
+			limit = {
+				OR ={
+					AND = {
+						has_country_flag = built_strategic_coordination_center_site
+						NOT = { has_relic = r_contingency_core }
+					}
+					AND = {
+						has_relic = r_contingency_core
+						has_country_flag = built_strategic_coordination_center_site_contingency
+					}
+				}
+			}
+			custom_tooltip = MT_ingenuity_agenda_strategic_coordination_center_effect
+			if = {
+				limit = {
+					has_country_flag = built_strategic_coordination_center_site_contingency
+				}
+				remove_country_flag = built_strategic_coordination_center_site_contingency
+			}
+			else = {
+				remove_country_flag = built_strategic_coordination_center_site
+			}
+		}
+		else_if = {
+			limit = {
+				OR ={
+					AND = {
+						has_country_flag = built_mega_art_installation
+						NOT = { has_relic = r_contingency_core }
+					}
+					AND = {
+						has_relic = r_contingency_core
+						has_country_flag = built_mega_art_installation_contingency
+					}
+				}
+			}
+			custom_tooltip = MT_ingenuity_agenda_mega_art_installation_effect
+			if = {
+				limit = {
+					has_country_flag = built_mega_art_installation_contingency
+				}
+				remove_country_flag = built_mega_art_installation_contingency
+			}
+			else = {
+				remove_country_flag = built_mega_art_installation
+			}
+		}
+		else_if = {
+			limit = {
+				OR ={
+					AND = {
+						has_country_flag = built_mega_shipyard_site
+						NOT = { has_relic = r_contingency_core }
+					}
+					AND = {
+						has_relic = r_contingency_core
+						has_country_flag = built_mega_shipyard_site_contingency
+					}
+				}
+			}
+			custom_tooltip = MT_ingenuity_agenda_mega_shipyard_effect
+			if = {
+				limit = {
+					has_country_flag = built_mega_shipyard_site_contingency
+				}
+				remove_country_flag = built_mega_shipyard_site_contingency
+			}
+			else = {
+				remove_country_flag = built_mega_shipyard_site
+			}
+		}
+		else_if = {
+			limit = {
+				OR ={
+					AND = {
+						has_country_flag = built_interstellar_assembly_site
+						NOT = { has_relic = r_contingency_core }
+					}
+					AND = {
+						has_relic = r_contingency_core
+						has_country_flag = built_interstellar_assembly_site_contingency
+					}
+				}
+			}
+			custom_tooltip = MT_ingenuity_agenda_interstellar_assembly_effect
+			if = {
+				limit = {
+					has_country_flag = built_interstellar_assembly_site_contingency
+				}
+				remove_country_flag = built_interstellar_assembly_site_contingency
+			}
+			else = {
+				remove_country_flag = built_interstellar_assembly_site
+			}
+		}
+		else_if = {
+			limit = {
+				OR ={
+					AND = {
+						has_country_flag = built_spyorb
+						NOT = { has_relic = r_contingency_core }
+					}
+					AND = {
+						has_relic = r_contingency_core
+						has_country_flag = built_spyorb_contingency
+					}
+				}
+			}
+			custom_tooltip = MT_ingenuity_agenda_spyorb_effect
+			if = {
+				limit = {
+					has_country_flag = built_spyorb_contingency
+				}
+				remove_country_flag = built_spyorb_contingency
+			}
+			else = {
+				remove_country_flag = built_spyorb
+			}
+		}
+		else = {
+			custom_tooltip = MT_ingenuity_agenda_none_effect
+		}
+	}
+}
+
+# curiosity
+agenda_MT_curiosity = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_curiosity_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+		has_astral_planes_dlc = yes
+	}
+	modifier = {
+		ship_anomaly_generation_chance_mult = 0.25
+	}
+	finish_modifier = agenda_MT_curiosity_finish # 
+}
+
+# sloth
+agenda_MT_sloth = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		#has_tradition = tr_mt_sloth_adopt
+		always = no
+	}
+	potential = {
+		has_paragon_dlc = yes
+		always = no
+	}
+	modifier = {
+		ship_friendly_territory_shield_mult = 0.1
+	}
+	finish_modifier = agenda_MT_sloth_finish # 
+}
+
+# industry
+agenda_MT_industry = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_industry_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+		is_gestalt = no
+	}
+	modifier = {
+		planet_artisans_consumer_goods_produces_mult = 0.1
+		planet_metallurgists_alloys_produces_mult = 0.1
+	}
+	finish_modifier = agenda_MT_industry_finish # 
+}
+
+# industry (gestalt)
+agenda_MT_industry_gestalt = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_industry_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+		is_gestalt = yes
+	}
+	modifier = {
+		planet_metallurgists_alloys_produces_mult = 0.1
+	}
+	finish_modifier = agenda_MT_industry_gestalt_finish # 
+}
+
+# antiquity
+agenda_MT_antiquity = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_antiquity_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+		has_ancrel = yes
+	}
+	modifier = {
+		ship_archaeological_site_clues_add = 2
+	}
+	finish_modifier = agenda_MT_antiquity_finish # 
+}
+
+# dominance
+agenda_MT_dominance = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_dominance_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+	}
+	modifier = {
+		planet_resettlement_unemployed_destination_mult = 0.5
+	}
+	finish_modifier = agenda_MT_dominance_finish # 
+}
+
+# guidance
+agenda_MT_guidance = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_guidance_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+	}
+	modifier = {
+		research_sharing_mult = 0.1
+	}
+	finish_modifier = agenda_MT_guidance_finish # 
+	effect = {
+		# Give your subjects the same modifier
+		custom_tooltip = council_agenda_agenda_MT_guidance_effect
+		hidden_effect = {
+			every_subject = {
+				add_modifier = { modifier = "agenda_MT_guidance_finish" days = 3600 }
+			}
+		}
+	}
+}
+
+# reflection
+agenda_MT_reflection = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		#has_tradition = tr_mt_reflection_adopt
+		always = no
+	}
+	potential = {
+		has_paragon_dlc = yes
+		always = no
+	}
+	modifier = {
+		ship_friendly_territory_shield_mult = 0.1
+	}
+	finish_modifier = agenda_MT_reflection_finish # 
+}
+
+# legion
+agenda_MT_legion = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_legion_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+		is_machine_empire = yes
+	}
+	modifier = {
+		ship_starting_experience_add = 100
+	}
+	finish_modifier = agenda_MT_legion_finish # 
+}
+
+# isolation
+agenda_MT_isolation = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_isolation_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+		is_gestalt = no
+	}
+	modifier = {
+		logistic_growth_mult = 0.1
+		planet_resettlement_unemployed_destination_mult = -0.1
+		planet_resettlement_unemployed_mult = -0.25
+	}
+	finish_modifier = agenda_MT_isolation_finish # 
+}
+
+# Evolution
+#agenda_MT_evolution = {
+#	agenda_cost = @base_tradition_agenda_cost
+#	allow = {
+#		has_tradition = tr_mt_evolution_adopt
+#	}
+#	potential = {
+#		has_paragon_dlc = yes
+#		is_machine_empire = no
+#	}
+#	modifier = {
+#		logistic_growth_mult = 0.1
+#	}
+#	finish_modifier = agenda_MT_evolution_finish # 
+#}
+
+# Brightburn
+agenda_MT_brightburn = {
+	agenda_cost = 700
+	allow = {
+		has_tradition = tr_mt_brightburn_adopt
+	}
+	potential = {
+		always = yes
+	}
+	modifier = {
+	}
+	finish_modifier = agenda_MT_brightburn_finish # 
+}
+
+# vengeance
+agenda_MT_vengeance = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_vengeance_adopt
+		num_rivals > 0
+		custom_tooltip = {
+			fail_text = "agenda_MT_vengeance_already_has_nemesis"
+			NOT = {
+				any_country = {
+					has_country_flag = MT_true_nemesis@root
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "agenda_MT_vengeance_already_choosing_nemesis"
+			NOT = {
+				has_active_event = {
+					MT_events.72
+				}
+			}
+		}
+	}
+	potential = {
+		has_paragon_dlc = yes
+	}
+	modifier = {
+		envoy_harm_relations_mult = 0.5
+		country_insult_efficiency = 0.5
+	}
+	finish_modifier = agenda_MT_vengance_finish # 
+	effect = {
+		custom_tooltip = MT_vengeance_choose_nemesis
+		if = {
+			limit = {
+				NOT = {
+					any_country = {
+						has_country_flag = MT_true_nemesis@root
+					}
+				}
+			}
+			hidden_effect = {
+				country_event = { id = MT_events.72 }
+			}
+		}
+	}
+}
+
+# oppression
+agenda_MT_oppression = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_oppression_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+		is_gestalt = no
+	}
+	modifier = {
+		planet_jobs_slave_produces_mult = 0.1
+	}
+	finish_modifier = agenda_MT_oppression_finish # 
+}
+
+# Philosophy
+agenda_MT_philosophy = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_philosophy_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+		is_gestalt = no
+	}
+	modifier = {
+		pop_civilian_bonus_workforce_mult = 0.2
+	}
+	finish_modifier = agenda_MT_philosophy_finish # 
+}
+
+# Advisor
+agenda_MT_advisor = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_advisor_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+	}
+	modifier = {
+		country_edict_fund_add = 25
+	}
+	finish_modifier = agenda_MT_advisor_finish # 
+}
+
+# Piracy
+agenda_MT_piracy = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_piracy_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+	}
+	modifier = {
+		ships_upkeep_mult = -0.05
+		planet_crime_mult = -0.2
+	}
+	finish_modifier = agenda_MT_piracy_finish # 
+	effect = {
+		# Give your neighbors a negative modifier
+		custom_tooltip = council_agenda_agenda_MT_piracy_effect
+		hidden_effect = {
+			every_neighbor_country = {
+				add_modifier = { modifier = "agenda_MT_piracy_hostile_finish" days = 3600 }
+			}
+		}
+	}
+}
+
+# Disruption
+agenda_MT_disruption = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_disruption_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+	}
+	modifier = {
+		spy_network_daily_value_mult = 0.5
+	}
+	finish_modifier = agenda_MT_disruption_finish # 
+}
+
+# Liberty
+agenda_MT_liberation = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_liberation_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+	}
+	modifier = {
+		MT_bombardment_ethic_mult = 0.25
+	}
+	finish_modifier = agenda_MT_liberation_finish # 
+}
+
+# Exchange
+agenda_MT_exchange = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_exchange_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+		OR = {
+			is_megacorp = yes
+			has_tradition = tr_mt_exchange_adopt
+		}
+	}
+	modifier = {
+		commercial_pact_mult = 0.1
+		country_trust_growth = 0.25
+	}
+	finish_modifier = agenda_MT_exchange_finish # 
+}
+
+# Veneration
+agenda_MT_veneration = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_veneration_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+	}
+	modifier = {
+		species_leader_exp_gain = 0.05
+	}
+	effect = {
+		# Give all leaders xp equal to their age
+		custom_tooltip = council_agenda_agenda_MT_veneration_effect
+		hidden_effect = {
+			every_owned_leader = {
+				add_experience = trigger:leader_age
+			}
+		}
+	}
+	finish_modifier = agenda_MT_veneration_finish # 
+}
+
+# Ruination
+agenda_MT_ruination = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_ruination_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+	}
+	modifier = {
+		planet_miners_produces_mult = 0.25
+	}
+	finish_modifier = agenda_MT_ruination_finish # 
+}
+
+# Maritime
+#agenda_MT_maritime = {
+#	agenda_cost = @base_tradition_agenda_cost
+#	allow = {
+#		has_tradition = tr_mt_maritime_adopt
+#	}
+#	potential = {
+#		has_paragon_dlc = yes
+#		NOT = {
+#			has_tradition = tr_mt_maritime_finish
+#		}
+#	}
+#	modifier = {
+#		country_trade_produces_mult = -0.25
+#		ships_logistics_mult = -0.1
+#	}
+#	finish_modifier = agenda_MT_maritime_finish # 
+#}
+
+# Maritime
+#agenda_MT_maritime_upgraded = {
+#	agenda_cost = @base_tradition_agenda_cost
+#	allow = {
+#		has_tradition = tr_mt_maritime_finish
+#	}
+#	potential = {
+#		has_paragon_dlc = yes
+#		has_tradition = tr_mt_maritime_finish
+#	}
+#	modifier = {
+#		country_trade_produces_mult = -0.05
+#		#ships_upkeep_mult = -0.1 # test
+#		ships_logistics_mult = -0.2
+#	}
+#	finish_modifier = agenda_MT_maritime_upgraded_finish # 
+#}
+
+# Centralization
+agenda_MT_core = {
+	agenda_cost = 350
+	allow = {
+		has_tradition = tr_mt_core_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+		is_machine_empire = yes
+		OR = {
+			host_has_dlc = "Utopia"
+			has_origin = origin_void_dwellers
+			has_origin = origin_toxic_knights
+		}
+	}
+	modifier = {
+		country_resettlement_cost_mult = -0.75
+		planet_resettlement_unemployed_mult = 1
+	}
+	agenda_finish_modifier_duration = 720
+	finish_modifier = agenda_MT_core_finish # 
+}
+
+# Integration
+#agenda_MT_integration = {
+#	agenda_cost = @base_tradition_agenda_cost
+#	allow = {
+#		#has_tradition = tr_mt_integration_adopt
+#		always = yes
+#	}
+#	potential = {
+#		always = yes
+#		has_paragon_dlc = yes
+#		#is_machine_empire = yes
+#		NOR = {
+#			has_civic = civic_machine_servitor
+#			has_civic = civic_machine_terminator
+#			has_civic = civic_machine_assimilator
+#		}
+#	}
+#	modifier = {
+#	}
+#	effect = {
+#		# Give pops the bio-integration trait
+#		custom_tooltip = council_agenda_agenda_MT_integration_effect
+#		hidden_effect = {
+#			every_owned_species = {
+#				limit = {
+#					NOT = {
+#						has_trait = trait_MT_bio_mechanical_uplink
+#					}
+#					is_organic_species = yes
+#				}
+#				change_species_characteristics = {
+#					add_trait = trait_MT_bio_mechanical_uplink
+#					add_traits_at_start_of_list = yes
+#				}
+#			}
+#		}
+#	}
+#	finish_modifier = agenda_MT_integration_finish # 
+#}
+
+# Entrapeneourship
+agenda_MT_entrap = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_entrap_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+		is_gestalt = no
+	}
+	modifier = {
+		planet_jobs_trade_produces_mult = 0.1
+		planet_jobs_consumer_goods_produces_mult = 0.05
+	}
+	finish_modifier = agenda_MT_entrap_finish # 
+}
+
+# Conquest
+agenda_MT_conquest = {
+	agenda_cost = 3500
+	allow = {
+		has_tradition = tr_mt_conquest_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+	}
+	modifier = {
+		army_attack_damage_mult = 0.25
+	}
+	finish_modifier = agenda_MT_conquest_finish # 
+}
+
+# Opulence
+agenda_MT_opulence = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_opulence_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+	}
+	modifier = {
+		country_energy_produces_mult = 0.15
+	}
+	finish_modifier = agenda_MT_opulence_finish # 
+}
+
+# Cosmopolitan
+agenda_MT_cosmopolitan = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_cosmopolitan_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+	}
+	modifier = {
+		pop_happiness = 0.05
+	}
+	effect = {
+		# Create a pop of the least represented species
+		custom_tooltip = council_agenda_agenda_MT_cosmopolitan_effect
+		hidden_effect = {
+			every_owned_planet = {
+				limit = {
+					any_owned_pop_group = {
+						PLANET = {
+							NOT = {
+								is_majority_species = prev
+							}
+						}
+					}
+				}
+				random_owned_species = {
+					limit = {
+						NOR = {
+							has_trait = trait_clone_soldier_infertile
+							has_trait = trait_clone_soldier_infertile_full_potential
+							prev = {
+								is_majority_species = prev
+							}
+						}
+					}
+					prev = {
+						create_pop_group = {
+							species = prev
+							size = 100
+						}
+					}
+				}
+			}
+		}
+	}
+	finish_modifier = agenda_MT_cosmopolitan_finish # 
+}
+
+# Lust
+#agenda_MT_lust = {
+#	agenda_cost = @base_tradition_agenda_cost
+#	allow = {
+#		has_tradition = tr_mt_lust_adopt
+#	}
+#	inline_script = {
+#		script = comptriggers/MT_Hydra_toggle
+#		HAS_MOD = @MT_aprils_fool_active
+#		INLINE = MT_MT_Hydra_lust
+#	}
+#	modifier = {
+#		logistic_growth_mult = 0.05
+#		pop_happiness = 0.05
+#	}
+#	finish_modifier = agenda_MT_cosmopolitan_finish # 
+#}
+#
+## Freedom
+agenda_MT_freedom = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_freedom_adopt
+	}
+	inline_script = {
+		script = comptriggers/MT_Hydra_double_toggle
+		HAS_MOD = @MT_aprils_fool_active
+		INLINE = MT_MT_Hydra_freedom
+	}
+	modifier = {
+		country_starbase_influence_cost_mult = -0.2
+		shipclass_colonizer_build_speed_mult = 0.33
+	}
+	finish_modifier = agenda_MT_freedom_finish # 
+}
+
+# Starseeker
+agenda_MT_starseeker = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_starseeker_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+		has_cosmic_storms_dlc = yes
+	}
+	modifier = {
+		ship_speed_mult = 0.2
+	}
+	effect = {
+		# Create a pop of the least represented species
+		if = {
+			limit = { has_tradition = tr_mt_starseeker_finish }
+			custom_tooltip = council_agenda_agenda_MT_starseeker_effect
+			hidden_effect = {
+				every_cosmic_storm = {
+					limit = {
+						NOT = { has_storm_flag = MAA_storm_cannot_be_destroyed }
+						any_system_within_storm = {
+							is_owned_by = root
+						}
+					}
+					destroy_cosmic_storm = yes
+				}
+			}
+		}
+	}
+	finish_modifier = agenda_MT_starseeker_finish # 
+}
+
+# Desperation
+agenda_MT_desperation = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_desperation_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+		has_ancrel = yes
+	}
+	modifier = {
+		all_technology_research_speed = 0.05
+	}
+	finish_modifier = agenda_MT_desperation_finish
+}
+
+########################
+# Azurian's Traditions #
+########################
+
+agenda_MT_astronomy = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_astronomy_adopt
+	}
+	modifier = {
+		station_gatherers_produces_mult = -0.15
+		station_researchers_produces_mult = 0.25
+	}
+	finish_modifier = agenda_MT_astronomy_finish
+}
+
+agenda_MT_botany = {
+	agenda_cost = @base_tradition_agenda_cost
+	potential = {
+		is_anglers_empire = no
+	}
+	allow = {
+		has_tradition = tr_mt_botany_adopt
+	}
+	modifier = {
+		planet_farmers_food_produces_mult = -0.1
+	}
+	effect = {
+		custom_tooltip = council_agenda_agenda_MT_botany_effect_desc
+        add_resource = {
+            physics_research = 100
+           	society_research = 100
+        	engineering_research = 100
+            mult = value:MT_num_farmers
+        }
+	}
+	finish_modifier = agenda_MT_botany_finish
+}
+
+agenda_MT_botany_angler = {
+	agenda_cost = @base_tradition_agenda_cost
+	potential = {
+		is_anglers_empire = yes
+	}
+	allow = {
+		has_tradition = tr_mt_botany_adopt
+	}
+	modifier = {
+		planet_farmers_food_produces_mult = -0.1
+	}
+	effect = {
+		custom_tooltip = council_agenda_agenda_MT_botany_angler_effect_desc
+        add_resource = {
+            physics_research = 200
+           	society_research = 200
+        	engineering_research = 200
+            mult = value:MT_num_anglers
+        }
+	}
+	finish_modifier = agenda_MT_botany_angler_finish
+}
+
+agenda_MT_genesis = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_genesis_adopt
+	}
+	modifier = {
+		planet_sensor_range_add = 2
+		science_ship_survey_speed = 0.1
+	}
+	finish_modifier = agenda_MT_genesis_finish
+}
+
+agenda_MT_geology = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_geology_adopt
+	}
+	modifier = {
+		planet_miners_volatile_motes_produces_mult = 0.2
+		planet_miners_exotic_gases_produces_mult = 0.2
+		planet_miners_rare_crystals_produces_mult = 0.2
+	}
+	effect = {
+		custom_tooltip = council_agenda_agenda_MT_geology_effect_desc
+		hidden_effect = {
+			every_owned_planet = {
+				limit = {
+					is_artificial = no
+					NOR = {
+						is_planet_class = pc_machine
+						is_planet_class = pc_hive
+						is_planet_class = pc_city
+						is_planet_class = pc_relic
+						is_planet_class = pc_nanotech
+					}
+					NOT = { has_planet_flag = MT_geology_prospected }
+				}
+				random = {
+					chance = 25
+					add_deposit_category_effect = "deposit_cat_rare_resource"
+					create_message = {
+						type = MESSAGE_TYPE_PLANET_PROSPECTED
+						localization = MESSAGE_PLANET_PROSPECTED
+						days = 30
+						target = this
+						variable = {
+							type = name
+							localization = PLANET
+							scope = this
+						}
+						variable = {
+							type = name
+							localization = DEPOSIT
+							scope = last_added_deposit
+						}
+					}
+				}
+				set_planet_flag = MT_geology_prospected
+			}
+		}
+	}
+	finish_modifier = agenda_MT_geology_finish
+}

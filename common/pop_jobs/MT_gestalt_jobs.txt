@@ -1,0 +1,59 @@
+###################
+# Gestalt Jobs
+###################
+
+#MT_organic_battery = {
+#	category = worker
+#	is_capped_by_modifier = no
+#	swappable_data = {
+#		default = {
+#			icon = organic_battery
+#		}
+#	}
+#
+#	tags = { energy }
+#
+#	possible_pre_triggers = {
+#		is_enslaved = yes
+#		is_sapient = yes
+#		is_robot_pop = no
+#	}
+#
+#	possible = {
+#		owner = { has_tradition = tr_mt_integration_adopt }
+#		has_citizenship_type = { type = citizenship_slavery country = owner }
+#		has_slavery_type = { type = slavery_matrix }
+#	}
+#
+##	pop_modifier = { # not on vanilla organic batteries?
+##		pop_housing_usage_add = -0.5
+##	}
+#	
+#	triggered_pop_modifier = {
+#		potential = {
+#			owner = {
+#				has_tradition = tr_mt_integration_dream_capsules
+#			}
+#		}
+#		pop_amenities_usage_add = -0.25
+#	}
+#
+#	resources = {
+#		category = MT_planet_organic_batteries
+#		produces = {
+#			energy = 4
+#		}
+#		produces = {
+#			trigger = {
+#				owner = {
+#					has_tradition = tr_mt_integration_biogrid_revision
+#				}
+#			}
+#			energy = 1
+#		}
+#	}
+#
+#	weight = {
+#		weight = 0.02
+#	}
+#}

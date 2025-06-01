@@ -1,0 +1,825 @@
+##########################################################################
+# Empire edicts
+##########################################################################
+
+@Edict1Cost = 10
+@Edict2Cost = 20
+@Edict3Cost = 30
+@EdictSpecialCost = 1
+
+@EdictPerpetual = -1
+
+@campaignCost = 15
+@hiveFood = 15
+@campaignDuration = -1
+
+@OpulenceCost = 100
+
+#################
+# Toggle Edicts
+#################
+
+#mt_mysticism_dark_ritual = {
+#	length = @EdictPerpetual
+#	icon = "GFX_edict_type_policy"
+#	
+#	resources = {
+#		category = campaigns
+#		cost = {
+#			sr_dark_matter = 2
+#			multiplier = value:edict_size_effect
+#		}
+#		upkeep = {
+#			sr_dark_matter = 2
+#			multiplier = value:edict_size_effect
+#		}
+#	}
+#
+#	potential = {
+#		has_tradition = tr_mt_mysticism_finish
+#	}
+#
+#	modifier = {
+#		planet_stability_add = -10
+#		planet_jobs_produces_mult = 0.1
+#		#custom_tooltip = "edict_mt_mysticism_dark_ritual_tooltip" # Leaders with the mystic messenger trait gets increased upkeep but also gives additional bonuses
+#	}
+#}
+#
+#mt_mysticism_dark_resonance = {
+#	length = @EdictPerpetual
+#	icon = "GFX_edict_type_policy"
+#
+#	resources = {
+#		category = campaigns
+#		cost = {
+#			sr_dark_matter = 2
+#			multiplier = value:edict_size_effect
+#		}
+#		upkeep = {
+#			sr_dark_matter = 2
+#			multiplier = value:edict_size_effect
+#		}
+#	}
+#
+#	potential = {
+#		has_tradition = tr_mt_mysticism_finish
+#	}
+#
+#	modifier = {
+#		council_agenda_progress_speed = 0.25
+#		species_leader_exp_gain = 0.25
+#		leaders_upkeep_mult = 0.25
+#		#custom_tooltip = "edict_mt_mysticism_dark_resonance_tooltip" # Leaders with the mystic messenger trait gets power twice as fast
+#	}
+#}
+
+####################
+# Philosophy Edicts
+####################
+
+MT_veneration_of_saints = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		planet_bureaucrats_produces_mult = 0.20
+		pop_ethic_spiritualist_attraction_mult = 0.25
+	}
+
+	potential = {
+		is_spiritualist = no
+		has_tradition = tr_mt_philosophy_finish
+	}
+
+	ai_weight = {
+		weight = @EdictMedPrio
+	}
+}
+
+MT_peace_festivals = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		pop_happiness = 0.10
+		pop_ethic_pacifist_attraction_mult = 0.25
+	}
+
+	potential = {
+		is_pacifist = no
+		has_tradition = tr_mt_philosophy_finish
+	}
+
+	ai_weight = {
+		weight = @EdictMedPrio
+	}
+}
+
+MT_information_quarantine = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		planet_stability_add = 5
+		pop_government_ethic_attraction = 0.5
+	}
+
+	potential = {
+		is_authoritarian = no
+		has_tradition = tr_mt_philosophy_finish
+	}
+
+	ai_weight = {
+		weight = @EdictLowPrio
+	}
+}
+
+MT_encourage_free_thought = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		pop_ethics_shift_speed_mult = 1
+	}
+
+	potential = {
+		is_egalitarian = no
+		has_tradition = tr_mt_philosophy_finish
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+MT_fear_campaign = {
+	length = @campaignDuration
+	icon = "GFX_edict_type_time"
+	resources = {
+		category = campaigns
+		cost = {
+			energy = @campaignCost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			energy = @campaignCost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		country_unity_produces_mult = 0.10
+		pop_ethic_xenophobe_attraction_mult = 0.25
+	}
+
+	potential = {
+		is_xenophobe = no
+		has_comms_with_alien_civilization = yes
+		has_technology = tech_planetary_unification
+		has_tradition = tr_mt_philosophy_finish
+	}
+
+	ai_weight = {
+		weight = 0
+		modifier = {
+			weight = @EdictLowPrio
+			has_resource = { type = energy amount > 5000 }
+		}
+	}
+}
+
+MT_land_of_opportunity = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = @Edict2Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = @Edict2Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		planet_resettlement_unemployed_destination_mult = 0.5
+	}
+
+	potential = {
+		is_xenophile = no
+		has_comms_with_alien_empire = yes
+		has_tradition = tr_mt_philosophy_finish
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# Integration
+#MT_nutrient_baths = {
+#	length = @EdictPerpetual
+#	icon = "GFX_edict_type_policy"
+#
+#	resources = {
+#		category = edicts
+#		cost = {
+#			unity = @Edict1Cost
+#			multiplier = value:edict_size_effect
+#		}
+#		upkeep = {
+#			unity = @Edict1Cost
+#			multiplier = value:edict_size_effect
+#		}
+#	}
+#
+#	modifier = {
+#		MT_planet_organic_batteries_food_upkeep_add = -0.75
+#		MT_planet_organic_batteries_minerals_upkeep_add = 0.5
+#	}
+#
+#	potential = {
+#		has_tradition = tr_mt_integration_pods
+#	}
+#
+#	ai_weight = {
+#		weight = @EdictLowPrio
+#	}
+#}
+###################
+# Opulence Edicts #
+###################
+MT_gilded_fleets = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			energy = @OpulenceCost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			energy = @OpulenceCost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		custom_tooltip = "edict_MT_gilded_fleets_effects"
+		show_only_custom_tooltip = yes
+		ships_upkeep_mult = 1
+	}
+
+	potential = {
+		has_tradition = tr_mt_opulence_golden_armada
+		is_ai = no
+	}
+
+	ai_weight = {
+		weight = @EdictLowPrio
+	}
+}
+
+MT_gilded_beacons = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			energy = @OpulenceCost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			energy = @OpulenceCost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		custom_tooltip = "edict_MT_gilded_beacons_effects"
+		show_only_custom_tooltip = yes
+		starbases_upkeep_mult = 1
+	}
+
+	potential = {
+		has_tradition = tr_mt_opulence_beacons_of_splendor
+		is_ai = no
+	}
+
+	ai_weight = {
+		weight = @EdictLowPrio
+	}
+}
+
+MT_gilded_gardens = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			energy = @OpulenceCost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			energy = @OpulenceCost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		custom_tooltip = "edict_MT_gilded_gardens_effects"
+		show_only_custom_tooltip = yes
+		planet_districts_upkeep_mult = 1
+	}
+
+	potential = {
+		has_tradition = tr_mt_opulence_big_estates
+		is_ai = no
+	}
+
+	ai_weight = {
+		weight = @EdictLowPrio
+	}
+}
+
+MT_gilded_cities = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			energy = @OpulenceCost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			energy = @OpulenceCost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		custom_tooltip = "edict_MT_gilded_cities_effects"
+		show_only_custom_tooltip = yes
+		pop_happiness = 0.1
+		planet_buildings_upkeep_mult = 1
+	}
+
+	potential = {
+		has_tradition = tr_mt_opulence_glistening_towers
+		is_gestalt = no
+	}
+
+	ai_weight = {
+		weight = @EdictLowPrio
+	}
+}
+
+MT_gilded_cities_gestalts = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			energy = @OpulenceCost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			energy = @OpulenceCost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		custom_tooltip = "edict_MT_gilded_cities_gestalts_effects"
+		show_only_custom_tooltip = yes
+		planet_stability_add = 10
+		planet_buildings_upkeep_mult = 1
+	}
+
+	potential = {
+		has_tradition = tr_mt_opulence_glistening_towers
+		is_gestalt = yes
+	}
+
+	ai_weight = {
+		weight = @EdictLowPrio
+	}
+}
+
+inline_script = {
+	script = comptriggers/MT_Philosophy_edicts
+	HAS_BUG = @has_bug_branch = 0
+	HAS_EVO = @has_stellaris_evolved = 0
+}
+
+##################
+# Genesis Edicts #
+##################
+MT_ark_ships = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		custom_tooltip = "edict_MT_ark_ships_effects"
+		show_only_custom_tooltip = yes
+		shipsize_colonizer_build_speed_mult = 1
+		shipsize_colonizer_speed_mult = 0.25
+		#ship_speed_mult = 0.25
+		#ship_military_speed_mult = -0.2       #if you're reading this, you done didn't see nothing you understand??
+	}
+
+
+	potential = {
+		is_ai = no
+		has_tradition = tr_mt_genesis_5
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+##################
+# Geology Edicts #
+##################
+MT_geology_1_geothermal_tapping = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+	modifier = {
+		job_technician_add = 100
+	}
+	potential = {
+		has_tradition = tr_mt_geology_1
+		is_gestalt = no
+	}
+}
+
+MT_geology_1_geothermal_tapping_gestalt = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+	modifier = {
+		job_technician_drone_add = 1
+	}
+	potential = {
+		has_tradition = tr_mt_geology_1
+		is_gestalt = yes
+	}
+}
+
+
+MT_geology_2_institute_of_geology = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			engineering_research = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+	modifier = {
+		custom_tooltip = "edict_MT_geology_2_institute_of_geology_tt"
+		show_only_custom_tooltip = yes
+		planet_miners_exotic_gases_produces_mult = 0.5
+		planet_miners_rare_crystals_produces_mult = 0.5
+		planet_miners_volatile_motes_produces_mult = 0.5
+		planet_miners_nanites_produces_mult = 0.5
+		planet_miners_astral_threads_produces_mult = 0.5
+		planet_miners_sr_dark_matter_produces_mult = 0.5
+		planet_miners_sr_living_metal_produces_mult = 0.5
+		planet_miners_sr_zro_produces_mult = 0.5
+	}
+	potential = {
+		has_tradition = tr_mt_geology_2
+	}
+}
+####################
+# Astronomy Edicts #
+####################
+MT_astronomy_4_institute_of_astronomy = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			physics_research = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+	modifier = {
+		custom_tooltip = "edict_MT_astronomy_4_institute_of_astronomy_tt"
+		show_only_custom_tooltip = yes
+		country_storms_astral_threads_produces_add = 1
+		country_astral_threads_produces_mult = 0.15
+	}
+	potential = {
+		has_tradition = tr_mt_astronomy_4
+		is_gestalt = no
+		has_astral_planes_dlc = yes
+		has_cosmic_storms_dlc = yes
+	}
+}
+
+MT_astronomy_4_institute_of_astronomy_swap_no_storm_dlc = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			physics_research = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+	modifier = {
+		planet_physicists_astral_threads_produces_add = 0.01
+		country_astral_threads_produces_mult = 0.15
+	}
+	potential = {
+		has_tradition = tr_mt_astronomy_4
+		is_gestalt = no
+		has_cosmic_storms_dlc = no
+		has_astral_planes_dlc = yes
+	}
+}
+
+MT_astronomy_4_institute_of_astronomy_swap_no_storm_or_astral_dlc = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			physics_research = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+	modifier = {
+		planet_physicists_sr_dark_matter_produces_add = 0.01
+	}
+	potential = {
+		has_tradition = tr_mt_astronomy_4
+		is_gestalt = no
+		# No need to check for both when all other edicts are disabled if astral planes is not enabled
+		has_astral_planes_dlc = no
+		#OR = {
+		#	AND = {
+		#		has_cosmic_storms_dlc = no
+		#		has_astral_planes_dlc = no
+		#	}
+		#	AND = {
+		#		has_cosmic_storms_dlc = yes
+		#		has_astral_planes_dlc = no
+		#	}
+		#}
+	}
+}
+
+#################
+# Botany Edicts #
+#################
+MT_botany_3_institute_of_botany = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			society_research = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+	modifier = {
+		pop_amenities_usage_organic_mult = -0.1
+	}
+	potential = {
+		has_tradition = tr_mt_botany_3
+		is_synthetic_empire = no
+	}
+}
+
+MT_botany_3_institute_of_botany_synth = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			society_research = @Edict3Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+	modifier = {
+		pop_amenities_usage_robotic_mult = -0.1
+	}
+	potential = {
+		has_tradition = tr_mt_botany_3
+		is_synthetic_empire = yes
+	}
+}
+
+MT_botany_4_genome_grafting = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = @Edict2Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = @Edict2Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+	modifier = {
+		custom_tooltip = "edict_MT_botany_4_genome_grafting_tt"
+		show_only_custom_tooltip = yes
+		planet_farmers_physics_research_produces_add = 0.5
+		planet_farmers_society_research_produces_add = 0.5
+		planet_farmers_engineering_research_produces_add = 0.5
+		planet_farmers_food_produces_add = -1
+	}
+	potential = {
+		has_tradition = tr_mt_botany_4
+		is_synthetic_empire = no
+		is_anglers_empire = no
+	}
+}
+MT_botany_4_sustainable_fishing = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = @Edict2Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = @Edict2Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+	modifier = {
+		custom_tooltip = "edict_MT_botany_4_sustainable_fishing_tt"
+		show_only_custom_tooltip = yes
+		planet_stability_add = 0.05
+		planet_farmers_food_produces_add = -1
+	}
+	potential = {
+		has_tradition = tr_mt_botany_4
+		is_synthetic_empire = no
+		is_anglers_empire = yes
+	}
+}
+
+#################
+# Greed Edicts #
+#################
+
+MT_greed_volatile_compounds = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			volatile_motes = @EdictSpecialCost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			volatile_motes = @EdictSpecialCost
+			multiplier = value:edict_size_effect
+		}
+	}
+	modifier = {
+		#custom_tooltip = 
+		#show_only_custom_tooltip = yes
+		planet_technician_energy_produces_add = 1.5
+		pop_environment_tolerance = -0.1
+	}
+	potential = {
+		has_tradition = tr_mt_greed_fossil_fuels
+	}
+}

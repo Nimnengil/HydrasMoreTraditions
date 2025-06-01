@@ -1,0 +1,4 @@
+concept_MT_claimed = {
+	icon = "gfx/interface/icons/concepts/concept.dds"
+	tooltip_override = "concept_claim_desc"
+}

@@ -1,0 +1,25 @@
+# Add global variables here that will be available in all script files.
+# @something = 42
+# They can be overridden in each normal script file.
+
+@HAS_AAA = 0
+
+@HAS_FHMP = 0
+
+@HAS_UCmod = 0
+
+@forgotten_empires = 0
+
+@HAS_MAR = 0
+
+@has_stellaris_evolved = 0
+
+@has_bug_branch = 0
+
+@has_mo_hydra = 0
+
+@HAS_MCS_Hydra = 0
+
+@HAS_MAA_Hydra = 0
+
+#

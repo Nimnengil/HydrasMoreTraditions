@@ -1,0 +1,112 @@
+# Forgotten History
+has_forgotten_history_active = {
+    optimize_memory
+    always = no
+}
+
+has_MAP_ap_relic_hunter = {
+	always = no
+}
+
+# More Precursors
+has_FHMP_active = {
+    optimize_memory
+    always = no
+}
+
+# Unavoidable Changes
+has_UCmod_active = {
+    optimize_memory
+    always = no
+}
+
+# More Ascension Perks
+has_MAP_active = {
+	always = no
+}
+
+has_sless_gene_template = { always = no }
+has_diary_of_innovo = { always = no }
+has_astanine_last_projector = { always = no }
+has_alshigan_engine = { always = no }
+has_znkar_distortion_generator = { always = no }
+has_first_empire_databank = { always = no }
+has_orders_trinket = { always = no }
+
+has_plexi_log = {
+	always = no
+}
+
+has_eztarta = {
+	always = no
+}
+
+has_ixardian_database = {
+	always = no
+}
+
+has_ezentian_core = {
+	always = no
+}
+
+has_werediran_core = {
+	always = no
+}
+
+# Unavoidable Changes
+
+has_frozen_engine = {
+	always = no
+}
+
+# Expanded Stellaris Traditions
+
+has_expanded_stellaris_traditions_active = {
+	always = no
+}
+
+# More Astral Rifts
+
+has_lightbeast_head = {
+	always = no
+}
+
+has_godsand_remote = {
+	always = no
+}
+
+has_clockstopper = {
+	always = no
+}
+
+# More Civics
+
+has_MC_family_enterprise = {
+	always = no
+}
+
+has_MAP_ap_mastery_of_hyperspace = {
+	always = no
+}
+
+######################
+# More Leader Traits #
+######################
+
+# More Leader Traits
+has_hydras_more_leader_traits_active = {
+    optimize_memory
+    always = no
+}
+
+is_AAA_insurgency = {
+	always = no
+}
+
+is_HMO_insurgency = {
+	always = no
+}
+
+has_hydras_mod_menu_active = {
+	always = no
+}

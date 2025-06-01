@@ -1,0 +1,93 @@
+############
+# Opulence #
+############
+concept_MT_opulence_gilded_edicts = {
+	icon =  "gfx/interface/icons/concepts/concept_edicts.dds"
+	alias = { concept_MT_opulence_gilded_edict }
+	#tooltip_override = 
+}
+
+
+#############
+# Antiquity #
+#############
+concept_MT_antiquity_minor_artifact_action_enhance_precursor = {
+	icon =  "gfx/interface/icons/resources/minor_artifacts.dds"
+}
+
+concept_MT_antiquity_operation_relic_steal = {
+	icon = "gfx/interface/espionage/operations/operations_blackops_icon.dds"
+}
+
+concept_MT_antiquity_cb_relic_steal = {
+	icon = "gfx/interface/icons/concepts/concept.dds"
+}
+
+# antiquity flexible tradition
+concept_MT_antiquity_5_cybrex = {
+	icon = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_cybrex.dds"
+}
+concept_MT_antiquity_5_first_league = {
+	icon = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_first_league.dds"
+}
+concept_MT_antiquity_5_irassian = {
+	icon = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_irassian.dds"
+}
+concept_MT_antiquity_5_vultaum = {
+	icon = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_vultaum.dds"
+}
+concept_MT_antiquity_5_yuht = {
+	icon = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_yuht.dds"
+}
+concept_MT_antiquity_5_zroni = {
+	icon = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_zroni.dds"
+}
+concept_MT_antiquity_5_baol = {
+	icon = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_baol.dds"
+}
+concept_MT_antiquity_5_adakkaria = {
+	icon = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_adakkaria.dds"
+}
+concept_MT_antiquity_5_inetian = {
+	icon = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_inetian.dds"
+}
+concept_MT_antiquity_5_plexian = {
+	icon = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_plexian.dds"
+}
+concept_MT_antiquity_5_lartian = {
+	icon = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_lartian.dds"
+}
+concept_MT_antiquity_5_ixardian = {
+	icon = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_ixardian.dds"
+}
+concept_MT_antiquity_5_werediran = {
+	icon = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_werediran.dds"
+}
+concept_MT_antiquity_5_ezentian = {
+	icon = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_ezentian.dds"
+}
+concept_MT_antiquity_5_volgan = {
+	icon = "gfx/interface/icons/traditions/tradition_mt_antiquity_5_volgan.dds"
+}
+# antiquity flexible tradition end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

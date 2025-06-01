@@ -1,0 +1,18 @@
+# its own trigger
+has_hydras_more_traditions_active = {
+    optimize_memory
+    always = yes
+}
+
+# Has relic theft
+has_relic_theft_wargoal_from_desecration = {
+	has_tradition = tr_mt_history_repurposed_relics
+}
+
+has_desecration_traditions = {
+	has_tradition = tr_mt_history_adopt
+}
+
+has_MT_black_hole_tradition = {
+	has_tradition = tr_mt_chaos_event_horizon
+}

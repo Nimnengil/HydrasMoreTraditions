@@ -1,0 +1,16 @@
+modifier = {
+	add = 20
+	is_inside_storm = MCS_time_storm
+}
+modifier = {
+	add = 5
+	is_inside_storm = MCS_cryo_storm
+}
+modifier = {
+	add = 10
+	is_inside_storm = MCS_nanite_storm
+}
+modifier = {
+	add = 20
+	is_inside_storm = MCS_astral_storm
+}

@@ -1,0 +1,71 @@
+MT_planet_custodians = {
+	parent = planet_bureaucrats
+	#generate_mult_modifiers = {
+	#	produces
+	#	upkeep
+	#}
+	#generate_add_modifiers = {
+	#	produces
+	#	upkeep
+	#}
+	modifier_category = pop_job
+}
+
+#MT_planet_buildings_museums = {
+#	parent = planet_buildings
+#}
+#
+#MT_planet_marines = {
+#	parent = planet_jobs_specialist
+#	modifier_category = pop_job
+## Inherited Modifiers
+#	triggered_produces_modifier = {
+#		key = planet_soldiers
+#		modifier_types = {
+#			add
+#		}
+#		trigger = {
+#			always = yes
+#		}
+#		use_parent_icon = yes
+#	}
+#	#triggered_upkeep_modifier = {
+#	#	key = planet_traders
+#	#	trigger = {
+#	#		always = yes
+#	#	}
+#	#	use_parent_icon = yes
+#	#}
+#}
+#
+#MT_planet_organic_batteries = {
+#	parent = planet_jobs
+#	generate_mult_modifiers = {
+#		produces
+#		upkeep
+#	}
+#	generate_add_modifiers = {
+#		produces
+#		upkeep
+#	}
+#	modifier_category = pop_job
+#	triggered_produces_modifier = {
+#		key = planet_technician
+#		modifier_types = {
+#			mult
+#			add
+#		}
+#		trigger = {
+#			always = yes
+#		}
+#		use_parent_icon = yes
+#	}
+#}
+
+#MT_country_traditions = {
+#	parent = country_base
+#	generate_add_modifiers = {
+#		upkeep
+#	}
+#	modifier_category = country
+#}

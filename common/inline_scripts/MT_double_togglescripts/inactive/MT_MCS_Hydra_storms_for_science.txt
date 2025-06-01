@@ -1,0 +1,5 @@
+inline_script = {
+	script = comptriggers/MT_Hydra_toggle
+	HAS_MOD = @HAS_MAA_Hydra
+	INLINE = MT_MAA_Hydra_storms_for_science
+}

@@ -1,0 +1,37 @@
+# Councilor Documentation
+#
+# councilor_name_key = {
+#    civic = civic_imperial_cult		Civic that is required for this council position. Also used by UI. Default = none.
+#    leader_class = { }					Which leader classes can have this council position. Currently only used for the Recruit new Leader buttons. Default = none.
+#    is_leader_possible = { }			Can a leader have this council position. Used to filter leaders. Scope: THIS = Leader.
+#    modifier = { }						Country Modifier, that is multiplied by assigned Leader's level.
+#	 custom_tooltip = "LOC_KEY"			Custom tooltip text shown for the modifier of the council position.
+#	 conditional_tooltip = "LOC_KEY"	Custom tooltip text shown for the requirements of the council position.
+# }
+
+################################
+## Veneration
+################################
+
+councilor_MT_veneration = {
+	leader_class = { scientist official commander }
+	possible = {
+		has_active_tradition = tr_mt_veneration_council_overseer
+	}
+	is_leader_possible = {
+		OR = {
+			leader_class = commander
+			leader_class = official
+			leader_class = scientist
+		}
+	}
+	modifier = {
+		councilor_exp_gain = 0.05
+		council_agenda_progress_speed = 0.02
+		council_agenda_finishing_effect_duration_mult = 0.02
+	}
+	icon = "GFX_icon_MT_veneration_position"
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+}

@@ -1,0 +1,9 @@
+##################################
+# Scripted Effects
+##################################
+
+MLT_convert_black_hole_expertise = {
+	random_owned_leader = {
+		add_experience = 1
+	}
+}

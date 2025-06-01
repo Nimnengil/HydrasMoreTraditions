@@ -1,0 +1,463 @@
+##########################################################################
+# Decisions
+##########################################################################
+
+#MT_decision_desecrate_world = {
+#	owned_planets_only = yes
+#	sound = event_administrative_work
+#	icon = decision_archaeological_dig
+#
+#	resources = {
+#		category = decisions
+#		cost = {
+#			unity = 500
+#		}
+#	}
+#
+#	potential = {
+#		OR = {
+#			is_planet_class = pc_nuked
+#			is_planet_class = pc_relic
+#		}
+#		owner = { has_active_tradition = tr_mt_history_world_desecration }
+#		NOT = { has_modifier = MT_desecration_research }
+#		NOT = { has_planet_flag = MT_desecrated_planet }
+#	}
+#
+#	effect = {
+#		if = {
+#			limit = { is_planet_class = pc_relic }
+#			if = {
+#				limit = {
+#					owner = {
+#						is_regular_empire = yes
+#					}
+#				}
+#				add_modifier = {
+#					modifier = MT_desecration_research
+#					days = 3600
+#					multiplier = 5
+#					clear_on_owner_change = yes
+#				}
+#			}
+#			if = {
+#				limit = {
+#					owner = {
+#						has_authority = auth_hive_mind
+#					}
+#				}
+#				add_modifier = {
+#					modifier = MT_desecration_research_hive
+#					days = 3600
+#					multiplier = 5
+#					clear_on_owner_change = yes
+#				}
+#			}
+#			if = {
+#				limit = {
+#					owner = {
+#						has_authority = auth_machine_intelligence
+#					}
+#				}
+#				add_modifier = {
+#					modifier = MT_desecration_research_machine
+#					days = 3600
+#					multiplier = 5
+#					clear_on_owner_change = yes
+#				}
+#			}
+#		}
+#		else = {
+#			if = {
+#				limit = {
+#					owner = {
+#						is_regular_empire = yes
+#					}
+#				}
+#				add_modifier = {
+#					modifier = MT_desecration_research
+#					days = 3600
+#					clear_on_owner_change = yes
+#				}
+#			}
+#			if = {
+#				limit = {
+#					owner = {
+#						has_authority = auth_hive_mind
+#					}
+#				}
+#				add_modifier = {
+#					modifier = MT_desecration_research_hive
+#					days = 3600
+#					clear_on_owner_change = yes
+#				}
+#			}
+#			if = {
+#				limit = {
+#					owner = {
+#						has_authority = auth_machine_intelligence
+#					}
+#				}
+#				add_modifier = {
+#					modifier = MT_desecration_research_machine
+#					days = 3600
+#					clear_on_owner_change = yes
+#				}
+#			}
+#		}
+#		set_planet_flag = MT_desecrated_planet
+#		planet_event = { id = MT_events.7 days = 3600 } # Add blockers
+#		hidden_effect = {
+#			planet_event = { id = MT_events.8 days = 360 } # Random Events gatekeeper (Chance of: Nothing, minor artifacts, research, relics (very rare), resources and digsites (rare)
+#			planet_event = { id = MT_events.8 days = 720 } # Random Events gatekeeper (Chance of: Nothing, minor artifacts, research, relics (very rare), resources and digsites (rare)
+#			planet_event = { id = MT_events.8 days = 1080 } # Random Events gatekeeper (Chance of: Nothing, minor artifacts, research, relics (very rare), resources and digsites (rare)
+#			planet_event = { id = MT_events.8 days = 1440 } # Random Events gatekeeper (Chance of: Nothing, minor artifacts, research, relics (very rare), resources and digsites (rare)
+#			planet_event = { id = MT_events.8 days = 1800 } # Random Events gatekeeper (Chance of: Nothing, minor artifacts, research, relics (very rare), resources and digsites (rare) 
+#			planet_event = { id = MT_events.8 days = 2160 } # Random Events gatekeeper (Chance of: Nothing, minor artifacts, research, relics (very rare), resources and digsites (rare)
+#			planet_event = { id = MT_events.8 days = 2520 } # Random Events gatekeeper (Chance of: Nothing, minor artifacts, research, relics (very rare), resources and digsites (rare)
+#			planet_event = { id = MT_events.8 days = 2880 } # Random Events gatekeeper (Chance of: Nothing, minor artifacts, research, relics (very rare), resources and digsites (rare)
+#			planet_event = { id = MT_events.8 days = 3240 } # Random Events gatekeeper (Chance of: Nothing, minor artifacts, research, relics (very rare), resources and digsites (rare)
+#		}
+#	}
+#
+#	ai_weight = {
+#		weight = 1
+#	}
+#}
+
+MT_decision_regrow_blockers = {
+	owned_planets_only = yes
+	icon = decision_animal_wildlife
+
+	enactment_time = 3600
+	resources = {
+		category = decisions
+		cost = {
+			minerals = 200
+			energy = 100
+		}
+	}
+	potential = {
+		exists = owner
+		owner = {
+			has_tradition = tr_mt_nature_land_claim
+		}
+		free_district_slots > 0
+		habitable_planet_not_urban = yes
+		#NOR = {
+		#	has_deposit = d_MT_cold_blocker
+		#	has_deposit = d_MT_dry_blocker
+		#	has_deposit = d_MT_wet_blocker
+		#}
+	}
+
+	effect = {
+		custom_tooltip = MT_decision_regrow_blockers_desc
+		hidden_effect = {
+			random_list = {
+				1 = {
+					add_deposit = d_MT_cold_blocker
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						is_dry = yes
+					}
+					add_deposit = d_MT_wet_blocker
+				}
+				1 = {
+					modifier = {
+						factor = 0
+						is_dry = no
+					}
+					add_deposit = d_MT_dry_blocker
+				}
+			}
+		}
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+MT_decision_ruin_city = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_city_ruins
+
+	enactment_time = 1800
+	resources = {
+		category = decisions
+		cost = {
+			unity = 2000
+			energy = 5000
+		}
+	}
+
+	potential = {
+		is_planet_class = pc_city
+		owner = { has_tradition = tr_mt_ruination_finish }
+	}
+
+	effect = {
+		change_pc = pc_relic
+		reroll_deposits = yes
+		hidden_effect = {
+			if = {
+				limit = {
+					owner = {
+						AND = {
+							has_origin = origin_progenitor_hive
+							root = { is_capital = yes }
+							root = { NOT = { has_deposit = d_progenitor } }
+						}
+					}
+				}
+				add_deposit = d_progenitor
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+	}
+}
+
+MT_decision_greed_stripmining = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_city_ruins
+
+	enactment_time = 180
+	resources = {
+		category = decisions
+		cost = {
+			unity = 50
+			energy = 200
+		}
+	}
+
+	potential = {
+		owner = { has_active_tradition = tr_mt_greed_strip_mines }
+		uses_district_set = standard
+		NOT = { has_deposit = d_MT_strip_mine }
+		NOT = { has_modifier = resort_colony }
+	}
+
+	effect = {
+		add_deposit = d_MT_strip_mine
+	}
+
+	ai_weight = {
+		weight = 1
+	}
+}
+
+MT_decision_tr_industry_strip_mining = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_strip_mining
+
+	enactment_time = 180
+
+	resources = {
+		category = decisions
+		cost = {
+			influence = 15
+		}
+	}
+
+	potential = {
+		owner = {
+			has_active_tradition = tr_mt_industry_prospector
+			}
+		NOT = { owner = {
+				is_specialist_subject_tier = {
+					TYPE = prospectorium
+					TIER = 3
+				}
+			}
+		}
+		any_deposit = {
+			has_deposit_category = deposit_cat_food
+		}
+
+		NOT = { has_district = district_mining_uncapped }
+	}
+
+	effect = {
+		custom_tooltip = MT_decision_tr_industry_strip_mining_tt
+		hidden_effect = {
+			random_deposit = {
+				limit = { has_deposit_category = deposit_cat_food }
+				remove_deposit = yes
+			}
+		}
+		add_deposit = d_MT_industry_strip_mine
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			OR = {
+				has_designation = col_farming
+				AND = {
+					has_district = district_farming
+					num_free_districts = { type = district_farming value < 3 }
+				}
+				AND = {
+					has_district = district_farming_uncapped
+					num_free_districts = { type = district_farming_uncapped value < 3 }
+				}
+			}
+		}
+		modifier = {
+			factor = 100
+			owner = {
+				country_uses_food = no
+			}
+		}
+		modifier = {
+			factor = 0.1
+			owner = {
+				has_valid_civic = civic_environmentalist
+			}
+		}
+	}
+}
+
+MT_decision_tr_industry_underfarm = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_MT_industry_underfarm
+
+	enactment_time = 180
+
+	resources = {
+		category = decisions
+		cost = {
+			influence = 15
+		}
+	}
+
+	potential = {
+		owner = {
+			has_active_tradition = tr_mt_industry_agriculture
+			}
+		any_deposit = {
+			has_deposit_category = deposit_cat_minerals
+		}
+		any_deposit = {
+			has_deposit_category = deposit_cat_energy
+		}
+
+		NOT = { has_district = district_farming_uncapped }
+	}
+
+	effect = {
+		custom_tooltip = MT_decision_tr_industry_underfarm_tt
+		hidden_effect = {
+			random_deposit = {
+				limit = { has_deposit_category = deposit_cat_minerals }
+				remove_deposit = yes
+			}
+			random_deposit = {
+				limit = { has_deposit_category = deposit_cat_energy }
+				remove_deposit = yes
+			}
+		}
+		add_deposit = d_MT_industry_underfarm
+	}
+
+	ai_weight = {
+		weight = 1
+		modifier = {
+			factor = 0
+			OR = {
+				has_designation = col_farming
+				AND = {
+					has_district = district_farming
+					num_free_districts = { type = district_farming value < 3 }
+				}
+				AND = {
+					has_district = district_farming_uncapped
+					num_free_districts = { type = district_farming_uncapped value < 3 }
+				}
+			}
+		}
+		modifier = {
+			factor = 100
+			owner = {
+				country_uses_food = no
+			}
+		}
+		modifier = {
+			factor = 0.1
+			owner = {
+				has_valid_civic = civic_environmentalist
+			}
+		}
+	}
+}
+
+######################
+# Azurians Decisions #
+######################
+
+# Study Star from Astronomy Starstudies
+MT_decision_study_star = {
+	resources = {
+		category = decisions
+		cost = {
+			influence = 100
+		}
+	}
+
+	potential = {
+		exists = from
+		from = {
+			has_tradition = tr_mt_astronomy_2
+		}
+		exists = space_owner
+		space_owner = { is_same_value = from }
+		is_star = yes
+        NOT = {
+            has_planet_flag = MT_star_studied
+        }
+    }
+
+    effect = {
+        custom_tooltip = MT_decision_study_star_tooltip
+        hidden_effect = {
+            mining_station = { delete_fleet = this }
+            set_planet_flag = MT_star_studied
+            clear_deposits = yes
+			random_list = {
+				1 = { add_deposit = d_physics_2 }
+				1 = { add_deposit = d_physics_3 }
+				1 = { add_deposit = d_physics_4 }
+                1 = { add_deposit = d_society_2 }
+				1 = { add_deposit = d_society_3 }
+				1 = { add_deposit = d_society_4 }
+                1 = { add_deposit = d_engineering_2 }
+				1 = { add_deposit = d_engineering_3 }
+				1 = { add_deposit = d_engineering_4 }
+            }
+            random_list = {
+                1 = { add_deposit = d_physics_1 }
+				1 = { add_deposit = d_physics_2 }
+				1 = { add_deposit = d_physics_3 }
+				1 = { add_deposit = d_physics_4 }
+                1 = { add_deposit = d_society_1 }
+                1 = { add_deposit = d_society_2 }
+				1 = { add_deposit = d_society_3 }
+				1 = { add_deposit = d_society_4 }
+                1 = { add_deposit = d_engineering_1 }
+                1 = { add_deposit = d_engineering_2 }
+				1 = { add_deposit = d_engineering_3 }
+				1 = { add_deposit = d_engineering_4 }
+            }
+        }
+    }
+}

@@ -1,0 +1,89 @@
+	## Ixardian
+	tradition_swap = {
+		name = tr_mt_antiquity_5_ixardian
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_ixardian_desc
+		trigger = {
+			has_country_flag = ixardian_homeworld_system
+		}
+		modifier = {
+			country_trade_fee = -0.1
+			inline_script = {
+				script = Tradition_Modifier_Groups/MT_Hydra_crisis_modifiers
+				AMOUNT = 0.20
+			}
+		}
+	}
+	tradition_swap = {
+		name = tr_mt_antiquity_5_ixardian_initial
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_ixardian_initial_desc
+		trigger = {
+			has_country_flag = ixardian_intro
+		}
+		modifier = {
+			ship_archaeological_site_clues_add = 1
+		}
+	}
+	
+	## Werediran
+	tradition_swap = {
+		name = tr_mt_antiquity_5_werediran
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_werediran_desc
+		trigger = {
+			has_country_flag = werediran_home_system
+		}
+		modifier = {
+			intel_decryption_add = 2
+			espionage_hostile_operation_difficulty_mult = 0.25
+		}
+	}
+	tradition_swap = {
+		name = tr_mt_antiquity_5_werediran_initial
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_werediran_initial_desc
+		trigger = {
+			has_country_flag = werediran_intro
+		}
+		modifier = {
+			ship_archaeological_site_clues_add = 1
+		}
+	}
+	
+	## Ezentian
+	tradition_swap = {
+		name = tr_mt_antiquity_5_ezentian
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_ezentian_desc
+		trigger = {
+			has_country_flag = ezentian_home_system
+		}
+		modifier = {
+			country_megastructure_build_cap_add = 1
+			counter_intel_gain_speed = -0.25
+		}
+	}
+	tradition_swap = {
+		name = tr_mt_antiquity_5_ezentian_initial
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_ezentian_initial_desc
+		trigger = {
+			has_country_flag = ezentian_intro
+		}
+		modifier = {
+			ship_archaeological_site_clues_add = 1
+		}
+	}

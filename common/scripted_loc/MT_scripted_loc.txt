@@ -1,0 +1,38 @@
+defined_text = { # Country/leader/pop/species scope
+	name = MT_intel_sabotage_first_contact
+ 	text = {
+ 		localization_key = MT_intel_sabotage_first_contact_key	#The loc key used if this text entry is picked.
+ 		trigger = {							#Triggers that determine if this text entry can be picked.
+			has_first_contact_dlc = yes
+ 		}
+ 	}
+	default = MT_NO_RELIC_TEXT
+}
+
+defined_text = {
+ 	name = MT_trade_value_number
+ 	value = value:mt_1_10_trade_value
+}
+
+defined_text = { # Country/leader/pop/species scope
+	name = GetMTFreedomDesc
+ 	text = {
+ 		localization_key = MT_Freedom_taxpayer_desc	#The loc key used if this text entry is picked.
+ 		trigger = {							#Triggers that determine if this text entry can be picked.
+			has_situation_flag = MT_freedom_tax_payer
+ 		}
+ 	}
+	default = MT_Freedom_taxreciever_desc
+}
+
+defined_text = { # Country/leader/pop/species scope
+	name = GetMTFreedomTooltip
+ 	text = {
+ 		localization_key = MT_Freedom_taxpayer_tooltip	#The loc key used if this text entry is picked.
+ 		trigger = {							#Triggers that determine if this text entry can be picked.
+			has_situation_flag = MT_freedom_tax_payer
+ 		}
+ 	}
+	default = MT_Freedom_taxreciever_tooltip
+}
+

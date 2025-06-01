@@ -1,0 +1,22 @@
+tradition_mt_exchange = {
+	desc = tradition_mt_exchange_desc
+	tree_template = "tree_12_11_11"
+	adoption_bonus = "tr_mt_exchange_adopt"
+	finish_bonus = "tr_mt_exchange_finish"
+	traditions = {
+		"tr_mt_exchange_big_contracts" # 
+		"tr_mt_exchange_tax_evasion" # 
+		"tr_mt_exchange_winds_of_trade" # 
+		"tr_mt_exchange_dealership" # 
+		"tr_mt_exchange_franchising" # 
+	}
+
+	potential = {
+		has_corporate_government = yes
+		NOT = { has_global_flag = disabled_MT_commerce }
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

@@ -1,0 +1,195 @@
+utility_component_template = {
+	key = "STARBASE_AURA_MT_THORNS"
+	size = medium
+	icon = "GFX_disintegrator_field"
+	icon_frame = 1
+	power = 0
+
+	class_restriction = { shipclass_starbase }
+
+	hidden = yes
+
+	hostile_aura = {
+		name = "aura_starbase_mt_thorns"
+		system_wide = yes
+
+		stack_info = {
+			id = hostile_mt_thorns_aura
+			priority = 10
+		}
+
+		modifier = {
+			#ship_shield_regen_add_static = -50
+			#ship_shield_regen_add_perc = -1
+		}
+
+		graphics = {
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+		
+		damage_per_day = {						# Deals damage per day to any ships affected by this aura.
+			accuracy = 100
+			damage = 10
+		}
+	}
+}
+
+utility_component_template = {
+	key = "STARBASE_AURA_MT_DISRUPTION"
+	size = medium
+	icon = "GFX_disintegrator_field"
+	icon_frame = 1
+	power = 0
+
+	class_restriction = { shipclass_starbase }
+
+	hidden = yes
+	
+	hostile_aura = {
+		name = "aura_starbase_mt_disruption"
+		system_wide = yes
+		apply_on = ships
+
+		stack_info = {
+			id = hostile_electromagnetic_disruptor
+			priority = 20
+		}
+
+		limit = {
+			OR = {
+				AND = {
+					exists = owner
+					owner = { is_machine_empire = yes }
+				}
+				has_sapient_combat_computer = yes
+				has_autonomous_combat_computer = yes
+			}
+		}
+
+		modifier = {
+			ship_accuracy_mult = -0.25
+			ship_fire_rate_mult = -0.25
+			ship_speed_reduction = 0.25
+		}
+
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "STARBASE_AURA_MT_DESPERATION"
+	size = medium
+	icon = "GFX_disintegrator_field"
+	icon_frame = 1
+	power = 0
+
+	class_restriction = { shipclass_starbase }
+
+	hidden = yes
+	
+	hostile_aura = {
+		name = "aura_starbase_mt_desperation"
+		system_wide = yes
+		apply_on = fleets
+
+		stack_info = {
+			id = hostile_mt_crisis_disruptor
+			priority = 10
+		}
+
+		limit = {
+			AND = {
+				exists = owner
+			}
+		}
+
+		modifier = {
+			ship_speed_reduction = 0.25
+		}
+
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+}
+
+utility_component_template = {
+	key = "STARBASE_AURA_MT_DESPERATION_2"
+	size = medium
+	icon = "GFX_disintegrator_field"
+	icon_frame = 1
+	power = 0
+
+	class_restriction = { shipclass_starbase }
+
+	hidden = yes
+	
+	hostile_aura = {
+		name = "aura_starbase_mt_desperation_2"
+		system_wide = yes
+		apply_on = fleets
+
+		stack_info = {
+			id = hostile_mt_crisis_disruptor
+			priority = 20
+		}
+
+		limit = {
+			AND = {
+				exists = owner
+				owner = {
+					OR = {
+						is_country_type = swarm
+						is_country_type = extradimensional
+						is_country_type = extradimensional_2
+						is_country_type = extradimensional_3
+						is_country_type = ai_empire
+						is_country_type = gray
+						is_country_type = awakened_marauders
+						is_country_type = synth_queen
+						is_country_type = synth_queen_storm
+						is_country_type = awakened_synth_queen
+						is_country_type = synth_queen_convoys
+						is_country_type = synth_queen_outposts
+						has_ascension_perk = ap_become_the_crisis
+						has_ascension_perk = ap_cosmogenesis
+					}
+				}
+			}
+		}
+
+		modifier = {
+			ship_speed_reduction = 0.5
+		}
+
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+}

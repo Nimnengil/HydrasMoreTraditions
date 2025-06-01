@@ -1,0 +1,57 @@
+	## Plexian
+	tradition_swap = {
+		name = tr_mt_antiquity_5_plexian
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_plexian_desc
+		trigger = {
+			has_country_flag = plexi_homeworld_system
+		}
+		modifier = {
+			mod_ship_hull_mult = 0.2
+			weapon_type_strike_craft_speed_mult = 0.1
+		}
+	}
+	tradition_swap = {
+		name = tr_mt_antiquity_5_plexian_initial
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_plexian_initial_desc
+		trigger = {
+			has_country_flag = plexi_intro
+		}
+		modifier = {
+			ship_archaeological_site_clues_add = 1
+		}
+	}
+	
+	## Lartian
+	tradition_swap = {
+		name = tr_mt_antiquity_5_lartian
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_lartian_desc
+		trigger = {
+			has_country_flag = lartia_home_system
+		}
+		modifier = {
+			country_physics_tech_research_speed = 0.2
+			diplo_weight_technology_mult = 0.5
+		}
+	}
+	tradition_swap = {
+		name = tr_mt_antiquity_5_lartian_initial
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_lartian_initial_desc
+		trigger = {
+			has_country_flag = lartia_intro
+		}
+		modifier = {
+			ship_archaeological_site_clues_add = 1
+		}
+	}

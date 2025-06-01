@@ -1,0 +1,849 @@
+###################
+# Specialist Jobs
+###################
+
+#MT_custodian = {
+#	category = specialist
+#	swappable_data = {
+#		default = {
+#			condition_string = SPECIALIST_JOB_TRIGGER
+#			building_icon = mt_building_museum 
+#		}
+#	}
+#	possible_pre_triggers = {
+#		has_owner = yes
+#		is_being_purged = no
+#		is_being_assimilated = no
+#	}
+#
+#	possible_precalc = can_fill_specialist_job
+#	possible = {
+#		hidden_trigger = { exists = owner }
+#		owner = {
+#			is_gestalt = no
+#		}
+#	}
+#
+#	resources = {
+#		category = MT_planet_custodians
+#		produces = {
+#			unity = 3
+#		}
+#
+#		upkeep = {
+#			consumer_goods = 1
+#		}
+#	}
+#
+#	triggered_planet_modifier = {
+#		potential = {
+#			always = yes
+#		}
+#		planet_amenities_add = 4
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+#	}
+#
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				has_relic = r_reality_perforator
+#			}
+#		}
+#		planet_amenities_mult = 0.01
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_MT_relic_effect_mult|
+#	}
+#	
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				has_relic = r_cryo_core
+#			}
+#		}
+#		planet_technician_energy_produces_add = 0.05
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_MT_relic_effect_mult|
+#	}
+#	
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				has_relic = r_zro_crystal
+#			}
+#		}
+#		ship_shield_hardening_add = 0.01
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_MT_relic_effect_mult|
+#	}
+#	
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				has_relic = r_war_forge
+#			}
+#		}
+#		planet_metallurgists_produces_mult = 0.01
+#		planet_metallurgists_upkeep_mult = 0.01
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_MT_relic_effect_mult|
+#	}
+#	
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				has_relic = r_the_last_baol
+#			}
+#		}
+#		pop_growth_speed = 0.01
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_MT_relic_effect_mult|
+#	}
+#	
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				has_relic = r_pox_sample
+#			}
+#		}
+#		leader_lifespan_add = 1
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_MT_relic_effect_mult|
+#	}
+#	
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				has_relic = r_weather_manipulator
+#			}
+#		}
+#		planet_storm_devastation_mult = -0.01
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_MT_relic_effect_mult|
+#	}
+#	
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				has_relic = r_the_tempest_invocator
+#			}
+#		}
+#		planet_buildings_storm_tech_upkeep_mult = -0.02
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_MT_relic_effect_mult|
+#	}
+#	
+#	inline_script = {
+#		script = comptriggers/MT_AAA_trigger_modifiers
+#		HAS_AAA = @HAS_AAA
+#	}
+#	
+#	inline_script = {
+#		script = comptriggers/MT_FHMP_trigger_modifiers
+#		HAS_FHMP = @HAS_FHMP
+#	}
+#	
+#	inline_script = {
+#		script = comptriggers/MT_UCmod_trigger_modifiers
+#		HAS_UCmod = @HAS_UCmod
+#	}
+#	
+#	inline_script = {
+#		script = comptriggers/MT_scfe_trigger_modifiers
+#		HAS_SCFE = @forgotten_empires
+#	}
+#	
+#	weight = {
+#		weight = @specialist_job_weight # Fairly important job
+#		mult = value:job_weights_modifier|JOB|MT_custodian|RESOURCE|unity|
+#		modifier = {
+#			factor = 2
+#			is_enslaved = yes
+#			can_take_servant_job = no
+#		}
+#		modifier = {
+#			factor = 5
+#			has_job = MT_custodian
+#		}
+#		modifier = {
+#			factor = 0.1
+#			NOT = { has_job = MT_custodian }
+#			exists = planet
+#			planet = {
+#				free_amenities > 5
+#			}
+#		}
+#		modifier = {
+#			factor = 2
+#			NOT = { has_job = MT_custodian }
+#			exists = planet
+#			planet = {
+#				free_amenities < 2
+#				has_available_jobs = MT_custodian
+#			}
+#		}
+#	}
+#	
+#	inline_script = "jobs/automodding_priority_unity"
+#}
+#
+#MT_astral_custodian = {
+#	category = specialist
+#	swappable_data = {
+#		default = {
+#			condition_string = SPECIALIST_JOB_TRIGGER
+#			building_icon = mt_building_museum
+#		}
+#	}
+#
+#	possible_pre_triggers = {
+#		has_owner = yes
+#		is_being_purged = no
+#		is_being_assimilated = no
+#	}
+#
+#	possible_precalc = can_fill_specialist_job
+#	possible = {
+#		hidden_trigger = { exists = owner }
+#		owner = {
+#			is_gestalt = no
+#		}
+#	}
+#
+#	resources = {
+#		category = MT_planet_custodians
+#		produces = {
+#			unity = 3
+#		}
+#
+#		upkeep = {
+#			consumer_goods = 1
+#		}
+#	}
+#
+#	triggered_planet_modifier = {
+#		potential = {
+#			always = yes
+#		}
+#		planet_amenities_add = 4
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+#	}
+#
+#	# r_ever_spinning_top r_celestial_tear r_plasmic_core r_infinity_root r_time_crystal r_daedalus_seal r_continuum r_eternal_throne
+#
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				has_relic = r_ever_spinning_top
+#			}
+#		}
+#		weapon_type_energy_weapon_damage_mult = 0.005
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_MT_relic_effect_mult|
+#	}
+#	
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				has_relic = r_celestial_tear
+#			}
+#		}
+#		planet_technician_energy_produces_mult = 0.05
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_MT_relic_effect_mult|
+#	}
+#	
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				has_relic = r_plasmic_core
+#			}
+#		}
+#		modify_species_cost_mult = -0.005
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_MT_relic_effect_mult|
+#	}
+#	
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				has_relic = r_infinity_root
+#			}
+#		}
+#		planet_farmers_unity_produces_add = 0.02
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_MT_relic_effect_mult|
+#	}
+#	
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				has_relic = r_time_crystal
+#			}
+#		}
+#		planet_building_build_speed_mult = 0.02
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_MT_relic_effect_mult|
+#	}
+#	
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				has_relic = r_daedalus_seal
+#			}
+#		}
+#		dimensional_lock_duration_mult = 0.01
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_MT_relic_effect_mult|
+#	}
+#	
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				has_relic = r_continuum
+#			}
+#		}
+#		all_technology_research_speed = 0.005
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_MT_relic_effect_mult|
+#	}
+#	
+#	inline_script = {
+#		script = comptriggers/MT_MAR_trigger_modifiers
+#		HAS_MAR = @HAS_MAR
+#	}
+#	
+#	weight = {
+#		weight = @specialist_job_weight # Fairly important job
+#		mult = value:job_weights_modifier|JOB|MT_astral_custodian|RESOURCE|unity|
+#		modifier = {
+#			factor = 2
+#			is_enslaved = yes
+#			can_take_servant_job = no
+#		}
+#		modifier = {
+#			factor = 5
+#			has_job = MT_astral_custodian
+#		}
+#		modifier = {
+#			factor = 0.1
+#			NOT = { has_job = MT_astral_custodian }
+#			exists = planet
+#			planet = {
+#				free_amenities > 5
+#			}
+#		}
+#		modifier = {
+#			factor = 2
+#			NOT = { has_job = MT_astral_custodian }
+#			exists = planet
+#			planet = {
+#				free_amenities < 2
+#				has_available_jobs = MT_astral_custodian
+#			}
+#		}
+#	}
+#	
+#	inline_script = "jobs/automodding_priority_unity"
+#}
+#
+#MT_crisis_custodian = {
+#	category = specialist
+#	swappable_data = {
+#		default = {
+#			condition_string = SPECIALIST_JOB_TRIGGER
+#			building_icon = mt_building_museum
+#		}
+#	}
+#
+#	possible_pre_triggers = {
+#		has_owner = yes
+#		is_being_purged = no
+#		is_being_assimilated = no
+#	}
+#
+#	possible_precalc = can_fill_specialist_job
+#	possible = {
+#		hidden_trigger = { exists = owner }
+#		owner = {
+#			is_gestalt = no
+#		}
+#	}
+#
+#	resources = {
+#		category = MT_planet_custodians
+#		produces = {
+#			unity = 3
+#		}
+#
+#		upkeep = {
+#			consumer_goods = 1
+#		}
+#	}
+#
+#	triggered_planet_modifier = {
+#		potential = {
+#			always = yes
+#		}
+#		planet_amenities_add = 4
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+#	}
+#
+#	# r_contingency_core r_prethoryn_queen r_unbidden_warlock r_cetenas_heart r_eternal_throne r_khans_throne
+#
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				has_relic = r_contingency_core
+#			}
+#		}
+#		pop_amenities_usage_robotic_mult = -0.05
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_MT_relic_effect_mult|
+#	}
+#	
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				has_relic = r_prethoryn_queen
+#			}
+#		}
+#		country_society_tech_research_speed = 0.05
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_MT_relic_effect_mult|
+#	}
+#	
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				has_relic = r_unbidden_warlock
+#			}
+#		}
+#		ship_shield_hardening_add = 0.05
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_MT_relic_effect_mult|
+#	}
+#	
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				has_relic = r_cetanas_heart
+#			}
+#		}
+#		planet_pop_assembly_mult = 0.1
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_MT_relic_effect_mult|
+#	}
+#	
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				has_relic = r_eternal_throne
+#			}
+#		}
+#		country_astral_threads_produces_mult = 0.2
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_MT_relic_effect_mult|
+#	}
+#	
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				has_relic = r_khans_throne
+#			}
+#		}
+#		damage_vs_country_type_pirate_mult = 0.5
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_MT_relic_effect_mult|
+#	}
+#	
+#	weight = {
+#		weight = @specialist_job_weight # Fairly important job
+#		mult = value:job_weights_modifier|JOB|MT_crisis_custodian|RESOURCE|unity|
+#		modifier = {
+#			factor = 2
+#			is_enslaved = yes
+#			can_take_servant_job = no
+#		}
+#		modifier = {
+#			factor = 5
+#			has_job = MT_crisis_custodian
+#		}
+#		modifier = {
+#			factor = 0.1
+#			NOT = { has_job = MT_crisis_custodian }
+#			exists = planet
+#			planet = {
+#				free_amenities > 5
+#			}
+#		}
+#		modifier = {
+#			factor = 2
+#			NOT = { has_job = MT_crisis_custodian }
+#			exists = planet
+#			planet = {
+#				free_amenities < 2
+#				has_available_jobs = MT_crisis_custodian
+#			}
+#		}
+#	}
+#	
+#	inline_script = "jobs/automodding_priority_unity"
+#}
+
+#MT_archeological_scavenger = {
+#	category = specialist
+#	swappable_data = {
+#		default = {
+#			condition_string = SPECIALIST_JOB_TRIGGER
+#			building_icon = mt_building_scavenger_site
+#		}
+#	}
+#
+#	possible_pre_triggers = {
+#		has_owner = yes
+#		is_being_purged = no
+#		is_being_assimilated = no
+#	}
+#
+#	possible_precalc = can_fill_specialist_job
+#	possible = {
+#		hidden_trigger = { exists = owner }
+#		owner = {
+#			is_gestalt = no
+#		}
+#	}
+#
+#	resources = {
+#		category = planet_researchers
+#		produces = {
+#			engineering_research = 2
+#			society_research = 5
+#		}
+#		produces = {
+#			trigger = {
+#				has_ancrel = yes
+#				planet = { is_planet_class = pc_relic }
+#			}
+#			minor_artifacts = 0.05
+#		}
+#		upkeep = {
+#			consumer_goods = 1
+#		}
+#	}
+#	
+#	triggered_planet_modifier = {
+#		potential = {
+#			always = yes
+#		}
+#		planet_amenities_add = 4
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+#	}
+#	
+#
+#	weight = {
+#		weight = @specialist_job_weight
+#		mult = value:job_weights_research_modifier|JOB|MT_archeological_scavenger|
+#		modifier = {
+#			factor = 2
+#			is_enslaved = yes
+#			can_take_servant_job = no
+#		}
+#		modifier = {
+#			factor = 5
+#			has_job = MT_archeological_scavenger
+#		}
+#		modifier = {
+#			factor = 0.1
+#			NOT = { has_job = MT_archeological_scavenger }
+#			exists = planet
+#			planet = {
+#				free_amenities > 5
+#			}
+#		}
+#		modifier = {
+#			factor = 2
+#			NOT = { has_job = MT_archeological_scavenger }
+#			exists = planet
+#			planet = {
+#				free_amenities < 2
+#				has_available_jobs = MT_archeological_scavenger
+#			}
+#		}
+#	}
+#	
+#	inline_script = "jobs/automodding_priority_research"
+#}
+
+#MT_marine = {
+#	category = specialist
+#	swappable_data = {
+#		default = {
+#			condition_string = MT_MARINE_JOB_TRIGGER
+#			building_icon = mt_building_marine_harbor
+#		}
+#	}
+#	possible_pre_triggers = {
+#		has_owner = yes
+#		is_being_purged = no
+#		is_being_assimilated = no
+#		is_sapient = yes
+#	}
+#
+#	possible_precalc = can_fill_specialist_job
+#
+#	possible = {
+#		soldier_job_check_trigger = yes
+#		owner = { is_gestalt = no }
+#	}
+#	
+#	resources = {
+#		category = MT_planet_marines
+#		upkeep = {
+#			consumer_goods = 1
+#		}
+#	}
+#
+#	triggered_planet_modifier = {
+#		potential = {
+#			always = yes
+#		}
+#		trade_value_add = 4
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|
+#	}
+#	
+#	country_modifier = {
+#		country_naval_cap_add = 2
+#	}
+#	
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = planet
+#			planet = {
+#				exists = owner
+#				owner = { has_technology = "tech_ground_defense_planning" }
+#			}
+#		}
+#		modifier = {
+#			country_naval_cap_add = 2
+#		}
+#	}
+#	
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = planet
+#			planet = {
+#				exists = owner
+#				owner = { has_policy_flag = mt_marine_soldiers }
+#			}
+#		}
+#		modifier = {
+#			country_naval_cap_add = 1
+#		}
+#	}
+#	
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = planet
+#			planet = {
+#				exists = owner
+#				owner = { has_policy_flag = mt_marine_traders }
+#			}
+#		}
+#		modifier = {
+#			country_naval_cap_add = -1
+#		}
+#	}
+#	
+#	triggered_country_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = {
+#				any_owned_leader = {
+#					is_councilor = yes
+#					has_trait = leader_trait_bellicose
+#				}
+#			}
+#		}
+#
+#		modifier = {
+#			country_naval_cap_add = 2
+#		}
+#		mult = value:bellicose_naval_cap
+#	}
+#	
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = { has_tradition = tr_mercantile_commercial_enterprise }
+#		}
+#		planet_amenities_add = 2
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+#	}
+#	
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = { has_policy_flag = mt_marine_traders }
+#		}
+#		trade_value_add = 2
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|
+#	}
+#	
+#	triggered_planet_modifier = {
+#		potential = {
+#			exists = owner
+#			owner = { has_policy_flag = mt_marine_soldiers }
+#		}
+#		trade_value_add = -2
+#		mult = value:scripted_modifier_mult|MODIFIER|pop_job_trade_mult|
+#	}
+#
+#	triggered_planet_modifier = {
+#		potential = {
+#			has_councilor = { COUNCILOR = "councilor_merchant_guilds" }
+#		}
+#		trade_value_add = 0.4
+#		mult = value:scripted_modifier_councilor_level_mult|MODIFIER|pop_job_trade_mult|TYPE|councilor_merchant_guilds|
+#	}
+#	
+#	triggered_planet_modifier = {
+#		potential = {
+#			always = yes
+#		}
+#		modifier = {
+#			planet_stability_add = 1
+#		}
+#		mult = planet.modifier:job_soldier_stability_add
+#	}
+#	
+#	pop_modifier = {
+#		pop_defense_armies_add = 3
+#	}
+#
+#	planet_modifier = {
+#		planet_stability_add = 0.25
+#	}
+#
+#	weight = {
+#		weight = @specialist_job_weight
+#		mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_amenities_mult|
+#		mult = value:scripted_modifier_job_weight_mult|MODIFIER|pop_job_trade_mult|
+#		modifier = {
+#			factor = 5
+#			has_job = MT_marine
+#		}
+#		modifier = {
+#			factor = 10
+#			exists = planet
+#			planet = {
+#				exists = leader
+#				leader = {
+#					leader_class = commander
+#				}
+#			}
+#		}
+#		modifier = {
+#			factor = 2
+#			has_trait = trait_resilient
+#		}
+#		modifier = {
+#			factor = 2
+#			has_trait = trait_very_strong
+#		}
+#		modifier = {
+#			factor = 1.5
+#			has_trait = trait_strong
+#		}
+#		modifier = {
+#			factor = 0.5
+#			has_trait = trait_weak
+#		}
+#		modifier = {
+#			factor = 0.1
+#			can_take_servant_job = yes
+#		}
+#		modifier = {
+#			factor = 1.1
+#			has_trait = trait_cybernetic
+#		}
+#		modifier = {
+#			factor = 2
+#			has_trait = trait_presapient_earthbound
+#		}
+#		modifier = {
+#			factor = 1.1
+#			has_trait = trait_limited_regeneration
+#		}
+#		modifier = {
+#			factor = 0
+#			species = { can_be_soldier = no }
+#		}
+#		modifier = {
+#			factor = 2
+#			has_trait = trait_lithoid
+#		}
+#	}
+#	
+#	inline_script = "jobs/automodding_priority_trade"
+#}
+
+#MT_culture_worker = {
+#	category = specialist
+#	swappable_data = {
+#		default = {
+#			condition_string = SPECIALIST_JOB_TRIGGER
+#			building_icon = building_autochthon_monument
+#			icon = culture_worker
+#		}
+#
+#	}
+#
+#	possible_pre_triggers = {
+#		has_owner = yes
+#		is_being_purged = no
+#		is_being_assimilated = no
+#		is_sapient = yes
+#	}
+#
+#	possible_precalc = can_fill_specialist_job
+#	possible = {
+#		complex_specialist_job_check_trigger = yes
+#	}
+#
+#	resources = {
+#		category = planet_culture_workers
+#		produces = {
+#			unity = 4
+#		}
+#		upkeep = {
+#			consumer_goods = 3
+#		}
+#	}
+#
+#	inline_script = "jobs/mt_culture_worker_outputs"
+#
+#	planet_modifier = {
+#		pop_government_ethic_attraction = -0.10
+#	}
+#
+#	weight = {
+#		weight = @specialist_job_weight
+#		mult = value:job_weights_modifier|JOB|culture_worker|RESOURCE|unity|
+#		# We deliberately don't weight the ethics-based modifiers
+#		modifier = {
+#			factor = 0.2
+#			has_citizenship_rights = no
+#			NOT = { has_trait = trait_mechanical }
+#		}
+#		modifier = {
+#			factor = 0.1
+#			can_take_servant_job = yes
+#		}
+#		modifier = {
+#			factor = 1.5
+#			has_job = MT_culture_worker
+#		}
+#	}
+#	
+#	inline_script = "jobs/automodding_priority_unity"
+#}

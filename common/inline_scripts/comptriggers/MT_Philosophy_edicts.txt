@@ -1,0 +1,3 @@
+inline_script = "philosophy/MT_bug_ethic_edicts_$HAS_BUG$"
+
+inline_script = "philosophy/MT_evo_ethic_edicts_$HAS_EVO$"

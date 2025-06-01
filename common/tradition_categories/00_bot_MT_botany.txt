@@ -1,0 +1,31 @@
+tradition_mt_botany = {
+	#desc = "tradition_mt_botany_desc"     redundant?
+	tree_template = "tree_12_11"
+	adoption_bonus = "tr_mt_botany_adopt"
+	finish_bonus = "tr_mt_botany_finish"
+	traditions = {
+		"tr_mt_botany_3" # Floating Gardens
+		"tr_mt_botany_4" # Designer Produce                         Synth Swap: Flora Experimentation			Angler Swap: Regenerative Phyocology	
+		"tr_mt_botany_1" # Herbal Supplements						Synth Swap: Natural Lubricants				Angler Name Swap: Medicinal Algae	
+		"tr_mt_botany_2" # Evolution in Miniature					Habitat Swap: Aeroponics Bays
+		"tr_mt_botany_5" # Plant Genomics							Synth Swap: Grown Exoframes			
+	}
+	potential = {
+#		always = yes
+		is_gestalt = no		# absolutely usable for gestalt but 80% would require swaps just to fix tooltips and/or descriptions
+#		OR = {
+#			has_civic = civic_agrarian_idyll
+#			has_civic = civic_environmentalist
+#			has_civic = civic_catalytic_processing
+#			has_civic = civic_hive_catalytic_processing
+#			has_civic = civic_machine_catalytic_processing
+#			has_civic = civic_private_healthcare_corporate
+#			is_species_class = FUN
+#			is_species_class = PLANT
+#		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

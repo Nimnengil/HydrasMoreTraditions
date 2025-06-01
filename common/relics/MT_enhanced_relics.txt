@@ -1,0 +1,21 @@
+#r_scfe_alshigan_engine = { activation_duration = 3600 portrait = "GFX_relic_dragon_trophy" resources = { category = relics } possible = { always = no } }
+
+#r_scfe_znkar_distortion_generator = { activation_duration = 3600 portrait = "GFX_relic_dragon_trophy" resources = { category = relics } possible = { always = no } }
+
+#r_scfe_sless_gene_template = { activation_duration = 3600 portrait = "GFX_relic_dragon_trophy" resources = { category = relics } possible = { always = no } }
+
+#r_scfe_diary_of_innovo = { activation_duration = 3600 portrait = "GFX_relic_dragon_trophy" resources = { category = relics } possible = { always = no } }
+
+#r_scfe_astanine_last_projector = { activation_duration = 3600 portrait = "GFX_relic_dragon_trophy" resources = { category = relics } possible = { always = no } }
+
+#r_the_frozen_engine = { activation_duration = 3600 portrait = "GFX_relic_dragon_trophy" resources = { category = relics } possible = { always = no } }
+
+#r_werediran_core = { activation_duration = 3600 portrait = "GFX_relic_dragon_trophy" resources = { category = relics } possible = { always = no } }
+
+#r_ezentian_core = { activation_duration = 3600 portrait = "GFX_relic_dragon_trophy" resources = { category = relics } possible = { always = no } }
+
+#r_ixardian_database = { activation_duration = 3600 portrait = "GFX_relic_dragon_trophy" resources = { category = relics } possible = { always = no } }
+
+#r_plexi_log = { activation_duration = 3600 portrait = "GFX_relic_dragon_trophy" resources = { category = relics } possible = { always = no } }
+
+#r_eztarta = { activation_duration = 3600 portrait = "GFX_relic_dragon_trophy" resources = { category = relics } possible = { always = no } }

@@ -1,0 +1,21 @@
+
+# Sabotage Fleet Operation
+#Country (target) scope | root = operation
+MT_has_valid_fleet_target = {
+	any_owned_fleet = {
+		fleet_power > 9
+	}
+}
+
+MT_is_currently_excavating_site = {
+	any_archaeological_site = {
+		is_site_locked = no
+		exists = excavator_fleet
+		excavator_fleet = {
+			exists = leader
+			leader = {
+				is_same_value = prevprevprev
+			}
+		}
+	}
+}

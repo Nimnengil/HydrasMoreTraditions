@@ -1,0 +1,8 @@
+modifier = {
+	add = 5
+	is_inside_storm = MCS_nanite_storm
+}
+modifier = {
+	add = 5
+	is_inside_storm = MCS_cryo_storm
+}

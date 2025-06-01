@@ -1,0 +1,270 @@
+# operation_type_name = {			# Key of the site, used for name lookup etc.
+#	target = <target type>			# Valid target types are country, megastructure, starbase, fleet, army, pop_faction, spynetwork, federation and none (spy network target is the target then)
+#	picture = <sprite key>			# GFX_* sprite key for the operation image
+#	desc = <triggered event desc>	# Description generator for the operation, with scope this=spy network
+#	stages = <int>					# Should match number of defined stages below.
+#	potential = <trigger>			# Trigger checking if a scope with this=spy network is potential to use (this will add/remove this operation without giving the player a reason).
+#	allow = <trigger>				# Trigger checking if a scope with this=spy network is allowed to use (this will toggle enable/disabled mode on buttons etc).
+#	stage = {						# Stage definition, order dependent.
+#		difficulty = <interval int>	# min max interval type. interval is defined either by '<int>' or '{ min = <int> max=<int> }' where the later will randomize a value between min and max.
+#		icon = <string>				# icon gfx type.
+#		event = <string>			# event to fire when finished the state.
+#	}
+#	stage = {...}					# Second stage, the total number of 'stage' entries should match value of 'stages'
+#	on_roll_failed = <effect>		# Effect to fire when a roll fails, with scope this=spy operation.
+#	on_create = <effect>			# Effect to fire upon operation creation, with scope this=spy operation.
+#}
+
+@diff_t0 = 4
+@diff_t1 = 5
+@diff_t2 = 6
+@diff_t3 = 7
+@diff_t4 = 8
+@diff_t5 = 9
+@diff_t6 = 10
+@diff_t7 = 11
+@diff_t8 = 12
+@diff_t9 = 13
+
+@operationTargetedByTimer = 10800 #30 years during which the effects of an operation may be felt by select Spy Network events
+
+# this = operation
+# from = operation target
+
+operation_MT_shatter_pride = {
+	target = none
+	categories = { op_cat_sabotage op_cat_military }
+	picture = GFX_evt_sabotaged_ship
+	desc = operation_MT_shatter_pride_desc
+	stages = 3
+
+	resources = {
+		category = operations
+		cost = {
+			influence = 100
+		}
+		upkeep = {
+			energy = 10
+		}
+	}
+
+	spy_power_cost = 60
+	potential = {
+		owner = { has_tradition = tr_mt_envy_expanded_workforce }
+		target = { is_primitive = no }
+	}
+	allow = {
+		custom_tooltip = {
+			is_running_espionage_operation = no
+			fail_text = operation_one_at_a_time
+		}
+		custom_tooltip = {
+			target = {
+				num_fleets > 0
+			}
+			fail_text = MT_shatter_pride_needs_fleet
+		}
+		custom_tooltip = {
+			fail_text = MT_operation_shatter_pride_too_recent
+			NOT = { has_spynetwork_flag = MT_recently_shattered_pride }
+		}
+	}
+	stage = { # identify targets
+		difficulty = @diff_t4
+		icon = GFX_espionage_chapter_icon_surveillance
+		event = MT_espionage_events.1
+	}
+	stage = { # Infiltrate
+		difficulty = @diff_t4
+		icon = GFX_espionage_chapter_icon_target
+		event = MT_espionage_events.2
+	}
+	stage = { # Plant Bombs
+		difficulty = @diff_t4
+		icon = GFX_espionage_chapter_icon_motion
+		event = MT_espionage_events.3
+	}
+	on_roll_failed = {
+		standard_espionage_operation_on_roll_failed = { RANDOM_EVENTS = operation_random_events_generic }
+	}
+	on_create = {
+		target = {
+			set_timed_country_flag = {
+				flag = espionage_operation_targeted_by@root.owner #Used in random Spy Network events
+				days = @operationTargetedByTimer
+			}
+		}
+	}
+}
+
+operation_MT_intel_sabotage = {
+	target = none
+	categories = { op_cat_infiltration }
+	picture = GFX_evt_synth_sabotage
+	desc = {
+		trigger = { has_first_contact_dlc = yes }
+		text = operation_MT_intel_sabotage_first_contact_desc
+	}
+	desc = {
+		trigger = { has_first_contact_dlc = no }
+		text = operation_MT_intel_sabotage_desc
+	}
+	stages = 2
+
+	resources = {
+		category = operations
+		cost = {
+			influence = 20
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+
+	spy_power_cost = 40
+	potential = {
+		owner = { has_tradition = tr_mt_disruption_large_toolkit }
+		target = { is_primitive = no }
+	}
+	allow = {
+		custom_tooltip = {
+			is_running_espionage_operation = no
+			fail_text = operation_one_at_a_time
+		}
+	}
+	stage = { # Hack
+		difficulty = @diff_t2
+		icon = GFX_espionage_chapter_icon_surveillance
+		event = MT_espionage_events.6
+	}
+	stage = { # In System
+		difficulty = @diff_t2
+		icon = GFX_espionage_chapter_icon_motion
+		event = MT_espionage_events.7
+	}
+	on_roll_failed = {
+		standard_espionage_operation_on_roll_failed = { RANDOM_EVENTS = operation_random_events_generic }
+	}
+	on_create = {
+		target = {
+			set_timed_country_flag = {
+				flag = espionage_operation_targeted_by@root.owner #Used in random Spy Network events
+				days = @operationTargetedByTimer
+			}
+		}
+	}
+}
+
+operation_MT_fleet_sabotage = {
+	target = fleet
+	categories = { op_cat_sabotage op_cat_military }
+	picture = GFX_evt_sabotaged_ship
+	desc = operation_MT_fleet_sabotage_desc
+	stages = 3
+
+	resources = {
+		category = operations
+		cost = {
+			influence = 80
+		}
+		upkeep = {
+			energy = 8
+		}
+	}
+
+	spy_power_cost = 80
+	potential = {
+		owner = { has_tradition = tr_mt_disruption_large_toolkit }
+		target = { is_primitive = no }
+	}
+	allow = {
+		custom_tooltip = {
+			is_running_espionage_operation = no
+			fail_text = operation_one_at_a_time
+		}
+		custom_tooltip = {
+			target = {
+				num_fleets > 0
+			}
+			fail_text = MT_shatter_pride_needs_fleet
+		}
+	}
+	stage = { # identify targets
+		difficulty = @diff_t2
+		icon = GFX_espionage_chapter_icon_surveillance
+		event = MT_espionage_events.10
+	}
+	stage = { # Infiltrate
+		difficulty = @diff_t5
+		icon = GFX_espionage_chapter_icon_target
+		event = MT_espionage_events.11
+	}
+	stage = { # Plant Bombs
+		difficulty = @diff_t2
+		icon = GFX_espionage_chapter_icon_motion
+		event = MT_espionage_events.12
+	}
+	on_roll_failed = {
+		standard_espionage_operation_on_roll_failed = { RANDOM_EVENTS = operation_random_events_generic }
+	}
+	on_create = {
+		target = {
+			set_timed_country_flag = {
+				flag = espionage_operation_targeted_by@root.owner #Used in random Spy Network events
+				days = @operationTargetedByTimer
+			}
+		}
+	}
+}
+
+#operation_MT_fund_crime = {
+#	target = none
+#	categories = { op_cat_sabotage op_cat_military }
+#	picture = GFX_evt_gunrunning
+#	desc = operation_MT_fund_crime_desc
+#	stages = 2
+#
+#	resources = {
+#		category = operations
+#		upkeep = {
+#			energy = 50
+#		}
+#	}
+#
+#	spy_power_cost = 10
+#	potential = {
+#		owner = { has_tradition = tr_mt_disruption_large_toolkit }
+#		target = { is_primitive = no }
+#	}
+#	allow = {
+#		custom_tooltip = {
+#			is_running_espionage_operation = no
+#			fail_text = operation_one_at_a_time
+#		}
+#		custom_tooltip = {
+#			fail_text = MT_operation_fund_crime_too_recent
+#			NOT = { has_spynetwork_flag = MT_recently_funded_crime }
+#		}
+#	}
+#	stage = { # identify targets
+#		difficulty = @diff_t1
+#		icon = GFX_espionage_chapter_icon_surveillance
+#		event = MT_espionage_events.1
+#	}
+#	stage = { # Deliver Credits
+#		difficulty = @diff_t2
+#		icon = GFX_espionage_chapter_icon_motion
+#		event = MT_espionage_events.3
+#	}
+#	on_roll_failed = {
+#		standard_espionage_operation_on_roll_failed = { RANDOM_EVENTS = operation_random_events_generic }
+#	}
+#	on_create = {
+#		target = {
+#			set_timed_country_flag = {
+#				flag = espionage_operation_targeted_by@root.owner #Used in random Spy Network events
+#				days = @operationTargetedByTimer
+#			}
+#		}
+#	}
+#}

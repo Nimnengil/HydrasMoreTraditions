@@ -1,0 +1,1296 @@
+#MT_situation_test = {
+#	picture = GFX_evt_atmospheric_entry
+#	complete_icon_frame = GFX_situation_outcome_frame_red
+#	complete_icon = GFX_situation_exploding_planet
+#	on_progress_complete = {
+#		custom_tooltip = situation_exploding_planet_outcome_approach
+#		hidden_effect = {
+#			situation_event = { id = origin.6175 }
+#		}
+#	}
+#
+#	#on_monthly = {
+#	#	events = {
+#	#		origin.6180
+#	#	}
+#	#}
+#	
+#	start_value = 50
+#	
+#	stages = {
+#		stage_1 = {
+#			icon = GFX_situation_stage_1
+#			icon_background = GFX_situation_stage_frame_red
+#			end = 100
+#			custom_tooltip = stage_edge_of_solar_system
+#		}
+#		#stage_2 = {
+#		#	icon = GFX_situation_stage_2
+#		#	icon_background = GFX_situation_stage_frame_red
+#		#	end = 80
+#		#	custom_tooltip = stage_edge_of_solar_system
+#		#	on_first_enter = {
+#		#		situation_event = { id = origin.6185 }
+#		#	}
+#		#}
+#		#stage_3 = {
+#		#	icon = GFX_situation_stage_3
+#		#	icon_background = GFX_situation_stage_frame_red
+#		#	end = 100
+#		#	custom_tooltip = stage_entered_solar_system
+#		#}
+#	}
+#	approach = {
+#		name = approach_stop_the_bullet
+#		icon = GFX_situation_approach_fist
+#		icon_background = GFX_situation_approach_bg_red
+#		default = yes
+#		on_select = {
+#			custom_tooltip = effect_stop_the_bullet
+#		}
+#	}
+#	monthly_progress = {
+#		base = 0
+#	}
+#	
+#	target_modifier = { planet_stability_add = 100 } 
+#	on_start = {
+#		target = {
+#			set_planet_flag = MT_situation_test_flag
+#		}
+#	}
+#	abort_trigger = {
+#		OR = {
+#			NOT = { exists = target.owner }
+#			#target.owner = { NOT = { is_same_value = root.owner } }
+#		}
+#	}
+#	on_abort = {
+#		target = {
+#			remove_planet_flag = MT_situation_test_flag
+#		}
+#	}
+#}
+
+MT_situation_royalty_keep = {
+	picture = GFX_evt_atmospheric_entry
+	complete_icon_frame = GFX_situation_outcome_frame_red
+	complete_icon = GFX_situation_exploding_planet
+	on_progress_complete = {
+		custom_tooltip = MT_NO_RELIC_TEXT
+		hidden_effect = {
+			situation_event = { id = MT_events.88 }
+		}
+	}
+	
+	start_value = 50
+	
+	stages = {
+		stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_red
+			end = 100
+			custom_tooltip = MT_NO_RELIC_TEXT
+		}
+	}
+	approach = {
+		name = approach_stop_the_bullet
+		icon = GFX_situation_approach_fist
+		icon_background = GFX_situation_approach_bg_red
+		default = yes
+		on_select = {
+			custom_tooltip = MT_NO_RELIC_TEXT
+		}
+	}
+	monthly_progress = {
+		base = 0
+	}
+	
+	triggered_target_modifier = {
+		potential = {
+			target = {
+				original_owner = yes
+			}
+		}
+		modifier = {
+			planet_orbital_bombardment_damage = -0.25
+			planet_defense_armies_add = 20
+		}
+	} 
+	on_start = {
+		target = {
+			set_planet_flag = MT_situation_royalty_keep_flag
+		}
+	}
+	abort_trigger = {
+		OR = {
+			NOT = { target = { exists = owner } }
+			target.owner = { NOT = { has_tradition = tr_mt_royalty_keep } }
+		}
+	}
+	on_abort = {
+		target = {
+			remove_planet_flag = MT_situation_royalty_keep_flag
+		}
+	}
+}
+
+MT_situation_exchange_franchising = {
+	picture = GFX_evt_atmospheric_entry
+	complete_icon_frame = GFX_situation_outcome_frame_red
+	complete_icon = GFX_situation_exploding_planet
+	on_progress_complete = {
+		custom_tooltip = MT_NO_RELIC_TEXT
+		hidden_effect = {
+			situation_event = { id = MT_events.88 }
+		}
+	}
+	
+	start_value = 50
+	
+	stages = {
+		stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_red
+			end = 100
+			custom_tooltip = MT_NO_RELIC_TEXT
+		}
+	}
+	approach = {
+		name = approach_stop_the_bullet
+		icon = GFX_situation_approach_fist
+		icon_background = GFX_situation_approach_bg_red
+		default = yes
+		on_select = {
+			custom_tooltip = MT_NO_RELIC_TEXT
+		}
+	}
+	monthly_progress = {
+		base = 0
+	}
+	
+	triggered_target_modifier = {
+		potential = {
+			always = yes
+		}
+		modifier = {
+			job_trader_add = 1
+		}
+	} 
+	on_start = {
+		target = {
+			set_planet_flag = MT_situation_exchange_franchising_flag
+		}
+	}
+	abort_trigger = {
+		OR = {
+			target = { has_branch_office = no }
+			NOT = { exists = target.owner }
+			target.branch_office_owner = { NOT = { has_tradition = tr_mt_exchange_franchising } }
+		}
+	}
+	on_abort = {
+		target = {
+			remove_planet_flag = MT_situation_exchange_franchising_flag
+		}
+	}
+}
+
+MT_situation_ruination_revelry_in_ruin = {
+	picture = GFX_evt_atmospheric_entry
+	complete_icon_frame = GFX_situation_outcome_frame_red
+	complete_icon = GFX_situation_exploding_planet
+	on_progress_complete = {
+		custom_tooltip = MT_NO_RELIC_TEXT
+		hidden_effect = {
+			situation_event = { id = MT_events.88 }
+		}
+	}
+	
+	start_value = 50
+	
+	stages = {
+		stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_red
+			end = 100
+			custom_tooltip = MT_NO_RELIC_TEXT
+		}
+	}
+	approach = {
+		name = approach_stop_the_bullet
+		icon = GFX_situation_approach_fist
+		icon_background = GFX_situation_approach_bg_red
+		default = yes
+		on_select = {
+			custom_tooltip = MT_NO_RELIC_TEXT
+		}
+	}
+	monthly_progress = {
+		base = 0
+	}
+	
+	triggered_target_modifier = {
+		potential = {
+			target = {
+				is_planet_class = pc_relic
+			}
+		}
+		modifier = {
+			planet_jobs_produces_mult = 0.2
+		}
+	}
+	triggered_target_modifier = {
+		potential = {
+			target = {
+				is_planet_class = pc_nuked
+				owner = {
+					has_tradition = tr_mt_ruination_wastelands_of_decay
+				}
+			}
+		}
+		modifier = {
+			planet_jobs_produces_mult = 0.1
+		}
+	}
+	on_start = {
+		target = {
+			set_planet_flag = MT_situation_ruination_revelry_in_ruin_flag
+		}
+	}
+	abort_trigger = {
+		OR = {
+			target = {
+				NOR = {
+					is_planet_class = pc_relic
+					is_planet_class = pc_nuked
+					
+				}
+			}
+			NOT = { exists = target.owner }
+			target.owner = { NOT = { has_tradition = tr_mt_ruination_revelry_in_ruin } }
+		}
+	}
+	on_abort = {
+		target = {
+			remove_planet_flag = MT_situation_ruination_revelry_in_ruin_flag
+		}
+	}
+}
+
+MT_situation_ruination_couldrons_of_corrosion = {
+	picture = GFX_evt_atmospheric_entry
+	complete_icon_frame = GFX_situation_outcome_frame_red
+	complete_icon = GFX_situation_exploding_planet
+	on_progress_complete = {
+		custom_tooltip = MT_NO_RELIC_TEXT
+		hidden_effect = {
+			situation_event = { id = MT_events.88 }
+		}
+	}
+	
+	start_value = 50
+	
+	stages = {
+		stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_red
+			end = 100
+			custom_tooltip = MT_NO_RELIC_TEXT
+		}
+	}
+	approach = {
+		name = approach_stop_the_bullet
+		icon = GFX_situation_approach_fist
+		icon_background = GFX_situation_approach_bg_red
+		default = yes
+		on_select = {
+			custom_tooltip = MT_NO_RELIC_TEXT
+		}
+	}
+	monthly_progress = {
+		base = 0
+	}
+	
+	triggered_target_modifier = {
+		potential = {
+			target = {
+				is_planet_class = pc_relic
+			}
+		}
+		modifier = {
+			planet_metallurgists_volatile_motes_produces_add = 0.1
+		}
+	}
+	triggered_target_modifier = {
+		potential = {
+			target = {
+				is_planet_class = pc_nuked
+				owner = {
+					has_tradition = tr_mt_ruination_wastelands_of_decay
+				}
+			}
+		}
+		modifier = {
+			planet_metallurgists_volatile_motes_produces_add = 0.05
+		}
+	}
+	on_start = {
+		target = {
+			set_planet_flag = MT_situation_ruination_couldrons_of_corrosion_flag
+		}
+	}
+	abort_trigger = {
+		OR = {
+			target = {
+				NOR = {
+					is_planet_class = pc_relic
+					is_planet_class = pc_nuked
+					
+				}
+			}
+			NOT = { exists = target.owner }
+			target.owner = { NOT = { has_tradition = tr_mt_ruination_couldrons_of_corrosion } }
+		}
+	}
+	on_abort = {
+		target = {
+			remove_planet_flag = MT_situation_ruination_couldrons_of_corrosion_flag
+		}
+	}
+}
+
+MT_situation_ruination_spiteful_reclamations = {
+	picture = GFX_evt_atmospheric_entry
+	complete_icon_frame = GFX_situation_outcome_frame_red
+	complete_icon = GFX_situation_exploding_planet
+	on_progress_complete = {
+		custom_tooltip = MT_NO_RELIC_TEXT
+		hidden_effect = {
+			situation_event = { id = MT_events.88 }
+		}
+	}
+	
+	start_value = 50
+	
+	stages = {
+		stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_red
+			end = 100
+			custom_tooltip = MT_NO_RELIC_TEXT
+		}
+	}
+	approach = {
+		name = approach_stop_the_bullet
+		icon = GFX_situation_approach_fist
+		icon_background = GFX_situation_approach_bg_red
+		default = yes
+		on_select = {
+			custom_tooltip = MT_NO_RELIC_TEXT
+		}
+	}
+	monthly_progress = {
+		base = 0
+	}
+	
+	triggered_target_modifier = {
+		potential = {
+			target = {
+				is_planet_class = pc_relic
+				owner = {
+					is_gestalt = no
+				}
+			}
+		}
+		job_scrap_miner_add = 100
+		mult = target.trigger:planet_size
+	}
+	triggered_target_modifier = {
+		potential = {
+			target = {
+				is_planet_class = pc_nuked
+				owner = {
+					is_gestalt = no
+					has_tradition = tr_mt_ruination_wastelands_of_decay
+				}
+			}
+		}
+		job_scrap_miner_add = 1
+		mult = target.value:MT_half_planet_size
+	}
+	triggered_target_modifier = {
+		potential = {
+			target = {
+				is_planet_class = pc_relic
+				owner = {
+					is_gestalt = yes
+				}
+			}
+		}
+		job_scrap_miner_drone_add = 1
+		mult = target.trigger:planet_size
+	}
+	triggered_target_modifier = {
+		potential = {
+			target = {
+				is_planet_class = pc_nuked
+				owner = {
+					is_gestalt = yes
+					has_tradition = tr_mt_ruination_wastelands_of_decay
+				}
+			}
+		}
+		job_scrap_miner_drone_add = 1
+		mult = target.value:MT_half_planet_size
+	}
+	on_start = {
+		target = {
+			set_planet_flag = MT_situation_ruination_spiteful_reclamations_flag
+		}
+	}
+	abort_trigger = {
+		OR = {
+			target = {
+				NOR = {
+					is_planet_class = pc_relic
+					is_planet_class = pc_nuked
+					
+				}
+			}
+			NOT = { exists = target.owner }
+			target.owner = { NOT = { has_tradition = tr_mt_ruination_spiteful_reclamations } }
+		}
+	}
+	on_abort = {
+		target = {
+			remove_planet_flag = MT_situation_ruination_spiteful_reclamations_flag
+		}
+	}
+}
+
+MT_situation_ruination_cities_under_cities = {
+	picture = GFX_evt_atmospheric_entry
+	complete_icon_frame = GFX_situation_outcome_frame_red
+	complete_icon = GFX_situation_exploding_planet
+	on_progress_complete = {
+		custom_tooltip = MT_NO_RELIC_TEXT
+		hidden_effect = {
+			situation_event = { id = MT_events.88 }
+		}
+	}
+	
+	start_value = 50
+	
+	stages = {
+		stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_red
+			end = 100
+			custom_tooltip = MT_NO_RELIC_TEXT
+		}
+	}
+	approach = {
+		name = approach_stop_the_bullet
+		icon = GFX_situation_approach_fist
+		icon_background = GFX_situation_approach_bg_red
+		default = yes
+		on_select = {
+			custom_tooltip = MT_NO_RELIC_TEXT
+		}
+	}
+	monthly_progress = {
+		base = 0
+	}
+	
+	triggered_target_modifier = {
+		potential = {
+			target = {
+				is_planet_class = pc_relic
+			}
+		}
+		modifier = {
+			planet_max_districts_add = 6
+			planet_orbital_bombardment_damage = -0.5
+		}
+	}
+	triggered_target_modifier = {
+		potential = {
+			target = {
+				is_planet_class = pc_nuked
+				owner = {
+					has_tradition = tr_mt_ruination_wastelands_of_decay
+				}
+			}
+		}
+		modifier = {
+			planet_max_districts_add = 3
+			planet_orbital_bombardment_damage = -0.25
+		}
+	}
+	on_start = {
+		target = {
+			set_planet_flag = MT_situation_ruination_cities_under_cities_flag
+		}
+	}
+	abort_trigger = {
+		OR = {
+			target = {
+				NOR = {
+					is_planet_class = pc_relic
+					is_planet_class = pc_nuked
+					
+				}
+			}
+			NOT = { exists = target.owner }
+			target.owner = { NOT = { has_tradition = tr_mt_ruination_cities_under_cities } }
+		}
+	}
+	on_abort = {
+		target = {
+			remove_planet_flag = MT_situation_ruination_cities_under_cities_flag
+		}
+	}
+}
+
+# MT_situation_evolution_predatory = {
+# 	picture = GFX_evt_atmospheric_entry
+# 	complete_icon_frame = GFX_situation_outcome_frame_red
+# 	complete_icon = GFX_situation_exploding_planet
+# 	on_progress_complete = {
+# 		custom_tooltip = MT_NO_RELIC_TEXT
+# 		hidden_effect = {
+# 			situation_event = { id = MT_events.88 }
+# 		}
+# 	}
+	
+# 	start_value = 50
+	
+# 	stages = {
+# 		stage_1 = {
+# 			icon = GFX_situation_stage_1
+# 			icon_background = GFX_situation_stage_frame_red
+# 			end = 100
+# 			custom_tooltip = MT_NO_RELIC_TEXT
+# 		}
+# 	}
+# 	approach = {
+# 		name = approach_stop_the_bullet
+# 		icon = GFX_situation_approach_fist
+# 		icon_background = GFX_situation_approach_bg_red
+# 		default = yes
+# 		on_select = {
+# 			custom_tooltip = MT_NO_RELIC_TEXT
+# 		}
+# 	}
+# 	monthly_progress = {
+# 		base = 0
+# 	}
+	
+# 	triggered_target_modifier = {
+# 		potential = {
+# 			always = yes
+# 		}
+# 		bonus_pop_growth_mult = 0.01
+# 		mult = target.value:MT_num_researchers
+# 	}
+# 	on_start = {
+# 		target = {
+# 			set_planet_flag = MT_situation_evolution_predatory_flag
+# 		}
+# 	}
+# 	abort_trigger = {
+# 		OR = {
+# 			NOT = { exists = target.owner }
+# 			target.owner = { NOT = { has_active_tradition = tr_mt_evolution_predatory } }
+# 		}
+# 	}
+# 	on_abort = {
+# 		target = {
+# 			remove_planet_flag = MT_situation_evolution_predatory_flag
+# 		}
+# 	}
+# }
+
+# MT_situation_evolution_demotion = {
+# 	picture = GFX_evt_atmospheric_entry
+# 	complete_icon_frame = GFX_situation_outcome_frame_red
+# 	complete_icon = GFX_situation_exploding_planet
+# 	on_progress_complete = {
+# 		custom_tooltip = MT_NO_RELIC_TEXT
+# 		hidden_effect = {
+# 			situation_event = { id = MT_events.88 }
+# 		}
+# 	}
+	
+# 	start_value = 50
+	
+# 	stages = {
+# 		stage_1 = {
+# 			icon = GFX_situation_stage_1
+# 			icon_background = GFX_situation_stage_frame_red
+# 			end = 100
+# 			custom_tooltip = MT_NO_RELIC_TEXT
+# 		}
+# 	}
+# 	approach = {
+# 		name = approach_stop_the_bullet
+# 		icon = GFX_situation_approach_fist
+# 		icon_background = GFX_situation_approach_bg_red
+# 		default = yes
+# 		on_select = {
+# 			custom_tooltip = MT_NO_RELIC_TEXT
+# 		}
+# 	}
+# 	monthly_progress = {
+# 		base = 0
+# 	}
+	
+# 	triggered_target_modifier = {
+# 		potential = {
+# 			target = {
+# 				owner = {
+# 					has_active_tradition = tr_mt_evolution_demotion_parental
+# 				}
+# 				num_species > 1
+# 			}
+# 		}
+# 		pop_amenities_usage_mult = -0.15
+# 	}
+# 	triggered_target_modifier = {
+# 		potential = {
+# 			target = {
+# 				owner = {
+# 					has_active_tradition = tr_mt_evolution_demotion_predatory
+# 				}
+# 				num_assigned_jobs = {
+# 					job = healthcare
+# 					value > 1
+# 				}
+# 			}
+# 		}
+# 		planet_jobs_society_research_produces_mult = 0.2
+# 	}
+# 	on_start = {
+# 		target = {
+# 			set_planet_flag = MT_situation_evolution_demotion_flag
+# 		}
+# 	}
+# 	abort_trigger = {
+# 		OR = {
+# 			NOT = { exists = target.owner }
+# 			target.owner = { NOT = { has_tradition = tr_mt_evolution_demotion } }
+# 		}
+# 	}
+# 	on_abort = {
+# 		target = {
+# 			remove_planet_flag = MT_situation_evolution_demotion_flag
+# 		}
+# 	}
+# }
+
+# MT_situation_evolution_farming = {
+# 	picture = GFX_evt_atmospheric_entry
+# 	complete_icon_frame = GFX_situation_outcome_frame_red
+# 	complete_icon = GFX_situation_exploding_planet
+# 	on_progress_complete = {
+# 		custom_tooltip = MT_NO_RELIC_TEXT
+# 		hidden_effect = {
+# 			situation_event = { id = MT_events.88 }
+# 		}
+# 	}
+	
+# 	start_value = 50
+	
+# 	stages = {
+# 		stage_1 = {
+# 			icon = GFX_situation_stage_1
+# 			icon_background = GFX_situation_stage_frame_red
+# 			end = 100
+# 			custom_tooltip = MT_NO_RELIC_TEXT
+# 		}
+# 	}
+# 	approach = {
+# 		name = approach_stop_the_bullet
+# 		icon = GFX_situation_approach_fist
+# 		icon_background = GFX_situation_approach_bg_red
+# 		default = yes
+# 		on_select = {
+# 			custom_tooltip = MT_NO_RELIC_TEXT
+# 		}
+# 	}
+# 	monthly_progress = {
+# 		base = 0
+# 	}
+	
+# 	triggered_target_modifier = {
+# 		potential = {
+# 			always = yes
+# 		}
+# 		planet_stability_add = 0.01
+# 		mult = target.value:MT_num_farmers
+# 	}
+# 	on_start = {
+# 		target = {
+# 			set_planet_flag = MT_situation_evolution_farmers_flag
+# 		}
+# 	}
+# 	abort_trigger = {
+# 		OR = {
+# 			NOT = { exists = target.owner }
+# 			target.owner = { NOT = { has_active_tradition = tr_mt_evolution_farmers_parental } }
+# 		}
+# 	}
+# 	on_abort = {
+# 		target = {
+# 			remove_planet_flag = MT_situation_evolution_farmers_flag
+# 		}
+# 	}
+# }
+
+MT_situation_nature_bounty = {
+	picture = GFX_evt_atmospheric_entry
+	complete_icon_frame = GFX_situation_outcome_frame_red
+	complete_icon = GFX_situation_exploding_planet
+	on_progress_complete = {
+		custom_tooltip = MT_NO_RELIC_TEXT
+		hidden_effect = {
+			situation_event = { id = MT_events.88 }
+		}
+	}
+	
+	start_value = 50
+	
+	stages = {
+		stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_red
+			end = 100
+			custom_tooltip = MT_NO_RELIC_TEXT
+		}
+	}
+	approach = {
+		name = approach_stop_the_bullet
+		icon = GFX_situation_approach_fist
+		icon_background = GFX_situation_approach_bg_red
+		default = yes
+		on_select = {
+			custom_tooltip = MT_NO_RELIC_TEXT
+		}
+	}
+	monthly_progress = {
+		base = 0
+	}
+	
+	triggered_target_modifier = {
+		potential = {
+			always = yes
+		}
+		modifier = {
+			planet_jobs_produces_mult = 0.1
+		}
+	}
+
+	on_start = {
+		target = {
+			set_planet_flag = MT_situation_nature_bounty_flag
+		}
+	}
+	abort_trigger = {
+		OR = {
+			target = {
+				is_artificial = yes
+			}
+			NOT = { exists = target.owner }
+			target.owner = { NOT = { has_tradition = tr_mt_nature_bounty } }
+		}
+	}
+	on_abort = {
+		target = {
+			remove_planet_flag = MT_situation_nature_bounty_flag
+		}
+	}
+}
+
+MT_situation_ingenuity_wonder_worlds = {
+	picture = GFX_evt_atmospheric_entry
+	complete_icon_frame = GFX_situation_outcome_frame_red
+	complete_icon = GFX_situation_exploding_planet
+	on_progress_complete = {
+		custom_tooltip = MT_NO_RELIC_TEXT
+		hidden_effect = {
+			situation_event = { id = MT_events.88 }
+		}
+	}
+	
+	start_value = 50
+	
+	stages = {
+		stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_red
+			end = 100
+			custom_tooltip = MT_NO_RELIC_TEXT
+		}
+	}
+	approach = {
+		name = approach_stop_the_bullet
+		icon = GFX_situation_approach_fist
+		icon_background = GFX_situation_approach_bg_red
+		default = yes
+		on_select = {
+			custom_tooltip = MT_NO_RELIC_TEXT
+		}
+	}
+	monthly_progress = {
+		base = 0
+	}
+	
+	triggered_target_modifier = {
+		potential = {
+			always = yes
+		}
+		modifier = {
+			planet_jobs_produces_mult = 0.1
+		}
+	}
+
+	on_start = {
+		target = {
+			set_planet_flag = MT_situation_ingenuity_wonder_worlds_flag
+		}
+	}
+	abort_trigger = {
+		OR = {
+			target = {
+				is_artificial = no
+			}
+			NOT = { exists = target.owner }
+			target.owner = { NOT = { has_tradition = tr_mt_ingenuity_wonder_worlds } }
+		}
+	}
+	on_abort = {
+		target = {
+			remove_planet_flag = MT_situation_ingenuity_wonder_worlds_flag
+		}
+	}
+}
+
+
+MT_situation_botany_4 = {
+	picture = GFX_evt_atmospheric_entry
+	complete_icon_frame = GFX_situation_outcome_frame_red
+	complete_icon = GFX_situation_exploding_planet
+	on_progress_complete = {
+		custom_tooltip = MT_NO_RELIC_TEXT
+		hidden_effect = {
+			situation_event = { id = MT_events.88 }
+		}
+	}
+	
+	start_value = 50
+	
+	stages = {
+		stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_red
+			end = 100
+			custom_tooltip = MT_NO_RELIC_TEXT
+		}
+	}
+	approach = {
+		name = approach_stop_the_bullet
+		icon = GFX_situation_approach_fist
+		icon_background = GFX_situation_approach_bg_red
+		default = yes
+		on_select = {
+			custom_tooltip = MT_NO_RELIC_TEXT
+		}
+	}
+	monthly_progress = {
+		base = 0
+	}
+	
+	triggered_target_modifier = {
+		potential = {
+			always = yes
+		}
+		#planet_stability_add = 0.5
+		pop_happiness = 0.00005 # 0.5% per 100
+		mult = target.value:MT_num_farmers
+	}
+	on_start = {
+		target = {
+			set_planet_flag = MT_situation_botany_4_flag
+		}
+	}
+	abort_trigger = {
+		OR = {
+			NOT = { exists = target.owner }
+			target.owner = { NOT = { has_active_tradition = tr_mt_botany_4 } }
+		}
+	}
+	on_abort = {
+		target = {
+			remove_planet_flag = MT_situation_botany_4_flag
+		}
+	}
+}
+
+MT_situation_botany_4_angler = {
+	picture = GFX_evt_atmospheric_entry
+	complete_icon_frame = GFX_situation_outcome_frame_red
+	complete_icon = GFX_situation_exploding_planet
+	on_progress_complete = {
+		custom_tooltip = MT_NO_RELIC_TEXT
+		hidden_effect = {
+			situation_event = { id = MT_events.88 }
+		}
+	}
+	
+	start_value = 50
+	
+	stages = {
+		stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_red
+			end = 100
+			custom_tooltip = MT_NO_RELIC_TEXT
+		}
+	}
+	approach = {
+		name = approach_stop_the_bullet
+		icon = GFX_situation_approach_fist
+		icon_background = GFX_situation_approach_bg_red
+		default = yes
+		on_select = {
+			custom_tooltip = MT_NO_RELIC_TEXT
+		}
+	}
+	monthly_progress = {
+		base = 0
+	}
+	
+	triggered_target_modifier = {
+		potential = {
+			always = yes
+		}
+		pop_happiness = 0.01
+		mult = target.value:MT_num_anglers
+	}
+	on_start = {
+		target = {
+			set_planet_flag = MT_situation_botany_4_angler_flag
+		}
+	}
+	abort_trigger = {
+		OR = {
+			NOT = { exists = target.owner }
+			target.owner = { NOT = { has_active_tradition = tr_mt_botany_4_angler } }
+		}
+	}
+	on_abort = {
+		target = {
+			remove_planet_flag = MT_situation_botany_4_angler_flag
+		}
+	}
+}
+
+MT_situation_core_fast_communication = {
+	picture = GFX_evt_atmospheric_entry
+	complete_icon_frame = GFX_situation_outcome_frame_red
+	complete_icon = GFX_situation_exploding_planet
+	on_progress_complete = {
+		custom_tooltip = MT_NO_RELIC_TEXT
+		hidden_effect = {
+			situation_event = { id = MT_events.88 }
+		}
+	}
+	
+	start_value = 50
+	
+	stages = {
+		stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_red
+			end = 100
+			custom_tooltip = MT_NO_RELIC_TEXT
+		}
+	}
+	approach = {
+		name = approach_stop_the_bullet
+		icon = GFX_situation_approach_fist
+		icon_background = GFX_situation_approach_bg_red
+		default = yes
+		on_select = {
+			custom_tooltip = MT_NO_RELIC_TEXT
+		}
+	}
+	monthly_progress = {
+		base = 0
+	}
+	
+	triggered_target_modifier = {
+		potential = {
+			target = {
+				exists = sector
+				sector = {
+					has_sector_type = core_sector
+				}
+			}
+		}
+		modifier = {
+			planet_jobs_produces_mult = 0.1
+		}
+	}
+	triggered_target_modifier = {
+		potential = {
+			target = {
+				OR = {
+					NOT = { exists = sector }
+					AND = {
+						exists = sector
+						sector = {
+							NOT = { has_sector_type = core_sector }
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			planet_jobs_produces_mult = -0.1
+		}
+	}
+	on_start = {
+		target = {
+			set_planet_flag = MT_situation_core_fast_communication_flag
+		}
+	}
+	abort_trigger = {
+		NOT = { exists = target.owner }
+		target.owner = { NOT = { has_tradition = tr_mt_core_fast_communication } }
+	}
+	on_abort = {
+		target = {
+			remove_planet_flag = MT_situation_core_fast_communication_flag
+		}
+	}
+}
+
+MT_situation_lathe_job_suppression = {
+	picture = GFX_evt_atmospheric_entry
+	complete_icon_frame = GFX_situation_outcome_frame_red
+	complete_icon = GFX_situation_exploding_planet
+	on_progress_complete = {
+		custom_tooltip = MT_NO_RELIC_TEXT
+		hidden_effect = {
+			situation_event = { id = MT_events.88 }
+		}
+	}
+	
+	start_value = 50
+	
+	stages = {
+		stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_red
+			end = 100
+			custom_tooltip = MT_NO_RELIC_TEXT
+		}
+	}
+	approach = {
+		name = approach_stop_the_bullet
+		icon = GFX_situation_approach_fist
+		icon_background = GFX_situation_approach_bg_red
+		default = yes
+		on_select = {
+			custom_tooltip = MT_NO_RELIC_TEXT
+		}
+	}
+	monthly_progress = {
+		base = 0
+	}
+	
+	#triggered_target_modifier = {
+	#	potential = {
+	#		target = {
+	#			owner = {
+	#				has_active_tradition = tr_mt_maritime_merchant_navy
+	#			}
+	#		}
+	#	}
+	#	modifier = {
+	#		job_MT_marine_per_pop = -0.05
+	#	}
+	#}
+	triggered_target_modifier = {
+		potential = {
+			target = {
+				owner = {
+					has_active_tradition = tr_mt_urban_oversight
+				}
+			}
+		}
+		modifier = {
+			job_bureaucrat_per_pop = -0.04
+		}
+	}
+	triggered_target_modifier = {
+		potential = {
+			target = {
+				owner = {
+					OR = {
+						has_active_tradition = tr_mt_urban_oversight_hive
+						has_active_tradition = tr_mt_urban_oversight_machine
+					}
+				}
+			}
+		}
+		modifier = {
+			job_coordinator_per_pop = -0.04
+		}
+	}	
+	triggered_target_modifier = {
+		potential = {
+			target = {
+				owner = {
+					has_edict = MT_geology_1_geothermal_tapping
+				}
+			}
+		}
+		modifier = {
+			job_technician_add = -1
+		}
+	}
+	triggered_target_modifier = {
+		potential = {
+			target = {
+				owner = {
+					has_edict = MT_geology_1_geothermal_tapping_gestalt
+				}
+			}
+		}
+		modifier = {
+			job_technician_drone_add = -1
+		}
+	}
+
+	on_start = {
+		target = {
+			set_planet_flag = MT_situation_lathe_job_suppression_flag
+		}
+	}
+	abort_trigger = {
+		OR = {
+			target = { NOT = { is_planet_class = pc_cosmogenesis_world } }
+			NOT = { exists = target.owner }
+		}
+	}
+	on_abort = {
+		target = {
+			remove_planet_flag = MT_situation_lathe_job_suppression_flag
+		}
+	}
+}
+
+MT_situation_freedom_tax = {
+	picture = GFX_evt_signing
+	complete_icon_frame = GFX_situation_outcome_frame_green
+	complete_icon = GFX_situation_approach_balance_sheet
+	on_progress_complete = {
+		if = {
+			limit = { has_situation_flag = MT_freedom_tax_payer }
+			custom_tooltip = MT_FREEDOM_TAX_REPAID_PAYER
+		}
+		else = {
+			custom_tooltip = MT_FREEDOM_TAX_REPAID_RECIEVER
+		}
+		hidden_effect = {
+			situation_event = { id = MT_events.99 }
+		}
+	}
+	
+	start_value = 0
+	
+	stages = {
+		stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_red
+			end = 120
+			custom_tooltip = MT_freedom_stage_1_desc
+		}
+	}
+	approach = {
+		name = approach_MT_repay_the_debt
+		icon = GFX_situation_approach_energy_credits
+		icon_background = GFX_situation_approach_bg_yellow
+		resources = {
+			category = situations
+			produces = {
+				exotic_gases = 1
+				multiplier = value:MT_freedom_gas_prize
+			}
+			upkeep = {
+				exotic_gases = 1
+				multiplier = value:MT_freedom_gas_tax
+			}
+		}
+		default = yes
+		on_select = {
+			if = {
+				limit = { has_situation_flag = MT_freedom_tax_payer }
+				custom_tooltip = MT_freedom_repay_the_debt_tooltip
+			}
+		}
+	}
+	#approach = {
+	#	name = approach_MT_forgive_the_debt
+	#	icon = GFX_situation_approach_balance_sheet
+	#	icon_background = GFX_situation_approach_bg_red
+	#	potential = {
+	#		has_situation_flag = MT_freedom_tax_reciever
+	#	}
+	#	on_select = {
+	#		custom_tooltip = MT_freedom_forgive_the_debt_tooltip
+	#		target = {
+	#			country_event = { id = MT_events.100 }
+	#			random_sitation = {
+	#				limit = {
+	#					is_situation_type = MT_situation_freedom_tax
+	#					target = {
+	#						is_same_empire = root.owner
+	#					}
+	#				}
+	#				destroy_situation = this
+	#			}
+	#		}
+	#		situation_event = { id = MT_events.102 }
+	#	}
+	#}
+	monthly_progress = {
+		base = 1
+		modifier = {
+			desc = MT_string_freedom_at_war
+			owner = { is_at_war_with = prev.target }
+			factor = 0
+		}
+	}
+	
+	#on_start = {
+	#	owner = {
+	#		country_event = { id = MT_events.101 }
+	#	}
+	#}
+	
+	abort_trigger = {
+		NOT = { exists = target }
+	}
+	#on_abort = {
+	#	owner = {
+	#		country_event = { id = MT_events.101 }
+	#	}
+	#}
+}
+
+
+

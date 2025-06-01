@@ -1,0 +1,50 @@
+####################
+# Industry Deposits
+####################
+
+d_MT_industry_strip_mine = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+	potential = { always = no }
+	icon = d_prospectorium_strip_mine
+	category = deposit_cat_minerals
+
+	planet_modifier = {
+		district_mining_max = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_mining_max = 2
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_MT_industry_underfarm = {
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = yes
+	potential = { always = no }
+	category = deposit_cat_food
+
+	planet_modifier = {
+		district_farming_max = 4
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		district_farming_max = 4
+		mult = value:natural_desposit_district_amount_multiplier
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}

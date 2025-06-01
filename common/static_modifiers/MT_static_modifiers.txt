@@ -1,0 +1,270 @@
+#MT_error_log = {
+#	planet_soldiers_unity_produces_mult = 1
+#	planet_soldiers_unity_upkeep_add = 1
+#	planet_soldiers_unity_upkeep_mult = 1
+#	planet_traders_food_upkeep_add = 1
+#	planet_traders_food_upkeep_mult = 1
+#}
+
+artifact_MT_buy_cooldown = {
+	icon = "gfx/interface/icons/modifiers/mod_relic_cooldown.dds"
+}
+
+artifact_MT_enegmatic_recharge_cooldown = {
+	icon = "gfx/interface/icons/modifiers/mod_relic_cooldown.dds"
+}
+
+MT_desecration_research = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
+	job_archaeoengineers_add = 3
+}
+
+MT_desecration_research_hive = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
+	job_archaeo_drone_add = 3
+}
+
+MT_desecration_research_machine = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
+	job_archaeo_unit_add = 3
+}
+
+MT_desecrated_planet = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_factory.dds"
+}
+
+artifact_MT_extract_resources_cooldown = {
+	icon = "gfx/interface/icons/modifiers/mod_relic_cooldown.dds"
+}
+
+MT_urban_finish_modifier = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_unknown.dds"
+	icon_frame = 1
+	planet_jobs_produces_mult = 0.1
+}
+
+mt_surprise_attack_modifier = {
+	ship_weapon_damage = 0.5
+}
+
+mt_valor_surprise_attack_modifier = {
+	ship_fire_rate_mult = 0.25
+}
+
+mt_feast_modifier = {
+	ship_weapon_damage = 0.5
+}
+
+mt_ambush_modifier = {
+	ship_speed_reduction = 0.2
+}
+
+# Chaotic
+
+mt_event_horizon_modifier = {
+	ship_disengage_chance_reduction = -0.5
+	ship_emergency_ftl_min_days_mult = -0.5
+	ship_fire_rate_mult = 1
+}
+
+MT_chaotic_scar = {
+	ship_disengage_chance_reduction = 0.5
+}
+
+MT_chaotic_jump_trauma = {
+	ship_disengage_chance_reduction = 1
+}
+
+MT_valor_charge_modifier = {
+	ship_speed_mult = 0.2
+	ship_fire_rate_mult = 0.2
+}
+
+# manipulation ethics attraction modifiers
+
+mt_manipulation_egalitarian = {
+	pop_ethic_egalitarian_attraction_mult = 2
+}
+
+mt_manipulation_authoritarian = {
+	pop_ethic_authoritarian_attraction_mult = 2
+}
+
+mt_manipulation_xenophile = {
+	pop_ethic_xenophile_attraction_mult = 2
+}
+
+mt_manipulation_xenophobe = {
+	pop_ethic_xenophobe_attraction_mult = 2
+}
+
+mt_manipulation_militarist = {
+	pop_ethic_militarist_attraction_mult = 2
+}
+
+mt_manipulation_pacifist = {
+	pop_ethic_pacifist_attraction_mult = 2
+}
+
+mt_manipulation_materialist = {
+	pop_ethic_materialist_attraction_mult = 2
+}
+
+mt_manipulation_spiritualist = {
+	pop_ethic_spiritualist_attraction_mult = 2
+}
+
+# Diligence
+
+mt_diligence_never_surrender_modifier = {
+	ship_weapon_damage = 0.25
+}
+
+# Royalty
+
+MT_grand_entrance_modifier = {
+	ship_speed_mult = 0.25
+}
+
+# Antiquity
+artifact_MT_direct_study_cooldown = {
+	icon = "gfx/interface/icons/modifiers/mod_relic_cooldown.dds"
+}
+
+artifact_MT_direct_study_modifier = {
+	category_archaeostudies_research_speed_mult = 0.25
+	category_archaeostudies_draw_chance_mult = 0.15
+}
+
+artifact_MT_personal_prizes_cooldown = {
+	icon = "gfx/interface/icons/modifiers/mod_relic_cooldown.dds"
+}
+
+MT_delegator_subject_bonus = {
+	country_unity_produces_mult = 0.1
+}
+
+mt_legion_stealth_speed = {
+	ship_speed_mult = 0.2
+}
+
+mt_legion_perfection_modifier = {
+	ship_speed_mult = 0.2
+	ship_tracking_add = 20
+}
+
+MT_legion_rapid_response_modifier = {
+	ship_speed_mult = 0.2
+	ship_interstellar_speed_mult = 0.2
+}
+
+# Envy Modifiers
+MT_envy_positive = {
+	num_tech_alternatives_add = 1
+}
+
+MT_envy_negative = {
+	num_tech_alternatives_add = -1
+}
+
+MT_shattered_pride_modifier = {
+	ship_speed_reduction = 0.4
+	ship_fire_rate_mult = -0.4
+	ship_weapon_damage = -0.4
+	ship_hull_mult = -0.4
+}
+
+agenda_MT_piracy_hostile_finish = {
+	planet_crime_mult = 0.5
+}
+
+MT_disrupted_fleets = {
+	ship_fire_rate_mult = -0.1
+}
+
+MT_disrupted_research = {
+	all_technology_research_speed = -0.1
+}
+
+MT_disrupted_economy = {
+	country_trade_produces_mult = -0.1
+}
+
+MT_sabotaged_intel = {
+	intel_decryption_add = -2
+	ship_sensor_range_add = -2
+}
+
+MT_sabotaged_intel_first_contact = {
+	intel_decryption_add = -2
+	ship_sensor_range_add = -2
+	ship_cloaking_detection_add = -2
+}
+
+MT_egalitarian_propaganda = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_unknown.dds"
+	icon_frame = 1
+	pop_ethic_egalitarian_attraction_mult = 1
+}
+
+MT_authoritarian_propaganda = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_unknown.dds"
+	icon_frame = 1
+	pop_ethic_authoritarian_attraction_mult = 1
+}
+
+MT_xenophile_propaganda = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_unknown.dds"
+	icon_frame = 1
+	pop_ethic_xenophile_attraction_mult = 1
+}
+
+MT_xenophobe_propaganda = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_unknown.dds"
+	icon_frame = 1
+	pop_ethic_xenophobe_attraction_mult = 1
+}
+
+MT_militarist_propaganda = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_unknown.dds"
+	icon_frame = 1
+	pop_ethic_militarist_attraction_mult = 1
+}
+
+MT_pacifist_propaganda = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_unknown.dds"
+	icon_frame = 1
+	pop_ethic_pacifist_attraction_mult = 1
+}
+
+MT_materialist_propaganda = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_unknown.dds"
+	icon_frame = 1
+	pop_ethic_materialist_attraction_mult = 1
+}
+
+MT_spiritualist_propaganda = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_unknown.dds"
+	icon_frame = 1
+	pop_ethic_spiritualist_attraction_mult = 1
+}
+
+MT_conquest_finish_modifier = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_nationalist_corruption.dds"
+	icon_frame = 1
+	planet_stability_add = 10
+	planet_crime_add = -20
+	pop_government_ethic_attraction = 0.5
+	pop_ethics_shift_speed_mult = 0.5
+}
+
+mt_mod_genesis_paradigm_boost = {
+	icon = "gfx/interface/icons/modifiers/mod_country_admin_cap_mult.dds"
+	country_produces_mult = 0.2
+}
+
+mt_pm_genesis_gen_colonization = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_landing_ship.dds"
+	icon_frame = 1
+	logistic_growth_mult = 0.5
+}

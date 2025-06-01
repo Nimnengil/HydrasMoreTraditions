@@ -1,0 +1,4 @@
+modifier = {
+	add = 20
+	is_inside_storm = MAA_astral_storm
+}

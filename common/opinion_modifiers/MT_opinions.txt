@@ -1,0 +1,175 @@
+##########################################################################
+# HARD FIXED STATE - DO NOT REMOVE OR RENAME ANY OF THESE
+##########################################################################
+
+opinion_MT_stole_relic = {
+	opinion = {
+		base = -200
+	}
+
+	decay = {
+		base = 0.5
+		modifier = {
+			factor = value:negative_opinion_decay_rate
+		}
+	}
+}
+
+triggered_opinion_MT_benevolence = {
+	trigger = {
+		is_country_type = default
+		FROM = { has_tradition = tr_mt_benevolence_adopt }
+	}
+	opinion = {
+		modifier = {
+			add = 20
+		}
+	}
+}
+
+triggered_opinion_MT_loyalty = {
+	trigger = {
+		is_country_type = default
+		has_subject = FROM
+		FROM = { has_tradition = tr_mt_loyalty_finish }
+	}
+	opinion = {
+		modifier = {
+			add = 500
+		}
+	}
+}
+
+triggered_opinion_MT_malevolence = {
+	trigger = {
+		is_country_type = default
+		FROM = { has_tradition = tr_mt_annihilation_adopt }
+	}
+	opinion = {
+		modifier = {
+			add = -20
+		}
+	}
+}
+
+triggered_opinion_MT_chaotic = {
+	trigger = {
+		is_country_type = default
+		FROM = { has_tradition = tr_mt_chaos_adopt }
+	}
+	opinion = {
+		modifier = {
+			add = -50
+		}
+	}
+}
+
+triggered_opinion_MT_exchange = {
+	trigger = {
+		is_country_type = default
+		FROM = { has_tradition = tr_mt_exchange_winds_of_trade }
+		has_commercial_pact = FROM
+	}
+	opinion = {
+		modifier = {
+			add = 50
+		}
+	}
+}
+
+triggered_opinion_MT_vengeance = {
+	trigger = {
+		is_country_type = default
+		has_tradition = tr_mt_vengeance_adopt
+		FROM = { has_country_flag = MT_true_nemesis@root }
+	}
+	opinion = {
+		modifier = {
+			add = -1000
+		}
+	}
+}
+
+#triggered_opinion_MT_diary = {
+#	trigger = {
+#		is_country_type = default
+#		FROM = {
+#			has_diary_of_innovo = yes
+#			has_tradition = tr_mt_archeology_museums
+#		}
+#	}
+#	opinion = {
+#		base = 1
+#		modifier = {
+#			factor = From.value:MT_num_museum_workers
+#			is_country_type = default
+#		}
+#	}
+#}
+
+triggered_opinion_MT_opulence = {
+	trigger = {
+		is_country_type = default
+		FROM = {
+			has_edict = MT_gilded_beacons
+		}
+	}
+	opinion = {
+		base = 5
+		modifier = {
+			factor = From.trigger:used_starbase_capacity_integer
+			is_country_type = default
+		}
+	}
+}
+
+triggered_opinion_MT_cosmopolitan_migration = {
+	trigger = {
+		is_country_type = default
+		FROM = {
+			has_active_tradition = tr_mt_cosmopolitan_migration
+			has_migration_access = prev
+		}
+	}
+	opinion = {
+		base = 50
+	}
+}
+
+triggered_opinion_MT_cosmopolitan_migration_xenophobe = {
+	trigger = {
+		is_country_type = default
+		FROM = {
+			has_active_tradition = tr_mt_cosmopolitan_migration_xenophobe
+			is_neighbor_of = prev
+		}
+	}
+	opinion = {
+		base = 20
+	}
+}
+
+triggered_opinion_MT_desperation_open_borders = {
+	trigger = {
+		is_country_type = default
+		FROM = {
+			has_active_tradition = tr_mt_desperation_united_we_stand
+		}
+		NOT = { has_closed_borders = FROM }
+	}
+	opinion = {
+		base = 50
+	}
+}
+
+triggered_opinion_MT_desperation_finisher = {
+	trigger = {
+		is_country_type = default
+		FROM = {
+			has_active_tradition = tr_mt_desperation_finish
+		}
+	}
+	opinion = {
+		base = 50
+	}
+}

@@ -1,0 +1,120 @@
+	tradition_swap = {
+		name = tr_mt_philosophy_ethics_bonuses_evo
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			is_gestalt = no
+		}
+
+		custom_tooltip_with_modifiers = tr_mt_philosophy_ethics_bonuses_desc
+		
+		### Base Ethics ###
+
+		triggered_modifier = {
+			potential = { is_spiritualist = yes }
+			all_technology_research_speed = 0.025
+		}
+		
+		triggered_modifier = {
+			potential = { is_pacifist = yes }
+			country_power_projection_influence_produces_mult = 0.05
+		}
+		
+		triggered_modifier = {
+			potential = { is_materialist = yes }
+			tradition_cost_empire_size_mult = -0.075
+		}
+		
+		triggered_modifier = {
+			potential = { is_militarist = yes }
+			country_unity_produces_mult = 0.05
+		}
+		
+		triggered_modifier = {
+			potential = { is_xenophile = yes }
+			planet_jobs_tec_main_species_produces_mult = 0.05
+		}
+		
+		triggered_modifier = {
+			potential = { is_xenophobe = yes }
+			diplomacy_upkeep_mult = -0.125
+		}
+		
+		triggered_modifier = {
+			potential = { is_authoritarian = yes }
+			pop_factions_produces_mult = 0.125
+		}
+		
+		triggered_modifier = {
+			potential = { is_egalitarian = yes }
+			country_influence_produces_mult = 0.05
+		}
+
+		### Evo Ethics ###
+		
+		triggered_modifier = {
+			potential = {
+				OR = {
+					has_ethic = ethic_ecologist
+					has_ethic = ethic_fanatic_ecologist
+				}
+			}
+			planet_structures_cost_mult = -0.025
+			decisions_ecu_influence_cost_mult = -0.125
+		}
+		
+		triggered_modifier = {
+			potential = {
+				OR = {
+					has_ethic = ethic_cooperative
+					has_ethic = ethic_fanatic_cooperative
+				}
+			}
+			pop_job_trade_mult = 0.05
+		}
+		
+		triggered_modifier = {
+			potential = {
+				OR = {
+					has_ethic = ethic_competitive
+					has_ethic = ethic_fanatic_competitive
+				}
+			}
+			pop_job_amenities_mult = 0.05
+		}
+		
+		triggered_modifier = {
+			potential = {
+				OR = {
+					has_ethic = ethic_industrialist
+					has_ethic = ethic_fanatic_industrialist
+				}
+			}
+			planet_structures_upkeep_mult = -0.05
+		}
+		
+		triggered_modifier = {
+			potential = {
+				OR = {
+					has_ethic = ethic_elitist
+					has_ethic = ethic_fanatic_elitist
+				}
+			}
+			country_leader_pool_size = 1
+		}
+		
+		triggered_modifier = {
+			potential = {
+				OR = {
+					has_ethic = ethic_pluralist
+					has_ethic = ethic_fanatic_pluralist
+				}
+			}
+			negative_traits_leader = -1
+		}
+		
+		weight = {
+			factor = 100
+		}
+	}

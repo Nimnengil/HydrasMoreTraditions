@@ -1,0 +1,106 @@
+##################################
+# Isolation Thorns Tradition
+##################################
+
+# Does not check whether or not you have the tradition, should be done before calling
+add_MT_thorns = {
+	fleet = {
+		every_controlled_ship = {
+			limit = {
+				is_ship_class = shipclass_starbase
+				NOT = { has_component = "STARBASE_AURA_MT_THORNS" }
+			}
+			starbase = {
+				add_starbase_component = {
+				 component = "STARBASE_AURA_MT_THORNS"
+			    }
+			}
+		}
+	}
+}
+
+remove_MT_thorns = {
+	fleet = {
+		every_controlled_ship = {
+			limit = {
+				is_ship_class = shipclass_starbase
+				has_component = "STARBASE_AURA_MT_THORNS"
+			}
+			starbase = {
+				remove_starbase_component = {
+				 component = "STARBASE_AURA_MT_THORNS"
+			    }
+			}
+		}
+	}
+}
+
+add_MT_disruption_aura = {
+	fleet = {
+		every_controlled_ship = {
+			limit = {
+				is_ship_class = shipclass_starbase
+				NOT = { has_component = "STARBASE_AURA_MT_DISRUPTION" }
+			}
+			starbase = {
+				add_starbase_component = {
+				 component = "STARBASE_AURA_MT_DISRUPTION"
+			    }
+			}
+		}
+	}
+}
+
+remove_MT_disruption_aura = {
+	fleet = {
+		every_controlled_ship = {
+			limit = {
+				is_ship_class = shipclass_starbase
+				has_component = "STARBASE_AURA_MT_DISRUPTION"
+			}
+			starbase = {
+				remove_starbase_component = {
+				 component = "STARBASE_AURA_MT_DISRUPTION"
+			    }
+			}
+		}
+	}
+}
+
+add_MT_desperation_aura = {
+	fleet = {
+		every_controlled_ship = {
+			limit = {
+				is_ship_class = shipclass_starbase
+				NOT = { has_component = "STARBASE_AURA_MT_DESPERATION" }
+			}
+			starbase = {
+				add_starbase_component = {
+				 component = "STARBASE_AURA_MT_DESPERATION"
+			    }
+				add_starbase_component = {
+				 component = "STARBASE_AURA_MT_DESPERATION_2"
+			    }
+			}
+		}
+	}
+}
+
+remove_MT_desperation_aura = {
+	fleet = {
+		every_controlled_ship = {
+			limit = {
+				is_ship_class = shipclass_starbase
+				has_component = "STARBASE_AURA_MT_DESPERATION"
+			}
+			starbase = {
+				remove_starbase_component = {
+				 component = "STARBASE_AURA_MT_DESPERATION"
+			    }
+				remove_starbase_component = {
+				 component = "STARBASE_AURA_MT_DESPERATION_2"
+			    }
+			}
+		}
+	}
+}

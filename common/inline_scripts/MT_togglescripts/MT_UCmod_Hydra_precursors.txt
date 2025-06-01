@@ -1,0 +1,28 @@
+	## Volgan
+	tradition_swap = {
+		name = tr_mt_antiquity_5_volgan
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_volgan_desc
+		trigger = {
+			has_country_flag = volgan_homeworld_system
+		}
+		modifier = {
+			country_scientist_cap_add = 3
+			country_terraform_speed_mult = 1
+		}
+	}
+	tradition_swap = {
+		name = tr_mt_antiquity_5_volgan_initial
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_volgan_initial_desc
+		trigger = {
+			has_country_flag = volgan_intro
+		}
+		modifier = {
+			ship_archaeological_site_clues_add = 1
+		}
+	}

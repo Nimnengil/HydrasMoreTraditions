@@ -1,0 +1,248 @@
+trigger = {
+	$SCOPE$ = {
+		OR = {
+			has_tradition = tr_mt_royalty_keep
+			has_tradition = tr_mt_ruination_adopt
+			#has_tradition = tr_mt_evolution_adopt
+			has_tradition = tr_mt_core_adopt
+			has_tradition = tr_mt_botany_4
+			has_tradition = tr_mt_nature_bounty
+			has_tradition = tr_mt_ingenuity_wonder_worlds
+		}
+	}
+	NOT = {
+		is_planet_class = pc_cosmogenesis_world
+	}
+}
+
+immediate = {
+	save_event_target_as = MT_target_planet
+	if = {
+		limit = {
+			$SCOPE$ = {
+				has_tradition = tr_mt_royalty_keep
+				home_planet = {
+					is_same_value = event_target:MT_target_planet
+				}
+			}
+			NOT = {
+				has_planet_flag = MT_situation_royalty_keep_flag
+			}
+		}
+		event_target:MT_situation_handler_country = {
+			start_situation = {
+				type = MT_situation_royalty_keep
+				target = event_target:MT_target_planet
+			}
+		}
+	}
+	if = {
+		limit = {
+			$SCOPE$ = {
+				has_tradition = tr_mt_ruination_revelry_in_ruin
+			}
+			OR = {
+				is_planet_class = pc_relic
+				is_planet_class = pc_nuked
+			}
+			NOT = {
+				has_planet_flag = MT_situation_ruination_revelry_in_ruin_flag
+			}
+		}
+		event_target:MT_situation_handler_country = {
+			start_situation = {
+				type = MT_situation_ruination_revelry_in_ruin
+				target = event_target:MT_target_planet
+			}
+		}
+	}
+	if = {
+		limit = {
+			$SCOPE$ = {
+				has_tradition = tr_mt_ruination_couldrons_of_corrosion
+			}
+			OR = {
+				is_planet_class = pc_relic
+				is_planet_class = pc_nuked
+			}
+			NOT = {
+				has_planet_flag = MT_situation_ruination_couldrons_of_corrosion_flag
+			}
+		}
+		event_target:MT_situation_handler_country = {
+			start_situation = {
+				type = MT_situation_ruination_couldrons_of_corrosion
+				target = event_target:MT_target_planet
+			}
+		}
+	}
+	if = {
+		limit = {
+			$SCOPE$ = {
+				has_tradition = tr_mt_ruination_spiteful_reclamations
+			}
+			OR = {
+				is_planet_class = pc_relic
+				is_planet_class = pc_nuked
+			}
+			NOT = {
+				has_planet_flag = MT_situation_ruination_spiteful_reclamations_flag
+			}
+		}
+		event_target:MT_situation_handler_country = {
+			start_situation = {
+				type = MT_situation_ruination_spiteful_reclamations
+				target = event_target:MT_target_planet
+			}
+		}
+	}
+	if = {
+		limit = {
+			$SCOPE$ = {
+				has_tradition = tr_mt_ruination_cities_under_cities
+			}
+			OR = {
+				is_planet_class = pc_relic
+				is_planet_class = pc_nuked
+			}
+			NOT = {
+				has_planet_flag = MT_situation_ruination_cities_under_cities_flag
+			}
+		}
+		event_target:MT_situation_handler_country = {
+			start_situation = {
+				type = MT_situation_ruination_cities_under_cities
+				target = event_target:MT_target_planet
+			}
+		}
+	}
+	# if = {
+	# 	limit = {
+	# 		$SCOPE$ = {
+	# 			has_active_tradition = tr_mt_evolution_predatory
+	# 		}
+	# 		NOT = {
+	# 			has_planet_flag = MT_situation_evolution_predatory_flag
+	# 		}
+	# 	}
+	# 	event_target:MT_situation_handler_country = {
+	# 		start_situation = {
+	# 			type = MT_situation_evolution_predatory
+	# 			target = event_target:MT_target_planet
+	# 		}
+	# 	}
+	# }
+	# if = {
+	# 	limit = {
+	# 		$SCOPE$ = {
+	# 			has_active_tradition = tr_mt_evolution_farmers_parental
+	# 		}
+	# 		NOT = {
+	# 			has_planet_flag = MT_situation_evolution_farming_flag
+	# 		}
+	# 	}
+	# 	event_target:MT_situation_handler_country = {
+	# 		start_situation = {
+	# 			type = MT_situation_evolution_farming
+	# 			target = event_target:MT_target_planet
+	# 		}
+	# 	}
+	# }
+	if = {
+		limit = {
+			$SCOPE$ = {
+				has_active_tradition = tr_mt_nature_bounty
+			}
+			NOR = {
+				has_planet_flag = MT_situation_nature_bounty_flag
+				is_artificial = yes
+			}
+		}
+		event_target:MT_situation_handler_country = {
+			start_situation = {
+				type = MT_situation_nature_bounty
+				target = event_target:MT_target_planet
+			}
+		}
+	}
+	if = {
+		limit = {
+			$SCOPE$ = {
+				has_active_tradition = tr_mt_botany_4
+			}
+			NOT = {
+				has_planet_flag = MT_situation_botany_4_flag
+			}
+		}
+		event_target:MT_situation_handler_country = {
+			start_situation = {
+				type = MT_situation_botany_4
+				target = event_target:MT_target_planet
+			}
+		}
+	}
+	if = {
+		limit = {
+			$SCOPE$ = {
+				has_active_tradition = tr_mt_botany_4_angler
+			}
+			NOT = {
+				has_planet_flag = MT_situation_botany_4_angler_flag
+			}
+		}
+		event_target:MT_situation_handler_country = {
+			start_situation = {
+				type = MT_situation_botany_4_angler
+				target = event_target:MT_target_planet
+			}
+		}
+	}
+	if = {
+		limit = {
+			$SCOPE$ = {
+				has_active_tradition = tr_mt_ingenuity_wonder_worlds
+			}
+			NOT = {
+				has_planet_flag = MT_situation_ingenuity_wonder_worlds_flag
+			}
+		}
+		event_target:MT_situation_handler_country = {
+			start_situation = {
+				type = MT_situation_ingenuity_wonder_worlds
+				target = event_target:MT_target_planet
+			}
+		}
+	}
+	# if = {
+	# 	limit = {
+	# 		$SCOPE$ = {
+	# 			has_tradition = tr_mt_evolution_demotion
+	# 		}
+	# 		NOT = {
+	# 			has_planet_flag = MT_situation_evolution_demotion_flag
+	# 		}
+	# 	}
+	# 	event_target:MT_situation_handler_country = {
+	# 		start_situation = {
+	# 			type = MT_situation_evolution_demotion
+	# 			target = event_target:MT_target_planet
+	# 		}
+	# 	}
+	# }
+	if = {
+		limit = {
+			$SCOPE$ = {
+				has_tradition = tr_mt_core_fast_communication
+			}
+			NOT = {
+				has_planet_flag = MT_situation_core_fast_communication_flag
+			}
+		}
+		event_target:MT_situation_handler_country = {
+			start_situation = {
+				type = MT_situation_core_fast_communication
+				target = event_target:MT_target_planet
+			}
+		}
+	}
+}

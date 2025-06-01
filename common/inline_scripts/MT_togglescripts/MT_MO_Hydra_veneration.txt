@@ -1,0 +1,3 @@
+NOT = {
+	has_origin = origin_HMO_planned_obsolescence
+}

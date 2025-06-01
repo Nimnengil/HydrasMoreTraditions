@@ -1,0 +1,7 @@
+potential = {
+	is_gestalt = no
+	is_homicidal = no
+	NOT = {
+		has_valid_civic = civic_inwards_perfection
+	}
+}

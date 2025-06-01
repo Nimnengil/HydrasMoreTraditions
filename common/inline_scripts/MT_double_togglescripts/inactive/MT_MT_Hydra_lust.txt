@@ -1,0 +1,3 @@
+potential = {
+	has_country_flag = MT_Hydra_lust_active
+}

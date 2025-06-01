@@ -1,0 +1,34 @@
+####################
+# Genesis Deposits #
+####################
+
+d_MT_genesis_capital_boost_1 = { #genesis opener for capital, see MT_events.1000
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = no
+	potential = { always = no }
+	icon = d_crashed_slaver_ship_memorial
+#	category =
+	planet_modifier = {
+		logistic_growth_mult = 0.25
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_MT_genesis_capital_boost_2 = { #genesis finisher for capital, see MT_events.1001
+	is_for_colonizable = yes
+	use_for_min_max_adjustments = no
+	potential = { always = no }
+	icon = d_crashed_slaver_ship_memorial
+#	category =
+	planet_modifier = {
+		logistic_growth_mult = 1
+		planet_jobs_produces_mult = 0.1
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}

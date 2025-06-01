@@ -1,0 +1,62 @@
+tec_equal_opportunities = {
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		planet_resettlement_unemployed_mult = 2.00
+		pop_demotion_time_mult = -0.25
+	}
+
+	potential = {
+		has_tradition = tr_mt_philosophy_finish
+		is_pluralist = no
+	}
+
+	ai_weight = {
+		weight = @EdictLowPrio
+	}
+}
+
+tec_social_benefits = { # TODO - renamed to match concept name, adjust loc and effects
+	length = @EdictPerpetual
+	icon = "GFX_edict_type_policy"
+
+	resources = {
+		category = edicts
+		cost = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+		upkeep = {
+			unity = @Edict1Cost
+			multiplier = value:edict_size_effect
+		}
+	}
+
+	modifier = {
+		pop_citizen_happiness = 0.05
+		#planet_clerks_unity_produces_add = 1
+		planet_pops_consumer_goods_upkeep_mult = 0.1
+	}
+
+	potential = {
+		has_tradition = tr_mt_philosophy_finish
+		is_cooperative = no
+	}
+
+	ai_weight = {
+		weight = @EdictHighPrio
+	}
+}

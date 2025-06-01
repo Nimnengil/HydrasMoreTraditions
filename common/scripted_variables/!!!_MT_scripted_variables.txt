@@ -1,0 +1,6 @@
+################
+# Mod presence #
+################
+
+# This mod:
+@HAS_MT_Hydra = 1
