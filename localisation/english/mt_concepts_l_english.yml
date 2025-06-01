@@ -1,0 +1,132 @@
+﻿l_english:
+
+ ### CONCEPTS
+ #
+ # Above each concept definition are instructions on usage, including an icon where one exists.
+ #   Note that between the icon and the term there's a non-breaking space. When you copy the usage example, it will keep the non-breaking space.
+ #   This is important to not get a line break between the icon and the concept.
+ # Use a concept link with icon the first time a new concept is mentioned, then use §H without an icon for repeated uses.
+ # Use §H with an icon the first time a concept is used withing its own description.
+ # Use §H without an icon if the concept is used more than once.
+
+ 
+ # Shorthand with §I highlighting
+ # Use §K for headers and §I for highlights in Concepts
+ #i_energy: "£energy£ §I$energy$§!"
+ 
+ 
+ 
+ 
+ ###################
+ # Shared Concepts #
+ ###################
+ concept_MT_claimed: "Claimed"
+ 
+ ############
+ # Opulence #
+ ############
+
+ concept_MT_opulence_gilded_edicts: "Gilded Edicts"
+ concept_MT_opulence_gilded_edict: "Gilded Edict"
+ concept_MT_opulence_gilded_edicts_desc: "§HGilded Edicts§! are ['concept_edicts'] that take large sums of £energy£ §I$energy$§! to maintain.\n\n- ['edict:MT_gilded_fleets']\n- ['edict:MT_gilded_gardens']\n- ['edict:MT_gilded_beacons']\n- ['edict:MT_gilded_cities']"
+
+ #############
+ # Antiquity #
+ #############
+ 
+ concept_MT_antiquity_minor_artifact_action_enhance_precursor: "$artifact_MT_enhance_precursor$"
+ concept_MT_antiquity_minor_artifact_action_enhance_precursor_desc: "The $artifact_MT_enhance_precursor$ §HMinor Artifact Action§! allows us to spend a large sum of ['concept_minor_artifacts'] to permanently upgrade the effects of one of our §HPrecursor Relics§!."
+ concept_MT_antiquity_operation_relic_steal: "RELICSTEAL"
+ concept_MT_antiquity_operation_relic_steal_desc: "The §HRELICTHEFT Operation§! is an §HOperation§! where we steal a random ['concept_relic'] owned by the targeted empire."
+ concept_MT_antiquity_cb_relic_steal: "$cb_MT_relic_envy$"
+ concept_MT_antiquity_cb_relic_steal_desc: "With the §H$cb_MT_relic_envy$ Casus Belli§!, ['concept_war'] is waged to seize a random ['concept_relic'] owned by the targeted empire. By using this §HWar Goal§!, we will not gain any ['concept_MT_claimed'] enemy systems."
+ 
+ # antiquity flexible tradition
+ concept_MT_antiquity_5_cybrex: "$tr_mt_antiquity_5_cybrex$"
+ concept_MT_antiquity_5_cybrex_desc: "§E$EFFECTS_CLEAN$§!\n$tr_mt_antiquity_5_cybrex_initial_desc$"
+
+ concept_MT_antiquity_5_first_league: "$tr_mt_antiquity_5_first_league$"
+ concept_MT_antiquity_5_first_league_desc: "§E$EFFECTS_CLEAN$§!\n$tr_mt_antiquity_5_first_league_initial_desc$"
+
+ concept_MT_antiquity_5_irassian: "$tr_mt_antiquity_5_irassian$"
+ concept_MT_antiquity_5_irassian_desc: "§E$EFFECTS_CLEAN$§!\n$tr_mt_antiquity_5_irassian_initial_desc$"
+
+ concept_MT_antiquity_5_vultaum: "$tr_mt_antiquity_5_vultaum$"
+ concept_MT_antiquity_5_vultaum_desc: "§E$EFFECTS_CLEAN$§!\n$tr_mt_antiquity_5_vultaum_initial_desc$"
+
+ concept_MT_antiquity_5_yuht: "$tr_mt_antiquity_5_yuht$"
+ concept_MT_antiquity_5_yuht_desc: "§E$EFFECTS_CLEAN$§!\n$tr_mt_antiquity_5_yuht_initial_desc$"
+
+ concept_MT_antiquity_5_zroni: "$tr_mt_antiquity_5_zroni$"
+ concept_MT_antiquity_5_zroni_desc: "§E$EFFECTS_CLEAN$§!\n$tr_mt_antiquity_5_zroni_initial_desc$"
+
+ concept_MT_antiquity_5_baol: "$tr_mt_antiquity_5_baol$"
+ concept_MT_antiquity_5_baol_desc: "§E$EFFECTS_CLEAN$§!\n$tr_mt_antiquity_5_baol_initial_desc$"
+
+ concept_MT_antiquity_5_adakkaria: "$tr_mt_antiquity_5_adakkaria$"
+ concept_MT_antiquity_5_adakkaria_desc: "§E$EFFECTS_CLEAN$§!\n$tr_mt_antiquity_5_adakkaria_initial_desc$"
+
+ concept_MT_antiquity_5_inetian: "$tr_mt_antiquity_5_inetian$"
+ concept_MT_antiquity_5_inetian_desc: "§E$EFFECTS_CLEAN$§!\n$tr_mt_antiquity_5_inetian_initial_desc$"
+ 
+ # antiquity flexible tradition mods
+ 
+ concept_MT_antiquity_5_plexian: "$tr_mt_antiquity_5_plexian$"
+ concept_MT_antiquity_5_plexian_desc: "§E$EFFECTS_CLEAN$§!\n$tr_mt_antiquity_5_plexian_initial_desc$"
+ 
+ concept_MT_antiquity_5_lartian: "$tr_mt_antiquity_5_lartian$"
+ concept_MT_antiquity_5_lartian_desc: "§E$EFFECTS_CLEAN$§!\n$tr_mt_antiquity_5_lartian_initial_desc$"
+ 
+ concept_MT_antiquity_5_ixardian: "$tr_mt_antiquity_5_ixardian$"
+ concept_MT_antiquity_5_ixardian_desc: "§E$EFFECTS_CLEAN$§!\n$tr_mt_antiquity_5_ixardian_initial_desc$"
+ 
+ concept_MT_antiquity_5_werediran: "$tr_mt_antiquity_5_werediran$"
+ concept_MT_antiquity_5_werediran_desc: "§E$EFFECTS_CLEAN$§!\n$tr_mt_antiquity_5_werediran_initial_desc$"
+ 
+ concept_MT_antiquity_5_ezentian: "$tr_mt_antiquity_5_ezentian$"
+ concept_MT_antiquity_5_ezentian_desc: "§E$EFFECTS_CLEAN$§!\n$tr_mt_antiquity_5_ezentian_initial_desc$"
+ 
+ concept_MT_antiquity_5_volgan: "$tr_mt_antiquity_5_volgan$"
+ concept_MT_antiquity_5_volgan_desc: "§E$EFFECTS_CLEAN$§!\n$tr_mt_antiquity_5_volgan_initial_desc$"
+ 
+ # antiquity flexible tradition mods end
+ 
+ 
+ # antiquity flexible tradition end
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

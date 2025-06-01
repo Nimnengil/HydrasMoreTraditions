@@ -1,0 +1,56 @@
+﻿l_english:
+
+ # MODIFIER LOC
+ # This loc exists to hold any modifier loc and fake modifier loc to prevent clogging of mt_l_english
+ # Any new OR moved loc should be added to the bottom of the list for ease of use for translators
+ # All added loc should use pre-existing loc whenever possible
+
+
+ #############
+ # Modifiers #
+ #############
+
+ mod_country_base_physics_research_produces_add: "$mod_country_physics_research_produces_mult$"
+ mod_planet_researchers_astral_threads_produces_add_modifier: "£astral_threads£ $astral_threads$ from £job_researcher£ Researchers"
+ mod_country_storms_astral_threads_produces_add: "Monthly £astral_threads£ $astral_threads$ from $country_storms$"
+ mod_planet_researchers_astral_threads_produces_add: "£astral_threads£ $astral_threads$ £job_researcher£ from [GetResearcherPlural]"
+ mod_country_traditions_minor_artifacts_produces_add: "$mod_country_minor_artifacts_produces_add$"
+ mod_deposit_blockers_natural_food_produces_add: "£food£ $food$ from ['concept_natural_blockers']"
+ #mod_job_MT_organic_battery_add: "$mod_job_organic_battery_add$"
+ #mod_job_MT_organic_battery_per_pop: "$mod_job_organic_battery_per_pop$"
+ #mod_job_MT_organic_battery_per_pop_short: "$mod_job_organic_battery_per_pop_short$"
+ #mod_MT_planet_organic_batteries_energy_produces_add: "£energy£ $energy$ from £job_MT_organic_battery£ $MT_grid_pops$"
+ #mod_MT_planet_organic_batteries_food_upkeep_mult: "£food£ $food$ Upkeep of £job_MT_organic_battery£ $MT_grid_pops$"
+ #mod_MT_planet_organic_batteries_physics_research_produces_add: "£physics_research£ $physics_research$ from £job_MT_organic_battery£ $MT_grid_pops$"
+ #mod_MT_planet_organic_batteries_society_research_produces_add: "£society_research£ $society_research$ from £job_MT_organic_battery£ $MT_grid_pops$"
+ #mod_MT_planet_organic_batteries_engineering_research_produces_add: "£engineering_research£ $engineering_research$ from £job_MT_organic_battery£ $MT_grid_pops$"
+ #mod_MT_planet_organic_batteries_unity_produces_add: "£unity£ $unity$ from £job_MT_organic_battery£ $MT_grid_pops$"
+ #mod_MT_planet_organic_batteries_produces_mult: "£job_MT_organic_battery£ $MT_grid_pops$ Output"
+ #mod_MT_planet_organic_batteries_minerals_upkeep_add: "£minerals£ $minerals$ $UPKEEP$ of £MT_organic_battery£ $MT_grid_pops$"
+ #mod_MT_planet_organic_batteries_food_upkeep_add: "£food£ $food$ $UPKEEP$ of £MT_organic_battery£ $MT_grid_pops$"
+ mod_councilor_ruler_machine_intelligence_exp_gain: "$mod_councilor_ruler_imperial_exp_gain$"
+ mod_country_civics_energy_upkeep_add: "$mod_country_energy_produces_add$"
+ mod_shipclass_colonizer_build_speed_mult: "$shipclass_colonizer$ Build Speed"
+ mod_deposit_blockers_natural_society_research_produces_add: "£society_research£ $society_research$ from Naturally Occurring Blockers"
+ mod_country_traditions_sr_dark_matter_produces_add: "Monthly $sr_dark_matter$"
+ mod_country_traditions_astral_threads_produces_add: "Monthly $astral_threads$"
+ mod_planet_traders_unity_produces_add: "$unity_with_icon$ per $pop_group_unit$ $job_trader_plural_with_icon$"
+ mod_shipsize_colonizer_speed_mult: "$colonizer$ $MOD_SHIP_SPEED_MULT$"
+ mod_planet_zone_industrial_build_speed_mult: "$zone_industrial$ Build Speed"
+ mod_planet_zone_foundry_build_speed_mult: "$zone_foundry$ Build Speed"
+ mod_planet_zone_factory_build_speed_mult: "$zone_factory$ Build Speed"
+
+
+
+
+ ####################################################
+ # non-existent modifiers for localisation purposes #
+ ####################################################
+
+ mt_planet_farmers_research_produces_add: "£physics£ £society£ £engineering£ Research per $pop_group_unit$ [farmer.GetIcon] [GetFarmerPlural]"
+ mt_planet_pops_produces_add: "For every $pop_group_unit$ £pop£ §Y$POPS$§! we have in our $EMPIRE$"
+ mt_increases_opinion: "Increases the £opinion£ §YOpinion§! of empires capable of regular diplomacy by"
+ mt_increases_opinion_open_borders: "Increases the £opinion£ §YOpinion§! of empires capable of regular diplomacy with whom we have open borders by"
+ mt_decreases_opinion: "Decreases the £opinion£ §YOpinion§! of empires capable of regular diplomacy by"
+ mt_on_non_artificial_worlds: "on Non-Artificial Worlds"
+ mt_on_artificial_worlds: "on Artificial Worlds"

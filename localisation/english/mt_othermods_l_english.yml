@@ -1,0 +1,34 @@
+﻿l_english:
+
+ # LOC for external mod terms
+ # This loc exists to hold any loc that has to do with terms from other mods
+ # Such terms should be kept here so that changing them is easier if the mod these come from are changed
+ # Always start with the acronym of the mod in question
+
+
+ ###########################
+ # Precursor Civilizations #
+ ###########################
+
+ ### Forgotten History ###
+
+ AAA_plexian_precursor_civ: "Plexi"
+ AAA_plexian_precursor_civ_long: "Plexian Swarm"
+ AAA_lartian_precursor_civ: "Lartian"
+ AAA_lartian_precursor_civ_long: "Empire that owned Lartia"
+ AAA_lartian_precursor_civ_short: "Lartia"
+ 
+ ### More Precursors ###
+ 
+ FHMP_ixardian_precursor_civ: "Ixardian"
+ FHMP_ixardian_precursor_civ_long: "Ixardian Corporation"
+ FHMP_werediran_precursor_civ: "Werediran"
+ FHMP_werediran_precursor_civ_long: "Werediran Signal"
+ FHMP_ezentian_precursor_civ: "Ezentian"
+ FHMP_ezentian_precursor_civ_long: "Ezentian Combine"
+ FHMP_ezentian_precursor_civ_short: "Ezenti"
+ 
+ ### Unavoidable Changes ###
+ 
+ UCmod_volgan_precursor_civ: "Volgan"
+ UCmod_volgan_precursor_civ_long: "Volgan Imperium"

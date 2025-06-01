@@ -1,0 +1,148 @@
+﻿l_english:
+
+ ### SITUATIONS
+# As most situations in More Traditions are fully hidden from the player, they usually do not require any specific localisation.
+# The purpose of this file is mainly to prevent errors, and to remove unnecessary loc in mt_l_english
+#
+#
+#
+#
+
+ ###############################
+ # Hidden Tradition Situations #
+ ###############################
+
+ MT_situation_botany_4: "$tr_mt_botany_4$"
+ MT_situation_botany_4_type: "$tr_mt_botany_4$"
+ MT_situation_botany_4_monthly_change_tooltip: "$tr_mt_botany_4$"
+ MT_situation_botany_4_desc: "$tr_mt_botany_4$"
+
+ MT_situation_botany_4_angler: "$tr_mt_botany_4_angler$"
+ MT_situation_botany_4_angler_type: "$tr_mt_botany_4_angler$"
+ MT_situation_botany_4_angler_monthly_change_tooltip: "$tr_mt_botany_4_angler$"
+ MT_situation_botany_4_angler_desc: "$tr_mt_botany_4_angler$"
+
+ MT_situation_core_fast_communication: "$tr_mt_core_fast_communication$"
+ MT_situation_core_fast_communication_type: "$tr_mt_core_fast_communication$"
+ MT_situation_core_fast_communication_monthly_change_tooltip: "$tr_mt_core_fast_communication$"
+ MT_situation_core_fast_communication_desc: "$tr_mt_core_fast_communication$"
+
+#  MT_situation_evolution_predatory: "$tr_mt_evolution_predatory$"
+#  MT_situation_evolution_predatory_type: "$tr_mt_evolution_predatory$"
+#  MT_situation_evolution_predatory_monthly_change_tooltip: "$tr_mt_evolution_predatory$"
+#  MT_situation_evolution_predatory_desc: "$tr_mt_evolution_predatory$"
+
+#  MT_situation_evolution_demotion: "$tr_mt_evolution_demotion$"
+#  MT_situation_evolution_demotion_type: "$tr_mt_evolution_demotion$"
+#  MT_situation_evolution_demotion_monthly_change_tooltip: "$tr_mt_evolution_demotion$"
+#  MT_situation_evolution_demotion_desc: "$tr_mt_evolution_demotion$"
+
+#  MT_situation_evolution_farming: "$tr_mt_evolution_farmers_parental$"
+#  MT_situation_evolution_farming_type: "$tr_mt_evolution_farmers_parental$"
+#  MT_situation_evolution_farming_monthly_change_tooltip: "$tr_mt_evolution_farmers_parental$"
+#  MT_situation_evolution_farming_desc: "$tr_mt_evolution_farmers_parental$"
+
+ MT_situation_exchange_franchising: "$tr_mt_exchange_franchising$"
+ MT_situation_exchange_franchising_type: "$tr_mt_exchange_franchising$"
+ MT_situation_exchange_franchising_monthly_change_tooltip: "$tr_mt_exchange_franchising$"
+ MT_situation_exchange_franchising_desc: "$tr_mt_exchange_franchising$"
+
+ MT_situation_ingenuity_wonder_worlds: "$tr_mt_ingenuity_wonder_worlds$"
+ MT_situation_ingenuity_wonder_worlds_type: "$tr_mt_ingenuity_wonder_worlds$"
+ MT_situation_ingenuity_wonder_worlds_monthly_change_tooltip: "$tr_mt_ingenuity_wonder_worlds$"
+ MT_situation_ingenuity_wonder_worlds_desc: "$tr_mt_ingenuity_wonder_worlds$"
+ 
+ MT_situation_nature_bounty: "$tr_mt_nature_bounty$"
+ MT_situation_nature_bounty_type: "$tr_mt_nature_bounty$"
+ MT_situation_nature_bounty_monthly_change_tooltip: "$tr_mt_nature_bounty$"
+ MT_situation_nature_bounty_desc: "$tr_mt_nature_bounty$"
+ 
+ MT_situation_royalty_keep: "$tr_mt_royalty_keep$"
+ MT_situation_royalty_keep_type: "$tr_mt_royalty_keep$"
+ MT_situation_royalty_keep_monthly_change_tooltip: "$tr_mt_royalty_keep$"
+ MT_situation_royalty_keep_desc: "$tr_mt_royalty_keep$"
+ 
+ MT_situation_ruination_revelry_in_ruin: "$tr_mt_ruination_revelry_in_ruin$"
+ MT_situation_ruination_revelry_in_ruin_type: "$tr_mt_ruination_revelry_in_ruin$"
+ MT_situation_ruination_revelry_in_ruin_monthly_change_tooltip: "$tr_mt_ruination_revelry_in_ruin$"
+ MT_situation_ruination_revelry_in_ruin_desc: "$tr_mt_ruination_revelry_in_ruin$"
+
+ MT_situation_ruination_couldrons_of_corrosion: "$tr_mt_ruination_couldrons_of_corrosion$"
+ MT_situation_ruination_couldrons_of_corrosion_type: "$tr_mt_ruination_couldrons_of_corrosion$"
+ MT_situation_ruination_couldrons_of_corrosion_monthly_change_tooltip: "$tr_mt_ruination_couldrons_of_corrosion$"
+ MT_situation_ruination_couldrons_of_corrosion_desc: "$tr_mt_ruination_couldrons_of_corrosion$"
+
+ MT_situation_ruination_spiteful_reclamations: "$tr_mt_ruination_spiteful_reclamations$"
+ MT_situation_ruination_spiteful_reclamations_type: "$tr_mt_ruination_spiteful_reclamations$"
+ MT_situation_ruination_spiteful_reclamations_monthly_change_tooltip: "$tr_mt_ruination_spiteful_reclamations$"
+ MT_situation_ruination_spiteful_reclamations_desc: "$tr_mt_ruination_spiteful_reclamations$"
+
+ MT_situation_ruination_cities_under_cities: "$tr_mt_ruination_cities_under_cities$"
+ MT_situation_ruination_cities_under_cities_type: "$tr_mt_ruination_cities_under_cities$"
+ MT_situation_ruination_cities_under_cities_monthly_change_tooltip: "$tr_mt_ruination_cities_under_cities$"
+ MT_situation_ruination_cities_under_cities_desc: "$tr_mt_ruination_cities_under_cities$"
+ 
+ #########
+ # Lathe #
+ #########
+
+ MT_situation_lathe_job_suppression: "Job Suppression"
+ MT_situation_lathe_job_suppression_type: "$MT_situation_lathe_job_suppression$"
+ MT_situation_lathe_job_suppression_monthly_change_tooltip: "$MT_situation_lathe_job_suppression$"
+ MT_situation_lathe_job_suppression_desc: "$MT_situation_lathe_job_suppression$"
+ 
+ ######################
+ # Visible Situations #
+ ######################
+
+ # NOTE FOR TRANSLATORS: 'FREEDOM' IS AN APRIL FOOLS JOKE TRADITION.
+ MT_situation_freedom_tax: "War Reparations"
+ MT_situation_freedom_tax_type: "War Reparations"
+ MT_situation_freedom_tax_desc: "[GetMTFreedomDesc]"
+ MT_situation_freedom_tax_monthly_change_tooltip: "[GetMTFreedomTooltip]"
+ MT_Freedom_taxpayer_tooltip: "We are working towards paying off our debt to the [target.GetName]."
+ MT_Freedom_taxreciever_tooltip: "We are receiving monthly payments from the [target.GetName]."
+ MT_Freedom_taxpayer_desc: "As part of our agreement with the [target.GetName], we must pay a portion of our advanced resources as payment for services rendered during our liberation."
+ MT_Freedom_taxreciever_desc: "As part of our agreement with the [target.GetName], they must pay a portion of their advanced resources as payment for services rendered during their liberation."
+ 
+ MT_string_freedom_at_war: "We are currently at war with those we have this agreement with."
+ 
+ MT_FREEDOM_TAX_REPAID_PAYER: "We will have repaid our debt to the [target.GetName]."
+ MT_FREEDOM_TAX_REPAID_RECIEVER: "The [target.GetName] will have paid off their debt to us."
+ 
+ approach_MT_repay_the_debt: "Repay Debt"
+ MT_freedom_repay_the_debt_tooltip: "We should repay our debt to the [target.GetName]"
+ 
+ MESSAGE_MT_CONTRACT_GONE: "War Reparations Terminated"
+ MESSAGE_MT_CONTRACT_GONE_TITLE: "War Reparations Terminated"
+ MESSAGE_TYPE_MT_CONTRACT_GONE: "War Reparations Terminated"
+ MESSAGE_TYPE_MT_CONTRACT_GONE_DESC: "Due to unforseen circumstances, our war reparations agreement with another empire have been terminated."
+ 
+ MT_events.99.name: "Debt Repaid"
+ MT_events.99.desc.taxpayer: "Our debt to the [target.GetName] has been repaid, and we no longer have any obligations towards them."
+ MT_events.99.desc.taxreciever: "The debt the [target.GetName] owes us has been repaid in full, and they will no longer pay us with part of their resource production."
+ MT_events.99.a.taxreciever: "Regrettable."
+ MT_events.99.a.taxpayer: "Finally."
+ # 'FREEDOM' JOKE TRADITION END
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
