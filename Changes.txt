@@ -1,0 +1,444 @@
+*The Evolution Rework Update*
+
+*Multiple*
+All traditions that unlock artifact actions now tell which ones
+
+*Archeology*
+Moved the "Buy from private collectors" artifact action from Archeology to Antiquiy
+New effect for Archeology tradition: +1 scientist cap and scientists start with the archeologist trait
+Archeology agenda now gives 25% / 50% scientist experience gain
+Archeology Media Coverage now states that it gives 8 months worth of unity when completing an archeology site
+Updated icons for History Lessons, Museums and Fascination of Past (Previously Private Collector Appropriation)
+
+*Chaotic*
+Chaotics Glory of War weapons damage is now 50% effective, and caps at 50%
+Envoy harm relations from chaotics opener 100% --> 50%
+Event Horizon bonus now informs you of the exact amount of fire rate gained from being in a black hole system. No longer provides ship weapons damage and no longer claims to provide ship sublight speed.
+Trip Through Hell gives a modifier to ships that use jump drives for 30 days (-100% disengage chance)
+Changed Glory of War's weapons damage to fire rate
+
+*Bureaucracy*
+Bureaucracy now comes before Chaotics
+
+*Benevolence*
+Benevolence Description changed
+Benevolence opener bonuses (Except for opinion increase) moved to kindness. Kindness bonuses moved to finisher. Technology sharing (25%) removed from finisher
+Open Borders renamed to Open Hearts for Xenophiles, because presumably their borders are already open
+
+*Antiquity*
+Direct study now grants a random archeotech option insead of increased archeotech research speed and draw chance
+Moved the "Buy from private collectors" artifact action from Archeology to Antiquiy
+
+*Diligence*
+Clarified that Last Stand's bonus is war exhaustion from defensive wars divided by 4 (Previously said it was total war exhaustion from defensive wars)
+Added +1 unity from soldiers to finisher
+Changed Last Stands ships weapons damage to fire rate
+
+*Dominance*
+Removed +1 unity from soldiers from finisher
+Halved influence gain from subjects (0.5 --> 0.25)
+Halved bonus to influence from power projection (+50% --> 25%)
+
+*Enigmatic*
+Changed finisher reduction to foreign intel gain to 75% (-50% --> -75%) so that activating the agenda from this tradition gives a total of 100% reduction to foreign intel gain
+Changed Ambush's fire rate to weapons damage
+Upped the reduction in MIA time from vanishing act to 20% (from 10%) to help the tree be relevant in singleplayer games
+
+*Envy*
+Removed the "Collectors", "Careful Dismantling" and "Expanded Workforce" traditions (+25% resources from debris and +25% chance to create debris as well as "steal 3 pops when successfully invading a planet")
+Changed opener bonus to +10% damage to superior empires
+Changed finisher bonus to ___
+Removed "Expanded Workforce" (Steal up to 3 pops when invading a world)
+Added the "Unjust Influence", "Data Siphon" and "Shattered Pride" traditions
+renamed "information highways" to "Gleaned Secrets"
+
+*Evolution*
+Completely reworked tree
+
+*Royalty*
+The machine trait from the broodmother tradition can now be removed
+
+*Industry*
+Changed opener to +33% mineral from stations (from +20% resources from stations)
+
+*Piracy*
+Added
+
+
+
+*Next Update, Name Pending*
+
+*Isolation*
+Fixed the Thorns tradition from Isolation so that it no longer reduces ship shield regen by 100%
+
+*Disruption*
+Added
+
+*Chaos*
+Event Horizon fixed: Now actually gives its bonuses to your fleets instead of just lying about it
+
+*Manipulation*
+Planted evidence now has only 40% chance to trigger
+
+*Evolution*
+Adoption Policy now correctly disables the effect
+
+*Industry*
+Rework by Azurian
+
+
+
+**Liberty Addition Update**
+
+**Liberty**
+Added
+
+**Malevolence**
+Now gives -20 opinion with foreign empires
+
+**Chaotic**
+Now gives -50 opinion with foreign empires
+
+**Royalty**
+Can now be picked by non-gestalts
+
+**All**
+Locked Agendas should now be hidden if you cannot pick the associated tradition tree
+
+
+
+**Situation Test**
+
+**Royalty**
+Keeps uses situations now, instead of leaders
+
+**Philosophy**
+Changed "Cultural Support" to "Differing Opinions"
+Differing opinions gives +5% diplomatic weight for each faction in your empires
+
+**Liberty**
+Free Speech changed to Will of the People
+Now gives up to 50% unity from factions from council legitimacy
+
+
+**Commerce Addition**
+
+**Commerce**
+Added
+
+**Venceance**
+Now gives -1000 opinion with your sworn enemy
+Changed Tree Icon
+Agenda Finisher now gives +20% damage against rivals (Previously gave ethics shift chance because I forgot to replace the placeholder bonus)
+
+**Liberation**
+Perks now have to be purchased in the correct order
+
+**Veneration**
+Added
+
+**Loyalty**
+Changed Pledge of Loyalty from 25% sublight speed while in a war your overlord participates in to 10% sublight speed and 10% ship fire rate (same conidition)
+
+**Justice**
+The +25% sublight speed in galactic community space changed to 10%
+
+**Malevolence**
+Changed finisher bonus from 100% influence from power projection to 50%
+
+**Nature**
+Agenda now gives +5/+10 society research from natural blockers
+Nature's Gift now grants access to the Biosphere Healing decision which adds blockers to the planet
+Finisher now gives +5 food from natural blockers
+
+
+**40th Tradition Tree Update**
+
+**Ruination**
+Added
+
+**Industry**
+No longer gives gestalts a popup about agenda if paragons DLC is unowned
+
+
+**40th Tradition Tree Hotfix**
+
+**Ruination**
+Now gives scrap miner drone jobs to gestalts
+Scrap miner jobs now scales with planet size on relic worlds instead of number of researchers
+Scrap miner jobs now scales with half the planet size on tomb worlds instead of providing a static 1
+Ruination Bombardment stance should now exist
+Added +20% tomb world habitability to finisher
+No longer gives ruin ecumenopoli decision if you don't own megacorp
+
+**3.11.1**
+
+**All**
+Adjusted Upkeep modifiers for ships from some traditions (I think the only one I actually changed was greed's cutting corners policy, though)
+
+**Malevolence**
+Reduced ship cost reduction from agenda finisher to 10% (Was 20%)
+
+**Envy**
+Adjusted Shiny Baubles to 3% research for each spy network with 60 or more infiltration (was 5%)
+
+**Evolution**
+Now uses situations to simulate dynamic modifiers instead of background leaders
+
+
+**Small Update**
+
+**Oppression**
+New flavor text (and rebalanced effects) by Azurian for both the forced slavery and punishments policies
+
+**Philosophy**
+Entertainment Analysis changed to Ethics Analysis, which makes half the culture workers from your monuments give opposite bonuses
+
+**Manipulation**
+Changed layout to the one Guidance Uses
+
+
+**Small Update**
+
+**Centralization**
+Centralization no longer requires that an empire has picked either Royalty, Ruination, Evolution or Commerce for the Latency Minimzation tradition to work correctly.
+Now comes before Chaotic
+
+**Chaotic**
+Opener no longer gives +2 max rivalries
+
+**Envy**
+Unjust Influence now gives 100% (Up from 50%) diplomatic weight when opposing resolutions proposed by a militarily superior empire (Before it was just superior)
+
+**Industry**
+Fixed Description
+
+**Isolation**
+Finisher reduced to 25% defensive army health, damage and morale (Was 50%)
+
+**Legion**
+Clarified that rapid response gives an empire-wide bonus
+
+**Philosophy**
+Differing Opinions should now work again
+
+**Vigilance**
+Fixed adoption localization
+
+
+**Integration Update**
+
+**Integration**
+Added
+
+**Oppression**
+No longer shows up if you're a gestalts
+
+**Philosophy**
+Can no longer be picked by gestalts
+
+**Evolution**
+Physics and Engineering research bonuses from farmers now have small research points icons like society research already had.
+
+
+**Entrapeneaurship Update**
+
+**Benevolence**
+Is no longer mutually exclusive with Oppression
+
+**Entrapeneaurship**
+Added
+
+**Greed**
+Reworked
+
+
+**Removal of Mutual Exclusivity Update**
+
+**Multiple**
+All opinion modifiers now use the opinion symbol in the tooltip
+
+The following traditions are no longer mutually exclusive:
+- Justice and Piracy
+- Oppression and Benevolence
+- Nature and Industry
+- Liberty and Oppression
+- (Oversight fixed): Disruption can now be picked even if you have Chaotic, Malevolence and/or Oppression
+
+The following traditions are still mutually exclusive:
+- Archeology and Desecration
+- Malevolence and Benevolence
+- Chaotic and Benevolence
+- Liberty and Manipulation
+- Guidance and Dominance
+- Insurgency and Loyalty
+
+**Industry**
+Can now be picked by envirionmentalists
+
+**Other**
+Added some scripted triggers to be used with Expanded Stellaris Traditions 3
+
+
+**Archeology Rework**
+
+**Mutual Exclusivity Removal**
+Archeology and Desecration
+Guidance and Dominance
+Manipulation and Liberty
+Benevolence and Chaotic
+
+The only remaining mutually exclusive traditions are Benevolence and Malevolence as well as Insurgency and Loyalty.
+
+Traditions that were once mutually exclusive now correctly grants their agendas, even if you have both traditions from a pair of previous mutual-exclusivity
+
+**Archeology**
+Museum Workers Have been renamed to Precursor Historians (Will use Museum Workers as name here)
+Museums now provide only 1 Museum Worker jobs
+Museum workers now only has additional bonuses from precursor relics
+Museum workers no longer produces unity equal to the number of relics you have
+The Museum building now produces unity equal to the number of relics you have
+All Museum worker bonuses from relics reworked
+Opener and Archeological Training combined and reduced
+Added: Meticilous Excavation
+Knowledge of a Legacy (Old: Fascination of Past) experience bonus reduced to 100 from 300
+Museum Workers now benefit from museum worker relic effect increases (Does not apply to History Preservation resolutions until the release of More Resolutions)
+
+Deviations from Azurian's suggestion: Gestalts do not get museums (Except for Rogue Servitors) and instead retain the scavenger sites. No culture workers if you do not have arhceology traditions. No edicts. Media Coverage Retained.
+
+**Forgotten History**
+All changes to Archeology in More Traditions also apply to Forgotten History
+
+**More Ascension Perks**
+Marvels of the Past is now available if you have More Traditions installed
+
+**Liberty**
+Can now be picked by Fanatic Purifiers. Free Speech for all sapients*!
+**Xeno's are not sapient*
+
+**Manipulation**
+Can now be picked by Fanatic Purifiers
+
+**Insurgency**
+The shadow strike agenda no longer requires you to have the finishing modifier for Industry
+
+**Envy**
+Can now be picked by gestalts
+
+
+**More Ascension Perks Improvement**
+
+**More Ascension Perks**
+Relic Hunter is now available even when you have Forgotten History or More Traditions enabled, although it disables desecration when picked, and is disabled by picking desecration
+
+**Maritime**
+Reduced Alloys from trade to 2%
+Is no longer mutually exclusive with Commerce
+
+**Commerce**
+Changed Alloys from trade to 5% Consumer goods from trade
+Is no longer mutually exclusive with Maritime**
+
+**Other**
+Updated Thumbnail
+
+# English Localization Standardization Update 1
+By Azurian
+
+**Fixes**
+- Fixed numerous English localization issues, inconsistencies and typos for the following traditions:
+- Antiquity
+- Archaeology
+- Benevolence
+- Chaotic
+- Desecration
+- Diligence
+- Disruption
+- Dominance
+- Enigmatic
+- Entrepreneurship
+- Envy
+
+# Quick Fixes
+By Metallichydra
+
+**Fixes**
+- Some english localizations in traditions affected by previous update
+- Envy Data Siphon now gives its bonus for 3 years instead of 1
+- The opener localization in malevolence
+- Event bug affecting the Ambush Tradition from the Swarm tree
+
+# Conquest and Opulence Update
+By Metallichydra
+
+**Fixes**
+- The Grudge Agenda (Vengeance) can no longer be used while picking a sworn enemy
+- The Entrepreneurship Agenda now uses its own finish modifier instead of Centralizations
+- Added Tradition Tree: Conquest
+- Added Tradition Tree: Opulence (Designed by Azurian)
+
+# Curiosity Museum Update
+By Metallichydra
+
+**Changes**
+- Commerce finisher changed from +1 trader per 20 pops --> +1 unity from clerks
+- The curiosity tradition "Bright Ideas" has been replaced with "Holographic Displays" which unlocks the museum building and adds an astral historian job to it
+
+**Fixes**
+- Traditions applying jobs to all planets no longer applies said jobs to the synaptic lathe
+- Jobs from this mod can now benefit from automodding traits
+
+**Astral Museum Workers**
+- Known as Astral Historians
+- Works just like Precursor Historians, except with relics from astral rifts
+- This includes those from "More Astral Rifts"
+
+
+# 3.13 Balance Update
+By Metallichydra
+
+**Changes**
+- Entrepreneurship Art of the Deal: trade value from specialists 1 --> 0.5
+- Veneration councilor position: agenda progress speed per level 5% --> 2%
+- Bureaucracy Standard Legal Documents: ~~-50 Empire size~~  -50% Empire Size from systems
+- Disruption Connected Web: ~~For each Spy Network with an Infiltration Level of §H100§!: +5% Operation Speed~~  +20% Operation Speed
+- Manipulation Special Agents: Envoy Improve and Harm relations 100% --> 25%
+- Manipulation Planted Evidence: Chance to get asset after finishing operation 40% --> 20%
+- Oppression Finisher: ~~-10% Empire size from pops~~ +10% stability
+- Piracy Privateers: Now grants an extra commander capacity to empires with the letters of marque civic to compensate for the fact that they already get the material liberator trait
+- Royalty Royal Mandate: diplomatic weight for each influence produced 20% --> 2%
+
+**Fixes**
+- Maritime opener now correctly gives a percentage increase to naval capacity
+- Maritime no longer claims to upgrade its agenda when galactic paragons is not owned
+
+**Compatability**
+- Chaotic Event Horizon: No longer provides immunity to black holes if the Mastery of Hyperspace ascension perk from More Traditions is picked, as that perk grants that effect. In exchange Event Horizon grants an additional 25% ship fire rate.
+
+# April Fools
+# By Metallichydra
+
+**Additions**
+- Lust Tradition Tree
+- Freedom Tradition Tree
+- Starseeker Tradition Tree
+
+**Changes**
+- Swarm opener now grants bonuses to crisis corvettes when the galactic nemesis perk has been picked
+
+**Fixes**
+
+# Great Aprils Fools Update
+By Metallichydra and Azurian
+
+**Changes**
+
+**Fixes**
+- Disruption Malware aura is now actived on all starbases you already own, not only those you gain after activating the tradition
+
+**Additions**
+- Desperation Tradition Tree
+- Astronomy Tradition Tree
+- Botany Tradition Tree
+- Geology Tradition Tree
+- Genesis Tradition Tree

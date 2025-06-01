@@ -1,0 +1,937 @@
+[h3] Antiquity [/h3]
+[i]For each problem we have ever had, a hundred civilizations before us have already engineered a solution.[/i]
+Opener: +10% Monthly Minor Artifacts
+Agenda: Careful Excavations
+
+Specialized Storage: +500 minor artifact storage capacity
+
+Excavation Training: +1 archeology skill and +10% excavation speed
+
+Research Benefits: +1 monthly minor artifact for each 100% Archeotech research speed
+
+New Purpose: Unlocks Artifact actions: Direct Study, Antique Rewards and Buy from private collectors
+
+Restored Weaponry: +25% archeotech weapon fire rate
+
+Finisher: -25% minor artifact ship cost
+
+[h3] Archeology [/h3]
+[i] To conquer the future, one must first look to the past.[/i]
+
+Opener: +15% excavation speed, +1 Archeological Skill
+Agenda: Efficient Archeology
+
+Holographic Exhibitions: Unlocks the museum building
+
+Knowledge of a Legacy: all leaders gain 100 xp whenever a relic is activated
+
+Meticilous Excavation: +3 Minor Artifacts from scientists that are excavating an archeological site
+
+Fascination of the Past: +1 scientist cap, scientists start with the Archeologist trait
+
+Media Coverage: Gain 8 months worth of unity whenever you complete an archeological site
+
+Finisher: Uncover an archeological site each decade
+
+[h3] Astronomy [/h3]
+[i] Perhaps the oldest field of science, the study of stars allows us to solve the universe's most complex questions.[/i]
+
+Opener: +20% Research Station Output, +10% Survey Speed
+Agenda: Science First
+
+Starstudies: Unlocks the Study Star decision
+
+Solar Siphon: +2 Dyson Swarm Capacity, Unlocks the Solar Panel Network Starbase Module
+
+Citizen Astronomers: +3 Physics Research from unemployed pops, +1 Astrometeorologist job per 30 pops, Unlocks the Institute of Astronomy edict
+
+Deeper Space: +20% Habitat Max Districts
+
+Weave Theory: For every technology researched, gain 0.01 monthly astral threads
+
+Finisher: +20% Physics Research from jobs
+
+[h3] Benevolence [/h3]
+[i] The best way to make friends is to show them you only wish to help.[/i]
+
+Opener: +20 opinion with other empires
+Agenda: Search for friends
+
+Mercy: -50% orbital bombardment damage and army collateral damage
+
+Kindness: +50% envoy improve relations, +25 trust cap
+
+Peace Protocols: Gain +0.5% monthly resources for each year we have been at peace, reaching a maximum of 30% after 60 years
+
+Open Borders: -25% border friction, +25% immigration pull
+
+Pledge of Honor: +5% diplomatic weight for each empire whose independence we are guaranteeing
+
+Finisher: +10% commercial pact efficiency, +10% research sharing from agreements, +1 monthly loyalty from subjects
+
+[h3] Botany [/h3]
+[i] One should never forget one's roots and where they come from, and botany allows us to reconnect with those roots like no other.[/i]
+
+Opener: +15% farmer output, +15% research speed (biology)
+Agenda: GMO Trials
+
+Herbal Supplements: +10 years leader lifespan, +10% Leader experience gain
+
+Evolution in Miniature: +50% terraforming cost, -50% Terraforming Speed, Upon terraforming a planet, gain 3 months worth of research points
+
+Floating Gardens: +10% Monthly Food, Unlocks the Institute of Botany edict
+
+Designer Produce: +0.5% happiness on your planets for each farmer on that planet, unlocks the Genome Crafting edict
+
+Plant Genomics: +1 Non-lithoid Organit trait picks, add the Botanical Transgenesis technology as a research option
+
+Finisher: +20% Society Research from jobs
+
+[h3] Bureaucracy [/h3]
+[i] The bureaucracy is expanding to meet the needs of the expanding bureaucracy.[/i]
+
+Opener: +10% edict Fund
+Agenda: Temporary Restructuring
+
+Verified Contracts: +1 unity from managers
+
+Applied Statistics: -10% empire size effective
+
+Standard Legal Documents: -50% empire size from systems
+
+Emergency Powers: -20% edict upkeep during war and crisis
+
+Fast Procedures: +25% Decision enactment speed
+
+Finisher: +1 civic slot
+
+[h3] Centralization [/h3]
+[i] The further our drones go from our central command, the more latency there is, and thus the less efficient they will be. Instead by optimizing the space around our central command and homeworld we'll be able to have a more efficient resource usage.[/i]
+
+Opener: -25% empire size from planets, -10% empire size from pops, +100% empire size from systems
+Agenda: Rapid Relocation
+
+Central Command: +2 effective ruler skill, +50% ruler experience gain
+
+Latency Minimization: Planets in our core sector gets +10% resources from jobs. Planets outside our core sector gets -10% resources from jobs
+
+Efficient Constructions: -10% habitat build cost, +1 housing from habitat districts
+
+Large-Scale Modularity Expansions: +1 max districts on artificial worlds
+
+Compact Computing: gain up to 50% council agenda speed based on the percentage of our systems that is located in our core sector
+
+Finisher: +3 max research, mining and generator districts on habitats
+
+[h3] Chaotic [/h3]
+[i] Reasoning and a healthy mind is a small price to pay for the power that lies beyond the boundaries of sanity.[/i]
+
+Opener: -50 opinion with other empires, +50% envoy harm relations efficiency, +50% insult efficiency
+Agenda: Dark Ritual
+
+Event Horizon: Negates the effects of black holes and provides a +100% ship fire rate when in black hole systems
+
+Horrific Visions: When defeating an enemy fleet, give the commander of that fleet the traumatized trait
+
+Trip Through Hell: +50% jump drive range, After jumping with a jump drive, your ships get 100% disengagement chance reduction for 30 days
+
+Last Gift: Ships that destroy your ships gets 50% disengagement chance reduction permanently
+
+True Devotion: Gain ship fire rate equal to 25% of your total war exhaustion from offensive wars, up to 50%
+
+Finisher: +50% orbital bombardment damage
+
+[h3] Commerce [/h3]
+[i] The most essential thing about trading is the mutual benefit of both parties. Without a benefit, why trade?[/i]
+
+Opener: -50% empire size from branch offices, -25% branch office cost
+Agenda: Marketing Campaign
+
+Special Contracts: +1 max corporate buildings in our branch offices, +10% commercial pact efficiency
+
+Tax Writeoffs: +25% branch office value
+
+Non-Standard Payments: Trade Value is converted into an additional 0.05 Consumer Goods
+
+Trustworth Partnership: +50 opinion with empires you have a commercial pact with
+
+Franchising: Your branch offices provide +1 trader jobs
+
+Finisher: +1 Unity from Clerks
+
+[h3] Conquest [/h3]
+[i] There's no difference between now and the time before FTL. Those who take more from others survive, and those content with what they have will be slain when the warmongers arrive. [/i]
+
+Opener: -20% Claim Influence Cost
+Agenda: Invasion Focus
+
+Rapid Training: +10% Army Training Speed, +200 Army Starting Experience
+
+Valiant Heroies: +2 Commander Capacity
+
+Strengthened Hulls: +400 Army Transport Hull Points
+
+Stranglehold: +10 Max occupation armies
+
+Siege Engines: +25% Orbital bombardment damage, +10% Damage to starbases
+
+Finisher: When Conquering a planet, give it the following modifiers for 10 years: +10 stability, -20 crime, +50% Governing ethics attraction and ethics shift chance
+
+[h3] Cosmopolitan [/h3]
+[i] As our empire spreads across new worlds, myriads of new cultures form. Yet, together, we are all citizens of this galaxy! [/i]
+
+Opener: +10% pop growth from immigration and +20% immigration pull
+Agenda: Festival of Cultures
+
+Galactic Citizenship: +1 External leader starting traits
+
+Wayfarers: +1% Habitability and +2% Pop Growth from Immigration per unique biomes across all colonies.
+
+Diversity of Knowledge: For each Migration Pact you have, gain §G+5%§! increased Leader Experience Gain.
+
+Mundialization: +10% Diplomatic Weight and -10% Crime
+
+Unity in Diversity: +50 Opinion with empires we have migration treaties with
+
+Finisher: +10% Faction Approval and -10% empire size from systems and planets
+
+[h3] Curiosity [/h3]
+[i] The universe is full of wonders, and we wish to see it all.[/i]
+
+Opener: +10% anomaly discovery chance, +20% astral rift exploration speed
+Agenda: Unchecked Theories
+
+Astral Siphon: +25% astral threads from jobs
+
+Call of the unknown: Whenever an astral rift opens in one of our systems, gain a large amount of physics research
+
+Bright Ideas: Unlocks the museum building. Museum buildings provide +1 astral historian job.
+
+Extensive Simulations: -25% astral rift fail probability, +25% scientist experience gain
+
+Lasting Impact: Gain 18 months worth of unity when you finish an astral rift
+
+Finisher: +25% damage to extradimensionals
+
+[h3] Desecration [/h3]
+[i] The ruins of the past shall be repurposed into the building blocks of the future.[/i]
+
+Opener: Unlocks Artifact Actions: Enigmatic Engineering and Resource Extractions
+Agenda: Archeological Dissassembly
+
+Repurposed Relics: +50% tomb world habitability
+
+Destructive Study: Unlocks decision: Destructive study, which can be used on tomb and relic worlds in order to give temporary archeoengineer jobs and create a lot of blockers
+
+Envy: For each fallen empire: +7% ship fire rate, +10% ship build speed and -20% commander cost
+
+Expropriation: Unlocks the relic theft wargoal
+
+Grave Robbers: Researching or scavenging debris from fallen empires grants you minor artifacts
+
+Finisher: Damage to fallen and awakened empires: +25%
+
+[h3] Diligence [/h3]
+[i] The difference between existence and eradication is the will to continue, even when all hope seems lost.[/i]
+
+Opener: -20% orbital bombardment damage and +20% defensive army healthy
+Agenda: Extended Training Program
+
+Zeal: While in a defensive war, gain 10% sublight speed and 20% evasion
+
+Retaliation: While in a defensive war, gain +50% orbital bombardment damage and +25% army damage
+
+Fortifiactions: +10% home territory fire rate and +5 planetary defensive armies
+
+Never Surrender: Whenever one of your ships are destroyed, another random ship in the same fleet gets +25% weapons damage for 30 days
+
+Last Stand: Gain Ship Fire Rate equal to 25% of your total war exhaustion from defensive wars
+
+Finisher: +50% hostile claim influence cost and +1 unity from soldiers
+
+[h3] Disruption [/h3]
+[i] Impeding the progress of our enemies is as good as furthering our own goals.[/i]
+
+Opener: After finishing an espionage operation, give the target a -10% malus to either ship fire rate, research speed or trade value
+Agenda: Skeleton Key
+
+Glitchy Vision: Unlocks the sabotage sensors operation
+
+Fleet Sabotage: Unlocks the sabotage fleet operation
+
+Malware: Hostile ships piloted by AI gets -25% accuracy, ship fire rate and base ship speed
+
+Specialized Tools: +4 operation skill
+
+Connected Web: +5% operation speed for each spy network with 100 infiltration
+
+Finisher: -20% operation cost and upkeep
+
+[h3] Dominance [/h3]
+[i] Not everyone are fit to decide their own fate.[/i]
+
+Opener: +10% subject tax
+Agenda: Workforce relocation
+
+Leverage: +25% influence from power projection, +20% diplomatic weight from fleets
+
+Special Contracts: +0.5 influence from subjects
+
+Suppression: Subjects contribute 10% of their naval capacity to you
+
+Integration: -50% subject influence integration cost
+
+Natural Leader: While in a war for subjegation, gain +25% ship and army build speed
+
+Finisher: +10% naval capacity
+
+[h3] Enigmatic [/h3]
+[i] Power comes from places where things are not like they are here.[/i]
+
+Opener: +2 encryption
+Agenda: Veil of Secrecy
+
+Shrouded: +2 cloaking strength
+
+Interference: +2 defense against hostile operations, +15% dimensional lock duration
+
+Element of Surprise: Recently uncloaked fleets have +50% weapons damage
+
+Vanishing Act: -50% emergency FTL cooldown, -20% Time spent missing in actions
+
+Otherworldly Protection: +25% armor and shield hardening
+
+Finisher: -75% foreign empire intel gain speed on us
+
+[h3] Envy [/h3]
+[i] The best things are always what others have that we don't.[/i]
+
+Opener: -20% operation difficulty, +1 envoy
+Agenda: Ambitious Promises
+
+Shiny Baubles: +3% research speed for each technologically superior empires
+
+Gleaned Secrets: +2% research speed for each spy network with more than 60 infiltration
+
+Unjust Influence: +100% diplomatic weight when opposing a resolution proposed by a militarily superior empire
+
+Data Siphon: After you finish an espionage operation, give the target -1 research alternatives and yourself +1 for 1 year
+
+Shattered Pride: Unlocks the cripple fleet operation
+
+Finisher: +20% damage to militarily superior empires
+
+[h3] Entrepreneurship [/h3]
+[i] Necessity is the mother of invention. We should ensure every citizen in our nation has the means, and if necessary the need, to profit from Innovation.[/i]
+
+Opener: Patent Reformation
+Agenda: +10% trade value
+
+Galactization: -5% market fee, +10% commercial pact effectiveness. Converts excess market fee reduction into trade value
+
+Market Research: Trade is converted into an additional 0.03 research of each type
+
+Art of the Deal: +0.5 trade value from specialists
+
+Adaptive Economy: +1% consumer goods for each year of peace in a row and +0.5% alloys for each year of war in a row, up to a maximum of 30%
+
+Rapid Expansion: -50% slave cost
+
+Finisher: +1% trade value for each year in a row of peace or war, up to a max of 30%
+
+[h3] Evoltuion [/h3]
+[i] Evolution solves all problems in time.[/i]
+
+Opener: Your newly grown pops gets the habitability preference of the planet they are grown on (Can be disabled by a policy)
+Agenda: Boosted Growth
+
+Coevolution Theory: +20% pop growth from immigration. Shifts the evolution tree onto the path of coevolution
+
+Scientific Procreation: Pop growth speed on your planets is increased by 1% for each researcher on that planet. Shifts the evolution tree onto the path of Divergent Evolution
+
+Flora Mutation (Divergent): Farmers produce +1 of each science
+Flora Mutation (Coevolution): Your planets have +1 stability for each farmer on it
+
+Genome Mutation (Divergent): +2 organic species trait picks
+Genome Mutation (Coevolution): +2 organic species trait points
+
+Societal Engineering (Divergent): +20% society research on planets with 2 or more medical workers
+Societal Engineering (Coevolution): -15% pop amenities usage on worlds with 2 or more species
+
+Finisher: +1 organic species trait picks and points
+
+[h3] Genesis [/h3]
+[i] As we enter a new chapter in our civilization, this is where our story will truly begin.[/i]
+
+Opener: +25% pop growth on your capital
+Agenda: Reach for the Stars
+
+Paradigm Shift: +20% monthly resources for 5 years after picking an ascension perk
+
+Generation Zero: Newly settled colonies gain +50% pop growth speed for 20 years
+
+Cradle of Civilizations: Gain 50 Research points of each type when colonizing a planet, multiplied by the number of years that have passed since the game's start
+
+Pioneering Corps: +1 scientist capacity, Gain +2 Monthly unity and +5% Survey speed for each type of habitable world you have surveyed
+
+New Beginnings: Gain a colony ship, -50% Colony ship build cost, Unlocks the Arc Ship edict
+
+Finisher: Quadruple the Genesis Opener bonus, +10% resources from jobs on your capital
+
+[h3] Geology [/h3]
+[i] An oft-overlooked branch of science, geology is just as relevant now as it was thousands of years ago.[/i]
+
+Opener: +15% miner output, +15% research speed (materials)
+Agenda: GMO Trials
+
+Geotechnical Engineering: +1 max districts on non-artificial planets, +2 housing from mining districts, Unlocks the geothermal tapping
+
+Certified Geologists: +20% Engineering Research from jobs, unlocks the Institute of Geology edict
+
+Deepcore Samples: +1 Engineering from miners
+
+Rock Plating: +50% ship strategic resource cost, +15% ship hull points
+
+Geode Clinics: +10% Lithoid growth speed, +1 Lithoid Species trait pick and +1 Lithoit Species trait point
+
+Finisher: +50% Mineral storage capacity
+
+[h3] Greed [/h3]
+[i] The universe is full of riches, and we wish to own it all.[/i]
+
+Opener: +10% monthly energy credits
+Agenda: Increased Workload
+
+Temporary Waste Disposal: -50% blocker clear cost and +50% blocker clear speed. Creates a landfill blocker when a non-landfill blocker is cleared.
+
+Excessive Tunneling: Unlocks the Deep Core Mining decision
+
+Fossil Fuels: +2 Energy from technicians, -15% habitability
+
+Tax: unlocks the tax policy
+
+Rightful Ownership: -25% claim influence cost
+
+Finisher: +100.000 storage cap for each resource
+
+[h3] Guidance [/h3]
+[i] The night may rage, and the storm may tear, but our cloak will shelter all beneath it.[/i]
+
+Opener: +100 Subject trust cap
+Agenda: Idea Sharing
+
+Natural Understanding: +15% shield hit points in friendly systems
+
+The Teacher: +25% Technology Sharing (Subjects only)
+
+The Shepherd: +10% diplomatic weight for each subject
+
+The Delegator: Subjects get +10% unity while specializing, -25% subject specialization time
+
+The Caretaker: +2 Subjects exempt from divided patronage
+
+Finisher: +25% pop growth from immigration, +1 monthly loyalty from subjects
+
+[h3] Industry [/h3]
+[i] Each era of our empire has been heralded by a rapid increase in our industrial capabilities. Now is the time for the next era.[/i]
+
+Opener: +33% mining station output
+Agenda: Industrial Quotas
+
+Pillars of Creation: +10% mechanical pop assembly speed
+
+Domestic Nanofabrication: +0.5 consumer goods from artisans, -5% consumer goods upkeep, Swaps  Multilayered Forging for Agricultural Industrial Complex
+
+Multilayered Forging: +0.5 alloys from metallurgists, +10% armor hit points, swaps Compact Nanofabrication for Large-Scale Prospecting
+
+Prefabricated Factories: +50% industrial district build speed
+
+Template Consolidation: -20% pop assembly cost
+
+Finisher: +20% translucer, chemist and gas refiner output
+
+[h3] Ingenuity [/h3]
+[i] We have ascended to the starts, and forever shall they be our home![/i]
+
+Opener: +2 starbase capacity, +10% mining station output
+Agenda: Megaengineering Focus
+
+Frameworks: -20% megastructure build cost
+
+Grand Construction: +25% megastrucure build speed
+
+Realtime Analasys: +5% engineering research speed for each upgrading megastructure
+
+Wonder Worlds: +10% pop output on artificial worlds
+
+Stellar Shipyards: +25% juggernaut and tital build speed, +20% juggernaut and tital hull points
+
+Finisher: +10% monthly alloys, +50% starbase armor
+
+[h3] Insurgency[/h3]
+[i] We will cut all the strings! And once we are free, we shall cut down the puppeteer![/i]
+
+Opener: -5 Monthly Loyalty
+Agenda: Shadow Buildup
+
+Rightful Independence / Bitter Memories: +25% Ship weapons damage and fire rate while in an independence war / +10% ship weapons damage and fire rate while fighting an overlord
+
+Deterence: +20% damage to militarily superior empires
+
+Taste of Freedom: +20% monthly unity and +5% happiness while independent
+
+What is ours: +20% Hostile claim influence cost, +2 planetary defensive armies
+
+Never Again: While in a defensive war, gain +10% fire rate and 20% ship build speed
+
+Finisher: +10% monthly unity, +20% diplomatic weight. You only gain these bonuses, including the ascension perk slot, once your overlord has been destroyed
+
+[h3] Integration [/h3]
+[i] Our calculations reveal untapped energy within galactic lifeforms. Embracing unconventional resources is key to achieving true efficiency.[/i]
+
+Opener: +10% resource output from grid amalgamated pops
+Agenda: Uplink Integration
+
+Full-Body Immersion Pods: +80 minimum habitability, Unlocks the Nutrient Baths Edict
+
+Dream Capsules: Grid Amalgamated pops use 25% less amenities
+
+Biogrid Revisions: Technician bonuses now also affect Grid Amalgamated pops
+
+Bio-Processors: Unlocks the bio-processors policy which gives either extra research, energy or unity output from Grid Amalgamated pops
+
+Simulated Reality: +50% biological pop happiness
+
+Finisher: +5% drone output for each 10% of the population that is Grid Amalgamated
+
+[h3] Integrity [/h3]
+[i] Integrity of society is paramount.[/i]
+
+Opener: -20 crime
+Agenda: Public Punishments
+
+Improved Bureaucracy: +1 motnhly influence
+
+None above the law: +10% monthly unity and 5% happiness while not in breach of galactic law
+
+Justified Penalties: +50% voting strength on sanctions
+
+Burden of Power: +4 hostile operation difficulty (infiltration), -1 maximum negative leader traits
+
+Pillars of Justice: +1 unity from enforcers, +10 trade protection
+
+Finisher: +10% sublight speed in galactic community space, +25% damage to pirates and marauders
+
+[h3] Isolation [/h3]
+[i] We do not want the influence of other empires to taint our perfection.[/i]
+
+Opener: -5% empire size from pops, -10% empire size from planets
+Agenda: Growth of our own
+
+Purity: +100% government ethics attraction, reduced by 10% for each diplomatic agreement, except for non-aggression pacts
+
+Introspection: +2 leader pool size, -2 external leader pool size
+
+Home Advantage: +15% home territory fire rate
+
+No Signals: -50% border Friction
+
+Thorns: Enemy ships take 10 damage each day in your unoccupied systems
+
+Finisher: +25% Defensive army damage, morale and health
+
+[h3] Legion [/h3]
+[i] Our fleets are the instrument through which we enforce our will on the galaxy.[/i]
+
+Opener: +50% Corvette build speed, +20% corvette hull points, +25% frigate build speed, +20% frigate hull points
+Agenda: Increased Data
+
+Replication: +33% ship build speed
+
+Synchronized Formations: +20% ship weapons range
+
+Perfect Execution: Whenever an enemy ship is destroyed, give the ship that destroyed that ship a +20% sublight speed an +20 tracking bonus for 30 days
+
+Rapid Response: When one of our fleets enter battle, gain +20% empire-wide sublight and interstellar speed for 60 days
+
+Silent Stream: +20% ship sublight speed while cloaked, +1 cloaking strength
+
+Finisher: +40 fleet command limit
+
+[h3] Liberty [/h3]
+[i] The ability to influence the decisions of ones own empire is a basic right for all sapients.[/i]
+
+Opener: While no faction are suppressed: +10% happiness
+Agenda: Encourage Freedom Propaganda
+
+A voice for all: +50% diplomatic weight from pops
+
+Direct Democracy: Pops have +50% political power
+
+Specialized Training: +100% democratic ruler experience gain
+
+Will of the people: Gain up to +50% unity from factions scaling with our council legitimacy
+
+Forced Liberation: While in a liberation war we started, gain +10% ship weapons damage and fire rate
+
+Finsher: +10% factions approval
+
+[h3] Loyalty [/h3]
+[i] There is no shame in not being the main character. Instead we aspire to become the loyal sidekick, the dragon or simply as dependaple right-appendage-being.[/i]
+
+Opener: +5 monthly loyalty
+Agenda: Unbreakable Bond
+
+Pledge of Loyalty: While in a war your overlord is also a part of, gain +10% sublight speed and friendly territory fire rate
+
+Shared Navy: Gain naval capacity equal to 10% of your overlords naval capacity
+
+Bonds, not chains: Gain influence each month equal to our overlords opinion of us
+
+Representitives: Gain 2 years worth of unity output when another empire hires a leader of our main species
+
+Speciality: +5% commercial pact efficiency, 5% research sharing from agreements and +5% damage to rivals. Specialize to focus on one of these bonuses
+
+Finisher: +500 opinion with your overlord
+
+[h3] Malevolence [/h3]
+[i] Our enemies deserve no mercy.[/i]
+
+Opener: -20 opinion with other empires, +50% orbital bombardment damage
+Agenda: Finality
+
+Fanatical Fervor: -25% war exhaustion gain
+
+Extreme Force: +25% hostile territory fire rate
+
+Final Strike: Upon winning a war, execute the enemy ruler
+
+Malignance: Invading a planet will kill up to 3 pops, leaving at least 1 behind
+
+Beauty of Annihilation: Whenever a pop is killed by orbital bombardment, gain 1 month worth of unity
+
+Finisher: +50% influence from power projection
+
+[h3] Manipulation [/h3]
+[i] To leave the fate of our empire in the care of the public would be to ask for collapse.[/i]
+
+Opener: +25% unity from factions, +4 operation skill (manipulation)
+Agenda: Subtle influence
+
+Master of the web: +2 effective ruler skill
+
+Special Agents: +2 envoys and +25% envoy harm and improve relations efficiency
+
+Mandatory Voting: +15% faction approval
+
+Planted Evidence: 20% chance to give an asset whenever you complete an espionage operation
+
+Public Speeches: +1 codebreaking, -25% spy network decay
+
+Finisher: For each spy network with 60 or more infiltration: +5% diplomatic weight
+
+[h3] Maritime [/h3]
+[i] Before FTL, the seas, sands or snows were the seat of profit. Logistics relied on trade routes and vessels for survival. As our ships take to the starts, this holds truer than ever.[/i]
+
+Opener: Gain a naval capacity increase equal to the cubed value of your trade value
+Agenda: Merchant Draft
+
+Grand Harbors: Unlocks the Harbor Complex Building. Harbor complexes grants a merchant job, but also converts half the soldier jobs from fortress and stronghold buildings into Merchant Marine jobs. Merchant Marines gets bonuses as if was both a trader and a soldier
+
+Port of Call: +20 trade protection, +4 defense platform cap
+
+Industry Contracts: Trade value is converted into an additional 0.02 alloys
+
+Merchant Navy: +1 Merchant Marine per 20 pops
+
+War and peace: Unlocks the Navy Draft policy, which affects merchant marines output of naval capacity and trade value
+
+Finisher: +1 mercenary enclave capacity, upgrades the merchant draft agenda
+
+[h3] Meteorology [/h3]
+[i] We have not tamed the void, merely figured out how to avoid its most prominent dangers. One should respect the natural phenomena of this world, for no one can truly control control such forces of nature.[/i]
+
+Opener: +20% Storm Influence
+Agenda: Follow The Slipstream
+
+Storm Observatory: Unlocks the Storm Observatory starbase building
+
+Stormshelters: -25% Devastation from storms
+
+Solar Treasure: +50% Energy from mining stations and -75% energy upkeep for stations
+
+Until The Event Horizon: -20% Starbase Influence Cost and +2 Starbase Capacity
+
+Rightful Fear: +1 Disengage Opportunity
+
+Finisher: Upgrades the Follow The Slipstream agenda
+
+[h3] Nature [/h3]
+[i]Every empire has its roots in nature, and all owe it their reverence.[/i]
+
+Opener: Pop Growth Speed +10%
+Agenda: Studies of Nature
+
+Keepers of Nature: Unity from Farmers +1
+
+Bounty of Nature: Pop Output on Non-Artificial Worlds +10%
+
+Natural Weaponry: Space Fauna Weapon Damage +33%
+
+Nature's Gift: Unlocks the Biosphere Healing Decision, Habitability +5% and +1 Max Districts (non-artificial planets only)
+
+Natural Repairs: Daily Hull Regen +10%
+
+Finisher: Food from Natural Blockers +5
+
+[h3] Oppression [/h3]
+[i] Why care for those under us? They are but cogs in a great machine, and we are its pilot.[/i]
+
+Opener: +10% slave pop resource output
+Agenda: Increased Productivity
+
+Identity Erasure: -25% political power for slaves
+
+Rationing: -20% Food upkeep from slaves
+
+Private Servants: +1 trade value from slaves
+
+Forced Slavery: Unlocks the citizen enslavement policy
+
+Motivational Punishments: Unlocks the Slave Disciplining Policy
+
+Finisher: -10% empire size from pops
+
+[h3] Opulence [/h3]
+[i] Our vast wealth must be undeniable. We are the most powerful empire in the galaxy and all will recognize our magnificence.[/i]
+
+Opener: +0.2 Influence and 5% Diplomatic weight if economically stronger than all neighbors and +0.3 influence and 5% diplomatic weight if economically stronger than all other empires
+Agenda: Wealth Breeds Wealth
+
+Golden Armada: +10% Ship Weapons Damage, Unlocks the Gilded Fleets edict
+
+Incomparable Estates: +1 building slot, Unlocks the Gilded Gardens edict
+
+Beacons of Splendor: +33% Starbase Hull Points, Unlocks the Gilded Beacons edict
+
+Glistening Towers: +10% Housing, Unlocks the Gilded Cities edict
+
+Boundless Earnings: Going over your leader cap will extend the leader cap, but each leader cap extension costs 50 monthly energy
+
+Finisher: +0.5 Influence and 10% Diplomatic Weight for each active gilded edict
+
+[h3] Philosophy [/h3]
+[i] To think that one knows everything is to admit ignorance.[/i]
+
+Opener: +10% faction approval
+Agenda: Remembrance
+
+Character Development: +1 research alternatives for each negative trait our ruler has
+
+Ethics Analysis: Half of the culture workers from your autochton monuments provide bonuses as if you had opposite ethics
+
+Differing Opinions: +5% diplomatic weight for each faction in your empire
+
+Beyond our borders: Gain half of your opposite ethic's bonuses
+
+Coming Change: -15% tradition cost from empire size
+
+Finisher: Unlocks all ethic edicts
+
+[h3] Piracy [/h3]
+[i] Stellar winds bring our fleets through the black sea of the voic, in search of treasures beyond imagination.[/i]
+
+Opener: Gain 1 month worth of unity when scavenging debris
+Agenda: Letters of Marque
+
+Private Pirate Parties: +1 Mercenary Enclave Capacity
+
+Privateers: Commanders start with the material liberator trait, +1 commander capacity, +4 arm privateers skill
+
+Wreck Extraction: +25% chance to spawn debris, +25% resources from debris
+
+Spoils of war: When successfully invading a planet, for each district with a basic resouce, gain 100 of that resource
+
+Golden Opportunity: +50 Naval Capacity for each migration pact
+
+Finisher: +1 mercenary enclave capacity
+
+[h3] Radiancy [/h3]
+[i] We shall blaze across the night sky, leaving a fiert trail that can be seen for millenia, even though our spark will have burned out long before then.[/i]
+
+Opener: +2% monthly Resources, All Radiancy traditions (Except the finisher) have their effects multiplied by 10 while the burn bright agenda is in effect
+Agenda: Burn Bright
+
+Supernova: every friendly ship that gets destroyed grants +0.1% empire-wide fire rate for 30 days
+
+Ever Brighter: +5% ship build speed
+
+Burning Light: +10% damage to endgame crisis factions
+
+Lightspeed: +5% sublight speed
+
+Recurring Radiance: -10% missing in action time
+
+Finisher: +20% agenda duration
+
+[h3] Royalty [/h3]
+[i] Our empire has but one purpose: Further the will of the queen and make sure she has absolute power in matters of galactic affair.[/i]
+
+Opener: +2 effective ruler skill
+Agenda: Royal Responsibilites
+
+Inspiring Presence: +1 commander capacity for each 5 effective ruler level
+
+Keeps: Your homeworld gains +20 defensive armies and -25% orbital bombardment damage
+
+The True Leader: You have a base of 1 point of royalty while independent, increased by +1 for each subject, +5 for being the leader of a federation, +3 for being on the galactic council, +5 for being the custodian and +10 for being the galactic emperor. For each point of royalty, gain +2% agenda progress speed and +5% resources from power projection
+
+Royal Mandate: +2% diplomatic weight, scaling with the amount of influence we produce
+
+Grand Entrance: +20 unity from power projection. Upon declaring war on another empire, gain 25% sublight speed for 5 years
+
+Finisher: +10 naval capacity, multiplied by the effective level of your ruler
+
+[h3] Ruination [/h3]
+[i] The ruins stand tall on worlds of ages past. They have been here for eons, and they will remain for eons to come.[/i]
+
+Opener: Unlocks the ruination bombardment stance, allowing you to bombard planets into tomb worlds and ecumenopoli into relic worlds
+Agenda: Extraction Focus
+
+Revelry in Ruins: +20% relic world habitability and +20% resources from jobs on relic worlds
+
+Spiteful Reclamations: +1 scrap miner job on relic worlds for each planet size
+
+Couldrons of Corrosion: Metallurgists now also produce +0.1 volatile motes on relic worlds
+
+Cities under Cities: Relic worlds gain +6 max districts and -50% orbital bombardment damage
+
+Wastelands of decay: All relic world buffs from the ruination tradition tree now also apply to tomb worlds at half strength
+
+Finisher: Unlocks the Ruin Ecumenopoli decision. +20% tomb world habitability
+
+[h3] Swarm [/h3]
+[i]We are the void between the stars, the endless swarm that hunts without pause[/i]
+
+Opener: +50% corvette build speed, -10% corvette build cost, +10% corvette hull points
+Agenda: Endless Legions
+
+Thousand Cuts: +20% small weapon fire rate, +10% small weapon damage
+
+Feast: Whenever one of your ships destroys an enemy ship, it gains +50% damage for 90 days
+
+Always More: Whenever one of your ships dies, another one in the same fleet gets 10% restored hull points
+
+Endless Pursuit: +50% engagement range, +5% sublight speed
+
+Ambush: Whenever one of your fleets ucloaks: All enemies in the same systems loses 20% sublight speed for 180 days
+
+Finisher: +25% naval capacity
+
+[h3] Transportation [/h3]
+[i]The ability to travel the void is what got us to where we are now. To neglect it now would be a mistake.[/i]
+
+Opener: +10% sublight speed
+Agenda: Conquer the void
+
+Hyperlane Tracking: gain 10 intel on empires who cross our borders
+
+Ease of Transportation: +500% resettlement chance, -50% resettlement cost
+
+Hyperlane Mapping: +25% FTL speed, hyper relays produce 5 unity
+
+Extended Pilot Training: +25% strike craft speed
+
+Optimized Warp Generators: +20% disengagement chance, +1 disengagement opportunity
+
+Finisher: Jump Drive Cooldown -25%
+
+[h3] Urbanization [/h3]
+[i]Optimizing the space we already have can be as rewarding as claiming more[/i]
+
+Opener: +25% housing
+Agenda: Construction Efforts
+
+Streamlined Services: +10% amenities
+
+Effective Planning: -25% Empire Size from districts, -25% district upkeep
+
+Compression: +10% districts
+
+Bureaucratic Oversight: +1 Manager job per 25 pops
+
+Trusted Caretakers: +1 official cap, +25% official experience gain
+
+Finisher: +10% resources from jobs on your capital
+
+[h3] Valor [/h3]
+[i]No king can rule his nation in a proper war without brave and loyal subordinates.[/i]
+
+Opener: +50 Naval Capacity and +20% army morale
+Agenda:
+
+Charge: For the first 30 days of combat your fleets gain +x% sublight speed and fire rate
+
+The Armada: +20% Command Limit
+
+Heroism: Whenever one of your fleets win a space battle, if it has a commander give the commander 1000 xp
+
+Heroic Symbols: The first space battle a commander wins gives a trait based on the circumstances of the battle
+
+Flagships: +20% hull points for titans and battleships
+
+Finisher: -10% ship upkeep while not humiliated.
+
+[h3] Veneration [/h3]
+[i] With age comes wisdom.[/i]
+
+Opener: +25% leader lifespan and starting age
+Agenda: Wisdom of Agenda
+
+Empire of Infinity: For each year that has passed since the start of the game, gain 1 edict fund
+
+New leaders: Get 1 leader cap for each leader type once the mid-game starts. This doubles once the end-game is reached
+
+Wise Council: for each leader above the age of 100 on your counci: +5% council agenda speed
+
+Elder: Your ruler gets +1 effective level for each 50 years they have been alive
+
+Council Overseer: Unlocks the council overseer council position
+
+Finisher: +2 effective councilor skill
+
+[h3] Vengeance [/h3]
+[i] Those who have wronged us shall pay for their sins![/i]
+
+Opener: Choose one of your rivals to be your sworn enemy. You have -1000 opinion towards your sworn enemy. +10% damage to rivals
+Agenda: Grudge
+
+Two-sided war: While we and our sworn enemy considers each other rivals, gain +50% orbital bombardment damage
+
+Adversary: +50% diplomatic weight when opposing a resolution your sworn enemy is supporting or when supporting a resolution your sworn enemy is opposing
+
+Antagonist: +5% damage to rivals, increased by 5% for each unused rivalry
+
+Glee: Each time you destroy an enemy ship, gain 1/10 of your monthly unity output
+
+Final Showdown: While at war with your sworn enemy, gain +15% sublight speed and weapons damage
+
+Finisher: once you have destroyed your sworn enemy, get the following bonuses: +10% monthly unity and naval capacity (You do not get your ascension perk slot until you have defeated your sworn enemy)
+
+[h3] Vigilance [/h3]
+[i] Our eyes are everywhere and they never blink.[/i]
+
+Opener: +4 sensor range, +1 detection strength
+Agenda: Long Range Response
+
+Overtuned Sensors: +20 tracking
+
+Observational studues: +2% research speed for each pre-FTL civilization you are observing
+
+Informational Fear: Your starbases get up to 80% weapons damage depending on the percentage of empires in the galaxy that you have communications with
+
+Perfect Tracking: Whenever a fleet uncloaks in your systems, get 20 intel on that fleets owner
+
+Always Ready: -25% time spent missing in action
+
+Finisher: +25% speed of intel gain on other empires, +10 base intel
