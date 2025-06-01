@@ -1,0 +1,157 @@
+tr_mt_envy_adopt = {
+	unlocks_agenda = agenda_MT_ambitious_promises
+	modifier = {
+		espionage_operation_difficulty_mult = -0.2
+		envoys_add = 1
+	}
+	#custom_tooltip = tr_mt_envy_opener_desc # New Effect: Gain 3 months worth of unity each time you complete an espionage operation 
+	# gain 1 month worth of unity when scavenging debris ( and one month worth of research when researching debris? )
+	tradition_swap = {
+		name = tr_mt_envy_adopt_gestalt
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			is_gestalt = yes
+		}
+		custom_tooltip = tr_mt_envy_adopt_gestalt_agenda_desc
+		modifier = {
+			espionage_operation_difficulty_mult = -0.2
+			envoys_add = 1
+		}
+		on_enabled = {
+			hidden_effect = {
+				if = {
+					limit = { has_paragon_dlc = yes }
+					create_message = {
+						type = COUNCIL_AGENDA_AVAILABLE
+						localization = MESSAGE_COUNCIL_AGENDA_AVAILABLE_UNLOCKED_MT_ENVY_GESTALT_AGENDA
+						days = 30
+						# Unfortunately can't set message type to: _MESSAGE_TYPE_COUNCIL_AGENDA_READY_, which would enable Left-click to open Council.
+					}
+				}
+			}
+		}
+		weight = {
+			factor = 100
+		}
+	}
+}
+# Modifier field in leader traits is the scope the leader is assigned to. Could try to give trait to envoys and modify country (improve relations) / spy networks (Use triggered modifier ( has_envoy_task ) to check if correct scope / task ) If this works, could use to apply negative effects to countries you are harming relations with, improving relations with and so on
+# For this tradition it would be a bonus applied to the spy network (If it is against a superior empire?) (Only applied against superior, because that is the theme of the tradition, and also if it applies to all then why not just apply bonus to country?
+# After testing: Can't be used this way, sadly
+tr_mt_envy_finish = {
+	#custom_tooltip = tr_mt_envy_finish_desc
+	modifier = {
+		damage_vs_superior_empires_mult = 0.2
+		ascension_perks_add = 1
+	}
+	#on_enabled = {
+	#	every_envoy = {
+	#		add_trait = leader_trait_MT_test
+	#	}
+	#}
+}
+
+# 5% research for each technologically superior empire
+tr_mt_envy_shiny_gadgets = {
+
+	custom_tooltip = tr_mt_envy_shiny_gadgets_modifier_desc # Bonuses for each technologically superior empire
+	
+	triggered_modifier = {
+		potential = { always = yes }
+		all_technology_research_speed = 0.03
+		mult = value:MT_envy_value
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# Debris bonuses to be moved to piracy
+# New bonus: Unlocks Espionage Operation: 
+tr_mt_envy_debris_collectors = {
+	#modifier = {
+	#	#scavenge_debris_mult = 0.25
+	#	#create_debris_chance = 0.25
+	#	
+	#}
+	
+	custom_tooltip = tr_mt_envy_debris_collectors_desc
+	
+	triggered_modifier = {
+		potential = {
+			any_country = {
+				is_proposing_resolution = any
+				relative_power = {
+					who = root
+					category = fleet
+					value >= superior
+				}
+			}
+		}
+		diplo_weight_opposing_mult = 1
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# New Effect: If winning a war against a superior empire, gain up to x technologies they have as permanent options
+# New name should be something like "Knowledge Thieves"
+tr_mt_envy_debris_creators = {
+	possible = {
+		has_tradition = tr_mt_envy_debris_collectors
+	}
+	custom_tooltip = tr_mt_envy_debris_creators_desc # Give -1 research alternatives to targets of any of your operations while gaining one yourself (2 years)
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# Move this to piracy with a policy called "Plunder" which can choose between plundering pops, resources or technology
+# New one should have something to do with spy networks or superior empires
+tr_mt_envy_expanded_workforce = {
+	possible = {
+		has_tradition = tr_mt_envy_highways
+		has_tradition = tr_mt_envy_debris_creators
+	}
+	custom_tooltip = tr_mt_envy_expanded_workforce_desc # Unlocks Espionage Operation: Damage fleet
+
+	#tradition_swap = {
+	#	name = tr_mt_envy_expanded_workforce_purifiers
+	#	inherit_icon = yes
+	#	trigger = {
+	#		has_civic = civic_fanatic_purifiers
+	#	}
+	#	custom_tooltip = tr_mt_envy_expanded_workforce_purifiers_desc
+	#	weight = {
+	#		factor = 10
+	#	}
+	#}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_envy_highways = {
+	possible = {
+		has_tradition = tr_mt_envy_shiny_gadgets
+	}
+	
+	custom_tooltip = tr_mt_envy_highways_modifier_desc # Bonuses for each spy network
+	triggered_modifier = {
+		potential = { always = yes }
+		all_technology_research_speed = 0.02
+		mult = value:MT_num_spy_networks
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

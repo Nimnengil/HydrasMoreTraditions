@@ -1,0 +1,112 @@
+tr_mt_chaos_adopt = {
+	unlocks_agenda = agenda_MT_chaos
+	custom_tooltip_with_modifiers = tr_mt_chaos_adopt_desc
+	modifier = {
+		envoy_harm_relations_mult = 0.5
+		country_insult_efficiency = 0.5
+	}
+}
+# 
+tr_mt_chaos_finish = {
+	#custom_tooltip = tr_mt_chaos_finish_desc # 
+	modifier = {
+		ship_orbital_bombardment_mult = 0.5
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_chaos_event_horizon = {
+
+	custom_tooltip = tr_mt_chaos_event_horizon_desc # Bonuses in black hole systems
+
+	ai_weight = {
+		factor = 1000
+	}
+	
+	on_enabled = {
+		hidden_effect = {
+			if = {
+				limit = {
+					has_hydras_more_leader_traits_active = yes
+				}
+				MLT_convert_black_hole_expertise = yes
+			}
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_chaos_event_horizon_hyperspace_picked
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			has_MAP_ap_mastery_of_hyperspace = yes
+		}
+		custom_tooltip = tr_mt_chaos_event_horizon_2_desc # Bonuses in black hole systems
+		weight = {
+			factor = 10
+		}
+	}
+}
+
+# 
+tr_mt_chaos_horrific_visions = {
+
+	possible = {
+		has_tradition = tr_mt_chaos_event_horizon
+	}
+	
+	custom_tooltip = tr_mt_chaos_horrific_visions_desc # When a space battle is won, give the enemy commander a negative trait (use on-lost)
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_chaos_trip_through_hell = {
+	custom_tooltip_with_modifiers = tr_mt_chaos_trip_through_hell_desc # Gives modifier to fleet for some time after jumping
+	modifier = {
+		ship_ftl_jumpdrive_range_mult = 0.5
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_chaos_last_gift = {
+	
+	possible = {
+		has_tradition = tr_mt_chaos_trip_through_hell
+	}
+	
+	custom_tooltip = tr_mt_chaos_last_gift_desc # When one of your ships are destroyed: the one that destroyed it loses 20% hull points # When faced with defeat we lash out one last time in our death-throes.
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_chaos_glory_of_war = {
+	
+	possible = {
+		has_tradition = tr_mt_chaos_last_gift
+	}
+	
+	custom_tooltip = tr_mt_chaos_glory_of_war_desc # While in war, gain bonuses (both good and bad) that scale with total war exhaustion # off_war_exhaustion_sum (All offensive wars war exhaustion)
+
+	triggered_modifier = {
+		potential = { always = yes }
+		ship_fire_rate_mult = 1
+		mult = value:MT_chaos_exhaustion
+		#mult = trigger:off_war_exhaustion_sum
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

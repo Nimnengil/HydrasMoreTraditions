@@ -1,0 +1,180 @@
+tr_mt_desperation_adopt = { # Theme: Crisis
+	unlocks_agenda = agenda_MT_desperation # 
+	custom_tooltip = tr_mt_desperation_adopt_desc # Less bombardment damage during crisis
+	possible = {
+		custom_tooltip = {
+			fail_text = MT_HYDRA_REQUIRES_CRISIS
+			OR = {
+				has_crisis = yes
+				any_country = {
+					has_ascension_perk = ap_become_the_crisis
+					has_ascension_perk = ap_cosmogenesis
+					has_ascension_perk = ap_behemoths
+				}
+			}
+		}
+	}
+	triggered_modifier = {
+		potential = { has_crisis = yes }
+		# Bombardment Damage
+		planet_orbital_bombardment_damage = -0.2
+		# Starbase Stats
+		shipclass_starbase_hull_mult = 0.4
+		shipclass_starbase_armor_mult = 0.4
+	}
+}
+
+# 
+tr_mt_desperation_finish = {
+	custom_tooltip = tr_mt_desperation_finish_desc # +20% damage to crisis, Unity when destroying Crisis ships, get half of the opener when no crisis is happening, +50 opinion
+	triggered_modifier = {
+		potential = { has_crisis = no }
+		# Bombardment Damage
+		planet_orbital_bombardment_damage = -0.1
+		# Starbase Stats
+		shipclass_starbase_hull_mult = 0.2
+		shipclass_starbase_armor_mult = 0.2
+		pop_happiness = 0.05
+	}
+	modifier = {
+		# +10% crisis Damage
+		inline_script = {
+			script = Tradition_Modifier_Groups/MT_Hydra_crisis_modifiers
+			AMOUNT = 0.10
+		}
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_desperation_fight_or_flight = {
+	
+	possible = {
+		has_tradition = tr_mt_desperation_weak_point_analysis
+	}
+	
+	modifier = {
+		ship_engagement_range_mult = 0.2
+		ship_disengage_opportunities_add = 1
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# Emergency Waiver
+tr_mt_desperation_weak_point_analysis = {
+	
+	custom_tooltip_with_modifiers = tr_mt_desperation_weak_point_analysis_desc
+
+	triggered_modifier = {
+		potential = { always = yes }
+		ship_shield_penetration_add = 0.1
+		mult = value:MT_extradimensional_multiplier
+	}
+	triggered_modifier = {
+		potential = { always = yes }
+		ship_armor_penetration_add = 0.1
+		mult = value:MT_swarm_multiplier
+	}
+	triggered_modifier = {
+		potential = { always = yes }
+		ship_armor_penetration_add = 0.05
+		ship_shield_penetration_add = 0.05
+		mult = value:MT_contingency_multiplier
+	}
+	triggered_modifier = {
+		potential = { always = yes }
+		ship_damage_against_starbases_mult = 0.25
+		mult = value:MT_cetena_multiplier
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_desperation_united_we_stand = {
+	
+	possible = {
+		has_tradition = tr_mt_desperation_weak_point_analysis
+	}
+	
+	custom_tooltip_with_modifiers = tr_mt_desperation_united_we_stand_desc # Gain +0.5% $mod_country_produces_mult$ for each year of peace, reaching maximum after 60 years
+	
+	modifier = {
+		resolution_category_galactic_focus_vote_strength_mult = 0.5
+	}
+	
+	tradition_swap = {
+		name = tr_mt_desperation_united_we_stand_xenophobe
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			OR = {
+				is_xenophobe = yes
+				AND = {
+					is_galactic_community_formed = yes
+					is_galactic_community_member = no
+				}
+				has_country_flag = galcom_form_nay
+			}
+		}
+		modifier = {
+			country_starbase_capacity_add = 2
+			ship_home_territory_fire_rate_mult = 0.2
+		}
+		weight = {
+			factor = 100
+		}
+	}
+	
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_desperation_emergency_waivers = {
+	
+	custom_tooltip = tr_mt_desperation_emergency_waivers_desc
+	
+	possible = {
+		has_tradition = tr_mt_desperation_weak_point_analysis
+	}
+	
+	on_enabled = {
+		hidden_effect = {
+			every_owned_starbase = {
+				limit = { is_normal_starbase = yes }
+				add_MT_desperation_aura = yes
+			}
+		}
+	}
+	
+	#triggered_modifier = {
+	#	potential = { has_crisis = yes }
+	#	all_technology_research_speed = 0.2
+	#}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_desperation_records = {
+	
+	possible = {
+		has_tradition = tr_mt_desperation_weak_point_analysis
+	}
+	
+	custom_tooltip = tr_mt_desperation_records_desc # Gain unity/influence/diplomatic weight for each guarantee independence
+
+	ai_weight = {
+		factor = 1000
+	}
+}

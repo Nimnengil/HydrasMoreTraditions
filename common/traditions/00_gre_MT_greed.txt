@@ -1,0 +1,205 @@
+tr_mt_greed_adopt = { # Theme: (basic) Resource extraction at the cost of habitability and other such things
+	unlocks_agenda = agenda_MT_greed # 
+	modifier = {
+		country_energy_produces_mult = 0.1
+	}
+	
+	tradition_swap = {
+		name = tr_mt_industry_gestalt_adopt
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			is_gestalt = yes
+		}
+		custom_tooltip = tr_mt_greed_adopt_gestalt_agenda_desc
+		modifier = {
+			country_energy_produces_mult = 0.1
+		}
+		on_enabled = {
+			hidden_effect = {
+				if = {
+					limit = { has_paragon_dlc = yes }
+					create_message = {
+						type = COUNCIL_AGENDA_AVAILABLE
+						localization = MESSAGE_COUNCIL_AGENDA_AVAILABLE_UNLOCKED_MT_GREED_GESTALT_AGENDA
+						days = 30
+						# Unfortunately can't set message type to: _MESSAGE_TYPE_COUNCIL_AGENDA_READY_, which would enable Left-click to open Council.
+					}
+				}
+			}
+		}
+		weight = {
+			factor = 100
+		}
+	}
+}
+
+# 
+tr_mt_greed_finish = {
+	modifier = {
+		country_resource_max_add = 100000
+		ascension_perks_add = 1
+	}
+}
+
+# Unfettered Energy Production
+tr_mt_greed_fossil_fuels = {
+
+	possible = {
+		has_tradition = tr_mt_greed_martial_business
+	}
+
+	on_enabled = {
+		custom_tooltip = tr_mt_greed_fossil_fuels_desc
+	}
+
+	modifier = {
+		planet_technician_energy_produces_add = 0.5
+		pop_environment_tolerance = -0.05
+		#
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+#  New Perk: Landfills
+tr_mt_greed_landfills = {
+	
+	possible = {
+		#has_tradition = tr_mt_greed_investment
+	}
+	
+	modifier = {
+		planet_clear_blocker_speed_mult = 0.5
+		deposit_blockers_cost_mult = -0.5
+	}
+	
+	custom_tooltip_with_modifiers = tr_mt_greed_landfills_desc
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# Policy: Taxation
+tr_mt_greed_taxes = {
+	
+	possible = {
+		has_tradition = tr_mt_greed_martial_business
+	}
+	
+	custom_tooltip = tr_mt_greed_taxes_desc # Gain the taxes policy, increasing trade value from living standards in exchange for happiness
+
+	tradition_swap = {
+		name = tr_mt_greed_taxes_hive
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		trigger = {
+			is_hive_empire = yes
+		}
+		modifier = {
+			planet_jobs_simple_drone_produces_mult = 0.2
+			planet_pops_organics_food_upkeep_mult = 0.1
+			planet_pops_organics_minerals_upkeep_mult = 0.1
+		}
+		weight = {
+			factor = 10
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_greed_taxes_machine
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		trigger = {
+			is_machine_empire = yes
+		}
+		modifier = {
+			planet_jobs_simple_drone_produces_mult = 0.2
+			pop_amenities_usage_robotic_mult = 0.05
+		}
+		weight = {
+			factor = 100
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_greed_martial_business = {
+	
+	possible = {
+		has_tradition = tr_mt_greed_landfills
+	}
+	
+	modifier = {
+		country_claim_influence_cost_mult = -0.25
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_mt_greed_strip_mines = {
+	
+	possible = {
+		has_tradition = tr_mt_greed_landfills
+	}
+	
+	custom_tooltip = tr_mt_greed_strip_mines_desc # Unlocks the strip mines decision
+	
+	tradition_swap = {
+		name = tr_mt_greed_strip_mines_subterranian
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			is_subterranean_empire = yes
+		}
+		modifier = {
+			planet_miners_rare_crystals_produces_add = 0.2
+		}
+		weight = {
+			factor = 100
+		}
+	}
+	
+	#tradition_swap = {
+	#	name = tr_mt_greed_strip_mines_hive
+	#	inherit_effects = yes
+	#	inherit_icon = yes
+	#	inherit_name = no
+	#	trigger = {
+	#		is_hive_empire = yes
+	#	}
+	#	weight = {
+	#		factor = 10
+	#	}
+	#}
+	
+	#tradition_swap = {
+	#	name = tr_mt_greed_strip_mines_machine
+	#	inherit_effects = yes
+	#	inherit_icon = yes
+	#	inherit_name = no
+	#	trigger = {
+	#		is_machine_empire = yes
+	#	}
+	#	weight = {
+	#		factor = 10
+	#	}
+	#}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

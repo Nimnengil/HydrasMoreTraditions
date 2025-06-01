@@ -1,0 +1,175 @@
+tr_mt_isolation_adopt = { # Theme: Isolation
+	unlocks_agenda = agenda_MT_isolation # Lose immigration pull, but also immigration push. Gain stability and pop growth speed
+	modifier = {
+		empire_size_pops_mult = -0.05
+		empire_size_colonies_mult = -0.1
+	}
+	possible = {
+		NOR = {
+			has_ethic = ethic_xenophile
+			has_ethic = ethic_fanatic_xenophile
+		}
+	}
+}
+
+# 
+tr_mt_isolation_finish = {
+	modifier = {
+		army_defense_damage_mult = 0.25
+		army_defense_morale_mult = 0.25
+		army_defense_health_mult = 0.25
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_isolation_closed_borders = {
+
+	modifier = {
+		country_border_friction_mult = -0.5
+	}
+	
+	possible = {
+		has_tradition = tr_mt_isolation_home_turf
+	}
+	
+	tradition_swap = {
+		name = tr_mt_isolation_closed_borders_gestalt
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_gestalt = yes
+		}
+		weight = {
+			factor = 100
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+#  
+tr_mt_isolation_home_turf = {
+	
+	modifier = {
+		ship_home_territory_fire_rate_mult = 0.15
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_isolation_thorns = {
+	
+	possible = {
+		has_tradition = tr_mt_isolation_closed_borders
+		has_tradition = tr_mt_isolation_introspection
+	}
+	
+	custom_tooltip = tr_mt_isolation_thorns_desc # All enemy fleets take damage inside our borders # Attach component to starbase like EMP
+
+	on_enabled ={
+		hidden_effect = {
+			every_owned_starbase = {
+				limit = { is_normal_starbase = yes }
+				add_MT_thorns = yes
+			}
+		}
+	}
+
+	#tradition_swap = {
+	#	name = tr_mt_isolation_thorns_first_contact
+	#	inherit_effects = no
+	#	inherit_icon = yes
+	#	inherit_name = yes
+	#	trigger = {
+	#		has_first_contact = yes
+	#	}
+	#	custom_tooltip = tr_mt_isolation_thorns_first_contact_desc
+	#	on_enabled ={
+	#		hidden_effect = {
+	#			every_owned_starbase = {
+	#				limit = { is_normal_starbase = yes }
+	#				add_MT_thorns = yes
+	#			}
+	#		}
+	#	}
+	#	weight = {
+	#		factor = 100
+	#	}
+	#}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_isolation_introspection = {
+	
+	modifier = {
+		country_leader_pool_size = 2
+		external_leader_pool_add = -2
+	}
+	
+	possible = {
+		has_tradition = tr_mt_isolation_no_relations
+	}
+	
+	tradition_swap = {
+		name = tr_mt_isolation_introspection_gestalt
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_gestalt = yes
+		}
+		modifier = {
+			country_leader_pool_size = 2
+		}
+		weight = {
+			factor = 100
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_isolation_introspection_gestalt
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			has_first_contact_dlc = no
+		}
+		modifier = {
+			country_leader_pool_size = 2
+		}
+		weight = {
+			factor = 1000
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_isolation_no_relations = {
+
+	custom_tooltip = tr_mt_isolation_no_relations_desc # Gain a bonus, lessened by your number of diplomatic agreements
+	
+	triggered_modifier = {
+		potential = { always = yes }
+		pop_government_ethic_attraction = 0.1
+		mult = value:MT_inverse_num_agreements
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

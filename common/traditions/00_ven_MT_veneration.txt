@@ -1,0 +1,106 @@
+tr_mt_veneration_adopt = { # Theme: Age and leaders
+	unlocks_agenda = agenda_MT_veneration # Give all leaders XP equal to their age
+	#custom_tooltip_with_modifiers = tr_mt_veneration_adopt_desc # All your leaders gets the special veneration trait that gives culture workers on any leader's background planet, 1 for each 100 years of age
+	modifier = {
+		leader_starting_age_mult = 0.25
+		leader_lifespan_mult = 0.25
+	}
+}
+
+# 
+tr_mt_veneration_finish = {
+	modifier = {
+		councilor_skill_add = 2
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_veneration_wise_council = {
+
+	# Gain 5% agenda speed for each councilor you have that is 100 years or older
+	
+	custom_tooltip = tr_mt_veneration_wise_council_desc
+	
+	triggered_modifier = {
+		potential = { always = yes }
+		council_agenda_progress_speed = 0.05
+		mult = value:MT_old_council
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# Recorded History
+tr_mt_veneration_empire_of_infinity = {
+	
+	custom_tooltip = tr_mt_veneration_empire_of_infinity_desc
+	
+	triggered_modifier = {
+		potential = { always = yes }
+		country_edict_fund_add = 1
+		mult = value:MT_years_passed
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_veneration_elder = {
+	
+	possible = {
+		has_tradition = tr_mt_veneration_wise_council
+	}
+	
+	custom_tooltip = tr_mt_veneration_elder_desc # Gain +1 effective ruler level for each 50 years old your ruler is
+	
+	triggered_modifier = {
+		potential = { always = yes }
+		ruler_skill_add = 1
+		mult = value:MT_royalty_ruler_age
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_veneration_more_leaders = {
+	
+	possible = {
+		has_tradition = tr_mt_veneration_empire_of_infinity
+	}
+	
+	custom_tooltip = tr_mt_veneration_more_leaders_desc # This bonus only takes effect after the mid-game start date, and doubles once you reach the end-game start date
+	
+	triggered_modifier = {
+		potential = { mid_game_years_passed > 0 }
+		country_official_cap_add = 1
+		country_commander_cap_add = 1
+		country_scientist_cap_add = 1
+		mult = value:MT_veneration_game_state
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_veneration_council_overseer = {
+
+	possible = {
+		has_tradition = tr_mt_veneration_elder
+	}
+
+	custom_tooltip = tr_mt_veneration_council_overseer_desc # Gain access to a council position that boosts councilor experience gain, council progress speed and agenda duration
+
+	ai_weight = {
+		factor = 1000
+	}
+}

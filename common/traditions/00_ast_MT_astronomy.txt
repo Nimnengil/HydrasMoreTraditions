@@ -1,0 +1,211 @@
+# Adoption
+tr_mt_astronomy_adopt = {
+	unlocks_agenda = agenda_MT_astronomy
+	#custom_tooltip = tr_mt_astronomy_adopt_desc
+	modifier = {
+		station_researchers_produces_mult = 0.2
+		science_ship_survey_speed = 0.1
+	}
+}
+
+# Finisher
+tr_mt_astronomy_finish = {
+	#custom_tooltip = tr_mt_astronomy_finisher_desc
+	modifier = {
+		planet_physicists_physics_research_produces_add = 0.5
+		ascension_perks_add = 1
+	}
+}
+
+# Solar Siphon
+tr_mt_astronomy_1 = {
+		possible = {
+		has_tradition = tr_mt_astronomy_2
+	}
+	on_enabled = {
+		custom_tooltip = tr_mt_astronomy_1_desc
+	}
+	modifier = {
+		dyson_swarm_limit_add = 2
+		# Also gain access to copy of 'Solar Panel Network' Starbase Module, see ADD LATER
+	}
+	tradition_swap = { # Swap Gestalt
+		name = tr_mt_astronomy_1_gestalt
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			is_gestalt = yes
+			has_machine_age_dlc = yes
+		}
+		modifier = {
+			dyson_swarm_limit_add = 2
+			stations_upkeep_mult = -0.33
+			# no solar panel
+		}
+		weight = {
+			factor = 100
+		}
+	}
+		tradition_swap = { # Swap No Machine Age DLC
+		name = tr_mt_astronomy_1_no_machine_age_dlc
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		on_enabled = {
+		custom_tooltip = tr_mt_astronomy_1_desc
+		}	
+		#custom_tooltip = tr_mt_astronomy_1_no_machine_age_dlc_desc
+		trigger = {
+			is_gestalt = no
+			has_machine_age_dlc = no
+		}
+		modifier = {
+			country_starbase_capacity_add = 2
+			# gain solar panel
+		}
+		weight = {
+			factor = 100
+		}
+	}
+		tradition_swap = { # Swap Gestalt + No Machine Age DLC
+		name = tr_mt_astronomy_1_gestalt_no_machine_age_dlc
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			is_gestalt = yes
+			has_machine_age_dlc = no
+		}
+		modifier = {
+			country_starbase_capacity_add = 2
+			stations_upkeep_mult = -0.33
+			# no solar panel
+		}
+		weight = {
+			factor = 100
+		}
+	}
+}
+
+# Starstudies
+tr_mt_astronomy_2 = {
+	custom_tooltip = tr_mt_astronomy_2_desc
+	#modifier = {
+	#	# gain decision 'Study Star' to be used on stars only
+	#	# removes all deposits and replaces them with random science deposit sized 3-8
+	#}
+}
+
+# Deeper Space
+tr_mt_astronomy_3 = {
+	possible = {
+		has_tradition = tr_mt_astronomy_1
+	}
+	custom_tooltip = BLANK_STRING # # Since the Modifier uses only a scripted modifier, we'll get an error without a custom tooltip.
+	modifier = {
+		habitat_max_districts_mult = 0.2
+	}
+}
+
+# Citizen Astronomers
+tr_mt_astronomy_4 = {
+	possible = {
+		has_tradition = tr_mt_astronomy_2
+	}
+	on_enabled = {
+		custom_tooltip = tr_mt_astronomy_4_desc
+	}
+	modifier = {
+		planet_civilians_physics_research_produces_add = 1
+		# Edict Institute of Astronomy, Astral Threads from Storms: +1 & Monthly Astral Threads +15% / phys upkeep
+	}
+	tradition_swap = { # Eyes to the Skies /// Swap Gestalt
+		name = tr_mt_astronomy_4_gestalt
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_gestalt = yes
+		}
+		modifier = {
+			planet_maintenance_drones_physics_research_produces_add = 0.1
+		}
+		#custom_tooltip = tr_mt_astronomy_4_gestalt_desc
+		#triggered_modifier = {
+		#	country_traditions_physics_research_produces_add = 0.003 # 0.3 per 100 pop
+		#	mult = trigger:pop_amount
+		#}
+		weight = {
+			factor = 300
+		}
+	}
+	tradition_swap = { # Swap No Storm DLC
+		name = tr_mt_astronomy_4_no_storm_dlc
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			has_cosmic_storms_dlc = no
+			has_astral_planes_dlc = yes
+		}
+		on_enabled = {
+			custom_tooltip = tr_mt_astronomy_4_swap_no_storm_dlc_desc
+		}
+		modifier = {
+			planet_civilians_physics_research_produces_add = 1
+			# Edict Institute of Astronomy, Astral Threads from Researchers: +0.01 & Monthly Astral Threads +15% / phys upkeep
+		}
+		weight = {
+			factor = 200
+		}
+	}
+	tradition_swap = { # Swap No Storm+Astral DLC
+		name = tr_mt_astronomy_4_no_storm_or_astral_dlc
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			has_astral_planes_dlc = no
+		}
+		on_enabled = {
+			custom_tooltip = tr_mt_astronomy_4_swap_no_storm_or_astral_dlc_desc
+		}
+		modifier = {
+			planet_civilians_physics_research_produces_add = 1
+			# Edict Institute of Astronomy, dark matter from researchers +0.01 / phys upkeep
+		}
+		weight = {
+			factor = 100
+		}
+	}
+}
+
+# Weave Theory
+tr_mt_astronomy_5 = {
+	possible = {
+		has_tradition = tr_mt_astronomy_4
+	}
+	custom_tooltip = tr_mt_astronomy_5_desc
+	triggered_modifier = {
+		country_traditions_astral_threads_produces_add = 0.01
+		mult = value:MT_num_tech_count
+	}
+	tradition_swap = { # Dark Matter Spotting /// Swap No Astral DLC
+		name = tr_mt_astronomy_5_no_astral_dlc
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			has_astral_planes_dlc = no
+		}
+		custom_tooltip = tr_mt_astronomy_5_no_astral_dlc_desc
+		triggered_modifier = {
+		country_traditions_sr_dark_matter_produces_add = 0.01
+			mult = value:MT_num_tech_count					#change to sensors maybe?
+		}
+		weight = {
+			factor = 100
+		}
+	}
+}

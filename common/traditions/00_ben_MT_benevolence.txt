@@ -1,0 +1,140 @@
+tr_mt_benevolence_adopt = { # Theme: Peace and Diplomacy
+	unlocks_agenda = agenda_MT_benevolence # 
+	custom_tooltip_with_modifiers = tr_mt_benevolence_adopt_desc # +20 opinion
+}
+
+# 
+tr_mt_benevolence_finish = {
+	# Subjects gain 25% research speed on technologies you have researched
+	modifier = {
+		commercial_pact_mult = 0.1
+		research_sharing_mult = 0.1
+		monthly_loyalty_from_subjects = 1
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_benevolence_open_borders = {
+
+	modifier = {
+		country_border_friction_mult = -0.25
+		planet_resettlement_unemployed_destination_mult = 0.25
+	}
+	
+	tradition_swap = {
+		name = tr_mt_benevolence_open_borders_xenophobe
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_xenophobe = yes
+		}
+		modifier = {
+			country_border_friction_mult = -0.35
+		}
+		weight = {
+			factor = 10
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_benevolence_open_borders_gestalt
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_gestalt = yes
+		}
+		modifier = {
+			country_border_friction_mult = -0.35
+		}
+		weight = {
+			factor = 100
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_benevolence_open_borders_xenophile
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_xenophile = yes
+		}
+		weight = {
+			factor = 100
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+#  
+tr_mt_benevolence_kindness = {
+	
+	modifier = {
+		envoy_improve_relations_mult = 0.5
+		country_trust_cap_add = 25
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_benevolence_peace_protocols = {
+	
+	possible = {
+		has_tradition = tr_mt_benevolence_kindness
+		has_tradition = tr_mt_benevolence_mercy
+	}
+	
+	custom_tooltip = tr_mt_benevolence_peace_protocols_desc # Gain +0.5% $mod_country_produces_mult$ for each year of peace, reaching maximum after 60 years
+	
+	triggered_modifier = {
+		potential = { always = yes }
+		country_produces_mult = 0.005
+		mult = value:mt_peace_time
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_benevolence_mercy = {
+	
+	modifier = {
+		ship_orbital_bombardment_pop_damage_mult = -0.5
+		army_collateral_damage_mult = -0.5
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_benevolence_guarantee = {
+
+	custom_tooltip = tr_mt_benevolence_guarantee_desc # Gain unity/influence/diplomatic weight for each guarantee independence
+	
+	possible = {
+		has_tradition = tr_mt_benevolence_open_borders
+	}
+	
+	triggered_modifier = {
+		potential = { always = yes }
+		diplo_weight_mult = 0.05
+		mult = trigger:num_guarantees
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

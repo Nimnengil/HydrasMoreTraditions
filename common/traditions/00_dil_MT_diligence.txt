@@ -1,0 +1,177 @@
+tr_mt_diligence_adopt = { # Theme: Last Stand
+	unlocks_agenda = agenda_MT_diligence # 
+	modifier = {
+		planet_orbital_bombardment_damage = -0.2
+		army_defense_health_mult = 0.2
+	}
+}
+
+# 
+tr_mt_diligence_finish = {
+	#
+	modifier = {
+		country_hostile_claim_influence_cost_mult = 0.5
+		planet_soldiers_unity_produces_add = 1
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_diligence_last_stand = {
+
+	custom_tooltip = tr_mt_diligence_last_stand_desc
+
+	possible = {
+		has_tradition = tr_mt_diligence_never_surrender
+	}
+
+	triggered_modifier = {
+		potential = { always = yes }
+		ship_fire_rate_mult = 1
+		mult = value:mt_diligence_last_stand_value
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+#  
+tr_mt_diligence_fortifications = {
+	
+	modifier = {
+		ship_home_territory_fire_rate_mult = 0.1
+		planet_defense_armies_add = 5
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_diligence_never_surrender = {
+	
+	custom_tooltip = tr_mt_diligence_never_surrender_desc # Whenever a ship dies, give bonus to nearby ship
+
+	possible = {
+		has_tradition = tr_mt_diligence_fortifications
+	}
+
+	tradition_swap = {
+		name = tr_mt_diligence_never_surrender_hive
+		inherit_effects = yes
+		inherit_icon = yes
+		trigger = {
+			is_hive_empire = yes
+		}
+		weight = {
+			factor = 1
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_diligence_never_surrender_machine
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_machine_empire = yes
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_diligence_zeal = {
+	
+	custom_tooltip = tr_mt_diligence_zeal_desc # Gain bonuses while in a defense war
+	
+	triggered_modifier = {
+		potential = {
+			any_war = {
+				is_war_participant = {
+					who = root
+					side = defenders
+				}
+			}
+		}
+		ship_speed_mult = 0.1
+		ship_evasion_mult = 0.2
+	}
+	
+	tradition_swap = {
+		name = tr_mt_diligence_zeal_hive
+		inherit_effects = yes
+		inherit_icon = yes
+		trigger = {
+			is_hive_empire = yes
+		}
+		weight = {
+			factor = 1
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_diligence_zeal_machine
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_machine_empire = yes
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_diligence_payback = {
+
+	custom_tooltip = tr_mt_diligence_payback_desc # Gain bonuses while in a defense war
+	
+	possible = {
+		has_tradition = tr_mt_diligence_zeal
+	}
+	
+	triggered_modifier = {
+		potential = {
+			any_war = {
+				is_war_participant = {
+					who = root
+					side = defenders
+				}
+			}
+		}
+		ship_orbital_bombardment_mult = 0.5
+		army_damage_mult = 0.25
+	}
+	
+	tradition_swap = {
+		name = tr_mt_diligence_payback_machine
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_machine_empire = yes
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

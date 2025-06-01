@@ -1,0 +1,140 @@
+# Designed by TrueWolves
+
+tr_mt_entrap_adopt = { # Theme: The Galactic Market
+	unlocks_agenda = agenda_MT_entrap # 
+	modifier = {
+		country_trade_produces_mult = 0.1
+	}
+}
+
+# 
+tr_mt_entrap_finish = {
+	# Subjects gain 25% research speed on technologies you have researched
+	custom_tooltip = tr_mt_entrap_finish_desc # Gain §G+1%§! 
+	triggered_modifier = {
+		potential = { has_tradition = tr_mt_entrap_finish }
+		country_trade_produces_mult = 0.01
+		mult = value:MT_years_in_row
+	}
+	modifier = {
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_entrap_adaptive_economy = {
+
+	custom_tooltip = tr_mt_entrap_adaptive_economy_desc
+
+	triggered_modifier = {
+		potential = { is_at_war = no }
+		country_consumer_goods_produces_mult = 0.01
+		mult = value:MT_years_of_peace
+	}
+	
+	triggered_modifier = {
+		potential = { is_at_war = yes }
+		country_alloys_produces_mult = 0.005
+		mult = value:MT_years_of_war
+	}
+	
+	on_enabled = {
+		hidden_effect = {
+			set_variable = { which = MT_current_war_start value = trigger:years_passed }
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# Gain trade value mult equal to your excess market fee reduction
+tr_mt_entrap_galactization = {
+	
+	possible = {
+		has_tradition = tr_mt_entrap_market_research
+		has_tradition = tr_mt_entrap_art_of_the_deal
+	}
+	
+	custom_tooltip = tr_mt_entrap_galactization_desc
+	
+	modifier = {
+		country_trade_fee = -0.05
+		commercial_pact_mult = 0.1
+	}
+	
+	triggered_modifier = {
+		potential = { always = yes }
+		country_trade_produces_mult = 1
+		mult = value:MT_excess_trade_fee
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_entrap_market_research = {
+	
+	custom_tooltip = tr_mt_entrap_market_research_desc # Gain 0.05 research of each type for each trade value
+
+	triggered_modifier = {
+		potential = { always = yes }
+		country_traditions_physics_research_produces_add = 0.03
+		country_traditions_society_research_produces_add = 0.03
+		country_traditions_engineering_research_produces_add = 0.03
+		mult = value:mt_trade_value
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# Gain a +10% production boost to the resource that is the most expensive on the market, in addition to the bonuses outlined by truewolves
+tr_mt_entrap_art_of_the_deal = {
+	
+	custom_tooltip = BLANK_STRING
+	
+	modifier = {
+		living_standard_trade_value_specialists_add = 0.5
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# Our business require more employees, and what better way to get more employees by using special technique: Buying and Selling
+tr_mt_entrap_human_resources = {
+	
+	possible = {
+		has_tradition = tr_mt_entrap_adaptive_economy
+	}
+	
+	modifier = {
+		slave_market_cost_mult = -0.5
+	}
+
+	tradition_swap = {
+		name = tr_mt_entrap_human_resources_no_megacorp
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			NOT = { host_has_dlc = "Megacorp" }
+		}
+		modifier = {
+			planet_resettlement_unemployed_mult = 0.25
+		}
+		weight = {
+			factor = 10
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

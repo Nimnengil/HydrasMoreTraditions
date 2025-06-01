@@ -1,0 +1,120 @@
+tr_mt_curiosity_adopt = { # Theme: Astral Rifts, Anomalies
+	unlocks_agenda = agenda_MT_curiosity # 
+	# custom_tooltip_with_modifiers = tr_mt_curiosity_adopt_desc # 
+	modifier = {
+		ship_anomaly_generation_chance_mult = 0.1
+		country_astral_rift_speed_mult = 0.2
+	}
+	possible = {
+		has_technology = tech_rift_sphere
+	}
+}
+
+# 
+tr_mt_curiosity_finish = {
+	# 
+	
+	custom_tooltip = tr_mt_curiosity_finish_desc # Damage to extradimensionals +25%
+	
+	modifier = {
+		damage_vs_country_type_formless_mult = 0.25
+		damage_vs_country_type_formless_event_aberrant_country_mult = 0.25
+		damage_vs_country_type_extradimensional_mult = 0.25
+		damage_vs_country_type_extradimensional_2_mult = 0.25
+		damage_vs_country_type_extradimensional_3_mult = 0.25
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_curiosity_siphon = {
+
+	modifier = {
+		planet_jobs_astral_threads_produces_mult = 0.25
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+#  
+tr_mt_curiosity_call_of_the_unknown = {
+	
+	possible = {
+		has_tradition = tr_mt_curiosity_siphon
+	}
+	
+	custom_tooltip = tr_mt_curiosity_call_of_the_unknown_desc # Gain 12 month's worth of physics research whenever an astral rift opens in your territory
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_curiosity_bright_ideas = {
+	
+	possible = {
+		has_tradition = tr_mt_curiosity_siphon
+	}
+	
+	custom_tooltip = tr_mt_curiosity_bright_ideas_desc # Unlocks the Museum Building # Produce unity and physics research equal to 10 times the number of rifts you have explored
+	
+	#triggered_modifier = {
+	#	potential = { always = yes }
+	#	country_councilor_unity_produces_add = 10
+	#	country_councilor_physics_research_produces_add = 10
+	#	mult = trigger:astral_rifts_completed
+	#}
+
+	tradition_swap = {
+		name = tr_mt_curiosity_bright_ideas_machine
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_gestalt = yes
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_curiosity_rapid_simulation = {
+	
+	possible = {
+		has_tradition = tr_mt_curiosity_siphon
+	}
+	
+	modifier = {
+		scientist_exp_gain = 0.25
+		country_astral_rift_fail_mult = -0.25
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_curiosity_gravity = {
+
+	possible = {
+		has_tradition = tr_mt_curiosity_rapid_simulation
+		has_tradition = tr_mt_curiosity_call_of_the_unknown
+		has_tradition = tr_mt_curiosity_bright_ideas
+	}
+
+	custom_tooltip = tr_mt_curiosity_gravity_desc # When you complete a rift, Gain 
+
+	ai_weight = {
+		factor = 1000
+	}
+}

@@ -1,0 +1,210 @@
+tr_mt_core_adopt = { # Theme: Core Sector Name: Centralization
+	unlocks_agenda = agenda_MT_core # All planets in your capital system gets +5% resource production
+	modifier = {
+		empire_size_pops_mult = -0.1
+		empire_size_colonies_mult = -0.25
+		empire_size_systems_mult = 1
+	}
+	on_enabled = {
+		hidden_effect = {
+			create_MT_situation_handler = yes
+		}
+	}
+}
+
+# num_sectors
+tr_mt_core_finish = {
+	modifier = {
+		district_hab_science_max = 3
+		district_hab_energy_max = 3
+		district_hab_mining_max = 3
+		ascension_perks_add = 1
+	}
+}
+
+# Leader Bonuses
+tr_mt_core_central_command = {
+
+	modifier = {
+		ruler_skill_add = 2
+		councilor_ruler_machine_intelligence_exp_gain = 0.5
+	}
+	
+	#tradition_swap = {
+	#	name = tr_mt_core_central_command_hive
+	#	inherit_effects = no
+	#	inherit_icon = yes
+	#	inherit_name = no
+	#	trigger = {
+	#		is_hive_empire = yes
+	#	}
+	#	modifier = {
+	#		ruler_skill_add = 2
+	#		councilor_ruler_hive_mind_exp_gain = 0.5
+	#	}
+	#	weight = {
+	#		factor = 10
+	#	}
+	#}
+	
+	#tradition_swap = {
+	#	name = tr_mt_core_central_command_regular
+	#	inherit_effects = no
+	#	inherit_icon = yes
+	#	inherit_name = no
+	#	trigger = {
+	#		is_gestalt = no
+	#	}
+	#	modifier = {
+	#		ruler_skill_add = 2
+	#		councilor_ruler_democratic_exp_gain = 0.5
+	#		councilor_ruler_oligarchic_exp_gain = 0.5
+	#		councilor_ruler_dictatorial_exp_gain = 0.5
+	#		councilor_ruler_imperial_exp_gain = 0.5
+	#		councilor_ruler_corporate_exp_gain = 0.5
+	#	}
+	#	weight = {
+	#		factor = 100
+	#	}
+	#}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+#  
+tr_mt_core_fast_communication = {
+	
+	possible = {
+		has_tradition = tr_mt_core_central_command
+	}
+	
+	custom_tooltip = tr_mt_core_fast_communication_desc # Planets in your core sector gets +10% resources from jobs and jobs outside your core sectors gets -10%
+	
+	on_enabled = {
+		hidden_effect = {
+			every_owned_planet = {
+				save_event_target_as = MT_target_planet
+				event_target:MT_situation_handler_country = {
+					start_situation = {
+						type = MT_situation_core_fast_communication
+						target = event_target:MT_target_planet
+					}
+				}
+			}
+		}
+	}
+	
+	#tradition_swap = {
+	#	name = tr_mt_core_central_command_hive
+	#	inherit_effects = yes
+	#	inherit_icon = yes
+	#	inherit_name = no
+	#	trigger = {
+	#		is_hive_empire = yes
+	#	}
+	#	weight = {
+	#		factor = 10
+	#	}
+	#}
+	
+	#tradition_swap = {
+	#	name = tr_mt_core_central_command_regular
+	#	inherit_effects = yes
+	#	inherit_icon = yes
+	#	inherit_name = no
+	#	trigger = {
+	#		is_gestalt = no
+	#	}
+	#	weight = {
+	#		factor = 100
+	#	}
+	#}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_core_compact_computing = {
+	
+	possible = {
+		has_tradition = tr_mt_core_central_command
+	}
+	
+	custom_tooltip = tr_mt_core_compact_computing_desc # Gain up to 50% agenda speed, scaling with the percentage of owned systems that are in your core sector
+	
+	triggered_modifier = {
+		potential = { always = yes }
+		council_agenda_progress_speed = 0.5
+		mult = value:MT_core_sector_dominance
+	}
+	
+	#tradition_swap = {
+	#	name = tr_mt_core_compact_computing_hive
+	#	inherit_effects = yes
+	#	inherit_icon = yes
+	#	inherit_name = no
+	#	trigger = {
+	#		is_hive_empire = yes
+	#	}
+	#	weight = {
+	#		factor = 10
+	#	}
+	#}
+	
+	#tradition_swap = {
+	#	name = tr_mt_core_compact_computing_regular
+	#	inherit_effects = yes
+	#	inherit_icon = yes
+	#	inherit_name = no
+	#	trigger = {
+	#		is_gestalt = no
+	#	}
+	#	weight = {
+	#		factor = 100
+	#	}
+	#}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_core_constructions = {
+	
+	possible = {
+		has_tradition = tr_mt_core_central_command
+	}
+	
+	modifier = {
+		habitat_districts_housing_add = 1
+		megastructures_habitat_cost_mult = -0.1
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_core_expansion = {
+
+	custom_tooltip = tr_mt_core_expansion_desc # +1 max districts on artifical planets
+	
+	possible = {
+		has_tradition = tr_mt_core_central_command
+	}
+	
+	modifier = {
+		planet_max_districts_add = 1
+		planet_non_artificial_max_districts_add = -1
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

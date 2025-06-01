@@ -1,0 +1,114 @@
+tr_mt_dominance_adopt = { # Theme: dominating vassals
+	unlocks_agenda = agenda_MT_dominance # 
+	modifier = {
+		subject_tribute_mult = 0.1
+	}
+}
+
+# 
+tr_mt_dominance_finish = {
+	#
+	modifier = {
+		country_naval_cap_mult = 0.1
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_dominance_leverage = {
+
+	modifier = {
+		country_power_projection_influence_produces_mult = 0.25
+		diplo_weight_naval_mult = 0.2
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+#  
+tr_mt_dominance_extended_gallery = {
+	
+	possible = {
+		has_tradition = tr_mt_dominance_leverage
+	}
+	
+	custom_tooltip = tr_mt_dominance_extended_gallery_desc
+
+	triggered_modifier = {
+		potential = { always = yes }
+		country_traditions_influence_produces_add = 0.25
+		mult = trigger:vassals
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_dominance_suppression = {
+	
+	modifier = {
+		country_naval_capacity_contribution_from_subjects_mult = 0.1
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_dominance_integration = {
+	
+	possible = {
+		has_tradition = tr_mt_dominance_suppression
+	}
+	
+	modifier = {
+		subject_integration_influence_cost_mult = -0.5
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_dominance_the_throne = {
+
+	possible = {
+		has_tradition = tr_mt_dominance_extended_gallery
+		has_tradition = tr_mt_dominance_integration
+	}
+
+	custom_tooltip = tr_mt_dominance_the_throne_desc # Gain bonuses while in a subjegation war
+	
+	triggered_modifier = {
+		potential = {
+			is_at_war = yes
+			OR = {
+				any_war = {
+					using_war_goal = {
+						type = wg_subjugation
+						owner = attacker
+					}
+				}
+				any_war = {
+					using_war_goal = {
+						type = wg_tribute
+						owner = attacker
+					}
+				}
+
+			}
+		}
+		starbase_shipyard_build_speed_mult = 0.25
+		planet_army_build_speed_mult = 0.25
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

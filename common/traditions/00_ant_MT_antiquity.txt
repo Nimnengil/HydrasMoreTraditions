@@ -1,0 +1,492 @@
+tr_mt_antiquity_adopt = {
+	unlocks_agenda = agenda_MT_antiquity
+	custom_tooltip = tr_mt_antiquity_adopt_desc
+	modifier = {
+		science_ship_survey_speed = 0.1
+		#ship_anomaly_generation_chance_mult = 0.2 # Metallichydra: Anomaly chance does not affect the chance of uncovering precursors
+	}
+	tradition_swap = {
+		name = tr_mt_antiquity_adopt_disabled
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		custom_tooltip = tr_mt_antiquity_adopt_desc
+		trigger = {
+			OR = {
+				has_relic = r_war_forge					# Cybrex
+				has_relic = r_pox_sample				# Irassian
+				has_relic = r_zro_crystal				# Zroni
+				has_relic = r_the_last_baol				# Baol
+				has_relic = r_reality_perforator		# Vultaum
+				has_relic = r_cryo_core					# Yuht
+				has_relic = r_weather_manipulator		# Inetian
+				has_relic = r_the_tempest_invocator		# adAkkaria
+			}
+		}
+	}
+}
+
+tr_mt_antiquity_finish = {
+	modifier = {
+		category_statecraft_research_speed_mult = 0.20
+		category_statecraft_draw_chance_mult = 0.5
+		ascension_perks_add = 1
+	}
+}
+
+tr_mt_antiquity_1 = { # Knowledge of a Legacy
+	custom_tooltip = tr_mt_antiquity_1_desc
+	possible = {
+		AND = {
+			has_tradition = tr_mt_antiquity_3
+			has_tradition = tr_mt_antiquity_4
+		}
+	}
+}
+
+tr_mt_antiquity_2 = {# Triumph of the Ages
+	custom_tooltip = tr_mt_antiquity_2_desc
+	possible = {
+		AND = {
+			has_tradition = tr_mt_antiquity_3
+			has_tradition = tr_mt_antiquity_4
+		}
+	}
+}
+
+tr_mt_antiquity_3 = { # Securing our Inheritance
+	custom_tooltip = tr_mt_antiquity_3_desc
+	modifier = {
+		# Unlocks Operation: Steal Relic NOT IMPLEMENTED
+		# Unlocks Casus Belli: Relic Theft
+	}
+	tradition_swap = {
+		name = tr_mt_antiquity_3_active
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		custom_tooltip = tr_mt_antiquity_3_desc
+		trigger = {
+			OR = {
+				has_country_flag = cybrex_world_found
+				has_country_flag = league_world_found
+				has_country_flag = irassian_world_found
+				has_country_flag = vultaum_world_found
+				has_country_flag = yuht_world_found
+				has_country_flag = last_zroni_system
+				has_country_flag = last_baol_system
+				has_country_flag = completed_inetian_traders_precursor
+				has_country_flag = adakkaria_intro
+			}
+		}
+		modifier = {
+			pop_happiness = 0.05
+		}
+	}
+}
+
+tr_mt_antiquity_4 = { # Artifacts of the Past
+	custom_tooltip = tr_mt_antiquity_4_desc
+	triggered_modifier = {
+		planet_researchers_produces_mult = 0.05
+		mult = trigger:num_owned_relics
+	}
+}
+
+# Flexible Tradition // Swappable depending on Precursor, swaps when homeworld is found.
+tr_mt_antiquity_5 = {
+	custom_tooltip = tr_mt_antiquity_5_desc
+	#$tr_mt_antiquity_5_desc_start$$tr_mt_antiquity_5_desc_vanilla$$tr_mt_antiquity_5_desc_ancrel$$tr_mt_antiquity_5_desc_cosstorm$$tr_mt_antiquity_5_desc_AAA_@HAS_AAA$
+	#inline_script = {
+	#	script = tooltips/MT_antiquity_5_tooltip
+	#	HAS_AAA = @HAS_AAA
+	#	HAS_FHMP = @HAS_FHMP
+	#	HAS_UCmod = @HAS_UCmod
+	#}
+	modifier = {
+		# mighty fuck all
+	}
+	
+	## CYBREX
+	tradition_swap = {
+		name = tr_mt_antiquity_5_cybrex
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_cybrex_desc
+		trigger = {
+			has_country_flag = cybrex_world_found
+		}
+		modifier = {
+			planet_jobs_unity_produces_mult = 0.2
+		}
+		on_enabled = {
+			hidden_effect = {
+				add_research_option = tech_combat_computers_autonomous
+			}
+		}
+	}
+	tradition_swap = {
+		name = tr_mt_antiquity_5_cybrex_initial
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_cybrex_initial_desc
+		trigger = {
+			has_country_flag = cybrex_intro
+		}
+		modifier = {
+			ship_anomaly_research_speed_mult = 0.2
+		}
+	}
+
+	## FIRST LEAGUE
+	tradition_swap = {
+		name = tr_mt_antiquity_5_first_league
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_first_league_desc
+		trigger = {
+			has_country_flag = league_world_found
+		}
+		modifier = {
+			country_society_tech_research_speed = 0.2
+			planet_stability_add = 5
+		}
+	}
+	tradition_swap = {
+		name = tr_mt_antiquity_5_first_league_initial
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_first_league_initial_desc
+		trigger = {
+			has_country_flag = first_league_intro
+		}
+		modifier = {
+			ship_anomaly_research_speed_mult = 0.2
+		}
+	}
+
+	## IRASSIAN
+	tradition_swap = {
+		name = tr_mt_antiquity_5_irassian
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_irassian_desc
+		trigger = {
+			has_country_flag = irassian_world_found
+		}
+		modifier = {
+			category_biology_research_speed_mult = 0.5
+			pop_environment_tolerance = 0.1
+		}
+	}
+	tradition_swap = {
+		name = tr_mt_antiquity_5_irassian_initial
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_irassian_initial_desc
+		trigger = {
+			has_country_flag = irassian_intro
+		}
+		modifier = {
+			ship_anomaly_research_speed_mult = 0.2
+		}
+	}
+
+	## VULTAUM
+	tradition_swap = {
+		name = tr_mt_antiquity_5_vultaum
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_vultaum_desc
+		trigger = {
+			has_country_flag = vultaum_world_found
+		}
+		modifier = {
+			category_computing_research_speed_mult = 0.5
+			planet_crime_add = -50
+		}
+	}
+	tradition_swap = {
+		name = tr_mt_antiquity_5_vultaum_initial
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_vultaum_initial_desc
+		trigger = {
+			has_country_flag = vultaum_1
+		}
+		modifier = {
+			ship_anomaly_research_speed_mult = 0.2
+		}
+	}
+
+	## YUHT
+	tradition_swap = {
+		name = tr_mt_antiquity_5_yuht
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_yuht_desc
+		trigger = {
+			has_country_flag = yuht_world_found
+		}
+		modifier = {
+			all_technology_research_speed = 0.1
+			planet_researchers_produces_mult = 0.1
+		}
+	}
+	tradition_swap = {
+		name = tr_mt_antiquity_5_yuht_initial
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_yuht_initial_desc
+		trigger = {
+			has_country_flag = yuht_intro
+		}
+		modifier = {
+			ship_anomaly_research_speed_mult = 0.2
+		}
+	}
+
+	## ZRONI
+	tradition_swap = {
+		name = tr_mt_antiquity_5_zroni
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_zroni_desc
+		trigger = {
+			has_country_flag = last_zroni_system
+		}
+		modifier = {
+			country_sr_zro_produces_mult = 1
+		}
+	}
+	tradition_swap = {
+		name = tr_mt_antiquity_5_zroni_initial
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_zroni_initial_desc
+		trigger = {
+			has_country_flag = zroni_intro
+		}
+		modifier = {
+			ship_archaeological_site_clues_add = 1
+		}
+		on_enabled = {
+			hidden_effect = {
+				add_research_option = tech_precognition_interface
+			}
+		}
+	}
+
+	## BAOL
+	tradition_swap = {
+		name = tr_mt_antiquity_5_baol
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_baol_desc
+		trigger = {
+			has_country_flag = last_baol_system
+		}
+		modifier = {
+			country_trust_cap_add = 50
+		}
+		on_enabled = {
+			hidden_effect = {
+				add_research_option = tech_housing_agrarian_idyll
+			}
+		}
+	}
+	tradition_swap = {
+		name = tr_mt_antiquity_5_baol_initial
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_baol_initial_desc
+		trigger = {
+			has_country_flag = baol_intro
+		}
+		modifier = {
+			ship_archaeological_site_clues_add = 1
+		}
+	}
+
+	## ADAKKARIA
+	tradition_swap = {
+		name = tr_mt_antiquity_5_adakkaria
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_adakkaria_desc
+		trigger = {
+			has_country_flag = adakkaria_world_found
+		}
+		modifier = {
+			country_naval_cap_add = 200
+			ship_weapon_damage = 0.1
+		}
+	}
+	tradition_swap = {
+		name = tr_mt_antiquity_5_adakkaria_initial
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_adakkaria_initial_desc
+		trigger = {
+			has_country_flag = adakkaria_intro
+		}
+		modifier = {
+			ship_archaeological_site_clues_add = 1
+		}
+	}
+
+	## INETIAN
+	tradition_swap = {
+		name = tr_mt_antiquity_5_inetian
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_inetian_desc
+		trigger = {
+			has_country_flag = completed_inetian_traders_precursor
+		}
+		modifier = {
+			planet_jobs_trade_produces_mult = 0.2
+			country_starbase_capacity_add = 3
+		}
+	}
+	tradition_swap = {
+		name = tr_mt_antiquity_5_inetian_initial
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_antiquity_5_inetian_initial_desc
+		trigger = {
+			has_country_flag = inetian_intro
+		}
+		modifier = {
+			ship_archaeological_site_clues_add = 1
+		}
+	}
+	
+	inline_script = {
+		script = comptriggers/MT_Hydra_toggle
+		HAS_MOD = @HAS_AAA
+		INLINE = MT_AAA_Hydra_precursors
+	}
+	
+	inline_script = {
+		script = comptriggers/MT_Hydra_toggle
+		HAS_MOD = @HAS_FHMP
+		INLINE = MT_FHMP_Hydra_precursors
+	}
+	
+	inline_script = {
+		script = comptriggers/MT_Hydra_toggle
+		HAS_MOD = @HAS_UCmod
+		INLINE = MT_UCmod_Hydra_precursors
+	}
+}
+
+
+
+
+# legacy code
+
+# tr_mt_antiquity_adopt = {
+# 	unlocks_agenda = agenda_MT_antiquity
+# 	modifier = {
+# 		country_minor_artifacts_produces_mult = 0.1
+# 	}
+# 	#possible = {
+# 	#	has_technology = tech_archaeostudies
+# 	#}
+# }
+
+# tr_mt_antiquity_finish = {
+# 	modifier = {
+# 		starbase_shipyard_build_minor_artifacts_cost_mult = -0.25
+# 		ascension_perks_add = 1
+# 	}
+# }
+
+# tr_mt_antiquity_restored_weaponry = {
+
+# 	possible = {
+# 		has_tradition = tr_mt_antiquity_more_actions
+# 	}
+
+# 	modifier = {
+# 		weapon_archaeotech_weapon_fire_rate_mult = 0.25
+# 	}
+
+# 	ai_weight = {
+# 		factor = 1000
+# 	}
+# }
+
+# tr_mt_antiquity_storage = {
+	
+# 	modifier = {
+# 		country_resource_max_minor_artifacts_add = 500
+# 	}
+
+# 	ai_weight = {
+# 		factor = 1000
+# 	}
+# }
+
+# tr_mt_antiquity_more_actions = {
+# 	possible = {
+# 		# has_tradition = tr_mt_antiquity_archeological_training
+# 	}
+	
+# 	custom_tooltip = tr_mt_antiquity_more_actions_desc # Unlocks 3 new artifact actions
+
+# 	ai_weight = {
+# 		factor = 1000
+# 	}
+# }
+
+# tr_mt_antiquity_research_benefits = {
+
+# 	custom_tooltip = tr_mt_antiquity_research_benefits_desc # Gain minor artifact production equal to your archeotech research speed
+	
+# 	possible = {
+# 		has_tradition = tr_mt_antiquity_excavations
+# 		has_tradition = tr_mt_antiquity_storage
+# 	}
+	
+# 	triggered_modifier = {
+# 		potential = { always = yes }
+# 		country_traditions_minor_artifacts_produces_add = 1
+# 		mult = modifier:category_archaeostudies_research_speed_mult
+# 	}
+
+# 	ai_weight = {
+# 		factor = 1000
+# 	}
+# }
+
+# tr_mt_antiquity_excavations = {
+	
+# 	modifier = {
+# 		ship_archaeological_site_clues_add = 1
+# 		ship_archaeological_site_excavation_speed_mult = 0.1
+# 	}
+
+# 	ai_weight = {
+# 		factor = 1000
+# 	}
+# }

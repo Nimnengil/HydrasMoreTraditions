@@ -1,0 +1,192 @@
+tr_mt_loyalty_adopt = {
+	# Requires Overlord
+	possible = {
+		is_subject = yes
+	}
+	unlocks_agenda = agenda_MT_loyalty # Give buff to yourself and overlord
+	modifier = {
+		monthly_loyalty = 5
+	}
+}
+
+# 
+tr_mt_loyalty_finish = {
+	custom_tooltip_with_modifiers = tr_mt_loyalty_finish_desc # +500 opinion with your overlord
+	modifier = {
+		ascension_perks_add = 1
+	}
+}
+
+tr_mt_loyalty_blood_pact = {
+
+	custom_tooltip = tr_mt_loyalty_blood_pact_desc
+
+	triggered_modifier = {
+		potential = {
+			is_at_war = yes
+			any_war = {
+				any_war_participant = {
+					is_same_value = root.overlord
+				}
+			}
+		}
+		ship_speed_mult = 0.1
+		ship_friendly_territory_fire_rate_mult = 0.1
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_mt_loyalty_shared_navy = {
+	
+	custom_tooltip = tr_mt_loyalty_shared_navy_desc
+	
+	triggered_modifier = {
+		potential = { always = yes }
+		country_naval_cap_add = 1
+		mult = overlord.value:mt_overlord_navy
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_mt_loyalty_representitives = {
+	
+	custom_tooltip = tr_mt_loyalty_representitives_desc # Whenever a leader of our species is hired by another empire, gain 24 months worth of unity
+
+	tradition_swap = {
+		name = tr_mt_loyalty_representitives_no_paragons
+		inherit_icon = yes
+		inherit_effects = no
+		trigger = {
+			OR = {
+				is_gestalt = yes
+				has_paragon_dlc = no
+			}
+		}
+		
+		modifier = {
+			research_sharing_mult = 0.1
+		}
+
+		weight = {
+			factor = 1
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_mt_loyalty_bonds_not_chains = {
+	custom_tooltip = tr_mt_loyalty_bonds_not_chains_desc # Whenever your overlord researches a technology that you can research, get it as a permanent option with 10%
+
+	possible = {
+		has_tradition = tr_mt_loyalty_blood_pact
+		has_tradition = tr_mt_loyalty_shared_navy
+	}
+
+	triggered_modifier = {
+		potential = { always = yes }
+		country_traditions_influence_produces_add = 1
+		mult = value:mt_overlord_opinion
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_mt_loyalty_speciality = {
+	
+	possible = {
+		has_tradition = tr_mt_loyalty_representitives
+	}
+	
+	Modifier = {
+		commercial_pact_mult = 0.05
+		research_sharing_mult = 0.05
+		damage_vs_rival_mult = 0.05
+	}
+	
+	custom_tooltip_with_modifiers = tr_mt_loyalty_speciality_desc # Specialize to subject to gain bonus
+	
+	tradition_swap = {
+		name = tr_mt_loyalty_speciality_bulwark
+		inherit_icon = no
+		inherit_effects = no
+		trigger = {
+			is_specialist_subject_type = { TYPE = bulwark }
+		}
+		
+		Modifier = {
+			damage_vs_rival_mult = 0.05
+		}
+		
+		custom_tooltip_with_modifiers = tr_mt_loyalty_speciality_bulwark_desc # Whenever you destroy a ship belonging to your overlord's rival, gain unity
+
+		weight = {
+			factor = 1
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_loyalty_speciality_scholarium
+		inherit_icon = no
+		inherit_effects = no
+		trigger = {
+			is_specialist_subject_type = { TYPE = scholarium }
+		}
+		
+		Modifier = {
+			research_sharing_mult = 0.1
+		}
+		
+		custom_tooltip_with_modifiers = tr_mt_loyalty_speciality_scholarium_desc # Whenever your overlord researches a technology, gain unity
+
+		weight = {
+			factor = 2
+		}
+	}
+	tradition_swap = {
+		name = tr_mt_loyalty_speciality_prospectorium
+		inherit_icon = no
+		inherit_effects = no
+		trigger = {
+			is_specialist_subject_type = { TYPE = prospectorium }
+		}
+		
+		modifier = {
+			commercial_pact_mult = 0.25
+		}
+
+		weight = {
+			factor = 3
+		}
+	}
+	tradition_swap = {
+		name = tr_mt_loyalty_speciality_no_overlord
+		inherit_icon = yes
+		inherit_effects = no
+		trigger = {
+			has_overlord_dlc = no
+		}
+		
+		modifier = {
+			commercial_pact_mult = 0.1
+		}
+
+		weight = {
+			factor = 10
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

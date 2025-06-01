@@ -1,0 +1,93 @@
+tr_mt_starseeker_adopt = { # Theme: Peace and Diplomacy
+	unlocks_agenda = agenda_MT_starseeker # 
+	modifier = {
+		country_storm_influence_mult = 0.2
+	}
+}
+
+# 
+tr_mt_starseeker_finish = {
+	# Upgrades the agenda to delete storms
+	custom_tooltip_with_modifiers = tr_mt_starseeker_finish_desc
+	modifier = {
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_starseeker_storm_shelters = {
+	
+	possible = {
+		has_tradition = tr_mt_starseeker_solar_panels
+	}
+	
+	modifier = {
+		planet_storm_devastation_mult = -0.25
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+#  
+tr_mt_starseeker_solar_panels = {
+	
+	modifier = {
+		station_gatherers_energy_produces_mult = 0.5
+		stations_upkeep_mult = -0.75
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_starseeker_observation_modules = {
+	
+	possible = {
+		has_tradition = tr_mt_starseeker_solar_panels
+	}
+	
+	custom_tooltip = tr_mt_starseeker_observation_modules_desc # Unlock observatory modules which produces science based on space terrain
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# Science ships get aura that reduces enemy shields
+tr_mt_starseeker_stormwielders = {
+	
+	#custom_tooltip = tr_mt_starseeker_stormwielders_desc
+	
+	possible = {
+		has_tradition = tr_mt_starseeker_solar_panels
+	}
+	
+	modifier = {
+		ship_disengage_opportunities_add = 1
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_starseeker_space_claim = {
+	
+	possible = {
+		has_tradition = tr_mt_starseeker_solar_panels
+	}
+	
+	modifier = {
+		country_starbase_influence_cost_mult = -0.2
+		country_starbase_capacity_add = 2
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

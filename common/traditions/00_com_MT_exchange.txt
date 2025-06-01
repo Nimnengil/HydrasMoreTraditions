@@ -1,0 +1,163 @@
+tr_mt_exchange_adopt = {
+	unlocks_agenda = agenda_MT_exchange
+	modifier = {
+		#pop_lifestyle_trade_mult = 0.5
+		empire_size_branch_office_mult = -0.5
+		planet_branch_offices_cost_mult = -0.25
+	}
+	on_enabled = {
+		hidden_effect = {
+			create_MT_situation_handler = yes
+		}
+	}
+}
+
+tr_mt_exchange_finish = {
+	modifier = {
+		#job_trader_per_pop = 0.05
+		planet_traders_unity_produces_add = 1
+		ascension_perks_add = 1
+	}
+}
+
+tr_mt_exchange_dealership = {
+
+	possible = {
+		has_tradition = tr_mt_exchange_tax_evasion
+	}
+
+	custom_tooltip = tr_mt_exchange_dealership_desc # Trade value conversion gives an additional 0.1 alloys
+	
+	triggered_modifier = {
+		potential = { always = yes }
+		country_traditions_consumer_goods_produces_add = 0.05
+		mult = value:mt_trade_value
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_mt_exchange_franchising = {
+	
+	possible = {
+		has_tradition = tr_mt_exchange_winds_of_trade
+	}
+	
+	custom_tooltip = tr_mt_exchange_franchising_desc # Planets you have branchs offices on get trader jobs
+	
+	on_enabled = {
+		hidden_effect = {
+			every_country = {
+				limit = {
+					has_commercial_pact = root
+				}
+				every_owned_planet = {
+					limit = {
+						has_branch_office = root
+					}
+					save_event_target_as = MT_target_planet
+					event_target:MT_situation_handler_country = {
+						start_situation = {
+							type = MT_situation_exchange_franchising
+							target = event_target:MT_target_planet
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_exchange_franchising_non_megacorp
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			has_corporate_government = no
+		}
+		modifier = {
+			commercial_pact_mult = 0.1
+		}
+		weight = {
+			factor = 10
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_mt_exchange_tax_evasion = {
+	possible = {
+		has_tradition = tr_mt_exchange_big_contracts
+	}
+	
+	modifier = {
+		branch_office_value_mult = 0.25
+	}
+	
+	tradition_swap = {
+		name = tr_mt_exchange_tax_evasion_non_megacorp
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			has_corporate_government = no
+		}
+		modifier = {
+			commercial_pact_mult = 0.1
+		}
+		weight = {
+			factor = 10
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_mt_exchange_big_contracts = {
+
+	modifier = {
+		planet_max_branch_office_buildings_self_add = 1
+		commercial_pact_mult = 0.1
+	}
+
+	tradition_swap = {
+		name = tr_mt_exchange_big_contracts_non_megacorp
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		trigger = {
+			has_corporate_government = no
+		}
+		modifier = {
+			commercial_pact_mult = 0.2
+		}
+		weight = {
+			factor = 10
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# Idea: Use situation system to give bonus to planets you have branch offices on
+tr_mt_exchange_winds_of_trade = {
+	possible = {
+		has_tradition = tr_mt_exchange_big_contracts
+	}
+	
+	custom_tooltip = tr_mt_exchange_winds_of_trade_desc # +50 opinion with those you have a commercial pact with
+	# All commanders get the "Merchant" Trait which gives a massive sublight speed along trade routes (has_trade_route)
+
+	ai_weight = {
+		factor = 1000
+	}
+}

@@ -1,0 +1,322 @@
+# Original Design by Metallichydra
+# Reworked Design by Azurian
+# Reworked again by Azurian
+
+tr_mt_industry_adopt = { # Theme: Industry districts and robots
+	unlocks_agenda = agenda_MT_industry # planet_district_industrial_build_speed_mult planet_district_arcology_arms_industry_build_speed_mult planet_district_arcology_civilian_industry_build_speed_mult planet_district_hab_industrial_build_speed_mult planet_district_rw_industrial_build_speed_mult
+	#unlocks_agenda = agenda_MT_industry_gestalt
+	modifier = {
+		station_gatherers_minerals_produces_mult = 0.33
+	}
+	
+	tradition_swap = {
+		name = tr_mt_industry_gestalt_adopt
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			is_gestalt = yes
+		}
+		custom_tooltip = tr_mt_industry_adopt_gestalt_agenda_desc
+		modifier = {
+			station_gatherers_minerals_produces_mult = 0.33
+		}
+		on_enabled = {
+			hidden_effect = {
+				if = {
+					limit = { has_paragon_dlc = yes }
+					create_message = {
+						type = COUNCIL_AGENDA_AVAILABLE
+						localization = MESSAGE_COUNCIL_AGENDA_AVAILABLE_UNLOCKED_MT_INDUSTRY_GESTALT_AGENDA
+						days = 30
+						# Unfortunately can't set message type to: _MESSAGE_TYPE_COUNCIL_AGENDA_READY_, which would enable Left-click to open Council.
+					}
+				}
+			}
+		}
+		weight = {
+			factor = 100
+		}
+	}
+}
+
+# 
+tr_mt_industry_finish = {
+	modifier = {
+		planet_translucers_produces_mult = 0.2
+		planet_chemists_produces_mult = 0.2
+		planet_refiners_produces_mult = 0.2
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_industry_recycled_products = {
+
+	custom_tooltip = tr_mt_industry_recycled_products_desc
+
+	modifier = {
+		#planet_artisans_upkeep_mult = -0.1
+		#planet_metallurgists_upkeep_mult = -0.1
+		planet_zone_industrial_build_speed_mult = 0.5
+		planet_zone_foundry_build_speed_mult = 0.5
+		planet_zone_factory_build_speed_mult = 0.5
+	}
+	
+	possible = {
+		has_tradition = tr_mt_industry_pillars_of_creation
+	}
+	
+	#tradition_swap = {
+	#	name = tr_mt_industry_recycled_products_gestalt
+	#	inherit_effects = no
+	#	inherit_icon = yes
+	#	inherit_name = yes
+	#	trigger = {
+	#		is_gestalt = yes
+	#		NOT = { has_civic = civic_machine_servitor }
+	#	}
+	#	modifier = {
+	#		planet_metallurgists_upkeep_mult = -0.1
+	#	}
+	#	weight = {
+	#		factor = 10
+	#	}
+	#}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+#  
+tr_mt_industry_bigger_batches = {
+	custom_tooltip = tr_mt_industry_bigger_batches_tt
+	modifier = {
+		planet_artisans_consumer_goods_produces_add = 0.5
+		planet_jobs_consumer_goods_upkeep_mult = -0.05
+		
+	}
+	
+	possible = {
+		has_tradition = tr_mt_industry_pillars_of_creation
+	}
+	
+	on_enabled = {
+		set_country_flag = MT_industry_civillian
+	}
+# swap for reg hive
+	tradition_swap = {
+		name = tr_mt_industry_bigger_batches_hive
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		trigger = {
+			is_hive_empire = yes
+			NOT = { has_civic = civic_machine_servitor }
+		}
+		modifier = {
+		planet_pop_assemblers_upkeep_mult = -0.20
+		}
+		weight = {
+			factor = 10
+		}
+	}
+# swap when picking alloy as non-hive
+	tradition_swap = {
+		name = tr_mt_industry_prospector
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_industry_prospector_tt
+		trigger = {
+			has_country_flag = MT_industry_military
+		}
+		modifier = {
+			planet_miners_minerals_produces_mult = 0.2
+		}
+		weight = {
+			factor = 10
+		}
+	}
+# swap for lithoid
+	tradition_swap = {
+		name = tr_mt_industry_bigger_batches_lithoid
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		custom_tooltip = tr_mt_industry_bigger_batches_lithoid_tt
+		trigger = {
+			is_lithoid_empire = yes
+		}
+		modifier = {
+			planet_artisans_consumer_goods_produces_add = 0.5
+			planet_jobs_consumer_goods_upkeep_mult = -0.05
+		}
+		on_enabled = {
+			set_country_flag = MT_industry_civillian
+		}
+		weight = {
+			factor = 10
+		}
+	}
+# swap for robot gestalts
+	tradition_swap = {
+		name = tr_mt_industry_bigger_batches_machine
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		trigger = {
+			is_machine_empire = yes
+		}
+		modifier = {
+			pop_roboticist_bonus_workforce_mult = 0.1
+		}
+		weight = {
+			factor = 10
+		}
+}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_industry_maintenance = {
+	
+	possible = {
+		has_tradition = tr_mt_industry_bigger_batches
+		has_tradition = tr_mt_industry_multilayered
+		has_tradition = tr_mt_industry_recycled_products
+	}
+	
+	modifier = {
+		planet_pop_assemblers_upkeep_mult = -0.20
+	}
+	
+	tradition_swap = {
+		name = tr_mt_industry_maintenance_hive
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_hive_empire = yes
+		}
+		modifier = {
+			station_gatherers_rare_crystals_produces_mult = 0.33
+			station_gatherers_exotic_gases_produces_mult = 0.33
+			station_gatherers_volatile_motes_produces_mult = 0.33
+		}
+		weight = {
+			factor = 10
+		}
+	}
+	
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_industry_pillars_of_creation = {
+	
+	modifier = {
+		planet_pop_assembly_mult = 0.1
+	}
+	
+	tradition_swap = {
+		name = tr_mt_industry_pillars_of_creation_hive
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			is_hive_empire = yes
+		}
+		modifier = {
+			bonus_pop_growth_mult = 0.1
+		}
+		weight = {
+			factor = 10
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# alloy main
+tr_mt_industry_multilayered = {
+
+		custom_tooltip = tr_mt_industry_multilayered_tt
+		possible = {
+			has_tradition = tr_mt_industry_pillars_of_creation
+		}
+		
+		on_enabled = {
+			set_country_flag = MT_industry_military
+		}
+		
+		modifier = {
+			planet_metallurgists_alloys_produces_add = 0.5
+			ship_hull_mult = 0.1
+		}
+
+	ai_weight = {
+		factor = 1000
+	}
+# swap if consumer picked first
+	tradition_swap = {
+		name =  tr_mt_industry_agriculture
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_industry_agriculture_tt
+		trigger = {
+			has_country_flag = MT_industry_civillian
+			is_lithoid_empire = no
+		}
+		modifier = {
+			planet_miners_minerals_produces_mult = 0.2
+		}
+		weight = {
+			factor = 10
+		}
+	}
+# swap if consumer picked first as organic lithoid
+	tradition_swap = {
+		name = tr_mt_industry_prospector
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		custom_tooltip = tr_mt_industry_prospector_tt
+		trigger = {
+			has_country_flag = MT_industry_civillian
+			is_lithoid_empire = yes
+		}
+		modifier = {
+			planet_miners_minerals_produces_mult = 0.2
+		}
+		weight = {
+			factor = 10
+		}
+	}
+# swap for gestalt
+	tradition_swap = {
+		name = tr_mt_industry_multilayered_gestalt
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			is_gestalt = yes
+		}
+		modifier = {
+			planet_metallurgists_alloys_produces_add = 0.5
+			ship_hull_mult = 0.1
+		}
+		weight = {
+			factor = 100 # Needs to be 100 or it will have same weight for lithoids for hives that are lithoid hives
+		}
+	}
+}

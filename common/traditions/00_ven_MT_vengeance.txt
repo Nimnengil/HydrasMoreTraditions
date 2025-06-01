@@ -1,0 +1,169 @@
+tr_mt_vengeance_adopt = { # Theme: That one annoying empire
+	unlocks_agenda = agenda_MT_vengeance # 
+	custom_tooltip_with_modifiers = tr_mt_vengeance_adopt_desc # Choose a rival to be your true nemesis. -1000 opinion against your true nemesis
+	modifier = {
+		damage_vs_rival_mult = 0.1
+	}
+	on_enabled = {
+		hidden_effect = {
+			country_event = { id = MT_events.72 }
+		}
+	}
+	possible = {
+		num_rivals > 0
+	}
+}
+
+# 
+tr_mt_vengeance_finish = {
+	custom_tooltip = tr_mt_vengance_finish_desc # Get modifier once true nemesis is dead
+	triggered_modifier = {
+		potential = {
+			OR = {
+				has_country_flag = mt_vengeance_victory
+				NOT = {
+					any_playable_country = {
+						has_country_flag = MT_true_nemesis@root
+					}
+				}
+			}
+		}
+		country_unity_produces_mult = 0.1
+		country_naval_cap_mult = 0.1
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_vengeance_insults = {
+
+	custom_tooltip = tr_mt_vengeance_insults_desc # Gain bonus while our nemesis considers us a rival
+	
+	possible = {
+		has_country_flag = MT_vengeance_chose_rival
+	}
+	
+	triggered_modifier = {
+		potential = {
+			any_rival_country = {
+				has_rival = root
+			}
+		}
+		planet_orbital_bombardment_damage = 0.5
+	}
+	
+	# Homicidals can't have rivalries
+	#tradition_swap = {
+	#	name = tr_mt_vengeance_insults_homicidal
+	#	inherit_effects = no
+	#	inherit_icon = yes
+	#	inherit_name = no
+	#	trigger = {
+	#		is_xenophobe = yes
+	#	}
+	#	modifier = {
+	#		country_border_friction_mult = -0.35
+	#	}
+	#	weight = {
+	#		factor = 10
+	#	}
+	#}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+#  
+tr_mt_vengeance_you_specifically = {
+	
+	possible = {
+		has_tradition = tr_mt_vengeance_glee
+	}
+	
+	custom_tooltip = tr_mt_vengeance_you_specifically_desc
+		triggered_modifier = {
+			potential = {
+				is_at_war = yes
+				any_war = {
+					any_war_participant = {
+						is_at_war_with = root
+						has_country_flag = MT_true_nemesis@root
+					}
+				}
+			}
+			ship_speed_mult = 0.15
+			ship_weapon_damage = 0.15
+		}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_vengeance_antagonist = {
+	
+	possible = {
+		has_tradition = tr_mt_vengeance_opposition
+	}
+	
+	custom_tooltip = tr_mt_vengeance_antagonist_desc # Gain +5% something, +5% extra for each max rivalries that you haven't used
+	
+	triggered_modifier = {
+		potential = { always = yes }
+		damage_vs_rival_mult = 0.05
+		mult = value:MT_unused_rival_slots
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_vengeance_opposition = {
+	
+	possible = {
+		has_tradition = tr_mt_vengeance_insults
+	}
+	
+	custom_tooltip = tr_mt_vengeance_opposition_desc # Gain +5% something, +5% extra for each max rivalries that you haven't used
+	
+	triggered_modifier = {
+		potential = {
+			any_rival_country = {
+				has_country_flag = MT_true_nemesis@root
+				position_on_current_resolution = support
+			}
+		}
+		diplo_weight_opposing_mult = 0.5
+	}
+	triggered_modifier = {
+		potential = {
+			any_rival_country = {
+				has_country_flag = MT_true_nemesis@root
+				position_on_current_resolution = oppose
+			}
+		}
+		diplo_weight_supporting_mult = 0.5
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_vengeance_glee = {
+
+	possible = {
+		has_tradition = tr_mt_vengeance_insults
+	}
+
+	custom_tooltip = tr_mt_vengeance_glee_desc # Whenever you destroy a ship belonging to your true nemesis, gain unity
+
+	ai_weight = {
+		factor = 1000
+	}
+}

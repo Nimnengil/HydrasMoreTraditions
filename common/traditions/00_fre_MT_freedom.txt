@@ -1,0 +1,133 @@
+tr_mt_freedom_adopt = { # Theme: Peace and Diplomacy
+	unlocks_agenda = agenda_MT_freedom # 
+	modifier = {
+		pop_happiness = 0.05
+		planet_resettlement_unemployed_destination_mult = 0.1
+		pop_government_ethic_attraction = -0.2
+	}
+}
+
+# 
+tr_mt_freedom_finish = {
+	
+	custom_tooltip = tr_mt_freedom_finish_desc
+	
+	triggered_modifier = {
+		potential = {
+			is_at_war = yes
+			any_war = {
+				OR = {
+					using_war_goal = {
+						type = wg_force_ideology
+						owner = attacker
+					}
+					using_war_goal = {
+						type = wg_independence
+						owner = attacker
+					}
+				}
+			}
+		}
+		country_war_exhaustion_mult = -0.2
+		country_naval_cap_mult = 0.1
+	}
+
+	modifier = {
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_freedom_of_arms = {
+
+	triggered_modifier = {
+		potential = { always = yes }
+		planet_stability_add = -5
+		planet_defense_armies_add = 10
+		army_damage_mult = 0.25
+		mult = value:MT_freedom_value
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+#  
+tr_mt_freedom_of_markets = {
+	
+	triggered_modifier = {
+		potential = { always = yes }
+		planet_pops_upkeep_mult = 0.2
+		pop_lifestyle_trade_value_mult = 0.5
+		mult = value:MT_freedom_value
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_freedom_of_speech = {
+	
+	#possible = {
+	#	has_tradition = tr_mt_freedom_kindness
+	#	has_tradition = tr_mt_freedom_mercy
+	#}
+	
+	triggered_modifier = {
+		potential = { always = yes }
+		faction_approval = -0.05
+		council_agenda_progress_speed = -0.05
+		pop_ethics_shift_speed_mult = 0.2
+		mult = value:MT_freedom_value
+	}
+
+	#tradition_swap = {
+	#	name = tr_mt_freedom_underground_service_centers
+	#	inherit_effects = yes
+	#	inherit_icon = yes
+	#	inherit_name = no
+	#	trigger = {
+	#		is_megacorp = yes
+	#	}
+	#	custom_tooltip = tr_mt_freedom_underground_service_centers_tooltip
+	#	weight = {
+	#		factor = 10
+	#	}
+	#}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_freedom_for_all = {
+	
+	custom_tooltip = tr_mt_freedom_for_all_desc
+	
+	possible = {
+		has_tradition = tr_mt_freedom_for_all
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_freedom_price = {
+
+	custom_tooltip = tr_mt_freedom_price_desc # Gain unity/influence/diplomatic weight for each guarantee independence
+	
+	possible = {
+		has_tradition = tr_mt_freedom_of_arms
+		has_tradition = tr_mt_freedom_of_speech
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

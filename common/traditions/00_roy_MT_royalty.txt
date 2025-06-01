@@ -1,0 +1,352 @@
+tr_mt_royalty_adopt = { # Theme: Ruler, Being Respected, Commanding, Ruler Stratum, Being the galactic emperor, being a federation leader, power projection
+	unlocks_agenda = agenda_MT_royalty # 
+	modifier = {
+		ruler_skill_add = 2
+	}
+	on_enabled = {
+		#random_country = {
+		#	limit = {
+		#		is_gestalt = yes
+		#	}
+		#	random_owned_planet = {
+		#		save_event_target_as = MT_test_target
+		#	}
+		#}
+		#random_owned_planet = {
+		#	save_event_target_as = MT_test_target
+		#}
+		create_MT_situation_handler = yes
+		#event_target:MT_situation_handler_country = {
+		#	start_situation = {
+		#		type = MT_situation_test
+		#		target = event_target:MT_test_target
+		#		effect = {
+		#			set_situation_flag = celebration_shard
+		#			set_situation_flag = standard_unity_reward
+		#		}
+		#	}
+		#	start_situation = {
+		#		type = MT_situation_test
+		#		target = event_target:MT_test_target
+		#		effect = {
+		#			set_situation_flag = celebration_shard
+		#			set_situation_flag = standard_unity_reward
+		#		}
+		#	}
+		#}
+	}
+}
+# Modifiers:
+# ruler_skill_add
+
+# Ideas:
+# Gain bonuses depending on how "royal" you are (Use script value that adds for subjects, emperor status and such
+
+# About tree: Scaling tree, meaning bonuses are bad in the beginning of the game, but becomes gradually more useful
+
+# 
+tr_mt_royalty_finish = {
+	# Gain 20 Naval Capacity for each level of your ruler. Includes effective skill
+	custom_tooltip = tr_mt_royalty_finish_desc
+	triggered_modifier = {
+		potential = { always = yes }
+		country_naval_cap_add = 10
+		mult = value:MT_royalty_ruler_level
+	}
+	modifier = {
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_royalty_broodmother_hive = {
+	
+	# Your capital gains a bonus / Whenever a ship is destroyed, gain something
+	# For hiveminds: Your capital gains bonus pop assembly and growth speed
+	# Actually, the bonus for hiveminds is that the ruler gets the broodmother trait, which gives extra pop assembly to homeworld planet
+	# For robots: Our main consciousness has become obsessed with being part of the assembly process, causing all pops assembled on the capital to gain a bonus / trait (Trait cannot be applied to templates)
+	
+	custom_tooltip = tr_mt_royalty_broodmother_hive_desc
+	
+	on_enabled = {
+		ruler = {
+			add_trait = leader_trait_MT_royalty_broodmother
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_royalty_broodmother
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_gestalt = no
+		}
+		custom_tooltip = tr_mt_royalty_broodmother_desc
+		triggered_modifier = {
+			potential = { always = yes }
+			country_commander_cap_add = 1
+			mult = value:MT_royalty_ruler_broodmother_level
+		}
+		weight = {
+			factor = 100
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_royalty_broodmother_male_hive
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_hive_empire = yes
+			leader = {
+				NOT = {
+					gender = female
+				}
+			}
+		}
+		custom_tooltip = tr_mt_royalty_broodmother_male_hive_desc
+		weight = {
+			factor = 100
+		}
+	}
+	
+	# Pops assembled on capital gains trait
+	tradition_swap = {
+		name = tr_mt_royalty_broodmother_machine
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_machine_empire = yes
+		}
+		custom_tooltip = tr_mt_royalty_broodmother_machine_desc
+		weight = {
+			factor = 1000
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+#  
+tr_mt_royalty_grand_entrance = {
+	
+	possible = {
+		has_tradition = tr_mt_royalty_keep
+	}
+	
+	custom_tooltip_with_modifiers = tr_mt_royalty_grand_entrance_desc # When your fleets enter battle they gain a buff # Alt: When you declare war on someone, gain bonus and give them a debuff
+
+	modifier = {
+		country_power_projection_unity_produces_add = 20
+	}
+	
+	#triggered_modifier = {
+	#	potential = { always = yes }
+	#	country_power_projection_unity_produces_add = 20
+	#	mult = value:mt_royal_unity_projection
+	#}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_royalty_mandate = {
+	
+	possible = {
+		has_tradition = tr_mt_royalty_broodmother_hive
+		has_tradition = tr_mt_royalty_keep
+	}
+	
+	custom_tooltip = tr_mt_royalty_mandate_desc # Gain diplomatic weight, boosted by power projection
+	
+	triggered_modifier = {
+		potential = { always = yes }
+		diplo_weight_mult = 0.02
+		mult = value:mt_royal_projection
+	}
+	
+	tradition_swap = {
+		name = tr_mt_royalty_mandate_homicidal
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			is_homicidal = yes
+		}
+		custom_tooltip = tr_mt_royalty_mandate_homicidal_desc # Gain Ship Fire Rate, boosted by power projection
+	
+		triggered_modifier = {
+			potential = { always = yes }
+			ship_fire_rate_mult = 0.1
+			mult = value:mt_royal_projection
+		}
+		weight = {
+			factor = 100
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_royalty_mandate_inwards_perfections
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			has_civic = civic_inwards_perfection
+		}
+		custom_tooltip = tr_mt_royalty_mandate_inwards_perfection_desc # Gain Starbase hull points and damage, boosted by power projection
+	
+		triggered_modifier = {
+			potential = { always = yes }
+			shipclass_starbase_damage_mult = 0.10
+			shipclass_starbase_hull_mult = 0.10
+			mult = value:mt_royal_projection
+		}
+		weight = {
+			factor = 1000
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_royalty_keep = {
+	
+	custom_tooltip = tr_mt_royalty_keep_desc
+	
+	# Create hidden leader that has background modifier that adds something to capital
+	on_enabled = {
+		hidden_effect = {
+			home_planet = {
+				save_event_target_as = MT_target_planet
+			}
+			event_target:MT_situation_handler_country = {
+				start_situation = {
+					type = MT_situation_royalty_keep
+					target = event_target:MT_target_planet
+					#effect = {
+					#	set_situation_flag = celebration_shard
+					#	set_situation_flag = standard_unity_reward
+					#}
+				}
+			}
+			#create_species = {
+			#	name = "NAME_Unknown"
+			#	class = PARAGON
+			#	portrait = paragon01
+			#	namelist = "PRT1"
+			#	traits = random
+			#	effect = {
+			#		save_event_target_as = mt_royalty_species
+			#	}
+			#}
+			#create_leader = {
+			#	name = tr_mt_royalty_keep
+			#	species = event_target:mt_royalty_species
+			#	class = MT_background
+			#	skill = 1 # The leader skill level, minimum LEADER_SKILL_MIN and maximum LEADER_MAX_SKILL_CAP.
+			#	set_age = 1
+			#	traits = {
+			#		1 = leader_trait_MT_royalty_keep
+			#	} # The traits of the leader, i.e. "1 = leader_trait_bureaucrat".
+			#
+			#	event_leader = yes
+			#	immortal = yes
+			#	hide_age = yes
+			#	can_manually_change_location = no # Optional, default = yes.
+			#	can_assign_to_council = no # Optional, default = yes.
+			#	hide_leader = yes # Optional, default = no. Hides the leader from the player's list of leaders, and doesn't count them towards the leader cap.
+			#	randomize_traits = no # Optional, default = yes.
+			#	effect = {
+			#		set_leader_flag = leader_death_events_blocked
+			#		set_leader_flag = immune_to_negative_traits
+			#	} # Optional. Scripted effect(s) that are run on the leader after it has been created.
+			#
+			#	skip_background_generation = yes # Optional, default = no. Disables random generation of a background.
+			#	background_planet = event_target:MT_royalty_homeworld # Optional. Used as the home planet of the leader.
+			#}
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# Legendary Artifact
+tr_mt_royalty_heirlooms = {
+
+	possible = {
+		has_tradition = tr_mt_royalty_broodmother_hive
+	}
+
+	#custom_tooltip = tr_mt_royalty_heirlooms_desc # Whenever a relic is activated, gain bonus / bonus based on number or relics
+	custom_tooltip = tr_mt_royalty_heirlooms_desc # Gain 
+	
+	#modifier = {
+	#	country_power_projection_produces_mult = 0.01
+	#	country_power_projection_influence_produces_mult = 0.01
+	#	country_power_projection_influence_produces = 0.01
+	#}
+	
+	triggered_modifier = {
+		potential = { always = yes }
+		council_agenda_progress_speed = 0.02
+		country_power_projection_produces_mult = 0.05
+		mult = value:MT_royalty_value
+	}
+	
+	tradition_swap = {
+		name = tr_mt_royalty_heirlooms_homicidal
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			is_homicidal = yes
+		}
+		custom_tooltip = tr_mt_royalty_heirlooms_homicidal_desc
+	
+		triggered_modifier = {
+			potential = { always = yes }
+			country_power_projection_produces_mult = 0.05
+			mult = value:MT_royalty_ruler_level # Gain power projection for ruler level
+		}
+		weight = {
+			factor = 100
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_royalty_heirlooms_inwards_perfection
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			has_civic = civic_inwards_perfection
+		}
+		custom_tooltip = tr_mt_royalty_heirlooms_inwards_perfection_desc
+	
+		triggered_modifier = {
+			potential = { always = yes }
+			council_agenda_progress_speed = 0.02
+			country_power_projection_produces_mult = 0.05
+			mult = value:MT_num_neighbors
+		}
+		weight = {
+			factor = 1000
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

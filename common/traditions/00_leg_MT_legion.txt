@@ -1,0 +1,113 @@
+tr_mt_legion_adopt = { # Legion is the machine equivelant of swarm, but with more focus on durability and command limit
+	unlocks_agenda = agenda_MT_legion # Build Cost Reduction
+	modifier = {
+		shipsize_corvette_build_speed_mult = 0.5
+		shipsize_corvette_hull_mult = 0.2
+		shipsize_frigate_build_speed_mult = 0.25
+		shipsize_frigate_hull_mult = 0.2
+	}
+}
+
+# 
+tr_mt_legion_finish = {
+	#custom_tooltip = tr_legion_finish_desc
+	modifier = {
+		command_limit_add = 40
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_legion_replication = {
+
+	modifier = {
+		starbase_shipyard_build_speed_mult = 0.33
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_legion_stealth = {
+	
+	custom_tooltip_with_modifiers = tr_mt_legion_stealth_desc # While cloaked, gain +20% ship speed
+
+	modifier = {
+		ship_cloaking_strength_add = 1
+	}
+	
+	possible = {
+		has_tradition = tr_mt_legion_perfection
+	}
+
+	tradition_swap = {
+		name = tr_mt_legion_stealth_no_cloaking
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		trigger = {
+			has_first_contact_dlc = no
+		}
+		modifier = {
+			ship_speed_mult = 0.1
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# Our perfection is evident in the effectiveness of our ships targeting. Any enemies are dispatched with no more resources expended than necessary and thus can focus on the next ship faster
+tr_mt_legion_perfection = {
+	
+	possible = {
+		#has_tradition = tr_mt_legion_feast
+	}
+	
+	custom_tooltip = tr_mt_legion_perfection_desc # Whenever one of our ships destroy an enemy ship, the destroyer gains +20% speed and 20 tracking for 30 days
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# Range
+tr_mt_legion_connected = {
+
+	possible = {
+		has_tradition = tr_mt_legion_replication
+	}
+	
+	modifier = {
+		ship_weapon_range_mult = 0.2
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# Whenever a fleet enters combat, all other fleets in our empire gets +20% ftl and sublight speed for 60 days
+tr_mt_legion_rapid_response = {
+
+	possible = {
+		has_tradition = tr_mt_legion_perfection
+	}
+	
+	custom_tooltip = tr_mt_legion_rapid_response_desc
+
+	triggered_modifier = {
+		potential = { has_country_flag = MT_legion_rapid_response_modifier }
+		MT_legion_rapid_response_modifier = 1
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

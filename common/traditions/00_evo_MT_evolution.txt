@@ -1,0 +1,277 @@
+# # Original Design by Metallichydra
+# # Reworked Design by Azurian
+
+# tr_mt_evolution_adopt = {
+# 	unlocks_agenda = agenda_MT_evolution
+# 	custom_tooltip = tr_mt_evolution_adopt_desc # Any new pops gain the ideal planet class of the planet they are grown on
+# 	on_enabled = {
+# 		hidden_effect = {
+# 			create_MT_situation_handler = yes
+# 		}
+# 	}
+# }
+
+# tr_mt_evolution_finish = {
+# 	#custom_tooltip_with_modifiers = tr_mt_evolution_finish_desc # Any new pops have a 10% chance to mutate
+# 	modifier = {
+# 		BIOLOGICAL_species_trait_points_add = 1
+# 		BIOLOGICAL_species_trait_picks_add = 1
+# 		ascension_perks_add = 1
+# 	}
+# }
+
+# # Divergent Path
+# tr_mt_evolution_predatory = {
+
+# 	#possible = {
+# 	#	has_tradition = tr_mt_evolution_more_actions
+# 	#}
+	
+# 	on_enabled = {
+# 		set_country_flag = MT_evolution_predatory
+# 		hidden_effect = {
+# 			every_owned_planet = {
+# 				save_event_target_as = MT_target_planet
+# 				event_target:MT_situation_handler_country = {
+# 					start_situation = {
+# 						type = MT_situation_evolution_predatory
+# 						target = event_target:MT_target_planet
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+# 	custom_tooltip = tr_mt_evolution_predatory_desc
+
+# 	tradition_swap = {
+# 		name = tr_mt_evolution_predatory_parental
+# 		inherit_effects = no
+# 		inherit_icon = yes
+# 		inherit_name = no
+# 		trigger = {
+# 			has_country_flag = MT_evolution_parental
+# 		}
+# 		custom_tooltip = tr_mt_evolution_predatory_parental_desc
+# 		triggered_modifier = {
+# 			potential = { always = yes }
+# 			logistic_growth_mult = 0.01
+# 			mult = trigger:num_species
+# 		}
+# 		weight = {
+# 			factor = 100
+# 		}
+# 	}
+
+# 	ai_weight = {
+# 		factor = 1000
+# 	}
+# }
+
+# # Shifts towards defensive actions
+# tr_mt_evolution_parental = {
+	
+# 	on_enabled = {
+# 		set_country_flag = MT_evolution_parental
+# 	}
+# 	custom_tooltip_with_modifiers = tr_mt_evolution_parental_desc
+# 	modifier = {
+# 		pop_growth_from_immigration = 0.2
+# 	}
+	
+# 	tradition_swap = {
+# 		name = tr_mt_evolution_parental_predatory
+# 		inherit_effects = no
+# 		inherit_icon = yes
+# 		inherit_name = no
+# 		trigger = {
+# 			has_country_flag = MT_evolution_predatory
+# 		}
+# 		modifier = {
+# 			research_sharing_mult = 0.2
+# 		}
+# 		weight = {
+# 			factor = 100
+# 		}
+# 	}
+
+# 	ai_weight = {
+# 		factor = 1000
+# 	}
+# }
+
+# # Farmers produce stuff
+# tr_mt_evolution_farmers = {
+# 	possible = {
+# 		has_tradition = tr_mt_evolution_parental
+# 	}
+	
+# 	custom_tooltip = tr_mt_evolution_farmers_desc
+	
+# 	tradition_swap = {
+# 		name = tr_mt_evolution_farmers_predatory
+# 		inherit_effects = no
+# 		inherit_icon = yes
+# 		inherit_name = no
+# 		trigger = {
+# 			has_country_flag = MT_evolution_predatory
+# 		}
+# 		modifier = {
+# 			planet_farmers_physics_research_produces_add = 1
+# 			planet_farmers_society_research_produces_add = 1
+# 			planet_farmers_engineering_research_produces_add = 1
+# 			#planet_farmers_minerals_produces_add = 1
+# 			#planet_farmers_alloys_produces_add = 0.1
+# 		}
+# 		#custom_tooltip = tr_mt_evolution_parental_predatory_desc
+# 		weight = {
+# 			factor = 100
+# 		}
+# 	}
+	
+# 	tradition_swap = {
+# 		name = tr_mt_evolution_farmers_parental
+# 		inherit_effects = no
+# 		inherit_icon = yes
+# 		inherit_name = no
+# 		trigger = {
+# 			has_country_flag = MT_evolution_parental
+# 		}
+# 		on_enabled = {
+# 			hidden_effect = {
+# 				every_owned_planet = {
+# 					save_event_target_as = MT_target_planet
+# 					event_target:MT_situation_handler_country = {
+# 						start_situation = {
+# 							type = MT_situation_evolution_farming
+# 							target = event_target:MT_target_planet
+# 						}
+# 					}
+# 				}
+# 			}
+# 		}
+# 		custom_tooltip = tr_mt_evolution_farmers_parental_desc
+# 		weight = {
+# 			factor = 100
+# 		}
+# 	}
+
+# 	ai_weight = {
+# 		factor = 1000
+# 	}
+# }
+
+# # Shifts towards cloaking
+# # Even the planets shall change to suit our needs!
+# tr_mt_evolution_terraforming = {
+	
+# 	possible = {
+# 		has_tradition = tr_mt_evolution_predatory
+# 		has_tradition = tr_mt_evolution_parental
+# 	}
+	
+# 	custom_tooltip = tr_mt_evolution_terraforming_desc
+	
+# 	tradition_swap = {
+# 		name = tr_mt_evolution_terraforming_predatory
+# 		inherit_effects = no
+# 		inherit_icon = yes
+# 		inherit_name = no
+# 		trigger = {
+# 			has_country_flag = MT_evolution_predatory
+# 		}
+# 		modifier = {
+# 			BIOLOGICAL_species_trait_picks_add = 2
+# 		}
+# 		weight = {
+# 			factor = 10
+# 		}
+# 	}
+	
+# 	tradition_swap = {
+# 		name = tr_mt_evolution_terraforming_parental
+# 		inherit_effects = no
+# 		inherit_icon = yes
+# 		inherit_name = no
+# 		trigger = {
+# 			has_country_flag = MT_evolution_parental
+# 		}
+# 		modifier = {
+# 			BIOLOGICAL_species_trait_points_add = 2
+# 		}
+# 		weight = {
+# 			factor = 10
+# 		}
+# 	}
+
+# 	ai_weight = {
+# 		factor = 1000
+# 	}
+# }
+
+# # Shifts towards speed
+# tr_mt_evolution_demotion = {
+	
+# 	possible = {
+# 		has_tradition = tr_mt_evolution_predatory
+# 	}
+	
+# 	custom_tooltip = tr_mt_evolution_demotion_desc
+	
+# 	tradition_swap = {
+# 		name = tr_mt_evolution_demotion_predatory
+# 		inherit_effects = no
+# 		inherit_icon = yes
+# 		inherit_name = no
+# 		trigger = {
+# 			has_country_flag = MT_evolution_predatory
+# 		}
+# 		on_enabled = {
+# 			hidden_effect = {
+# 				every_owned_planet = {
+# 					save_event_target_as = MT_target_planet
+# 					event_target:MT_situation_handler_country = {
+# 						start_situation = {
+# 							type = MT_situation_evolution_demotion
+# 							target = event_target:MT_target_planet
+# 						}
+# 					}
+# 				}
+# 			}
+# 		}
+# 		custom_tooltip = tr_mt_evolution_demotion_predatory_desc
+# 		weight = {
+# 			factor = 10
+# 		}
+# 	}
+	
+# 	tradition_swap = {
+# 		name = tr_mt_evolution_demotion_parental
+# 		inherit_effects = no
+# 		inherit_icon = yes
+# 		inherit_name = no
+# 		trigger = {
+# 			has_country_flag = MT_evolution_parental
+# 		}
+# 		on_enabled = {
+# 			hidden_effect = {
+# 				every_owned_planet = {
+# 					save_event_target_as = MT_target_planet
+# 					event_target:MT_situation_handler_country = {
+# 						start_situation = {
+# 							type = MT_situation_evolution_demotion
+# 							target = event_target:MT_target_planet
+# 						}
+# 					}
+# 				}
+# 			}
+# 		}
+# 		custom_tooltip = tr_mt_evolution_demotion_parental_desc
+# 		weight = {
+# 			factor = 10
+# 		}
+# 	}
+
+# 	ai_weight = {
+# 		factor = 1000
+# 	}
+# }

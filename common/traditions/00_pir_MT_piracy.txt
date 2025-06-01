@@ -1,0 +1,183 @@
+tr_mt_piracy_adopt = { # Theme: piracy and stealing
+	unlocks_agenda = agenda_MT_piracy # -5% upkeep, -20% piracy | -10% upkeep, -40% piracy, all neighbors get +25% max piracy and growth for the agenda's duration.
+	custom_tooltip = tr_mt_piracy_adopt_desc # Scavenging debris gives 1 month of unity
+}
+
+# 
+tr_mt_piracy_finish = {
+	# 
+	#custom_tooltip_with_modifiers = tr_mt_piracy_finish_desc
+	modifier = {
+		country_enclave_capacity_add = 1
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_piracy_privateers = {
+
+	custom_tooltip = tr_mt_piracy_privateers_desc # Commanders start with the material liberator trait
+	
+	possible = {
+		has_tradition = tr_mt_piracy_mercenaries
+	}
+	
+	modifier = {
+		country_commander_cap_add = 1
+	}
+	
+	tradition_swap = {
+		name = tr_mt_piracy_privateers_nemesis
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			has_nemesis = yes
+		}
+		custom_tooltip = tr_mt_piracy_privateers_desc # Commanders start with the material liberator trait
+		modifier = {
+			country_commander_cap_add = 1
+			operation_arm_privateers_skill_add = 4
+		}
+		weight = {
+			factor = 10
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_piracy_privateers_already_has_buff
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			has_valid_civic = civic_crusader_spirit_corporate
+			has_nemesis = yes
+		}
+		modifier = {
+			country_commander_cap_add = 2
+			operation_arm_privateers_skill_add = 4
+		}
+		weight = {
+			factor = 100
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_piracy_privateers_already_has_buff_no_nemesis
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			has_valid_civic = civic_crusader_spirit_corporate
+			has_nemesis = no
+		}
+		custom_tooltip = BLANK_STRING
+		modifier = {
+			country_commander_cap_add = 2
+		}
+		weight = {
+			factor = 100
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+#  
+tr_mt_piracy_mercenaries = {
+	
+	modifier = {
+		country_enclave_capacity_add = 1
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_piracy_plunder = {
+	
+	possible = {
+		has_tradition = tr_mt_piracy_debris
+	}
+	
+	custom_tooltip = tr_mt_piracy_plunder_desc # When you successfully invade a planet, gain reources based on districts
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_piracy_debris = {
+	
+	modifier = {
+		create_debris_chance = 0.25
+		scavenge_debris_mult = 0.25
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_piracy_opportunity = {
+
+	custom_tooltip = tr_mt_piracy_opportunity_desc # 
+	
+	possible = {
+		has_tradition = tr_mt_piracy_debris
+	}
+	
+	triggered_modifier = {
+		potential = { always = yes }
+		country_naval_cap_add = 50
+		mult = trigger:num_migration_pacts
+	}
+	
+	tradition_swap = {
+		name = tr_mt_piracy_opportunity_paragon
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			has_paragon_dlc = yes
+		}
+		custom_tooltip = tr_mt_piracy_opportunity_paragon_desc
+		triggered_modifier = {
+			potential = { always = yes }
+			country_naval_cap_add = 50
+			mult = trigger:num_migration_pacts
+		}
+		modifier = {
+			external_leader_pool_add = 1
+		}
+		weight = {
+			factor = 10
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_piracy_opportunity_xenophobe
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_xenophobe = yes
+		}
+		modifier = {
+			planet_jobs_slave_produces_mult = 0.15
+		}
+		weight = {
+			factor = 100
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

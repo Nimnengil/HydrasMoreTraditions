@@ -1,0 +1,268 @@
+# Adoption
+tr_mt_botany_adopt = {
+	#custom_tooltip = tr_mt_botany_adopt_desc
+	unlocks_agenda = agenda_MT_botany
+	modifier = {
+		planet_farmers_produces_mult = 0.15
+		category_biology_research_speed_mult = 0.15
+	}
+	# Situation Handler
+	on_enabled = {
+		hidden_effect = {
+			create_MT_situation_handler = yes
+		}
+	}
+	tradition_swap = { # Swap Angler (but not with the agenda aka paragons dlc)
+		name = tr_mt_botany_adopt_angler
+		custom_tooltip = tr_mt_botany_adopt_angler_desc
+		inherit_effects = no
+		#inherit_icon = no
+		inherit_name = no
+		trigger = {
+			is_anglers_empire = yes
+			has_paragon_dlc = yes
+		}
+		modifier = {
+			planet_farmers_produces_mult = 0.15
+			category_biology_research_speed_mult = 0.15
+		}
+		# Situation Handler
+		on_enabled = {
+			hidden_effect = {
+				create_MT_situation_handler = yes
+			}
+		}
+		weight = {
+			factor = 200
+		}
+	}
+}
+
+# Finisher
+tr_mt_botany_finish = {
+	#custom_tooltip = tr_mt_botany_finisher_desc
+	modifier = {
+		planet_jobs_society_research_produces_mult = 0.2
+		ascension_perks_add = 1
+	}
+}
+
+# Herbal Supplements
+tr_mt_botany_1 = {
+	#custom_tooltip = tr_mt_botany_garden_desc
+	possible = {
+		has_tradition = tr_mt_botany_3
+	}
+	modifier = {
+		leader_lifespan_add = 10
+		species_leader_exp_gain = 0.1
+	}
+
+	tradition_swap = { # Organic Lubricant // Swap Synth
+		name = tr_mt_botany_1_synth
+		custom_tooltip = tr_mt_botany_1_synth_desc
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		trigger = {
+			is_synthetic_empire = yes
+		}
+		modifier = {
+			ROBOT_pop_happiness = 0.05
+			planet_pops_unemployed_food_upkeep_add = 0.5      # 0.5 food upkeep for all pop but theres no single modifier for that
+			pop_category_slave_food_upkeep_add = 0.5
+			pop_category_workers_food_upkeep_add = 0.5
+			pop_category_specialists_food_upkeep_add = 0.5
+			pop_category_rulers_food_upkeep_add = 0.5
+		}
+		weight = {
+			factor = 200
+		}
+	}
+	tradition_swap = { # Medicinal Algae // Swap Angler
+		name = tr_mt_botany_1_angler
+		inherit_effects = yes
+		inherit_icon = no
+		inherit_name = no
+		trigger = {
+			is_anglers_empire = yes
+		}
+		weight = {
+			factor = 100
+		}
+	}
+}
+
+# Evolution in Miniature
+tr_mt_botany_2 = {
+	on_enabled = {
+		custom_tooltip = tr_mt_botany_2_desc
+	}
+	possible = {
+		has_tradition = tr_mt_botany_3
+	}
+	modifier = {
+		terraforming_cost_mult = -0.5
+		terraform_speed_mult = -0.5
+		# on terraforming completion, gain 3 month worth of science. see MT_botany.1 
+	}
+	tradition_swap = { # Swap Void Dwellers
+		name = tr_mt_botany_2_habitat
+		#custom_tooltip = tr_mt_botany_2_habitat_desc
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		trigger = {
+			has_origin = origin_void_dwellers
+		}
+		weight = {
+			factor = 100
+		}
+		modifier = {
+			job_farmer_per_pop = 0.066 # per 15 pop
+			habitat_stability_add = 5
+		}
+	}
+}
+
+# Floating Gardens
+tr_mt_botany_3 = {
+	custom_tooltip = tr_mt_botany_3_desc
+	modifier = {
+		country_food_produces_mult = 0.1
+		# unlocks edict: institute of botany
+	}
+	tradition_swap = { # Swap Synth
+		name = tr_mt_botany_3_synth
+		custom_tooltip = tr_mt_botany_3_synth_desc
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_synthetic_empire = yes
+		}
+		modifier = {
+			country_food_produces_mult = 0.1
+			# unlocks edict: institute of botany, synth version
+		}
+		weight = {
+			factor = 100
+		}
+		# this entire swap is solely so I can change the edict desc in the tooltip of this tradition
+	}
+}
+
+# Designer Produce
+tr_mt_botany_4 = {
+	custom_tooltip = tr_mt_botany_4_desc
+	modifier = {
+		#uses situation to make farmers provide +0.5% planet happiness
+	}
+	on_enabled = {
+		hidden_effect = {
+			every_owned_planet = {
+				save_event_target_as = MT_target_planet
+				event_target:MT_situation_handler_country = {
+					start_situation = {
+						type = MT_situation_botany_4
+						target = event_target:MT_target_planet
+					}
+				}
+			}
+		}
+	}
+	tradition_swap = { # Regenerative Phycology
+		name = tr_mt_botany_4_angler
+		custom_tooltip = tr_mt_botany_4_angler_desc
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		trigger = {
+			is_anglers_empire = yes
+		}
+		on_enabled = {
+			hidden_effect = {
+				every_owned_planet = {
+					save_event_target_as = MT_target_planet
+					event_target:MT_situation_handler_country = {
+						start_situation = {
+							type = MT_situation_botany_4_angler
+							target = event_target:MT_target_planet
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			#uses situation to grant pearl divers +1% planet happiness
+		}
+		weight = {
+			factor = 100
+		}
+	}
+	tradition_swap = { # Flora Experimentation
+		name = tr_mt_botany_4_synth
+		custom_tooltip = tr_mt_botany_4_synth_desc
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_synthetic_empire = yes
+			is_anglers_empire = no
+		}
+		modifier = {
+			planet_farmers_engineering_research_produces_add = 0.5
+			planet_farmers_physics_research_produces_add = 0.5
+			planet_farmers_society_research_produces_add = 0.5
+		}
+		weight = {
+			factor = 100
+		}
+	}
+}
+
+# Plant Genomics
+tr_mt_botany_5 = {
+	#custom_tooltip = tr_mt_botany_5_desc
+	possible = {
+		has_tradition = tr_mt_botany_4
+	}
+	modifier = {
+		district_farming_max = 8
+	}
+	#on_enabled = {
+	#	hidden_effect = {
+	#		add_research_option = tech_plantoid_transgenesis
+	#	}
+	#}
+	tradition_swap = { # Swap No Plantoid DLC
+		name = tr_mt_botany_5_angler
+		#custom_tooltip = tr_mt_botany_5_angler
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_anglers_empire = yes
+		}
+		weight = {
+			factor = 100
+		}
+	}
+	tradition_swap = { # Grown Exoframes // Swap Synth
+		name = tr_mt_botany_5_synth
+		custom_tooltip = tr_mt_botany_5_synth_desc
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		trigger = {
+			is_synthetic_empire = yes
+		}
+		modifier = {
+			planet_pop_assemblers_food_upkeep_add = 2
+			planet_pop_assemblers_alloys_upkeep_add = -1
+		}
+		weight = {
+			factor = 200
+		}
+	}
+}

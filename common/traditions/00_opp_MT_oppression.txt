@@ -1,0 +1,152 @@
+tr_mt_oppression_adopt = { # Theme: Slavery
+	unlocks_agenda = agenda_MT_oppression # 
+	modifier = {
+		planet_jobs_slave_produces_mult = 0.1
+	}
+	possible = {
+		OR = {
+			is_authoritarian = yes
+			is_xenophobe = yes
+			is_spiritualist = yes
+		}
+	}
+}
+
+# 
+tr_mt_oppression_finish = {
+	modifier = {
+		planet_stability_mult = 0.1
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_oppression_rationing = {
+
+	modifier = {
+		pop_category_slave_food_upkeep_mult = -0.2
+	}
+	
+	tradition_swap = {
+		name = tr_mt_oppression_rationing_gestalt
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_gestalt = yes
+		}
+		weight = {
+			factor = 10
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_oppression_rationing_xenophile_spiritualist
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_spiritualist = yes
+			OR = {
+				AND = {
+					is_authoritarian = no
+					is_xenophobe = no
+				}
+				is_xenophile = yes
+			}
+		}
+		modifier = {
+			planet_pops_robotics_upkeep_mult = -0.2
+		}
+		weight = {
+			factor = 10
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+#  
+tr_mt_oppression_removal_of_self = {
+	
+	modifier = {
+		pop_cat_slave_political_power = -0.25
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# You can rent slaves. This generates extra revenue
+tr_mt_oppression_private_servants = {
+	
+	possible = {
+		has_tradition = tr_mt_oppression_removal_of_self
+		has_tradition = tr_mt_oppression_rationing
+	}
+	
+	modifier = {
+		living_standard_trade_value_slaves_add = 1
+	}
+	
+	custom_tooltip = BLANK_STRING
+	
+	tradition_swap = {
+		name = tr_mt_oppression_private_servants_gestalt
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_gestalt = yes
+		}
+		modifier = {
+			planet_jobs_slave_produces_mult = 0.1
+		}
+		weight = {
+			factor = 100
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_oppression_forced_slavery = {
+	
+	custom_tooltip = tr_mt_oppression_forced_slavery_desc # Gain a policy that lets you enslave part of your population by way of country_pop_enslaved_mult
+
+	ai_weight = {
+		factor = 1000
+	}
+	
+	on_enabled = {
+		hidden_effect = {
+			set_policy = { policy = mt_forced_slavery option = mt_forced_slavery_voluntary cooldown = no }
+		}
+	}
+}
+
+# 
+tr_mt_oppression_punishments = {
+
+	custom_tooltip = tr_mt_oppression_punishments_desc # Gain the "Motivational Punishments" policy which increases slave output and decreases slave happiness
+
+	possible = {
+		has_tradition = tr_mt_oppression_forced_slavery
+	}
+	
+	on_enabled = {
+		hidden_effect = {
+			set_policy = { policy = mt_punishments option = mt_prison_punishments cooldown = no }
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

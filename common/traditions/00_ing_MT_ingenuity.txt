@@ -1,0 +1,201 @@
+tr_mt_ingenuity_adopt = {
+	unlocks_agenda = agenda_MT_ingenuity
+	modifier = {
+		country_starbase_capacity_add = 2
+		station_gatherers_produces_mult = 0.1
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_mega_engineering"
+			has_technology = tech_mega_engineering
+		}
+	}
+	# Situation Handler (wonder worlds)
+	on_enabled = {
+		hidden_effect = {
+			create_MT_situation_handler = yes
+		}
+	}
+}
+# 
+tr_mt_ingenuity_finish = {
+	modifier = {
+		shipclass_starbase_armor_mult = 0.5
+		country_alloys_produces_mult = 0.1
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_ingenuity_frameworks = {
+
+	modifier = {
+		megastructures_cost_mult = -0.2
+	}
+
+	tradition_swap = {
+		name = tr_mt_ingenuity_frameworks_hive
+		inherit_effects = yes
+		inherit_icon = yes
+		trigger = {
+			is_hive_empire = yes
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
+	tradition_swap = {
+		name = tr_mt_ingenuity_frameworks_machine
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_machine_empire = yes
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_ingenuity_extra_dyson_sphere = {
+
+	possible = {
+		has_tradition = tr_mt_ingenuity_grand_construction
+		has_tradition = tr_mt_ingenuity_frameworks
+	}
+
+	custom_tooltip = tr_mt_ingenuity_extra_dyson_sphere_desc # Gain 5% engineering research for each upgrading megastructure
+
+	triggered_modifier = {
+		potential = { always = yes }
+		country_engineering_tech_research_speed = 0.05
+		mult = value:MT_num_upgrading_megastructures
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_ingenuity_grand_construction = {
+	modifier = {
+		megastructure_build_speed_mult = 0.25
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_ingenuity_stellar_shipyards = {
+	
+	possible = {
+		has_tradition = tr_mt_ingenuity_wonder_worlds
+	}
+	
+	modifier = {
+		shipsize_juggernaut_build_speed_mult = 0.25
+		shipsize_titan_build_speed_mult = 0.25
+		shipsize_juggernaut_hull_mult = 0.2
+		shipsize_titan_hull_mult = 0.2
+	}
+	
+	tradition_swap = {
+		name = tr_mt_ingenuity_stellar_shipyards_no_apocalypse
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			has_federations_dlc = yes
+			NOT = { host_has_dlc = "Apocalypse" }
+		}
+		modifier = {
+			shipsize_juggernaut_build_speed_mult = 0.25
+			shipsize_juggernaut_hull_mult = 0.2
+		}
+		weight = {
+			factor = 10
+		}
+	}
+	tradition_swap = {
+		name = tr_mt_ingenuity_stellar_shipyards_no_federations
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			has_federations_dlc = no
+			host_has_dlc = "Apocalypse"
+		}
+		modifier = {
+			shipsize_titan_build_speed_mult = 0.25
+			shipsize_titan_hull_mult = 0.2
+		}
+		weight = {
+			factor = 10
+		}
+	}
+	tradition_swap = {
+		name = tr_mt_ingenuity_stellar_shipyards_no_federations_no_apocalypse
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			has_federations_dlc = no
+			NOT = { host_has_dlc = "Apocalypse" }
+		}
+		modifier = {
+			starbase_shipyard_build_speed_mult = 0.05
+		}
+		weight = {
+			factor = 100
+		}
+	}
+	
+	
+	
+	
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_ingenuity_wonder_worlds = {
+	
+	possible = {
+		#has_tradition = tr_mt_ingenuity_last_gift
+	}
+
+	custom_tooltip = tr_mt_ingenuity_wonder_worlds_desc
+
+	modifier = {
+		# non_artificial_planet_jobs_produces_mult = -0.1 # defunct as of 4.0, replaced with situation
+		# planet_jobs_produces_mult = 0.1
+	}
+	on_enabled = {
+		set_country_flag = MT_ingenuity_wonder_worlds
+		hidden_effect = {
+			every_owned_planet = {
+				limit = {
+					is_artificial = yes
+				}
+				save_event_target_as = MT_target_planet
+				event_target:MT_situation_handler_country = {
+						start_situation = {
+						type = MT_situation_ingenuity_wonder_worlds
+						target = event_target:MT_target_planet
+					}
+				}
+			}
+		}
+	}
+	ai_weight = {
+		factor = 1000
+	}
+}

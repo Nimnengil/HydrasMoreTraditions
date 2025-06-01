@@ -1,0 +1,121 @@
+tr_mt_liberation_adopt = { # Theme: Opposite of oppression
+	unlocks_agenda = agenda_MT_liberation # When Bombarding planets, give the planet ethics attraction towards your ethics
+	custom_tooltip = tr_mt_liberation_adopt_desc # +10% happiness as long as no factions are promoted or oppressed
+	triggered_modifier = {
+		potential = {
+			NOR = {
+				has_modifier = suppressed_xenophobe
+				has_modifier = suppressed_xenophile
+				has_modifier = suppressed_materialist
+				has_modifier = suppressed_spiritualist
+				has_modifier = suppressed_pacifist
+				has_modifier = suppressed_militarist
+				has_modifier = suppressed_egalitarian
+				has_modifier = suppressed_authoritarian
+			}
+		}
+		pop_happiness = 0.1
+	}
+}
+
+# 
+tr_mt_liberation_finish = {
+	# +10% faction approval
+	modifier = {
+		faction_approval = 0.1
+		ascension_perks_add = 1
+	}
+}
+
+# Gain +10% unity from factions for each faction in your empire
+tr_mt_liberation_free_speech = {
+
+	possible = {
+		has_tradition = tr_mt_liberation_presidential_training
+	}
+
+	custom_tooltip = tr_mt_liberation_free_speech_desc
+
+	triggered_modifier = {
+		potential = { always = yes }
+		pop_factions_unity_produces_mult = 0.5
+		mult = trigger:council_legitimacy
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+#  
+tr_mt_liberation_influence = {
+	
+	modifier = {
+		pop_political_power = 0.5
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_liberation_presidential_training = {
+	
+	possible = {
+		has_tradition = tr_mt_liberation_influence
+		has_tradition = tr_mt_liberation_voice
+	}
+	custom_tooltip = BLANK_STRING
+	modifier = {
+		councilor_ruler_democratic_exp_gain = 1
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_liberation_forced_liberation = {
+	
+	possible = {
+		has_tradition = tr_mt_liberation_presidential_training
+	}
+	
+	custom_tooltip = tr_mt_liberation_forced_liberation_desc
+	
+	triggered_modifier = {
+		potential = {
+			is_at_war = yes
+			any_war = {
+				using_war_goal = {
+					type = wg_force_ideology
+					owner = attacker
+				}
+			}
+		}
+		ship_fire_rate_mult = 0.1
+		ship_weapon_damage = 0.1
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_liberation_voice = {
+	
+	possible = {
+		#has_tradition = tr_mt_liberation_open_borders
+	}
+	
+	modifier = {
+		diplo_weight_pops_mult = 0.5
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

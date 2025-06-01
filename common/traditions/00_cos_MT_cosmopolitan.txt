@@ -1,0 +1,148 @@
+tr_mt_cosmopolitan_adopt = { # Theme: Peace and Diplomacy
+	unlocks_agenda = agenda_MT_cosmopolitan # 
+	modifier = {
+		planet_resettlement_unemployed_destination_mult = 0.2
+	}
+}
+
+# 
+tr_mt_cosmopolitan_finish = {
+	modifier = {
+		faction_approval = 0.1
+		empire_size_systems_mult = -0.1
+		empire_size_colonies_mult = -0.1
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_cosmopolitan_galactic_citizenship = {
+	
+	possible = {
+		has_tradition = tr_mt_cosmopolitan_wayfarers
+	}
+	
+	on_enabled = {
+		custom_tooltip = "tr_mt_cosmopolitan_galactic_citizenship_desc"
+	}
+	
+	modifier = {
+		external_leader_pool_add = 2
+	}
+	
+	tradition_swap = {
+		name = tr_mt_cosmopolitan_galactic_citizenship_xenophobe
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			OR = {
+				is_xenophobe = yes
+				has_paragon_dlc = no
+			}
+		}
+		modifier = {
+			country_leader_pool_size = 2
+		}
+		weight = {
+			factor = 100
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+#  
+tr_mt_cosmopolitan_diverse_knowledge = {
+	
+	custom_tooltip = tr_mt_cosmopolitan_diverse_knowledge_desc
+	triggered_modifier = {
+		potential = { always = yes }
+		species_leader_exp_gain = 0.05
+		mult = trigger:num_migration_pacts
+	}
+
+	possible = {
+		has_tradition = tr_mt_cosmopolitan_migration
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+	
+	tradition_swap = {
+		name = tr_mt_cosmopolitan_diverse_knowledge_xenophobe # We must always know what our adversaries are up to
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_xenophobe = yes
+		}
+		modifier = {
+			intel_decryption_add = 1
+		}
+		weight = {
+			factor = 100
+		}
+	}
+}
+
+# 
+tr_mt_cosmopolitan_mundialization = {
+	
+	possible = {
+		has_tradition = tr_mt_cosmopolitan_diverse_knowledge
+		has_tradition = tr_mt_cosmopolitan_galactic_citizenship
+	}
+	
+	modifier = {
+		diplo_weight_mult = 0.1
+		planet_crime_mult = -0.1
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_cosmopolitan_wayfarers = {
+	
+	custom_tooltip = tr_mt_cosmopolitan_wayfarers_desc
+	
+	triggered_modifier = {
+		pop_environment_tolerance = 0.01
+		logistic_growth_mult = 0.02
+		mult = value:MT_cosmopolitan_wayfarers_value
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_cosmopolitan_migration = {
+
+	custom_tooltip = tr_mt_cosmopolitan_migration_desc # Gain 20 opinion with those you have a migration pact with
+	
+	tradition_swap = {
+		name = tr_mt_cosmopolitan_migration_xenophobe # Gain 20 opinion with your neighbors # Other empires make for great natural defenses.
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_xenophobe = yes
+		}
+		custom_tooltip = tr_mt_cosmopolitan_migration_xenophobe_desc
+		weight = {
+			factor = 100
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

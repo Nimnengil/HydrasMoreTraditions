@@ -1,0 +1,174 @@
+tr_mt_manipulation_adopt = { # Theme: political power, ethics, factions
+	unlocks_agenda = agenda_MT_manipulation # 
+	modifier = {
+		pop_factions_unity_produces_mult = 0.25
+	}
+	# Check if agenda still exists
+	tradition_swap = {
+		name = tr_mt_manipulation_nemesis_adopt
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			has_nemesis = yes
+		}
+		modifier = {
+			pop_factions_unity_produces_mult = 0.25
+			op_cat_manipulation_skill_add = 4
+		}
+		weight = {
+			factor = 100
+		}
+	}
+}
+
+# 
+tr_mt_manipulation_finish = {
+	#
+	custom_tooltip_with_modifiers = tr_mt_manipulation_finish_desc # Get diplomatic weight for each spy network
+	
+	triggered_modifier = {
+		potential = { always = yes }
+		diplo_weight_mult = 0.05
+		mult = value:MT_num_spy_networks
+	}
+	
+	modifier = {
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_manipulation_mandatory_voting = {
+
+	modifier = {
+		country_election_cost_mult = -0.5
+		faction_approval = 0.1
+	}
+	
+	possible = {
+		has_tradition = tr_mt_manipulation_master_of_the_web
+	}
+	
+	tradition_swap = {
+		name = tr_mt_manipulation_mandatory_voting_dictatorial
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			OR = {
+				is_autocracy = yes
+				has_MC_family_enterprise = yes
+				AND = {
+					has_civic = civic_shadow_council
+					has_paragon_dlc = no
+				}
+			}
+		}
+		modifier = {
+			faction_approval = 0.15
+		}
+		weight = {
+			factor = 10
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_manipulation_mandatory_voting_shadow_council
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			has_paragon_dlc = yes
+			has_civic = civic_shadow_council
+		}
+		modifier = {
+			councilor_shadow_council_exp_gain = 0.5
+			faction_approval = 0.1
+		}
+		weight = {
+			factor = 100
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+#  
+tr_mt_manipulation_puplic_speeches = {
+	
+	possible = {
+		has_tradition = tr_mt_manipulation_master_of_the_web
+	}
+	
+	modifier = {
+		intel_decryption_add = 1
+		spy_network_decay_mult = -0.25
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_manipulation_master_of_the_web = {
+	
+	modifier = {
+		ruler_skill_add = 2
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_manipulation_special_agents = {
+	
+	possible = {
+		has_tradition = tr_mt_manipulation_master_of_the_web
+	}
+	
+	modifier = {
+		envoys_add = 2
+		envoy_improve_relations_mult = 0.25
+		envoy_harm_relations_mult = 0.25
+	}
+	
+	tradition_swap = {
+		name = tr_mt_manipulation_special_agents_purifiers
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			is_homicidal = yes
+		}
+		modifier = {
+			envoys_add = 2
+		}
+		weight = {
+			factor = 100
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_manipulation_planted_evidence = {
+
+	possible = {
+		has_tradition = tr_mt_manipulation_master_of_the_web
+	}
+
+	custom_tooltip = tr_mt_manipulation_planted_evidence_desc # Gain unity/influence/diplomatic weight for each successful espionage operation
+
+	ai_weight = {
+		factor = 1000
+	}
+}

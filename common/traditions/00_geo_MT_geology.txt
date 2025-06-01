@@ -1,0 +1,159 @@
+# Adoption
+tr_mt_geology_adopt = {
+	unlocks_agenda = agenda_MT_geology
+	custom_tooltip = tr_mt_geology_adopt_desc #custom tooltip due to wrong vanilla localization for miner output, mentioning now defunct strategic resource gatherers
+	modifier = {
+		planet_miners_produces_mult = 0.15
+		category_materials_research_speed_mult = 0.15
+	}
+	tradition_swap = { # gestalt tooltip swap to refer to miners as mining drones
+		name = tr_mt_geology_adopt_gestalt
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		custom_tooltip = tr_mt_geology_adopt_gestalt_desc
+		modifier = {
+			planet_miners_produces_mult = 0.15
+			category_materials_research_speed_mult = 0.15
+		}
+		trigger = {
+			is_gestalt = yes
+		}
+	}
+}
+
+# Finisher
+tr_mt_geology_finish = {
+	#custom_tooltip = tr_mt_geology_finish_desc #no vanilla localization for mineral storage capacity
+	modifier = {
+		country_resource_max_minerals_add = 50000
+		ascension_perks_add = 1
+	}
+}
+
+# Geotechnical Engineering
+tr_mt_geology_1 = {
+	on_enabled = {
+		custom_tooltip = "tr_mt_geology_1_desc"
+	}
+	modifier = {
+		planet_non_artificial_max_districts_add = 1
+		mining_district_housing_add = 2
+		#unlocks edict geothermal tapping = job_technician_add = 1
+	}
+}
+
+# Certified Geologists
+tr_mt_geology_2 = {
+	on_enabled = {
+		custom_tooltip = "tr_mt_geology_2_desc"
+	}
+	modifier = {
+		#unlocks edict institute of geology granting all miner strategic resource output +50%
+		planet_jobs_engineering_research_produces_mult = 0.2
+	}
+	tradition_swap = { # Applied Geology
+		name = tr_mt_geology_2_gestalt
+		inherit_effects = no
+		inherit_name = no
+		inherit_icon = yes
+		trigger = {
+			is_gestalt = yes
+		}
+		custom_tooltip = "tr_mt_geology_2_gestalt_desc"
+		modifier = {
+			planet_jobs_engineering_research_produces_mult = 0.1
+			planet_miners_exotic_gases_produces_mult = 0.33
+			planet_miners_rare_crystals_produces_mult = 0.33
+			planet_miners_volatile_motes_produces_mult = 0.33
+			planet_miners_nanites_produces_mult = 0.33
+			planet_miners_astral_threads_produces_mult = 0.33
+			planet_miners_sr_dark_matter_produces_mult = 0.33
+			planet_miners_sr_living_metal_produces_mult = 0.33
+			planet_miners_sr_zro_produces_mult = 0.33
+		}
+		
+	}
+}
+
+# Deepcore Samples
+tr_mt_geology_3 = {
+	modifier = {
+		planet_miners_engineering_research_produces_add = 1
+	}
+	possible = {
+		has_tradition = tr_mt_geology_2
+	}
+}
+
+# Rock Plating
+tr_mt_geology_4 = {
+	custom_tooltip = tr_mt_geology_4_tt
+	modifier = {
+		ship_hull_mult = 0.15
+		starbase_shipyard_build_rare_crystals_cost_mult = 0.5
+		starbase_shipyard_build_exotic_gases_cost_mult = 0.5
+		starbase_shipyard_build_volatile_motes_cost_mult = 0.5
+	}
+	possible = {
+		has_tradition = tr_mt_geology_1
+	}
+}
+
+# Geode Clinics
+tr_mt_geology_5 = {
+	modifier = {
+		LITHOID_logistic_growth_mult = 0.1
+		LITHOID_species_trait_picks_add = 1
+		LITHOID_species_trait_points_add = 1
+	}
+	possible = {
+		has_tradition = tr_mt_geology_3
+		has_tradition = tr_mt_geology_4
+	}
+	tradition_swap = { # lithoid desc swap
+		name = "tr_mt_geology_5_lithoid"
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_lithoid_empire = yes
+		}
+	}
+	tradition_swap = { # Tectonic Analysis
+		name = "tr_mt_geology_5_gestalt"
+		#custom_tooltip = tr_mt_geology_5_gestalt_tooltip
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_gestalt = yes
+			is_lithoid_empire = no
+		}
+		modifier = {
+			ship_orbital_bombardment_mult = 0.15
+			planet_clear_blocker_speed_mult = 0.15
+		}
+	}
+	tradition_swap = { # Mineral Petrification
+		name = "tr_mt_geology_5_purifier"
+		inherit_effects = no
+		inherit_icon = no
+		inherit_name = no
+		
+		trigger = {
+			OR = {
+				has_civic = civic_fanatic_purifiers
+				has_civic = civic_hive_devouring_swarm
+				has_civic = civic_machine_terminator
+			}
+			NOT = {
+				is_lithoid_empire = yes
+			}
+		}
+		custom_tooltip = tr_mt_geology_5_purifier_desc
+		modifier = {
+			# on_pop_purged gain 5-100 minerals (1x monthly) see MT_events.1005
+		}
+	}
+}

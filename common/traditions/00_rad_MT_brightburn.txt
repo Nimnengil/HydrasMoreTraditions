@@ -1,0 +1,147 @@
+tr_mt_brightburn_adopt = { # Theme: Going out in a blaze of glory
+	unlocks_agenda = agenda_MT_brightburn # The first time this agenda is used, gain 10 brightburn stacks. From then on, it gives 2 brightburn stacks # This agenda is available even without paragons
+	custom_tooltip = tr_mt_brightburn_adopt_desc # All traditions in this tradition tree will be multiplied by the amount of brightburn stacks you have, and will also be doubled if here is a crisis
+	on_enabled = {
+		hidden_effect = {
+			#set_variable = {
+			#	which = MT_brightburn_variable
+			#	value = 0
+			#}
+			set_variable = {
+				which = mt_supernova
+				value = 0
+			}
+		}
+	}
+	triggered_modifier = {
+		potential = { always = yes }
+		country_produces_mult = 0.02
+		mult = value:MT_brightburn_value
+	}
+}
+
+# 
+tr_mt_brightburn_finish = {
+	# This tradition tree is supposed to be about going out in a blaze of glory. It is meant to become useless over time. If you win the game, the fire is eternal
+	#custom_tooltip_with_modifiers = tr_mt_brightburn_finish_desc # Gain 10 Brightburn stacks,
+	#on_enabled = {
+	#	hidden_effect = {
+	#		set_variable = {
+	#			which = MT_brightburn_variable
+	#			value = trigger:years_passed
+	#		}
+	#	}
+	#}
+	
+	modifier = {
+		council_agenda_finishing_effect_duration_mult = 0.2
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_brightburn_lightspeed = {
+	
+	custom_tooltip = tr_mt_brightburn_lightspeed_desc
+	
+	triggered_modifier = {
+		potential = { always = yes }
+		ship_speed_mult = 0.05
+		mult = value:MT_brightburn_value
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+#  
+tr_mt_brightburn_supernova = {
+
+	custom_tooltip = tr_mt_brightburn_supernova_desc # Whenever a ship you own dies, gain a 0.1% fire rate for 30 days (empire wide). Works by having a variable which gets increased by 1 each time a ship dies, and fires event to reduce by 1 aftr 30 days
+	
+	triggered_modifier = {
+		potential = { NOT = { has_modifier = agenda_MT_brightburn_finish } }
+		ship_fire_rate_mult = 0.001
+		mult = mt_supernova
+	}
+	
+	triggered_modifier = {
+		potential = { has_modifier = agenda_MT_brightburn_finish }
+		ship_fire_rate_mult = 0.01
+		mult = mt_supernova
+	}
+	
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_brightburn_eternity = {
+	
+	possible = {
+		#has_tradition = tr_mt_brightburn_kindness
+		#has_tradition = tr_mt_brightburn_mercy
+	}
+	
+	possible = {
+		has_tradition = tr_mt_brightburn_lightspeed
+	}
+	
+	custom_tooltip = tr_mt_brightburn_eternity_desc
+	
+	triggered_modifier = {
+		potential = { always = yes }
+		fleet_mia_time_mult = -0.1
+		#ship_disengage_opportunities_add = 1
+		mult = value:MT_brightburn_value
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_brightburn_ever_brighter = {
+	
+	custom_tooltip = tr_mt_brightburn_ever_brighter_desc
+	
+	possible = {
+		has_tradition = tr_mt_brightburn_supernova
+	}
+	
+	triggered_modifier = {
+		potential = { always = yes }
+		starbase_shipyard_build_speed_mult = 0.05
+		mult = value:MT_brightburn_value
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_brightburn_burning_light = {
+
+	custom_tooltip = tr_mt_brightburn_burning_light_desc
+	
+	possible = {
+		has_tradition = tr_mt_brightburn_ever_brighter
+	}
+	
+	triggered_modifier = {
+		potential = { always = yes }
+		inline_script = {
+			script = Tradition_Modifier_Groups/MT_Hydra_crisis_modifiers
+			AMOUNT = 0.10
+		}
+		mult = value:MT_brightburn_value
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

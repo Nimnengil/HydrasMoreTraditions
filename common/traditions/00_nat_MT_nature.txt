@@ -1,0 +1,119 @@
+tr_mt_nature_adopt = { # 
+	unlocks_agenda = agenda_MT_nature # 
+	modifier = {
+		BIOLOGICAL_bonus_pop_growth = 1
+	}
+	# Situation Handler (nature_bounty)
+	on_enabled = {
+		hidden_effect = {
+			create_MT_situation_handler = yes
+		}
+	}
+}
+
+# 
+tr_mt_nature_finish = {
+	modifier = {
+		deposit_blockers_natural_food_produces_add = 5
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_nature_natural_weaponry = {
+
+	modifier = {
+		weapon_type_space_fauna_weapon_damage_mult = 0.33
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_nature_healing = {
+	
+	modifier = {
+		ship_hull_regen_add_perc = 0.1
+	}
+	
+	possible = {
+		has_tradition = tr_mt_nature_natural_weaponry
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_nature_land_claim = {
+
+	possible = {
+		has_tradition = tr_mt_nature_bounty
+		has_tradition = tr_mt_nature_nutrient_rich
+	}
+	
+	custom_tooltip_with_modifiers = tr_mt_nature_land_claim_desc
+	
+	modifier = {
+		pop_environment_tolerance = 0.05
+		planet_non_artificial_max_districts_add = 1
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_nature_bounty = {
+	custom_tooltip = tr_mt_nature_bounty_desc
+	modifier = {
+		# non_artificial_planet_jobs_produces_mult = 0.1 # defunct as of 4.0, replaced with situation
+	}
+	on_enabled = {
+			set_country_flag = MT_nature_bounty
+			hidden_effect = {
+				every_owned_planet = {
+					limit = {
+						is_artificial = no
+					}
+					save_event_target_as = MT_target_planet
+					event_target:MT_situation_handler_country = {
+							start_situation = {
+							type = MT_situation_nature_bounty
+							target = event_target:MT_target_planet
+						}
+					}
+				}
+			}
+		}
+	ai_weight = {
+		factor = 1000
+	}
+	tradition_swap = {
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			is_ai = yes
+		}
+		modifier = {
+			planet_jobs_produces_mult = 0.1 # situation preventer
+		}
+	}
+}
+
+# 
+tr_mt_nature_nutrient_rich = {
+
+	modifier = {
+		planet_farmers_unity_produces_add = 1
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

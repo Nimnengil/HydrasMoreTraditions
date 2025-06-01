@@ -1,0 +1,146 @@
+tr_mt_vigilance_adopt = { # 
+	unlocks_agenda = agenda_MT_long_range_communication # 
+	modifier = {
+		ship_sensor_range_add = 4
+		ship_cloaking_detection_add = 1
+	}
+	tradition_swap = {
+		name = tr_mt_vigilance_no_cloaking_adopt
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			has_first_contact_dlc = no
+		}
+		modifier = {
+			ship_sensor_range_add = 2
+		}
+
+		weight = {
+			factor = 1
+		}
+	}
+}
+
+# 
+tr_mt_vigilance_finish = {
+	modifier = {
+		intel_gain_speed = 0.25
+		add_base_country_intel = 10
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_vigilance_cloak_tracking = {
+
+	custom_tooltip = tr_mt_vigilance_cloak_tracking_desc # Whenever you force a ship out of cloaking on your territory, gain something (Idea: Intel based on ship type)
+	
+	tradition_swap = {
+		name = tr_mt_vigilance_cloak_tracking_no_cloaking
+		inherit_effects = no
+		inherit_icon = yes
+		trigger = {
+			has_first_contact_dlc = no
+		}
+		modifier = {
+			ship_sensor_range_add = 2
+		}
+
+		weight = {
+			factor = 1
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_vigilance_tracking = {
+	
+	modifier = {
+		ship_tracking_add = 20
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_vigilance_observation = {
+	
+	custom_tooltip = tr_mt_vigilance_observation_desc # Gain 2% research speed for each observed pre-FTL civilization
+	possible = {
+		has_tradition = tr_mt_vigilance_tracking
+	}
+	triggered_modifier = {
+		potential = { always = yes }
+		all_technology_research_speed = 0.02
+		mult = value:MT_num_observed_preftls
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_vigilance_political_map = {
+	custom_tooltip = tr_mt_vigilance_political_map_desc # Gain up to 100% starbase damage based on the percentage of empires you have communications with
+	possible = {
+		has_tradition = tr_mt_vigilance_observation
+	}
+	
+	triggered_modifier = {
+		potential = { always = yes }
+		shipclass_starbase_damage_mult = 0.8
+		mult = trigger:perc_communications_with_playable
+	}
+	
+	tradition_swap = {
+		name = tr_mt_vigilance_political_map_hive
+		inherit_effects = yes
+		inherit_icon = yes
+		trigger = {
+			is_hive_empire = yes
+		}
+		weight = {
+			factor = 1
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_vigilance_political_map_machine
+		inherit_effects = yes
+		inherit_icon = yes
+		trigger = {
+			is_machine_empire = yes
+		}
+		weight = {
+			factor = 10
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_vigilance_always_ready = {
+
+	possible = {
+		has_tradition = tr_mt_vigilance_cloak_tracking
+	}
+
+	modifier = {
+		fleet_mia_time_mult = -0.25
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

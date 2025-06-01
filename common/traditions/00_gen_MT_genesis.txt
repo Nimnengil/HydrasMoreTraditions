@@ -1,0 +1,145 @@
+# Adoption
+tr_mt_genesis_adopt = {
+	custom_tooltip = tr_mt_genesis_adopt_desc
+	unlocks_agenda = agenda_MT_genesis
+#	modifier = {
+#		ascension_perks_add = 1
+#	}
+	on_enabled = {
+		hidden_effect = {
+			capital_scope = {
+				add_deposit = d_MT_genesis_capital_boost_1 #moves on_capital_changed, see MT_events.1000
+			}
+		}
+	}
+}
+
+# Finisher
+tr_mt_genesis_finish = {
+	custom_tooltip = tr_mt_genesis_finish_desc
+	modifier = {
+		ascension_perks_add = 1
+	}
+	on_enabled = {
+		hidden_effect = {
+			capital_scope = {
+				remove_deposit = d_MT_genesis_capital_boost_1
+				add_deposit = d_MT_genesis_capital_boost_2 #moves on_capital_changed, see MT_events.1001
+			}
+			#add_research_option = tech_terrestrial_sculpting
+		}
+	}
+}
+
+# Paradigm Shift
+tr_mt_genesis_4 = {
+	possible = {
+		AND = {
+			has_tradition = tr_mt_genesis_3
+			has_tradition = tr_mt_genesis_5
+		}
+	}
+	custom_tooltip = tr_mt_genesis_4_desc
+	#on_ascension_perk_picked gain +20% country resources for 5 years, see MT_events.1003
+}
+
+# Pioneering Corps
+tr_mt_genesis_1 = {
+	custom_tooltip = tr_mt_genesis_1_desc
+	modifier = {
+		country_scientist_cap_add = 1
+	}
+	triggered_modifier = {
+		science_ship_survey_speed = 0.05
+		country_traditions_unity_produces_add = 2
+		mult = value:MT_num_surveyed_habitable_planet_types #see MT_survey_events.txt
+	}
+
+	# Pioneering Corps  swap if mod with more planet types detected
+	tradition_swap = {
+		name = tr_mt_genesis_1_planetmod 
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			OR = {
+				has_global_flag = planetarydiversity
+				#has_global_flag = what else is there?
+			}
+		}
+		modifier = {
+			country_scientist_cap_add = 1
+			science_ship_survey_speed = 0.25
+		}
+		weight = {
+			factor = 100
+		}
+	}
+
+	# Pioneering Corps  AI swap to prevent triggered modifier for AI empires
+	tradition_swap = {
+		name = tr_mt_genesis_1_ai 
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			is_ai = yes
+		}
+		modifier = {
+			science_ship_survey_speed = 0.25
+			country_traditions_unity_produces_add = 10
+		}
+		weight = {
+			factor = 200
+		}
+	}
+}
+
+# Cradle of Cilivizations
+tr_mt_genesis_3 = {
+	possible = {
+		has_tradition = tr_mt_genesis_1
+	}
+	custom_tooltip = tr_mt_genesis_3_desc
+	#on_colonized gain lumpsum 50 sci x years since game started   see MT_events.1004
+}
+
+# Generation Zero
+tr_mt_genesis_2 = {
+	custom_tooltip = tr_mt_genesis_2_desc
+     # adds planet modifier on_planet_colonized, see MT_events.1002
+}    # modifier=+50% pop growth for 20 years, equal to 3.6 free pop 
+
+# New Beginnings
+tr_mt_genesis_5 = {
+	possible = {
+		has_tradition = tr_mt_genesis_2
+	}
+	custom_tooltip = tr_mt_genesis_5_desc
+	modifier = {
+#		shipsize_colonizer_build_speed_mult = 1    #moved to edict unlocked by this perk
+		ship_colonizer_cost_mult = -0.5
+	}	#instantly gain a colony ship
+	on_enabled = {
+		hidden_effect = {
+			create_fleet = {
+				effect = {
+#					name = random
+					set_owner = root
+					create_ship = {
+						name = random
+						design = random
+						random_existing_design = colonizer
+						prefix = yes
+						colonizer_species = root.species
+                    }
+                    set_location = {
+                        target = root.capital_star
+                        distance = 10
+                        angle = random
+					}
+				}
+			}
+		}
+	}
+}

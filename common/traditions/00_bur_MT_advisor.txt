@@ -1,0 +1,268 @@
+tr_mt_advisor_adopt = { # Theme: Edicts, edict fund and empire size (And bearucrat upkeep and output)
+	unlocks_agenda = agenda_MT_advisor # 
+	modifier = {
+		country_edict_fund_mult = 0.1
+	}
+}
+
+# 
+tr_mt_advisor_finish = {
+	modifier = {
+		country_government_civic_points_add = 1
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_advisor_extra_papers = {
+
+	modifier = {
+		planet_bureaucrats_unity_produces_add = 1
+	}
+	
+	tradition_swap = {
+		name = tr_mt_advisor_extra_papers_hive
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_hive_empire = yes
+		}
+		weight = {
+			factor = 10
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_advisor_extra_papers_machine
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_machine_empire = yes
+		}
+		weight = {
+			factor = 10
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_advisor_extra_papers_megacorp
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_megacorp = yes
+		}
+		weight = {
+			factor = 100
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_advisor_extra_papers_spiritualist
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_spiritualist = yes
+		}
+		weight = {
+			factor = 1000
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_advisor_extra_papers_servitor
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_machine_empire = yes
+			has_civic = civic_machine_servitor
+		}
+		modifier = {
+			planet_bio_trophies_unity_produces_add = 0.5
+		}
+		weight = {
+			factor = 100
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+#  
+tr_mt_advisor_emergency_powers = {
+	
+	custom_tooltip = tr_mt_advisor_emergency_powers_desc # While at war: -20% edict cost
+	
+	possible = {
+		has_tradition = tr_mt_advisor_standard_legal_language
+	}
+	
+	triggered_modifier = {
+		potential = {
+			OR = {
+				is_at_war = yes
+				has_crisis = yes
+			}
+		}
+		edicts_upkeep_mult = -0.2
+	}
+	
+	tradition_swap = {
+		name = tr_mt_advisor_emergency_powers_hive
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_hive_empire = yes
+		}
+		weight = {
+			factor = 10
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_advisor_emergency_powers_machine
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_machine_empire = yes
+		}
+		weight = {
+			factor = 10
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_advisor_standard_legal_language = {
+	
+	modifier = {
+		empire_size_systems_mult = -0.5
+	}
+	
+	tradition_swap = {
+		name = tr_mt_advisor_standard_legal_language_hive
+		inherit_effects = yes
+		inherit_icon = no
+		inherit_name = no
+		trigger = {
+			is_hive_empire = yes
+		}
+		weight = {
+			factor = 10
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_advisor_standard_legal_language_machine
+		inherit_effects = yes
+		inherit_icon = no
+		inherit_name = no
+		trigger = {
+			is_machine_empire = yes
+		}
+		weight = {
+			factor = 10
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_advisor_information_collection = {
+	
+	modifier = {
+		empire_size_penalty_mult = -0.1
+	}
+	
+	possible = {
+		has_tradition = tr_mt_advisor_extra_papers
+	}
+	
+	tradition_swap = {
+		name = tr_mt_advisor_information_collection_hive
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_hive_empire = yes
+		}
+		weight = {
+			factor = 10
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_advisor_information_collection_machine
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_machine_empire = yes
+		}
+		weight = {
+			factor = 10
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# Idea: Administrator upkeep reduction
+tr_mt_advisor_fast_procedures = {
+	
+	possible = {
+		has_tradition = tr_mt_advisor_information_collection
+		has_tradition = tr_mt_advisor_emergency_powers
+	}
+	
+	modifier = {
+		planet_decision_enact_speed_mult = 0.25
+	}
+	
+	tradition_swap = {
+		name = tr_mt_advisor_fast_procedures_hive
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_hive_empire = yes
+		}
+		weight = {
+			factor = 10
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_advisor_fast_procedures_machine
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_machine_empire = yes
+		}
+		weight = {
+			factor = 10
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

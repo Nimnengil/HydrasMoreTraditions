@@ -1,0 +1,154 @@
+tr_mt_philosophy_adopt = { # Theme: Ethics, especially opposing ethics
+	unlocks_agenda = agenda_MT_philosophy # planet_culture_workers_unity_produces_mult = 0.1
+	#custom_tooltip_with_modifiers = tr_mt_philosophy_adopt_desc # Gain the change of heart policy, which lets you get negative governmental ethics attraction
+	modifier = {
+		faction_approval = 0.1
+	}
+	
+	on_enabled = {
+		hidden_effect = {
+			create_MT_situation_handler = yes
+		}
+	}
+}
+
+# 
+tr_mt_philosophy_finish = {
+	# Subjects gain 25% research speed on technologies you have researched
+	custom_tooltip_with_modifiers = tr_mt_philosophy_finish_desc # Gain all ethic edicts
+	modifier = {
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_philosophy_ethics_bonuses = {
+
+	custom_tooltip_with_modifiers = tr_mt_philosophy_ethics_bonuses_desc
+
+	triggered_modifier = {
+		potential = { is_spiritualist = yes }
+		planet_pops_robotics_upkeep_mult = -0.05
+		all_technology_research_speed = 0.025
+	}
+	
+	triggered_modifier = {
+		potential = { is_pacifist = yes }
+		country_hostile_claim_influence_cost_mult = 0.05
+		ship_fire_rate_mult = 0.05
+	}
+	
+	triggered_modifier = {
+		potential = { is_materialist = yes }
+		country_unity_produces_mult = 0.05
+		edicts_upkeep_mult= -0.05
+		edicts_cost_mult= -0.05
+	}
+	
+	triggered_modifier = {
+		potential = { is_militarist = yes }
+		empire_size_pops_mult = -0.075
+		planet_stability_add = 2.5
+	}
+	
+	triggered_modifier = {
+		potential = { is_xenophile = yes }
+		country_starbase_influence_cost_mult = -0.1
+		logistic_growth_mult = 0.05
+	}
+	
+	triggered_modifier = {
+		potential = { is_xenophobe = yes }
+		country_trade_produces_mult = 0.05
+		envoys_add = 0.5
+	}
+	
+	triggered_modifier = {
+		potential = { is_authoritarian = yes }
+		pop_factions_produces_mult = 0.125
+		planet_jobs_specialist_produces_mult = 0.025
+	}
+	
+	triggered_modifier = {
+		potential = { is_egalitarian = yes }
+		country_traditions_influence_produces_add = 0.25
+		planet_jobs_worker_produces_mult = 0.025
+	}
+	
+	inline_script = {
+		script = comptriggers/MT_Philosophy_trigger_modifiers
+		HAS_BUG = @has_bug_branch
+		HAS_EVO = @has_stellaris_evolved
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+#  
+tr_mt_philosophy_entertainment = {
+	
+	modifier = {
+		planet_civilians_unity_produces_add = 1
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# All societies must change. The only question is how we react to them
+tr_mt_philosophy_coming_change = {
+	
+	possible = {
+		has_tradition = tr_mt_philosophy_ethics_bonuses
+	}
+	
+	modifier = {
+		tradition_cost_empire_size_mult = -0.15
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# Flaws are just misunderstood benefits / Flaws are an opportunity to improve upon oneselves, not an insurmountable obstacle
+tr_mt_philosophy_flaws = {
+	
+	custom_tooltip = tr_mt_philosophy_flaws_desc
+	
+	triggered_modifier = {
+		potential = {
+			exists = ruler
+		}
+		num_tech_alternatives_add = 1
+		mult = value:MT_philosophy_ruler_flaws
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# Those who has the people on their side can do anything
+tr_mt_philosophy_control = {
+
+	custom_tooltip = tr_mt_philosophy_control_desc # Gain diplomatic weight based on your council legitimacy, up to 50
+	
+	possible = {
+		has_tradition = tr_mt_philosophy_flaws
+		has_tradition = tr_mt_philosophy_entertainment
+	}
+	
+	triggered_modifier = {
+		potential = { always = yes }
+		diplo_weight_mult = 0.05
+		mult = value:MT_num_factions #trigger:council_legitimacy
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

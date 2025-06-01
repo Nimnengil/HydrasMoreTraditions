@@ -1,0 +1,196 @@
+# Desiged by Azuran
+# Descriptions by Metallichydra
+
+tr_mt_ruination_adopt = { # Theme: Relic worlds (And tomb worlds)
+	unlocks_agenda = agenda_MT_ruination # 
+	custom_tooltip = tr_mt_ruination_adopt_desc # Gain access to ruination bombardment stance
+	on_enabled = {
+		hidden_effect = {
+			create_MT_situation_handler = yes
+		}
+	}
+}
+
+# 
+tr_mt_ruination_finish = {
+	custom_tooltip_with_modifiers = tr_mt_ruination_finish_desc
+	modifier = {
+		pc_nuked_habitability = 0.2
+		ascension_perks_add = 1
+	}
+	
+	tradition_swap = {
+		name = tr_mt_exchange_franchising_non_megacorp
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = yes
+		trigger = {
+			NOT = { host_has_dlc = "Megacorp" }
+		}
+		modifier = {
+			pc_nuked_habitability = 0.2
+			ascension_perks_add = 1
+		}
+		weight = {
+			factor = 10
+		}
+	}
+}
+
+# 
+tr_mt_ruination_revelry_in_ruin = {
+	
+	custom_tooltip = tr_mt_ruination_revelry_in_ruin_desc
+	
+	modifier = {
+		pc_relic_habitability = 0.2
+	}
+	
+	triggered_modifier = {
+		potential = {
+			has_tradition = tr_mt_ruination_wastelands_of_decay
+		}
+		pc_nuked_habitability = 0.1
+	}
+	
+	on_enabled = {
+		hidden_effect = {
+			every_owned_planet = {
+				limit = {
+					OR = {
+						is_planet_class = pc_relic
+						is_planet_class = pc_nuked
+					}
+				}
+				save_event_target_as = MT_target_planet
+				event_target:MT_situation_handler_country = {
+					start_situation = {
+						type = MT_situation_ruination_revelry_in_ruin
+						target = event_target:MT_target_planet
+					}
+				}
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+#  
+tr_mt_ruination_couldrons_of_corrosion = {
+	
+	possible = {
+		has_tradition = tr_mt_ruination_revelry_in_ruin
+		has_tradition = tr_mt_ruination_spiteful_reclamations
+	}
+	
+	custom_tooltip = tr_mt_ruination_couldrons_of_corrosion_desc
+
+	on_enabled = {
+		hidden_effect = {
+			every_owned_planet = {
+				limit = {
+					OR = {
+						is_planet_class = pc_relic
+						is_planet_class = pc_nuked
+					}
+				}
+				save_event_target_as = MT_target_planet
+				event_target:MT_situation_handler_country = {
+					start_situation = {
+						type = MT_situation_ruination_couldrons_of_corrosion
+						target = event_target:MT_target_planet
+					}
+				}
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_ruination_spiteful_reclamations = {
+	
+	custom_tooltip = tr_mt_ruination_spiteful_reclamations_desc # Relic worlds have extra scrap miner jobs
+
+	on_enabled = {
+		hidden_effect = {
+			every_owned_planet = {
+				limit = {
+					OR = {
+						is_planet_class = pc_relic
+						is_planet_class = pc_nuked
+					}
+				}
+				save_event_target_as = MT_target_planet
+				event_target:MT_situation_handler_country = {
+					start_situation = {
+						type = MT_situation_ruination_spiteful_reclamations
+						target = event_target:MT_target_planet
+					}
+				}
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_ruination_cities_under_cities = {
+	
+	possible = {
+		has_tradition = tr_mt_ruination_revelry_in_ruin
+		has_tradition = tr_mt_ruination_spiteful_reclamations
+	}
+	
+	custom_tooltip = tr_mt_ruination_cities_under_cities_desc
+
+	on_enabled = {
+		hidden_effect = {
+			every_owned_planet = {
+				limit = {
+					OR = {
+						is_planet_class = pc_relic
+						is_planet_class = pc_nuked
+					}
+				}
+				save_event_target_as = MT_target_planet
+				event_target:MT_situation_handler_country = {
+					start_situation = {
+						type = MT_situation_ruination_cities_under_cities
+						target = event_target:MT_target_planet
+					}
+				}
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_ruination_wastelands_of_decay = {
+	
+	possible = {
+		OR = {
+			has_tradition = tr_mt_ruination_revelry_in_ruin
+			has_tradition = tr_mt_ruination_spiteful_reclamations
+		}
+	}
+	
+	custom_tooltip = tr_mt_ruination_wastelands_of_decay_desc # Enable traditions at half effect for tomb worlds
+
+	ai_weight = {
+		factor = 1000
+	}
+}

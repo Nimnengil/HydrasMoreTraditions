@@ -1,0 +1,210 @@
+tr_mt_valor_adopt = {
+	unlocks_agenda = agenda_MT_valor
+	modifier = {
+		country_naval_cap_add = 50
+		army_morale = 0.2
+	}
+}
+# 
+tr_mt_valor_finish = {
+	custom_tooltip = tr_mt_valor_finish_desc # Gain bonuses as long as you are not humiliated
+	triggered_modifier = {
+		potential = { NOT = { has_modifier = humiliated } }
+		ships_upkeep_mult = -0.1
+	}
+	modifier = {
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_valor_charge = {
+
+	custom_tooltip = tr_mt_valor_charge_desc # Bonuses for the first 30 days of battle
+
+	tradition_swap = {
+		name = tr_mt_valor_charge_hive
+		inherit_effects = yes
+		inherit_icon = yes
+		trigger = {
+			is_hive_empire = yes
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
+	tradition_swap = {
+		name = tr_mt_valor_charge_machine
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_machine_empire = yes
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_valor_flagships = {
+
+	modifier = {
+		shipsize_battleship_hull_mult = 0.2
+		shipsize_titan_hull_mult = 0.2
+	}
+
+	tradition_swap = {
+		name = tr_mt_valor_flagships_hive
+		inherit_effects = yes
+		inherit_icon = yes
+		trigger = {
+			is_hive_empire = yes
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
+	tradition_swap = {
+		name = tr_mt_valor_flagships_machine
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_machine_empire = yes
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_valor_the_armada = {
+	modifier = {
+		command_limit_mult = 0.2
+	}
+	
+	possible = {
+		has_tradition = tr_mt_valor_charge
+	}
+	
+	tradition_swap = {
+		name = tr_mt_valor_the_armada_hive
+		inherit_effects = yes
+		inherit_icon = yes
+		trigger = {
+			is_hive_empire = yes
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
+	tradition_swap = {
+		name = tr_mt_valor_the_armada_machine
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_machine_empire = yes
+		}
+		weight = {
+			factor = 1
+		}
+	}
+	
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_valor_heroism = {
+
+	custom_tooltip = tr_mt_valor_heroism_desc # Upon winning a battle, give the commander 1000 xp
+
+	possible = {
+		has_tradition = tr_mt_valor_flagships
+	}
+
+	tradition_swap = {
+		name = tr_mt_valor_heroism_hive
+		inherit_effects = yes
+		inherit_icon = yes
+		trigger = {
+			is_hive_empire = yes
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
+	tradition_swap = {
+		name = tr_mt_valor_heroism_machine
+		inherit_effects = yes
+		inherit_icon = no
+		inherit_name = no
+		trigger = {
+			is_machine_empire = yes
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_valor_heroic_symbols = {
+	
+	possible = {
+		has_tradition = tr_mt_valor_heroism
+		has_tradition = tr_mt_valor_the_armada
+	}
+	
+	custom_tooltip = tr_mt_valor_heroic_symbols_desc # The first time a commander wins a battle, gain a trait based on the circumstances
+	
+	tradition_swap = {
+		name = tr_mt_valor_heroic_symbols_hive
+		inherit_effects = yes
+		inherit_icon = yes
+		trigger = {
+			is_hive_empire = yes
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
+	tradition_swap = {
+		name = tr_mt_valor_heroic_symbols_machine
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_machine_empire = yes
+		}
+		weight = {
+			factor = 1
+		}
+	}
+	
+	ai_weight = {
+		factor = 1000
+	}
+}

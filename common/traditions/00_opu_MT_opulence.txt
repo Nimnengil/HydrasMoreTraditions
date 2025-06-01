@@ -1,0 +1,240 @@
+# Opener
+tr_mt_opulence_adopt = { # Theme: Excess Energy, Edicts
+	unlocks_agenda = agenda_MT_opulence # Wealth Breeds Wealth
+	custom_tooltip = tr_mt_opulence_adopt_desc # bonuses if economically stronger than all neighbors and all empires
+	triggered_modifier = {
+		potential = {
+			NOT = {
+				any_country = {
+					is_country_type = default
+					relative_power = {
+						who = root
+						category = economy
+						value >= equivalent
+					}
+				}
+			}
+		}
+		diplo_weight_economy_mult = 1
+	}
+	triggered_modifier = {
+		potential = {
+			NOT = {
+				any_neighbor_country = {
+					is_country_type = default
+					relative_power = {
+						who = root
+						category = economy
+						value >= equivalent
+					}
+				}
+			}
+		}
+		diplo_weight_economy_mult = 0.5
+	}
+}
+
+# Finisher
+tr_mt_opulence_finish = {
+	custom_tooltip = tr_mt_opulence_finish_desc # +0.5 influence for each gilded edict active
+	modifier = {
+		ascension_perks_add = 1
+	}
+	triggered_modifier = {
+		potential = { always = yes }
+		country_traditions_influence_produces_add = 0.5
+		mult = value:MT_num_gilded_edicts
+	}
+}
+
+# Golden Armada
+tr_mt_opulence_golden_armada = {
+	custom_tooltip = tr_mt_opulence_golden_armada_desc # Unlocks Edict 'Gilded Fleets'
+	modifier = {
+		command_limit_mult = 0.1
+		ship_weapon_damage = 0.05
+	}
+
+	tradition_swap = { # swap for active edict, doubling primary bonuses + edict effects
+		name = tr_mt_opulence_golden_armada_x2
+		inherit_effects = no
+		inherit_name = yes
+		inherit_icon = yes
+		trigger = {
+			has_edict = MT_gilded_fleets
+		}
+		custom_tooltip = "tr_mt_opulence_golden_armada_x2_desc" # Unlocks Edict 'Gilded Fleets'
+		modifier = {
+			command_limit_mult = 0.2
+			ship_weapon_damage = 0.1
+		}
+		triggered_modifier = {
+			potential = { has_edict = MT_gilded_fleets }
+			country_traditions_unity_produces_add = 0.5
+			mult = trigger:used_naval_capacity_integer
+		}
+	}
+
+	tradition_swap = { # ai swap
+	name = tr_mt_opulence_big_estates_ai
+	inherit_effects = no
+	inherit_name = yes
+	inherit_icon = yes
+	trigger = {
+		is_ai = yes
+	}
+	modifier = {
+		country_traditions_unity_produces_add = 1000 	# to avoid triggered modifier, giving them an arbitrary lumpsum instead
+		country_traditions_energy_produces_add = -500 # simulated edict cost
+		ships_upkeep_mult = 1 # edict malus
+		command_limit_mult = 0.2
+		ship_weapon_damage = 0.1
+		}
+	}
+}
+
+# Luxuriant Estates
+tr_mt_opulence_big_estates = {
+	custom_tooltip = tr_mt_opulence_big_estates_desc # Unlocks the Gilded Gardens Edict
+	modifier = {
+		planet_amenities_mult = 0.05
+		planet_crime_add = -10
+	}
+
+	tradition_swap = { # swap for active edict, doubling primary bonuses + edict effects
+		name = tr_mt_opulence_big_estates_x2
+		inherit_effects = no
+		inherit_name = yes
+		inherit_icon = yes
+		trigger = {
+			has_edict = MT_gilded_gardens
+		}
+		custom_tooltip = "tr_mt_opulence_big_estates_x2_desc" # Unlocks Edict 'Gilded Beacons'
+		modifier = {
+			planet_amenities_mult = 0.1
+			planet_crime_add = -20
+		}
+		triggered_modifier = {
+			potential = { has_edict = MT_gilded_gardens }
+			country_traditions_food_produces_add = 2
+			mult = value:MT_num_districts
+		}
+	}
+
+	tradition_swap = { # ai swap
+	name = tr_mt_opulence_big_estates_ai
+	inherit_effects = no
+	inherit_name = yes
+	inherit_icon = yes
+	trigger = {
+		is_ai = yes
+	}
+	modifier = {
+		country_traditions_food_produces_add = 500 	# to avoid triggered modifier, giving them an arbitrary lumpsum instead
+		country_traditions_energy_produces_add = -500 # simulated edict cost
+		planet_districts_upkeep_mult = 1 # edict malus
+		planet_amenities_mult = 0.1
+		planet_crime_add = -20
+		}
+	}
+}
+
+# Beacons of Splendor
+tr_mt_opulence_beacons_of_splendor = {
+	possible = {
+		has_tradition = tr_mt_opulence_golden_armada
+		has_tradition = tr_mt_opulence_big_estates
+	}
+	custom_tooltip = "tr_mt_opulence_beacons_of_splendor_desc" # Unlocks Edict 'Gilded Beacons'
+	modifier = {
+		shipclass_starbase_hull_mult = 0.25
+		shipclass_starbase_damage_mult = 0.1
+	}
+
+	tradition_swap = { # swap for active edict, doubling primary bonuses
+		name = tr_mt_opulence_beacons_of_splendor_x2
+		inherit_effects = no
+		inherit_name = yes
+		inherit_icon = yes
+		trigger = {
+			has_edict = MT_gilded_beacons
+		}
+		custom_tooltip = "tr_mt_opulence_beacons_of_splendor_x2_desc" # Unlocks Edict 'Gilded Beacons'
+		modifier = {
+			shipclass_starbase_hull_mult = 0.5
+			shipclass_starbase_damage_mult = 0.2
+		}
+	}
+}
+
+# Glistening Towers
+tr_mt_opulence_glistening_towers = {
+	possible = {
+		has_tradition = tr_mt_opulence_golden_armada
+		has_tradition = tr_mt_opulence_big_estates
+	}
+	custom_tooltip = "tr_mt_opulence_glistening_towers_desc" # Unlocks Edict 'Gilded Cities'
+	modifier = {
+		planet_housing_mult = 0.1
+		planet_max_districts_mult = 0.05
+	}
+
+	tradition_swap = { # swap for active edict, doubling primary bonuses
+		name = tr_mt_opulence_glistening_towers_x2
+		inherit_effects = no
+		inherit_name = yes
+		inherit_icon = yes
+		trigger = {
+			has_edict = MT_gilded_beacons
+		}
+		custom_tooltip = "tr_mt_opulence_beacons_of_splendor_x2_desc" # Unlocks Edict 'Gilded Beacons'
+		modifier = {
+			planet_housing_mult = 0.2
+			planet_max_districts_mult = 0.1
+		}
+	}
+}
+
+# Starred Personnel
+tr_mt_opulence_golden_paycheck = {
+
+	custom_tooltip = tr_mt_opulence_golden_paycheck_desc 
+	
+# Our leader cap is extended if we go over it, but each leader capacity extended this way costs us 50 energy
+
+	triggered_modifier = {
+		potential = { always = yes }
+		MT_num_excess_commanders = 1
+		country_commander_cap_add = 1
+		country_civics_energy_upkeep_add = 100
+		mult = value:MT_excess_commanders
+	}
+	triggered_modifier = {
+		potential = { always = yes }
+		MT_num_excess_scientists = 1
+		country_scientist_cap_add = 1
+		country_civics_energy_upkeep_add = 100
+		mult = value:MT_excess_scientists
+	}
+	triggered_modifier = {
+		potential = { always = yes }
+		MT_num_excess_officials = 1
+		country_official_cap_add = 1
+		country_civics_energy_upkeep_add = 100
+		mult = value:MT_excess_officials
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+
+	tradition_swap = { # flavour swap for gestalt
+		name = tr_mt_opulence_golden_paycheck_gestalt
+		inherit_effects = yes
+		inherit_name = no
+		inherit_icon = yes
+		trigger = {
+			is_gestalt = yes
+		}
+	}
+}

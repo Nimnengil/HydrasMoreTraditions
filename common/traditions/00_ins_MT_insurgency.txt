@@ -1,0 +1,168 @@
+tr_mt_insurgency_adopt = { # Mark overlord
+	# Requires Overlord
+	possible = {
+		is_subject = yes
+	}
+	unlocks_agenda = agenda_MT_insurgency # Buildup in the shadows
+	modifier = {
+		monthly_loyalty = -5
+	}
+	on_enabled = {
+		overlord = {
+			set_country_flag = MT_insurgent_overlord
+			set_country_flag = MT_overlord@prev
+		}
+	}
+}
+
+# 
+tr_mt_insurgency_finish = {
+	custom_tooltip = tr_mt_insurgency_finish_desc # Get modifier once overlord is dead
+	triggered_modifier = {
+		potential = { has_country_flag = mt_insurgent_victory }
+		country_unity_produces_mult = 0.2
+		diplo_weight_naval_mult = 0.2
+		ascension_perks_add = 1
+	}
+}
+
+tr_mt_insurgency_right_of_independence = {
+
+	custom_tooltip = tr_mt_insurgency_right_of_independence_desc
+
+	triggered_modifier = {
+		potential = {
+			is_at_war = yes
+			any_war = {
+				using_war_goal = {
+					type = wg_independence
+					owner = attacker
+				}
+			}
+		}
+		ship_fire_rate_mult = 0.25
+		ship_weapon_damage = 0.25
+	}
+	
+	tradition_swap = {
+		name = tr_mt_insurgency_spiteful_memories
+		inherit_icon = no
+		inherit_effects = no
+		trigger = {
+			AND = {
+				is_subject = no
+				has_tradition = tr_mt_insurgency_adopt
+			}
+		}
+		custom_tooltip = tr_mt_insurgency_spiteful_memories_desc
+		triggered_modifier = {
+			potential = {
+				is_at_war = yes
+				any_war = {
+					any_war_participant = {
+						is_at_war_with = root
+						is_overlord = yes
+					}
+				}
+			}
+			ship_fire_rate_mult = 0.1
+			ship_weapon_damage = 0.1
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_mt_insurgency_deterrence = {
+	
+	modifier = {
+		damage_vs_superior_empires_mult = 0.2
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_mt_insurgency_our_land = {
+	
+	modifier = {
+		country_hostile_claim_influence_cost_mult = 0.2
+		planet_defense_armies_add = 2
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_mt_insurgency_taste_of_freedom = {
+	custom_tooltip = tr_mt_insurgency_taste_of_freedom_desc
+	
+	possible = {
+		has_tradition = tr_mt_insurgency_right_of_independence
+		has_tradition = tr_mt_insurgency_deterrence
+	}
+	
+	triggered_modifier = {
+		potential = {
+			is_subject = no
+		}
+		country_unity_produces_mult = 0.2
+		pop_citizen_happiness = 0.05
+	}
+
+	tradition_swap = {
+		name = tr_mt_insurgency_taste_of_freedom_gestalt
+		inherit_icon = yes
+		inherit_effects = no
+		trigger = {
+			is_gestalt = yes
+		}
+		custom_tooltip = tr_mt_insurgency_taste_of_freedom_gestalt_desc
+		triggered_modifier = {
+			potential = {
+				is_subject = no
+			}
+			country_unity_produces_mult = 0.2
+			planet_stability_add = 5
+		}
+		weight = {
+			factor = 1
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+tr_mt_insurgency_never_again = {
+
+	possible = {
+		has_tradition = tr_mt_insurgency_our_land
+	}
+	
+	custom_tooltip = tr_mt_insurgency_never_again_desc
+	triggered_modifier = {
+		potential = {
+			any_war = {
+				is_war_participant = {
+					who = root
+					side = defenders
+				}
+			}
+		}
+		ship_fire_rate_mult = 0.1
+		starbase_shipyard_build_speed_mult = 0.2
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

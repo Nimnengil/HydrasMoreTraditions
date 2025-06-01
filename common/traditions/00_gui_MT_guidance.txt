@@ -1,0 +1,125 @@
+tr_mt_guidance_adopt = { # Theme: Peace and Diplomacy
+	unlocks_agenda = agenda_MT_guidance # 
+	modifier = {
+		country_subject_trust_cap_add = 100
+	}
+}
+
+# 
+tr_mt_guidance_finish = {
+	# Gain 10% of your subjects' unity production
+	modifier = {
+		planet_resettlement_unemployed_destination_mult = 0.25
+		monthly_loyalty_from_subjects = 1
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_guidance_trusted_caretaker = {
+
+	modifier = {
+		divided_patrongage_max_subjects = 2
+	}
+	
+	custom_tooltip = BLANK_STRING
+	
+	possible = {
+		has_tradition = tr_mt_guidance_shared_frequencies
+	}
+	
+	tradition_swap = {
+		name = tr_mt_guidance_trusted_caretaker_hive
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_hive_empire = yes
+		}
+		weight = {
+			factor = 10
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_guidance_trusted_caretaker_machine
+		inherit_effects = yes
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_machine_empire = yes
+		}
+		weight = {
+			factor = 100
+		}
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+#  
+tr_mt_guidance_teacher = {
+	
+	possible = {
+		has_tradition = tr_mt_guidance_shared_frequencies
+	}
+	
+	modifier = {
+		country_subject_technology_sharing_mult = 0.25
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_guidance_delegator = {
+	
+	possible = {
+		has_tradition = tr_mt_guidance_shared_frequencies
+	}
+	
+	custom_tooltip_with_modifiers = tr_mt_guidance_delegator_desc # Specializing subjects get +10% unity
+	modifier = {
+		specialist_subject_conversion_time_mult = -0.25
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_guidance_shared_frequencies = {
+	
+	modifier = {
+		ship_friendly_territory_shield_mult = 0.15
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_guidance_shepherd = {
+
+	custom_tooltip = tr_mt_guidance_shepherd_desc # Gain 10% diplomatic weight for each subject
+	
+	possible = {
+		has_tradition = tr_mt_guidance_shared_frequencies
+	}
+	
+	triggered_modifier = {
+		potential = { always = yes }
+		diplo_weight_mult = 0.1
+		mult = trigger:vassals
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}

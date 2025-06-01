@@ -1,0 +1,94 @@
+tr_mt_disruption_adopt = { # Theme: Disruption, hacking, operations, spy networks (But negative effects for enemies specifically, so no defensive modifiers or making it easier beyond some flavor)
+	unlocks_agenda = agenda_MT_disruption # +25% infiltration growth, when finished spy_network_decay_mult and give all enemies with spy networks a negative modifier
+	custom_tooltip = tr_mt_disruption_adopt_desc # Whenever you finish an espionage operation, give the target a negative modifier
+}
+
+# 
+tr_mt_disruption_finish = {
+	# 
+	modifier = {
+		operations_cost_mult = -0.2
+		operations_upkeep_mult = -0.2
+		ascension_perks_add = 1
+	}
+}
+
+# 
+tr_mt_disruption_special_tools = {
+
+	modifier = {
+		espionage_operation_skill_add = 4
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+#  
+tr_mt_disruption_intel_sabotage = {
+	
+	custom_tooltip = tr_mt_disruption_intel_sabotage_desc # 
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_disruption_full_infiltration = {
+	
+	possible = {
+		has_tradition = tr_mt_disruption_special_tools
+	}
+	
+	#custom_tooltip = tr_mt_disruption_full_infiltration_desc # Gain bonus for each empire you have 100 infiltration on. ALternatively, gain bonus for each ongoing operation
+	
+	modifier = {
+		espionage_operation_speed_mult = 0.2
+	}
+	
+	#triggered_modifier = {
+	#	potential = { always = yes }
+	#	espionage_operation_speed_mult = 0.05
+	#	mult = value:MT_num_disruption_spy_networks
+	#}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_disruption_large_toolkit = {
+	
+	custom_tooltip_with_modifiers = tr_mt_disruption_large_toolkit_desc # Gain access to the following operations: Sabotage Fleets (Hits multiple/random fleets), Intel Destruction (Decrease Codebreaking and sensor strength) and Fund Criminals (Increases Crime) 
+
+	ai_weight = {
+		factor = 1000
+	}
+}
+
+# 
+tr_mt_disruption_malware = {
+
+	custom_tooltip = tr_mt_disruption_malware_desc # Ships from machine intelligences and with autonomous (red) computers get negative modifier in our space (Starbase building like Thorns and EMP pulses)
+	
+	on_enabled = {
+		hidden_effect = {
+			every_owned_starbase = {
+				limit = { is_normal_starbase = yes }
+				add_MT_disruption_aura = yes
+			}
+		}
+	}
+	
+	possible = {
+		has_tradition = tr_mt_disruption_intel_sabotage
+		has_tradition = tr_mt_disruption_large_toolkit
+	}
+
+	ai_weight = {
+		factor = 1000
+	}
+}
