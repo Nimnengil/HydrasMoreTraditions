@@ -1,0 +1,70 @@
+tradition_mt_royalty = {
+	desc = {
+		trigger = {
+			is_machine_empire = no
+			leader = {
+				OR = {
+					gender = female
+					gender = male
+				}
+			}
+		}
+		text = tradition_mt_royalty_desc
+	}
+	desc = {
+		trigger = {
+			OR = {
+				is_machine_empire = yes
+				leader = {
+					NOR = {
+						gender = female
+						gender = male
+					}
+				}
+			}
+		}
+		text = tradition_mt_royalty_desc_machine
+	}
+	tree_template = "tree_12_12"
+	adoption_bonus = "tr_mt_royalty_adopt"
+	finish_bonus = "tr_mt_royalty_finish"
+	traditions = {
+		"tr_mt_royalty_broodmother_hive" # 
+		"tr_mt_royalty_keep" # 
+		"tr_mt_royalty_heirlooms" # 
+		"tr_mt_royalty_mandate" # 
+		"tr_mt_royalty_grand_entrance" # 
+	}
+
+	potential = {
+		#is_gestalt = yes
+		#NOT = {
+		#	has_valid_civic = civic_inwards_perfection
+		#}
+		is_wilderness_empire = no
+		NOT = { has_global_flag = disabled_MT_royalty }
+	}
+
+	ai_weight = {
+		weight = 1
+		#modifier = {
+		#	factor = 0.5
+		#	has_ethic = ethic_egalitarian
+		#}
+		#modifier = {
+		#	factor = 0
+		#	has_ethic = ethic_fanatic_egalitarian
+		#}
+		modifier = {
+			factor = 0
+			NOR = {
+				has_ethic = ethic_authoritarian
+				has_ethic = ethic_fanatic_authoritarian
+			}
+		}
+		#modifier = {
+		#	factor = 3
+		#	has_ethic = ethic_fanatic_authoritarian
+		#}
+	}
+}

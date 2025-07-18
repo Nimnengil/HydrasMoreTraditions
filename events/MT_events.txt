@@ -526,7 +526,10 @@ country_event = { # Envy Material Liberator / FROM = Leader
 				limit = {
 					leader_class = commander
 				}
-				add_trait_no_notify = leader_trait_corsair
+				add_trait = {
+					trait = leader_trait_corsair
+					show_message = no
+				}
 			}
 		}
 	}
@@ -1166,7 +1169,9 @@ country_event = {
 						NOT = { has_trait = leader_trait_MT_traumatized }
 					}
 					# add trait
-					add_trait = leader_trait_MT_traumatized
+					add_trait = {
+						trait = leader_trait_MT_traumatized
+					}
 				}
 			}
 		}
@@ -1315,43 +1320,57 @@ country_event = {
 				trigger = has_fleet_flag
 				MT_valor_overwhelming_odds = {
 					leader = {
-						add_trait = leader_trait_MT_valor_lucky
+						add_trait = {
+							trait = leader_trait_MT_valor_lucky
+						}
 						set_leader_flag = MT_obtained_valor_trait
 					}
 				}
 				MT_valor_recently_uncloaked = {
 					leader = {
-						add_trait = leader_trait_MT_valor_ambusher
+						add_trait = {
+							trait = leader_trait_MT_valor_ambusher
+						}
 						set_leader_flag = MT_obtained_valor_trait
 					}
 				}
 				MT_valor_fast_battle = {
 					leader = {
-						add_trait = leader_trait_MT_valor_quick_victory
+						add_trait = {
+							trait = leader_trait_MT_valor_quick_victory
+						}
 						set_leader_flag = MT_obtained_valor_trait
 					}
 				}
 				MT_valor_capital_defender = {
 					leader = {
-						add_trait = leader_trait_MT_valor_capital_defender
+						add_trait = {
+							trait = leader_trait_MT_valor_capital_defender
+						}
 						set_leader_flag = MT_obtained_valor_trait
 					}
 				}
 				MT_valor_capital_invader = {
 					leader = {
-						add_trait = leader_trait_MT_valor_capital_invader
+						add_trait = {
+							trait = leader_trait_MT_valor_capital_invader
+						}
 						set_leader_flag = MT_obtained_valor_trait
 					}
 				}
 				MT_valor_recently_catapulted_into_fight = {
 					leader = {
-						add_trait = leader_trait_MT_valor_slingshot
+						add_trait = {
+							trait = leader_trait_MT_valor_slingshot
+						}
 						set_leader_flag = MT_obtained_valor_trait
 					}
 				}
 				default = {
 					leader = {
-						add_trait = leader_trait_MT_valor_hero
+						add_trait = {
+							trait = leader_trait_MT_valor_hero
+						}
 						set_leader_flag = MT_obtained_valor_trait
 					}
 				}
@@ -3185,7 +3204,10 @@ country_event = { # Extra traits for external leaders
 
 	immediate = {
 		FROM = {
-			add_trait_no_notify = "random_common"
+			add_trait = {
+				trait = "random_common"
+				show_message = no
+			}
 		}
 	}
 }

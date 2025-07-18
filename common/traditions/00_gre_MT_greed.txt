@@ -11,6 +11,7 @@ tr_mt_greed_adopt = { # Theme: (basic) Resource extraction at the cost of habita
 		inherit_name = yes
 		trigger = {
 			is_gestalt = yes
+			has_paragon_dlc = yes
 		}
 		custom_tooltip = tr_mt_greed_adopt_gestalt_agenda_desc
 		modifier = {

@@ -1,4 +1,4 @@
-tr_mt_swarm_adopt = { # Justice loves its enforcers
+tr_mt_swarm_adopt = {
 	unlocks_agenda = agenda_MT_swarm # Sublight Speed
 	modifier = {
 		shipsize_corvette_build_speed_mult = 0.5
@@ -6,21 +6,31 @@ tr_mt_swarm_adopt = { # Justice loves its enforcers
 		shipsize_corvette_hull_mult = 0.1
 	}
 	
+	triggered_modifier = {
+		potential = { has_ascension_perk = ap_become_the_crisis }
+		shipsize_crisis_corvette_build_speed_mult = 0.5
+		shipsize_crisis_corvette_hull_mult = 0.1
+	}
+	
 	tradition_swap = {
-		name = tr_mt_swarm_adopt_crisis
+		name = tr_mt_swarm_adopt_bioship
 		inherit_effects = no
 		inherit_icon = yes
 		inherit_name = yes
 		trigger = {
-			has_ascension_perk = ap_become_the_crisis
+			country_uses_bio_ships = yes
 		}
+		custom_tooltip = tr_mt_swarm_adopt_bioship_desc
 		modifier = {
-			shipsize_corvette_build_speed_mult = 0.5
-			shipsize_crisis_corvette_build_speed_mult = 0.5
-			ship_corvette_cost_mult = -0.1
-			shipsize_corvette_hull_mult = 0.1
-			shipsize_crisis_corvette_hull_mult = 0.1
+			ship_mauler_cost_mult = -0.1
+			shipsize_mauler_stage_1_hull_mult = 0.1
+			shipsize_mauler_stage_2_hull_mult = 0.1
+			shipsize_mauler_stage_3_hull_mult = 0.1
+			shipsize_mauler_stage_1_build_speed_mult = 0.5
+			shipsize_mauler_stage_2_build_speed_mult = 0.5
+			shipsize_mauler_stage_3_build_speed_mult = 0.5
 		}
+		# Bioship empires get no crisis ship bonuses since those are mechanical
 		weight = {
 			factor = 1
 		}

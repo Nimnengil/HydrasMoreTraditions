@@ -12,16 +12,9 @@ MT_solar_panel_network_copy = { #used in Astronomy Solar Siphon, functions ident
 	section = "SCIENCE_STARBASE_SECTION"
 	construction_days = 180
 	initial = yes
-
+														# IMPORTANT: Defunct as of 4.0.14, however has to be kept in for compatibility purposes.
 	potential = {
-		exists = owner
-		is_normal_starbase = yes
-		owner = {
-			has_tradition = tr_mt_astronomy_1
-			NOT = {
-				is_gestalt = yes
-			}
-		}
+		always = no
 	}
 
 	possible = {

@@ -19,7 +19,7 @@ tr_mt_astronomy_finish = {
 
 # Solar Siphon
 tr_mt_astronomy_1 = {
-		possible = {
+	possible = {
 		has_tradition = tr_mt_astronomy_2
 	}
 	on_enabled = {
@@ -27,60 +27,21 @@ tr_mt_astronomy_1 = {
 	}
 	modifier = {
 		dyson_swarm_limit_add = 2
-		# Also gain access to copy of 'Solar Panel Network' Starbase Module, see ADD LATER
+		# Also gain access to 'Energy Beaming Array' Starbase Building
 	}
-	tradition_swap = { # Swap Gestalt
-		name = tr_mt_astronomy_1_gestalt
-		inherit_effects = no
-		inherit_icon = yes
-		inherit_name = yes
-		trigger = {
-			is_gestalt = yes
-			has_machine_age_dlc = yes
-		}
-		modifier = {
-			dyson_swarm_limit_add = 2
-			stations_upkeep_mult = -0.33
-			# no solar panel
-		}
-		weight = {
-			factor = 100
-		}
-	}
-		tradition_swap = { # Swap No Machine Age DLC
+	tradition_swap = { # Swap No Machine Age DLC
 		name = tr_mt_astronomy_1_no_machine_age_dlc
 		inherit_effects = no
 		inherit_icon = yes
 		inherit_name = yes
 		on_enabled = {
-		custom_tooltip = tr_mt_astronomy_1_desc
+			custom_tooltip = tr_mt_astronomy_1_desc
 		}	
-		#custom_tooltip = tr_mt_astronomy_1_no_machine_age_dlc_desc
 		trigger = {
-			is_gestalt = no
 			has_machine_age_dlc = no
 		}
 		modifier = {
 			country_starbase_capacity_add = 2
-			# gain solar panel
-		}
-		weight = {
-			factor = 100
-		}
-	}
-		tradition_swap = { # Swap Gestalt + No Machine Age DLC
-		name = tr_mt_astronomy_1_gestalt_no_machine_age_dlc
-		inherit_effects = no
-		inherit_icon = yes
-		inherit_name = yes
-		trigger = {
-			is_gestalt = yes
-			has_machine_age_dlc = no
-		}
-		modifier = {
-			country_starbase_capacity_add = 2
-			stations_upkeep_mult = -0.33
-			# no solar panel
 		}
 		weight = {
 			factor = 100

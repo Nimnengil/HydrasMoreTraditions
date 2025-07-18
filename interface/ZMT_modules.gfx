@@ -6,3 +6,9 @@ spriteTypes = {
 		texturefile = "gfx/interface/icons/modules/MT_Hydra_starseeker_observation_post.dds"
 	}
 }
+spriteTypes = {
+	spriteType = {
+		name = "GFX_mt_starbase_energy_beaming"
+		texturefile = "gfx/interface/icons/modules/mt_starbase_energy_beaming.dds"
+	}
+}

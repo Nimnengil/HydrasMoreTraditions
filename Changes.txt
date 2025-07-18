@@ -442,3 +442,18 @@ By Metallichydra and Azurian
 - Botany Tradition Tree
 - Geology Tradition Tree
 - Genesis Tradition Tree
+
+# 4.0.x small wilderness update
+
+Changes:
+- Urbanization now gives logistic drones to machine intelligences
+- For Rogue Servitors, this is now replaced with Happiness to bio-trophies
+
+Additions:
+- Wilderness now has a tradition swap for the "ease of movement" perk from the Movement tradition tree
+
+Bugfixes:
+- Greed no longer claims to give an agenda to Gestalt empires when Galactic Paragons is not enabled
+
+Restrictions:
+- Wilderness no longer has access to Urbanization or Royalty

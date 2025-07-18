@@ -39,6 +39,10 @@
  mod_planet_zone_industrial_build_speed_mult: "$zone_industrial$ Build Speed"
  mod_planet_zone_foundry_build_speed_mult: "$zone_foundry$ Build Speed"
  mod_planet_zone_factory_build_speed_mult: "$zone_factory$ Build Speed"
+ mod_pop_category_specialists_trade_produces_add: "$mod_living_standard_trade_value_specialists_add$"
+ mod_shipsize_mauler_stage_1_hull_mult: "$mauler_stage_1$ $MOD_SHIP_HULL_MULT$"
+ mod_shipsize_mauler_stage_2_hull_mult: "$mauler_stage_2$ $MOD_SHIP_HULL_MULT$"
+ mod_shipsize_mauler_stage_3_hull_mult: "$mauler_stage_3$ $MOD_SHIP_HULL_MULT$"
 
 
 
@@ -54,3 +58,6 @@
  mt_decreases_opinion: "Decreases the £opinion£ §YOpinion§! of empires capable of regular diplomacy by"
  mt_on_non_artificial_worlds: "on Non-Artificial Worlds"
  mt_on_artificial_worlds: "on Artificial Worlds"
+ mt_relic_planet_pops_produces_mult: "$mod_planet_jobs_produces_mult$ on §Y$pc_relic$s§!"
+ mt_relic_habitability: "$HABITABILITY$ on §Y$pc_relic$s§!"
+ mt_relic_planet_metallurgists_volatile_motes_produces_add: "$r_volatile_motes$ from [From.GetAlloyProducerPlural] on §YRelic Worlds§!"

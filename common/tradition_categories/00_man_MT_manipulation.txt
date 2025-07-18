@@ -1,0 +1,45 @@
+tradition_mt_manipulation = {
+	desc = tradition_mt_manipulation_desc
+	tree_template = "MT_tree_1_4"
+	adoption_bonus = "tr_mt_manipulation_adopt"
+	finish_bonus = "tr_mt_manipulation_finish"
+	traditions = {
+		"tr_mt_manipulation_special_agents" # 
+		"tr_mt_manipulation_master_of_the_web" # 
+		"tr_mt_manipulation_puplic_speeches" # 
+		"tr_mt_manipulation_mandatory_voting" # 
+		"tr_mt_manipulation_planted_evidence" # 
+	}
+
+	potential = {
+		is_gestalt = no
+		NOT = {
+			has_civic = civic_inwards_perfection
+		}
+		NOT = { has_global_flag = disabled_MT_manipulation }
+	}
+
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 0.5
+			has_ethic = ethic_egalitarian
+		}
+		modifier = {
+			factor = 0
+			has_ethic = ethic_fanatic_egalitarian
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_authoritarian
+		}
+		modifier = {
+			factor = 2
+			has_ethic = ethic_fanatic_authoritarian
+		}
+		modifier = {
+			factor = 3
+			has_civic = civic_shadow_council
+		}
+	}
+}

@@ -1,0 +1,49 @@
+tradition_mt_guidance = {
+	desc = tradition_mt_guidance_desc
+	tree_template = "MT_tree_1_4"
+	adoption_bonus = "tr_mt_guidance_adopt"
+	finish_bonus = "tr_mt_guidance_finish"
+	traditions = {
+		"tr_mt_guidance_teacher" # 
+		"tr_mt_guidance_shared_frequencies" # 
+		"tr_mt_guidance_trusted_caretaker" # 
+		"tr_mt_guidance_shepherd" # 
+		"tr_mt_guidance_delegator" # 
+	}
+
+	potential = {
+		is_homicidal = no
+		NOT = {
+			has_valid_civic = civic_inwards_perfection
+		}
+		NOT = { has_global_flag = disabled_MT_guidance }
+	}
+
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 0.5
+			has_ethic = ethic_xenophobe
+		}
+		modifier = {
+			factor = 0.5
+			has_ethic = ethic_fanatic_xenophobe
+		}
+		modifier = {
+			factor = 2
+			has_ethic = ethic_xenophile
+		}
+		modifier = {
+			factor = 3
+			has_ethic = ethic_fanatic_xenophile
+		}
+		modifier = {
+			factor = 0.5
+			is_gestalt = yes
+		}
+		modifier = {
+			factor = 0
+			has_ascension_perk = ap_become_the_crisis
+		}
+	}
+}

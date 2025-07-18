@@ -93,13 +93,13 @@ tr_mt_entrap_market_research = {
 	}
 }
 
-# Gain a +10% production boost to the resource that is the most expensive on the market, in addition to the bonuses outlined by truewolves
+# Quantitative Easing
 tr_mt_entrap_art_of_the_deal = {
 	
-	custom_tooltip = BLANK_STRING
+	#custom_tooltip = BLANK_STRING
 	
 	modifier = {
-		living_standard_trade_value_specialists_add = 0.5
+		pop_category_specialists_trade_produces_add = 0.5
 	}
 
 	ai_weight = {

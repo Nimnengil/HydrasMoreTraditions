@@ -1,7 +1,7 @@
 tr_mt_nature_adopt = { # 
 	unlocks_agenda = agenda_MT_nature # 
 	modifier = {
-		BIOLOGICAL_bonus_pop_growth = 1
+		logistic_growth_mult = 0.15
 	}
 	# Situation Handler (nature_bounty)
 	on_enabled = {
@@ -25,7 +25,37 @@ tr_mt_nature_natural_weaponry = {
 	modifier = {
 		weapon_type_space_fauna_weapon_damage_mult = 0.33
 	}
-
+	
+	tradition_swap = {
+		name = tr_mt_nature_natural_weaponry_mechship_noarchivedlc
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			country_uses_bio_ships = no
+			has_grand_archive_dlc = no
+		}
+		modifier = {
+			ship_hull_regen_add_perc = 0.02
+			ship_armor_regen_add_perc = 0.04
+		}
+	}
+	
+	tradition_swap = {
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			country_uses_bio_ships = yes
+			has_grand_archive_dlc = no
+		}
+		modifier = {
+			shipsize_mauler_stage_1_hull_mult = 0.2
+			shipsize_mauler_stage_2_hull_mult = 0.2
+			shipsize_mauler_stage_3_hull_mult = 0.2
+		}
+	}
+	
 	ai_weight = {
 		factor = 1000
 	}

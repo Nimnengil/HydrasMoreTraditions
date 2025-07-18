@@ -1,0 +1,21 @@
+tradition_mt_opulence = {
+	desc = tradition_mt_opulence_desc
+	tree_template = "MT_tree_1_22"
+	adoption_bonus = "tr_mt_opulence_adopt"
+	finish_bonus = "tr_mt_opulence_finish"
+	traditions = {
+		"tr_mt_opulence_golden_paycheck" # 
+		"tr_mt_opulence_golden_armada" # 
+		"tr_mt_opulence_big_estates" # 
+		"tr_mt_opulence_beacons_of_splendor" # 
+		"tr_mt_opulence_glistening_towers" # 
+	}
+
+	potential = {
+		NOT = { has_global_flag = disabled_MT_opulence }
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

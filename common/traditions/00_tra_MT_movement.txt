@@ -58,6 +58,22 @@ tr_mt_movement_ease_of_transportation = {
 		planet_resettlement_unemployed_mult = 5.00
 		pop_resettlement_cost_mult = -0.50
 	}
+	
+	tradition_swap = {
+		name = tr_mt_movement_ease_of_transportation_wilderness
+		inherit_effects = no
+		inherit_icon = yes
+		inherit_name = no
+		trigger = {
+			is_wilderness_empire = yes
+		}
+		modifier = {
+			terraforming_cost_mult = -0.25
+		}
+		weight = {
+			factor = 100
+		}
+	}
 
 	ai_weight = {
 		factor = 1000

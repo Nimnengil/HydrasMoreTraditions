@@ -403,7 +403,7 @@ MT_situation_ruination_spiteful_reclamations = {
 				}
 			}
 		}
-		job_scrap_miner_add = 100
+		job_miner_add = 100 #job_scrap_miner_add = 100
 		mult = target.trigger:planet_size
 	}
 	triggered_target_modifier = {
@@ -1139,17 +1139,27 @@ MT_situation_lathe_job_suppression = {
 		potential = {
 			target = {
 				owner = {
-					OR = {
-						has_active_tradition = tr_mt_urban_oversight_hive
-						has_active_tradition = tr_mt_urban_oversight_machine
-					}
+					has_active_tradition = tr_mt_urban_oversight_hive
 				}
 			}
 		}
 		modifier = {
 			job_coordinator_per_pop = -0.04
 		}
-	}	
+	}
+	triggered_target_modifier = {
+		potential = {
+			target = {
+				owner = {
+					has_active_tradition = tr_mt_urban_oversight_machine
+					NOT = { has_civic = civic_machine_servitor }
+				}
+			}
+		}
+		modifier = {
+			job_logistics_drone_per_pop = -0.04
+		}
+	}
 	triggered_target_modifier = {
 		potential = {
 			target = {

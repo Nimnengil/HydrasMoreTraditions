@@ -16,6 +16,8 @@
  tr_mt_movement_constant_tracking_desc: "Whenever a vessel owned by another empire enters our borders, gain §Y10 Intel§! on the offending empire."
  tr_mt_movement_ease_of_transportation: "Ease Of Transportation"
  tr_mt_movement_ease_of_transportation_delayed: "By making it easier to move between worlds we can incentivize our population to go to the worlds where they are of most use, although its benefits also extends to those who do not do so willingly."
+ tr_mt_movement_ease_of_transportation_wilderness: "Luminous Spores"
+ tr_mt_movement_ease_of_transportation_wilderness_delayed: "Decreases in density and mass of interstellar spores allows for photon-based propulsion, a much less energy-intensive mode of transportation than conventional methods."
  #tr_mt_archeology_history_lessons_modifier_desc: "§YScientists§! can gain §YPrecursor Expertise Traits§!.\n\nRarely some other leaders also get §YPrecursor Expertise Traits§!.\n\nFinding a precursor homeworld will increase the chance of getting leaders with that precursors §YExpertise Trait§!."
  tr_mt_movement_highways: "Optimized Warp Generators"
  tr_mt_movement_highways_delayed: "By adding additional processors to our emergency drives, we are able to expend more energy when needed."
@@ -128,8 +130,10 @@
  tr_mt_urban_oversight_corporate_delayed: "$tr_mt_urban_oversight_delayed$"
  tr_mt_urban_oversight_hive: "Increased Oversight"
  tr_mt_urban_oversight_hive_delayed: "As our population increases, so does our need for reliable management."
- tr_mt_urban_oversight_machine: "Inrospective Surveillance"
- tr_mt_urban_oversight_machine_delayed: "As we add more and more complexity to our systems we must make sure that the resulting deviancy"
+ tr_mt_urban_oversight_machine: "Introspective Surveillance"
+ tr_mt_urban_oversight_machine_delayed: "As we add more and more complexity to our systems we must make sure that we have the necessary logistical capacity to maintain such a system."
+ tr_mt_urban_oversight_machine_servitor: "Luxary Domes"
+ tr_mt_urban_oversight_machine_servitor_delayed: "As we continuosly expand our infrastructure, we must not forget who this is all for. Extra space allows for better facilities for our bio-trophies without reducing our industrial capabilites."
  tr_mt_urban_effective_planning: "Effective Planning"
  tr_mt_urban_effective_planning_delayed: "Planning ahead allows us to reduce costs and logistic paperwork."
  tr_mt_urban_compression: "Compression"
@@ -552,6 +556,7 @@
  tradition_mt_swarm_desc: "We are the void between the stars, the endless swarm that hunts without pause."
  tr_mt_swarm_adopt: "Swarm Traditions"
  tr_mt_swarn_finish: "Swarm Traditions Finished"
+ tr_mt_swarm_adopt_bioship_desc: "$mauler_class_cap$ $MOD_SHIP_HULL_MULT$: §G+10%§!\n$mauler_class_cap$ Build Speed: §G+50%§!"
  
  agenda_MT_swarm: "Endless Legions"
  council_agenda_agenda_MT_swarm_name: "Endless Legions"
@@ -1646,6 +1651,12 @@
  tr_mt_nature_natural_weaponry: "Natural Weaponry"
  tr_mt_nature_natural_weaponry_delayed: "Nature has always made sure its creations has the tools they need to solve their problems."
  
+ tr_mt_nature_natural_weaponry_mechship_noarchivedlc: "Enhanced Biohull"
+ tr_mt_nature_natural_weaponry_mechship_noarchivedlc_delayed: "By integrating microbiome stabilizers in our hull, our ships can make use of microorganisms engineered to mend metal constructions."
+ 
+ tr_mt_nature_natural_weaponry_bioship_noarchivedlc: "Improved Biohull"
+ tr_mt_nature_natural_weaponry_bioship_noarchivedlc_delayed: "New insights into the macrolevel of microbiospheres in biological ships has allowed for greater strength of their hull."
+ 
  tr_mt_nature_healing: "Natural Repairs"
  tr_mt_nature_healing_delayed: "The ability to repair oneselves over time is a universal concept among living organisms, one that we can now apply to unnatural things as well."
  
@@ -2416,15 +2427,15 @@
  tr_mt_ruination_finish_desc: "§YUnlocks Decision:§! $MT_decision_ruin_city$"
  
  tr_mt_ruination_revelry_in_ruin: "Revelry in Ruins"
- tr_mt_ruination_revelry_in_ruin_desc: "§G+20%§! Resources from Jobs on §YRelic Worlds§!\n§G+20%§! §YRelic Worlds§! Habitability"
+ tr_mt_ruination_revelry_in_ruin_desc: "$mt_relic_planet_pops_produces_mult$: §G+20%§!\n$mt_relic_habitability$: §G+20%§!"
  tr_mt_ruination_revelry_in_ruin_delayed: "Most would feel a sense of dread, walking among the gastly ruins, yet our people are comforted and bolstered by their presence. No stories of ghosts and spirits can match this feeling."
  
- tr_mt_ruination_couldrons_of_corrosion: "Couldrons of Corrosion"
- tr_mt_ruination_couldrons_of_corrosion_desc: "Metallurgists now also produce §G+0.1§! $i_volatile_motes$ on §YRelic Worlds§!"
- tr_mt_ruination_couldrons_of_corrosion_delayed: "Everything crumbles away, though with the right concoction it should be possible to speed up the process."
+ tr_mt_ruination_couldrons_of_corrosion: "Cauldrons of Corrosion"
+ tr_mt_ruination_couldrons_of_corrosion_desc: "$mt_relic_planet_metallurgists_volatile_motes_produces_add$: §G+0.1§!"
+ tr_mt_ruination_couldrons_of_corrosion_delayed: "Everything rusts eventually, though with certain compounds we could speed up the process."
  
  tr_mt_ruination_spiteful_reclamations: "Spiteful Reclamations"
- tr_mt_ruination_spiteful_reclamations_desc: "§YRelic Worlds§! gain 100 §YScrap Miners§! job for each 1 Planet Size"
+ tr_mt_ruination_spiteful_reclamations_desc: "§YRelic Worlds§! gain 100 §YMiner§! Jobs for every 1 §YPlanet Size§!."
  tr_mt_ruination_spiteful_reclamations_delayed: "Our vision of a grand empire is one that is most easily fulfilled by combining it with the past we revere so much."
  
  tr_mt_ruination_cities_under_cities: "Cities Under Cities"
@@ -2635,8 +2646,8 @@
  tr_mt_entrap_market_research_desc: "Each collected £trade_value£ §Y$TRADE_VALUE$§! earns us an additional\n§Y£physics£ £society£ £engineering£ 0.03 Research points§!."
  tr_mt_entrap_market_research_delayed: "As ideas and brands clash in our markets, vast strides in research are born in a bid to be the next big breakthrough of profit."
  
- tr_mt_entrap_art_of_the_deal: "Art of the Deal"
- tr_mt_entrap_art_of_the_deal_delayed: "The latest innovation isn't always obviously useful. This is a minor obstacle to the astute salesmen."
+ tr_mt_entrap_art_of_the_deal: "Quantitative Easing" # old Art of the Deal
+ tr_mt_entrap_art_of_the_deal_delayed: "As our economy grows, it is our imperative to ensure goods and services remain affordable to our own salesmen." # old The latest innovation isn't always obviously useful. This is a minor obstacle to the astute salesmen.
  
  tr_mt_entrap_human_resources: "Rapid Expansion"
  tr_mt_entrap_human_resources_delayed: "Our business require more employees, and what better way to get more employees than by simply buying them?"
@@ -3296,9 +3307,11 @@
  
  tr_mt_astronomy_1: "Solar Siphon"
  tr_mt_astronomy_1_delayed: "It has been the dream of civilizations throughout the ages to harness the boundless power of the stars. Once but a dream, it is now reality as we have begun to tap that power."
- tr_mt_astronomy_1_desc: "§HUnlocks Starbase Module:§! Solar Panel Network"
- sm_MT_solar_panel_network_copy: "$sm_solar_panel_network$"
- #sm_MT_solar_panel_network_copy_desc: "$sm_solar_panel_network_desc$" this thing never had a desc?????????
+ tr_mt_astronomy_1_desc: "§HUnlocks Starbase Module:§! $sm_mt_starbase_energy_beaming$"
+ sm_MT_solar_panel_network_copy: "$sm_solar_panel_network$" # LEGACY COMPATIBILITY
+ sm_mt_starbase_energy_beaming: "Energy Beaming Array"
+ sm_mt_starbase_energy_beaming_desc: "Station sized power beaming arrays allow us to transfer energy with minimal packet loss.\n"
+ sm_mt_energy_beaming_desc_modifier: "Produces §G2§! $r_energy$ for each $sm_solar_panel_network$\n\n"
 
  tr_mt_astronomy_2: "Starstudies"
  tr_mt_astronomy_2_delayed: "Only rigorous testing and constant observation will let us begin to tap into the processes behind the stars in our galaxy."

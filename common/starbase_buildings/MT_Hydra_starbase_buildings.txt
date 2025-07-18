@@ -52,3 +52,60 @@ MT_Hydra_starseeker_observation_post = {
 		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
+
+
+mt_starbase_energy_beaming = {
+	icon = "GFX_mt_starbase_energy_beaming"
+	construction_days = 360
+
+	potential = {
+		exists = owner
+		owner = {
+			has_tradition = tr_mt_astronomy_1
+		}
+		is_normal_starbase = yes
+		is_space_citadel = no
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_starport"
+			has_starbase_size >= starbase_starport
+		}
+		OR = {
+			has_starbase_module = solar_panel_network
+			starbase_buildable_is_in_queue_before = {
+				first = solar_panel_network
+				second = mt_starbase_energy_beaming
+			}
+		}
+	}
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 100
+		}
+		produces = {
+			trigger = {
+				hidden_trigger = { exists = this }
+				has_starbase_module = solar_panel_network
+			}
+			energy = 2
+			mult = value:num_starbase_modules_of_type|TYPE|solar_panel_network|
+		}
+	}
+
+	custom_tooltip = sm_mt_energy_beaming_desc_modifier
+
+	ai_weight = {
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		modifier = {
+			factor = 0
+			count_starbase_modules = {
+				type = solar_panel_network
+				count < 3
+			}
+		}
+	}
+}

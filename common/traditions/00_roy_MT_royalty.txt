@@ -70,7 +70,9 @@ tr_mt_royalty_broodmother_hive = {
 	
 	on_enabled = {
 		ruler = {
-			add_trait = leader_trait_MT_royalty_broodmother
+			add_trait = {
+				trait = leader_trait_MT_royalty_broodmother
+			}
 		}
 	}
 	

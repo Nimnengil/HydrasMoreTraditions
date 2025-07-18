@@ -9,8 +9,6 @@
 #
 ## 
 #tr_mt_integration_finish = {
-#	# Subjects gain 25% research speed on technologies you have researched
-#	
 #	custom_tooltip = tr_mt_integration_finish_desc
 #	
 #	triggered_modifier = {

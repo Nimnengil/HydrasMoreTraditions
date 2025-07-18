@@ -52,9 +52,25 @@ tr_mt_urban_oversight = {
 		inherit_icon = yes
 		trigger = {
 			is_machine_empire = yes
+			NOT = { has_civic = civic_machine_servitor }
 		}
 		modifier = {
-			job_coordinator_per_pop = 0.04
+			job_logistics_drone_per_pop = 0.04
+		}
+		weight = {
+			factor = 100
+		}
+	}
+	
+	tradition_swap = {
+		name = tr_mt_urban_oversight_machine_servitor
+		inherit_icon = yes
+		trigger = {
+			is_machine_empire = yes
+			has_civic = civic_machine_servitor
+		}
+		modifier = {
+			pop_cat_bio_trophy_happiness = 0.05
 		}
 		weight = {
 			factor = 100

@@ -1,0 +1,28 @@
+tradition_mt_veneration = {
+	desc = tradition_mt_veneration_desc
+	tree_template = "tree_11_111"
+	adoption_bonus = "tr_mt_veneration_adopt"
+	finish_bonus = "tr_mt_veneration_finish"
+	traditions = {
+		"tr_mt_veneration_empire_of_infinity" # 
+		"tr_mt_veneration_more_leaders" # 
+		"tr_mt_veneration_wise_council" # 
+		"tr_mt_veneration_elder" # 
+		"tr_mt_veneration_council_overseer" # 
+	}
+
+	potential = {
+		is_gestalt = no
+		has_paragon_dlc = yes
+		NOT = { has_global_flag = disabled_MT_veneration }
+		inline_script = {
+			script = comptriggers/MT_Hydra_toggle
+			HAS_MOD = @has_mo_hydra
+			INLINE = MT_MO_Hydra_veneration
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
