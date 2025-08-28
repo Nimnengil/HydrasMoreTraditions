@@ -1953,13 +1953,13 @@
  
  tr_mt_industry_prospector: "Large-Scale Prospecting"
  tr_mt_industry_prospector_delayed: "Our advanced seismic and core sampling techniques will unlock vast new reserves of minerals, no longer will our [Owner.GetEngineerPlural] be hindered by out-of-date surface scans."
- tr_mt_industry_prospector_tt: "$mod_planet_miners_minerals_produces_mult$: §G+20%§!\n §YUnlocks Planetary Decision:§! $MT_decision_tr_industry_strip_mining$\n     - $mod_district_mining_max$: §G+2§!\n     - Permanently removes an Agricultural Planetary Feature"
+ tr_mt_industry_prospector_tt: "$mod_planet_miners_minerals_produces_mult$: §G+20%§!\n §YUnlocks Planetary Decision:§! $MT_decision_tr_industry_strip_mining$\n     - $mod_district_mining_max_add$: §G+2§!\n     - Permanently removes an Agricultural Planetary Feature"
  #tr_mt_industry_prospector_flesh_hive_tt: "£minerals£ Minerals from £job_miner£ Miners: §G+20%§!\n §YUnlocks Planetary Decision:§! $MT_decision_tr_industry_strip_mining$\n   -Max Mining Districts: §G+2§!\n   -Remove an Agricultural Planetary Feature"
  #tr_mt_industry_prospector_other_hive_tt: "£minerals£ Minerals from £job_miner£ Miners: §G+20%§!\n §YUnlocks Planetary Decision:§! $MT_decision_tr_industry_strip_mining$\n   -Max Mining Districts: §G+2§!\n   -Remove a Generator Planetary Feature"
  
  tr_mt_industry_agriculture: "Agricultural Industrial Complex"
  tr_mt_industry_agriculture_delayed: "Towering vertical farms and sprawling greenhouses will dominate our industrial landscape. Monocultures spanning continents will yield us with enough food to feed trillions."
- tr_mt_industry_agriculture_tt: "£food£ Food from £job_farmer£ Farmers: §G+20%§!\n §YUnlocks Planetary Decision:§! $MT_decision_tr_industry_underfarm$\n     - $mod_district_farming_max$: §G+2§!\n     - Permanently removes a Generator or Mining Planetary Feature"
+ tr_mt_industry_agriculture_tt: "£food£ Food from £job_farmer£ Farmers: §G+20%§!\n §YUnlocks Planetary Decision:§! $MT_decision_tr_industry_underfarm$\n     - $mod_district_farming_max_add$: §G+2§!\n     - Permanently removes a Generator or Mining Planetary Feature"
  
  MT_decision_tr_industry_strip_mining: "Excavate $d_MT_industry_strip_mine$"
  MT_decision_tr_industry_strip_mining_desc: "$d_prospectorium_strip_mine_desc$"
