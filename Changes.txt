@@ -457,3 +457,15 @@ Bugfixes:
 
 Restrictions:
 - Wilderness no longer has access to Urbanization or Royalty
+
+# 4.0.x Archaeology Update
+Changes:
+- Antiquity xp gain reduced by 90%
+- Now grants relic activation cost reduction
+- Reinstated anomaly discovery chance
+
+Reworks:
+- Archaeology has been greatly simplified
+
+Bugfixes:
+- Commerce now grants 100 traders on branch offices instead of 1

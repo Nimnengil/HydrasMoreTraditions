@@ -174,7 +174,7 @@ MT_situation_exchange_franchising = {
 			always = yes
 		}
 		modifier = {
-			job_trader_add = 1
+			job_trader_add = 100
 		}
 	} 
 	on_start = {
