@@ -160,21 +160,25 @@
  council_agenda_agenda_MT_archeology_grants_name: "Efficient Archaeology"
  council_agenda_agenda_MT_archeology_grants_desc: "We must ensure that all traces of ancient civiliaztions are recovered, so that we may learn the secrets of the past."
  agenda_MT_archeology_grants_finish: "Efficient Archaeology"
- tr_mt_archeology_museums: "Holographic Exhibitions"
- tr_mt_archeology_museums_delayed: "By carefully replicating our precursor artifacts with holographic technology, citizens can see galactic history unfold before their very eyes. This newfound fascination with the past is fueling a surge in historical curiosity."
- tr_mt_archeology_museums_modifier_desc: "§YUnlocks Building:§! $mt_building_museum$\n§YHolo-Museum§! gains a §Y[GetMTCustodianType]§! Job."
- tr_mt_archeology_museums_hive: "History Archives"
- tr_mt_archeology_museums_hive_delayed: "The ancient worlds of this galaxy are full of resources, ready for the taking!"
- tr_mt_archeology_museums_hive_modifier_desc: "§YUnlocks Building:§! Scavenger Site\nScavenger Sites can only be constructed on ancient worlds."
- tr_mt_archeology_museums_machine: "History Archives"
- tr_mt_archeology_museums_machine_delayed: "We can increase our efficiency by looking at what past civilizations did to solve their problems."
- tr_mt_archeology_museums_machine_modifier_desc: "§YUnlocks Building:§! Scavenger Site\nScavenger Sites can only be constructed on ancient worlds."
- tr_mt_archeology_history_lessons: "Knowledge of a Legacy"
- tr_mt_archeology_history_lessons_delayed: "After tireless excavation and study by our scientific community, the past will finally be able to inspire the present."
- tr_mt_archeology_history_lessons_modifier_desc: "Whenever a §YRelic§! is activated:\n   All leaders gain §G100§! experience"
+ tr_mt_archeology_museums: "Archaeology Grants"
+ tr_mt_archeology_museums_delayed: "Extra funding for those willing to partake in work in the field will greatly increase research into both new and old."
+ tr_mt_archeology_history_lessons: "In The Books"
+ tr_mt_archeology_history_lessons_delayed: "What better way to become an expert in the field of history than to have lived through it?"
+ #tr_mt_archeology_museums: "Holographic Exhibitions"
+ #tr_mt_archeology_museums_delayed: "By carefully replicating our precursor artifacts with holographic technology, citizens can see galactic history unfold before their very eyes. This newfound fascination with the past is fueling a surge in historical curiosity."
+ #tr_mt_archeology_museums_modifier_desc: "§YUnlocks Building:§! $mt_building_museum$\n§YHolo-Museum§! gains a §Y[GetMTCustodianType]§! Job."
+ #tr_mt_archeology_museums_hive: "History Archives"
+ #tr_mt_archeology_museums_hive_delayed: "The ancient worlds of this galaxy are full of resources, ready for the taking!"
+ #tr_mt_archeology_museums_hive_modifier_desc: "§YUnlocks Building:§! Scavenger Site\nScavenger Sites can only be constructed on ancient worlds."
+ #tr_mt_archeology_museums_machine: "History Archives"
+ #tr_mt_archeology_museums_machine_delayed: "We can increase our efficiency by looking at what past civilizations did to solve their problems."
+ #tr_mt_archeology_museums_machine_modifier_desc: "§YUnlocks Building:§! Scavenger Site\nScavenger Sites can only be constructed on ancient worlds."
+ #tr_mt_archeology_history_lessons: "Knowledge of a Legacy"
+ #tr_mt_archeology_history_lessons_delayed: "After tireless excavation and study by our scientific community, the past will finally be able to inspire the present."
+ #tr_mt_archeology_history_lessons_modifier_desc: "Whenever a §YRelic§! is activated:\n   All leaders gain §G100§! experience"
  #tr_mt_archeology_history_lessons_toast_text: "All leaders have gained §G+1000§! experience" moved
- tr_mt_archeology_history_lessons_gestalt: "Assimilating a Legacy"
- tr_mt_archeology_history_lessons_gestalt_delayed: "The successful activation of a relic would yield valuable data sets from a bygone era."
+ #tr_mt_archeology_history_lessons_gestalt: "Assimilating a Legacy"
+ #tr_mt_archeology_history_lessons_gestalt_delayed: "The successful activation of a relic would yield valuable data sets from a bygone era."
  #tr_mt_archeology_history_lessons_delayed: "Our scientists cannot invent the future without knowing the past. Special history programs will become available to all who work in the fields of technological advancement."
  #tr_mt_archeology_history_lessons_modifier_desc: "Our leaders can get §YPrecursor Expertise Traits§!.\n\nFinding a precursor homeworld will increase the chance of getting leaders with that precursors §YExpertise Trait§!."
  #tr_mt_archeology_history_lessons_modifier_desc: "§YScientists§! can gain §YPrecursor Expertise Traits§!.\n\nRarely some other leaders also get §YPrecursor Expertise Traits§!.\n\nFinding a precursor homeworld will increase the chance of getting leaders with that precursors §YExpertise Trait§!."
@@ -184,8 +188,8 @@
  tr_mt_archeology_private_collector_appropriation: "Fascination of the Past"
  tr_mt_archeology_private_collector_appropriation_delayed: "As our fascination with precursor civilizations grows, so too does the demand for skilled researchers. Universities across the empire are scrambling to expand their scientific programs to meet this burgeoning need."
  tr_mt_archeology_private_collector_modifier_desc: "§YScientists§! start with the §Y$leader_trait_archaeologist$§! trait."
- tr_mt_archeology_artifact_trading: "Artifact Trading"
- tr_mt_archeology_artifact_trading_delayed: "By incentivizing our population to buy and sell artifacts, we can significantly increase our revenue from taxes."
+ #tr_mt_archeology_artifact_trading: "Artifact Trading"
+ #tr_mt_archeology_artifact_trading_delayed: "By incentivizing our population to buy and sell artifacts, we can significantly increase our revenue from taxes."
  tr_mt_archeology_remember_the_past: "Remember the Past"
  tr_mt_archeology_remember_the_past_delayed: "Each era of history has had its own marvelous innovations and empires. We must equip our autonomous drones with the means to uncover their secrets."
  #tr_mt_archeology_remember_the_past_delayed: "We have dedicated a part of our mind to imagining the significance the relics we find may have had in ancient empires."
@@ -199,7 +203,7 @@
  tr_mt_archeology_archeological_training: "Meticilous Excavation"
  tr_mt_archeology_archeological_training_desc: "Scientists who are Excavating §YArchaeology Sites§! gain §G+3§! Monthly £minor_artifacts£ $minor_artifacts$"
  tr_mt_archeology_archeological_training_delayed: "Every crack in an asteroid, every seam of a moon and every ravine on a planet holds the potential for forgotten artifacts. Let us not squander potential new discoveries."
- tr_mt_archeology_archeological_training_modifier_desc: ""
+ #tr_mt_archeology_archeological_training_modifier_desc: ""
  tr_mt_archeology_respect_the_dead: "Media Coverage"
  tr_mt_archeology_respect_the_dead_delayed: "We must share our our findings with our people. After a successful excavation, an interview will be made with the leading scientist which will be broadcasted on our news outlets."
  tr_mt_archeology_respect_the_dead_modifier_desc: "Upon completing an §YArchaeology Site§!, gain 8 months worth of £unity£ §Y$unity$§!."
@@ -319,6 +323,8 @@
  # Modifier Localization
  mod_planet_psionic_jobs_unity_produces_mult: "Unity from Psionic Pops"
  mod_country_minor_artifacts_produces_mult: "Monthly Minor Artifacts"
+ mod_scientist_lifespan_mult: "$scientist_with_icon$ Lifespan"
+ mod_job_logistics_drone_per_pop: "§G+1§! $job_logistics_drone$ Job per $VALUE$ Pops"
  
  # Desecration
  
@@ -1243,17 +1249,17 @@
 
  tr_mt_antiquity_1: "Knowledge of a Legacy"
  tr_mt_antiquity_1_delayed: "Untold amounts of knowledge have been lost to time, but we can still learn from those who came before us."
- tr_mt_antiquity_1_desc: "Whenever a §Y$NAME_Relic$§! is activated:\n    All leaders gain §G+1000§! experience"
- tr_mt_antiquity_1_toast_text: "All leaders have gained §G+1000§! experience."
+ tr_mt_antiquity_1_desc: "Whenever a §Y$NAME_Relic$§! is activated:\n    All leaders gain §G+100§! experience"
+ tr_mt_antiquity_1_toast_text: "All leaders have gained §G+100§! experience."
  message_tradition_effect_MT_history_lessons_effect_desc: "§Y$tr_mt_antiquity_1$§! §HTradition§! activated\n" # toast headline
  
  tr_mt_antiquity_2: "Triumph of the Ages"
  tr_mt_antiquity_2_delayed: "Our people will become famous for our fascination with the past, our desire to preserve all that there is to be preserved."
- tr_mt_antiquity_2_desc: "After finishing our §YPrecursor Chain§!:\n    $MOD_POP_HAPPINESS$: §G+5%§!" # PLACEHOLDER
+ #tr_mt_antiquity_2_desc: "After finishing our §YPrecursor Chain§!:\n    $MOD_POP_HAPPINESS$: §G+5%§!" # PLACEHOLDER
  #tr_mt_antiquity_2_delayed: "Not only are we ensuring institutional knowledge is not lost, we are strengthening it."
  #tr_mt_antiquity_2_desc: "§YUnlocks Artifact Action§!: ['concept_MT_antiquity_minor_artifact_action_enhance_precursor']"
- artifact_MT_enhance_precursor: "Enhance Precursor Relic"
- artifact_MT_enhance_precursor_desc: "We can use our minor artifacts to bring our Precursor Relic to its full potential."
+ #artifact_MT_enhance_precursor: "Enhance Precursor Relic"
+ #artifact_MT_enhance_precursor_desc: "We can use our minor artifacts to bring our Precursor Relic to its full potential."
 
 
  tr_mt_antiquity_3: "Securing our Inheritance"
@@ -1947,13 +1953,13 @@
  
  tr_mt_industry_prospector: "Large-Scale Prospecting"
  tr_mt_industry_prospector_delayed: "Our advanced seismic and core sampling techniques will unlock vast new reserves of minerals, no longer will our [Owner.GetEngineerPlural] be hindered by out-of-date surface scans."
- tr_mt_industry_prospector_tt: "$mod_planet_miners_minerals_produces_mult$: §G+20%§!\n §YUnlocks Planetary Decision:§! $MT_decision_tr_industry_strip_mining$\n     - $mod_district_mining_max$: §G+2§!\n     - Permanently removes an Agricultural Planetary Feature"
+ tr_mt_industry_prospector_tt: "$mod_planet_miners_minerals_produces_mult$: §G+20%§!\n §YUnlocks Planetary Decision:§! $MT_decision_tr_industry_strip_mining$\n     - $mod_district_mining_max_add$: §G+2§!\n     - Permanently removes an Agricultural Planetary Feature"
  #tr_mt_industry_prospector_flesh_hive_tt: "£minerals£ Minerals from £job_miner£ Miners: §G+20%§!\n §YUnlocks Planetary Decision:§! $MT_decision_tr_industry_strip_mining$\n   -Max Mining Districts: §G+2§!\n   -Remove an Agricultural Planetary Feature"
  #tr_mt_industry_prospector_other_hive_tt: "£minerals£ Minerals from £job_miner£ Miners: §G+20%§!\n §YUnlocks Planetary Decision:§! $MT_decision_tr_industry_strip_mining$\n   -Max Mining Districts: §G+2§!\n   -Remove a Generator Planetary Feature"
  
  tr_mt_industry_agriculture: "Agricultural Industrial Complex"
  tr_mt_industry_agriculture_delayed: "Towering vertical farms and sprawling greenhouses will dominate our industrial landscape. Monocultures spanning continents will yield us with enough food to feed trillions."
- tr_mt_industry_agriculture_tt: "£food£ Food from £job_farmer£ Farmers: §G+20%§!\n §YUnlocks Planetary Decision:§! $MT_decision_tr_industry_underfarm$\n     - $mod_district_farming_max$: §G+2§!\n     - Permanently removes a Generator or Mining Planetary Feature"
+ tr_mt_industry_agriculture_tt: "£food£ Food from £job_farmer£ Farmers: §G+20%§!\n §YUnlocks Planetary Decision:§! $MT_decision_tr_industry_underfarm$\n     - $mod_district_farming_max_add$: §G+2§!\n     - Permanently removes a Generator or Mining Planetary Feature"
  
  MT_decision_tr_industry_strip_mining: "Excavate $d_MT_industry_strip_mine$"
  MT_decision_tr_industry_strip_mining_desc: "$d_prospectorium_strip_mine_desc$"
@@ -2361,7 +2367,7 @@
  tr_mt_exchange_dealership_delayed: "By allowing our trade partners to pay in goods, instead of purely credits, we'll be able to save a lot of money if we were going to use those credits to buy those goods anyway."
  
  tr_mt_exchange_franchising: "Franchising"
- tr_mt_exchange_franchising_desc: "Your §YBranch Offices§! provide §G+1§! §Y$job_trader_plural_with_icon$§!."
+ tr_mt_exchange_franchising_desc: "Your §YBranch Offices§! provide §G+100§! §Y$job_trader_plural_with_icon$§!."
  tr_mt_exchange_franchising_delayed: "Our commerce centers on foreign worlds will allow local traders to borrow our brand in order to greatly bolster the trade taking place on the planet."
  
  tr_mt_exchange_tax_evasion: "Tax Writeoffs"

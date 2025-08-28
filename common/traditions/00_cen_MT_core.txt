@@ -15,9 +15,9 @@ tr_mt_core_adopt = { # Theme: Core Sector Name: Centralization
 # num_sectors
 tr_mt_core_finish = {
 	modifier = {
-		district_hab_science_max = 3
-		district_hab_energy_max = 3
-		district_hab_mining_max = 3
+		district_hab_science_max_add = 3
+		district_hab_energy_max_add = 3
+		district_hab_mining_max_add = 3
 		ascension_perks_add = 1
 	}
 }

@@ -1,8 +1,9 @@
 ## Galactic Paragons modifiers
 
 agenda_MT_archeology_grants_finish = {
-	scientist_exp_gain = 0.25
-	country_minor_artifacts_produces_mult = 0.4
+	scientist_exp_gain = 0.5
+	ship_archaeological_site_excavation_speed_mult = 0.1
+	#country_minor_artifacts_produces_mult = 0.4
 }
 
 agenda_MT_artifact_exploitation_finish = {

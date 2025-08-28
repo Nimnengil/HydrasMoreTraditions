@@ -3,7 +3,7 @@ tr_mt_antiquity_adopt = {
 	custom_tooltip = tr_mt_antiquity_adopt_desc
 	modifier = {
 		science_ship_survey_speed = 0.1
-		#ship_anomaly_generation_chance_mult = 0.2 # Metallichydra: Anomaly chance does not affect the chance of uncovering precursors
+		ship_anomaly_generation_chance_mult = 0.2 # Metallichydra: Anomaly chance does not affect the chance of uncovering precursors # Scrap that, it does.
 	}
 	tradition_swap = {
 		name = tr_mt_antiquity_adopt_disabled
@@ -45,44 +45,47 @@ tr_mt_antiquity_1 = { # Knowledge of a Legacy
 }
 
 tr_mt_antiquity_2 = {# Triumph of the Ages
-	custom_tooltip = tr_mt_antiquity_2_desc
-	possible = {
-		AND = {
-			has_tradition = tr_mt_antiquity_3
-			has_tradition = tr_mt_antiquity_4
-		}
+	modifier = {
+		relics_cost_mult = -0.25
 	}
+	#custom_tooltip = tr_mt_antiquity_2_desc
+	#possible = {
+	#	AND = {
+	#		has_tradition = tr_mt_antiquity_3
+	#		has_tradition = tr_mt_antiquity_4
+	#	}
+	#}
 }
 
 tr_mt_antiquity_3 = { # Securing our Inheritance
 	custom_tooltip = tr_mt_antiquity_3_desc
-	modifier = {
-		# Unlocks Operation: Steal Relic NOT IMPLEMENTED
-		# Unlocks Casus Belli: Relic Theft
-	}
-	tradition_swap = {
-		name = tr_mt_antiquity_3_active
-		inherit_effects = no
-		inherit_icon = yes
-		inherit_name = yes
-		custom_tooltip = tr_mt_antiquity_3_desc
-		trigger = {
-			OR = {
-				has_country_flag = cybrex_world_found
-				has_country_flag = league_world_found
-				has_country_flag = irassian_world_found
-				has_country_flag = vultaum_world_found
-				has_country_flag = yuht_world_found
-				has_country_flag = last_zroni_system
-				has_country_flag = last_baol_system
-				has_country_flag = completed_inetian_traders_precursor
-				has_country_flag = adakkaria_intro
-			}
-		}
-		modifier = {
-			pop_happiness = 0.05
-		}
-	}
+	#modifier = {
+	#	# Unlocks Operation: Steal Relic NOT IMPLEMENTED
+	#	# Unlocks Casus Belli: Relic Theft
+	#}
+	#tradition_swap = {
+	#	name = tr_mt_antiquity_3_active
+	#	inherit_effects = no
+	#	inherit_icon = yes
+	#	inherit_name = yes
+	#	custom_tooltip = tr_mt_antiquity_3_desc
+	#	trigger = {
+	#		OR = {
+	#			has_country_flag = cybrex_world_found
+	#			has_country_flag = league_world_found
+	#			has_country_flag = irassian_world_found
+	#			has_country_flag = vultaum_world_found
+	#			has_country_flag = yuht_world_found
+	#			has_country_flag = last_zroni_system
+	#			has_country_flag = last_baol_system
+	#			has_country_flag = completed_inetian_traders_precursor
+	#			has_country_flag = adakkaria_intro
+	#		}
+	#	}
+	#	modifier = {
+	#		pop_happiness = 0.05
+	#	}
+	#}
 }
 
 tr_mt_antiquity_4 = { # Artifacts of the Past

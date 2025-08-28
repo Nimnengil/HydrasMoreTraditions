@@ -1,22 +1,23 @@
 @base_tradition_agenda_cost = 7000
 
-#agenda_MT_archeology_grants = {
-#	agenda_cost = @base_tradition_agenda_cost
-#	allow = {
-#		has_tradition = tr_mt_archeology_adopt
-#	}
-#	potential = {
-#		has_paragon_dlc = yes
-#	}
-#	modifier = {
-#		scientist_exp_gain = 0.1
-#		country_minor_artifacts_produces_mult = 0.2
-#	}
-#	finish_modifier = agenda_MT_archeology_grants_finish
-#	#effect = {
-#	#	give_next_terraforming_tech_option_effect = yes # Change to give archeotech
-#	#}
-#}
+agenda_MT_archeology_grants = {
+	agenda_cost = @base_tradition_agenda_cost
+	allow = {
+		has_tradition = tr_mt_archeology_adopt
+	}
+	potential = {
+		has_paragon_dlc = yes
+	}
+	modifier = {
+		scientist_exp_gain = 0.2
+		ship_archaeological_site_excavation_speed_mult = 0.1
+		#country_minor_artifacts_produces_mult = 0.2
+	}
+	finish_modifier = agenda_MT_archeology_grants_finish
+	#effect = {
+	#	give_next_terraforming_tech_option_effect = yes # Change to give archeotech
+	#}
+}
 
 # Desecration.
 #agenda_MT_artifact_exploitation = {

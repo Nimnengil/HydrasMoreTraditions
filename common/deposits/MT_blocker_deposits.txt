@@ -214,7 +214,7 @@ d_MT_strip_mine = {
 	icon = d_organic_landfill
 
 	planet_modifier = {
-		district_mining_max = 4
+		district_mining_max_add = 4
 		planet_miners_rare_crystals_produces_add = 0.2
 	}
 	
@@ -222,7 +222,7 @@ d_MT_strip_mine = {
 		potential = {
 			always = yes
 		}
-		district_mining_max = 4
+		district_mining_max_add = 4
 		mult = value:natural_desposit_district_amount_multiplier
 	}
 	

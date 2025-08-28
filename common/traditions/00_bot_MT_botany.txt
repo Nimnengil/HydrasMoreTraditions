@@ -228,7 +228,7 @@ tr_mt_botany_5 = {
 		has_tradition = tr_mt_botany_4
 	}
 	modifier = {
-		district_farming_max = 8
+		district_farming_max_add = 8
 	}
 	#on_enabled = {
 	#	hidden_effect = {
